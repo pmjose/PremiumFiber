@@ -1,0 +1,52 @@
+vendor_key,vendor_name,vertical,address,city,county,postcode
+1,Nokia España,Network Equipment,Calle Ramirez de Prado 5,Chamartín Madrid,Comunidad de Madrid,28045
+2,ZTE España,Network Equipment,Paseo de la Castellana 141,Chamartín Madrid,Comunidad de Madrid,28046
+3,Ericsson España,Network Equipment,Calle Retama 3,Chamartín Madrid,Comunidad de Madrid,28045
+4,Corning España,Fiber Cable,Calle Serrano 240,Salamanca Madrid,Comunidad de Madrid,28016
+5,Prysmian Group España,Fiber Cable,Calle Velázquez 130,Salamanca Madrid,Comunidad de Madrid,28006
+6,CommScope España,Fiber Optics,Paseo de la Castellana 95,Chamartín Madrid,Comunidad de Madrid,28046
+7,Calix España,Network Infrastructure,Calle José Ortega y Gasset 22,Salamanca Madrid,Comunidad de Madrid,28006
+8,TP-Link España,Consumer Equipment,Calle Goya 89,Salamanca Madrid,Comunidad de Madrid,28009
+9,Ubiquiti Networks España,Network Equipment,Calle Alcalá 75,Retiro Madrid,Comunidad de Madrid,28009
+10,MikroTik Distribuidor España,Network Equipment,Gran Vía 32,Madrid Centro,Comunidad de Madrid,28013
+11,Cisco Systems España,Enterprise Networking,Paseo de la Castellana 79,Chamartín Madrid,Comunidad de Madrid,28046
+12,Juniper Networks España,Enterprise Networking,Calle María de Molina 40,Chamartín Madrid,Comunidad de Madrid,28006
+13,Arista Networks España,Data Center,Calle Velázquez 150,Salamanca Madrid,Comunidad de Madrid,28002
+14,Amazon Web Services España,Cloud Provider,Paseo de la Castellana 77,Chamartín Madrid,Comunidad de Madrid,28046
+15,Google Cloud España,Cloud Provider,Paseo de la Castellana 259A,Chamartín Madrid,Comunidad de Madrid,28046
+16,Microsoft Azure España,Cloud Provider,Paseo del Club Deportivo 1,Pozuelo de Alarcón Madrid,Comunidad de Madrid,28223
+17,Oracle Cloud España,Cloud Provider,Calle Santa Hortensia 26,Chamartín Madrid,Comunidad de Madrid,28002
+18,Movistar Plus+ España,Content Provider,Gran Vía 28,Madrid Centro,Comunidad de Madrid,28013
+19,Netflix España,Content Provider,Calle Velázquez 130,Salamanca Madrid,Comunidad de Madrid,28006
+20,Disney+ España,Content Provider,Paseo de la Castellana 52,Chamartín Madrid,Comunidad de Madrid,28046
+21,HBO Max España,Content Provider,Calle José Ortega y Gasset 22,Salamanca Madrid,Comunidad de Madrid,28006
+22,LaLiga España,Content Provider,Calle Goya 67,Salamanca Madrid,Comunidad de Madrid,28001
+23,Paramount+ España,Content Provider,Calle Serrano 61,Salamanca Madrid,Comunidad de Madrid,28006
+24,Amazon Prime España,Content Provider,Paseo de la Castellana 77,Chamartín Madrid,Comunidad de Madrid,28046
+25,MediaMarkt,Consumer Retail,Calle Preciados 28,Madrid Centro,Comunidad de Madrid,28013
+26,FNAC España,Consumer Retail,Calle Preciados 28,Madrid Centro,Comunidad de Madrid,28013
+27,PcComponentes,Consumer Retail,Calle Gran Vía 1,Madrid Centro,Comunidad de Madrid,28013
+28,El Corte Inglés,Retail Partner,Calle Preciados 3,Madrid Centro,Comunidad de Madrid,28013
+29,Leroy Merlin España,Retail Partner,Av. de la Industria 32,Alcobendas Madrid,Comunidad de Madrid,28108
+30,Worten España,Retail Partner,Calle Orense 24,Chamartín Madrid,Comunidad de Madrid,28020
+31,CNMC,Regulatory,Calle Barquillo 5,Madrid Centro,Comunidad de Madrid,28004
+32,Ministerio de Transformación Digital,Regulatory,Paseo de la Castellana 160,Chamartín Madrid,Comunidad de Madrid,28046
+33,AEPD,Regulatory,Calle Jorge Juan 6,Retiro Madrid,Comunidad de Madrid,28001
+34,Telefónica España,Competitor,Distrito Telefónica,Chamartín Madrid,Comunidad de Madrid,28050
+35,Orange España,Competitor,Parque Empresarial La Finca,Pozuelo de Alarcón Madrid,Comunidad de Madrid,28223
+36,Digi España,Competitor,Calle Alejandro Sánchez 109,Alcobendas Madrid,Comunidad de Madrid,28108
+37,Avatel España,Competitor,Calle Luchana 23,Chamberí Madrid,Comunidad de Madrid,28010
+38,Adamo España,Competitor,Paseo de la Castellana 95,Chamartín Madrid,Comunidad de Madrid,28046
+39,Telefónica España Wholesale,Competitor,Distrito Telefónica,Chamartín Madrid,Comunidad de Madrid,28050
+40,Fiberlux España,Competitor,Calle Serrano 93,Salamanca Madrid,Comunidad de Madrid,28006
+41,Internexa España,Carrier Services,Calle María de Molina 40,Chamartín Madrid,Comunidad de Madrid,28006
+42,Level 3 España,Carrier Services,Paseo de la Castellana 141,Chamartín Madrid,Comunidad de Madrid,28046
+43,Lumen España,Carrier Services,Calle Santa Hortensia 26,Chamartín Madrid,Comunidad de Madrid,28002
+44,MasOrange,Wholesale,Paseo del Club Deportivo 1,Pozuelo de Alarcón Madrid,Comunidad de Madrid,28223
+45,Optical Networks España,Fiber Infrastructure,Calle Alcalá 518,Madrid Centro,Comunidad de Madrid,28027
+46,Reintel,Fiber Infrastructure,Calle Pradillo 42,Chamartín Madrid,Comunidad de Madrid,28002
+47,Fortinet España,Security,Paseo de la Castellana 259A,Chamartín Madrid,Comunidad de Madrid,28046
+48,Palo Alto Networks España,Security,Calle Velázquez 130,Salamanca Madrid,Comunidad de Madrid,28006
+49,Kaspersky España,Security,Calle Serrano 240,Retiro Madrid,Comunidad de Madrid,28016
+50,Trend Micro España,Security,Paseo de la Castellana 95,Chamartín Madrid,Comunidad de Madrid,28046
+51,Salesforce España,CRM Platform,Paseo del Club Deportivo 1,Pozuelo de Alarcón Madrid,Comunidad de Madrid,28223

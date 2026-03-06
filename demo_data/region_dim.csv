@@ -1,0 +1,13 @@
+region_key,region_name,latitude,longitude,capital_city,area_km2
+400,Comunidad de Madrid,40.4168,-3.7038,Madrid,8028
+401,Cataluña,41.3874,2.1686,Barcelona,32108
+402,Comunidad Valenciana,39.4699,-0.3763,Valencia,23255
+403,Andalucía,37.3891,-5.9845,Sevilla,87268
+404,País Vasco,43.2627,-2.9253,Bilbao,7234
+405,Región de Murcia,37.9922,-1.1307,Murcia,11313
+406,Aragón,41.6488,-0.8891,Zaragoza,47720
+407,Castilla y León,41.6520,-4.7286,Valladolid,94226
+408,Islas Canarias,28.1235,-15.4363,Las Palmas,7447
+409,Islas Baleares,39.5696,2.6502,Palma de Mallorca,4992
+410,Galicia,42.2328,-8.7226,Vigo,29574
+411,Extremadura,38.8794,-6.9707,Mérida,41634

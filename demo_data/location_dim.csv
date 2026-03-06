@@ -1,0 +1,33 @@
+location_key,location_name,city,department,location_type,latitude,longitude
+900,Sede Central - Chamartín Madrid,Chamartín,Comunidad de Madrid,Headquarters,40.4568,-3.6883
+901,Oficina Comercial Salamanca,Salamanca,Comunidad de Madrid,Commercial Office,40.4260,-3.6795
+902,Centro Operaciones Las Palmas,Las Palmas,Islas Canarias,Operations Center,28.1235,-15.4363
+903,Centro de Datos Madrid Norte,Alcobendas,Comunidad de Madrid,Data Center,40.5330,-3.6370
+904,Centro de Datos Madrid Sur,Getafe,Comunidad de Madrid,Data Center,40.3080,-3.7327
+905,Oficina Regional Barcelona,Barcelona,Cataluña,Regional Office,41.3874,2.1686
+906,Oficina Regional Valencia,Valencia,Comunidad Valenciana,Regional Office,39.4699,-0.3763
+907,Oficina Regional Sevilla,Sevilla,Andalucía,Regional Office,37.3891,-5.9845
+908,Oficina Regional Palma de Mallorca,Palma de Mallorca,Islas Baleares,Regional Office,39.5696,2.6502
+909,Oficina Regional Bilbao,Bilbao,País Vasco,Regional Office,43.2627,-2.9253
+910,Oficina Regional Valladolid,Valladolid,Castilla y León,Regional Office,41.6520,-4.7286
+911,Oficina Regional Málaga,Málaga,Andalucía,Regional Office,36.7213,-4.4214
+912,Oficina Regional Zaragoza,Zaragoza,Aragón,Regional Office,41.6488,-0.8891
+913,Call Center Retiro,Retiro,Comunidad de Madrid,Call Center,40.4145,-3.6823
+914,Call Center Chamberí,Chamberí,Comunidad de Madrid,Call Center,40.4350,-3.7050
+915,Centro Tecnico Alcobendas,Alcobendas,Comunidad de Madrid,Technical Center,40.5330,-3.6370
+916,Centro Tecnico Vallecas,Vallecas,Comunidad de Madrid,Technical Center,40.3794,-3.6517
+917,Centro Tecnico San Sebastián de los Reyes,San Sebastián de los Reyes,Comunidad de Madrid,Technical Center,40.5490,-3.6260
+918,Almacen Central Coslada,Coslada,Comunidad de Madrid,Warehouse,40.4240,-3.5610
+919,Almacen Regional Norte,Valencia,Comunidad Valenciana,Warehouse,39.4699,-0.3763
+920,Almacen Regional Sur,Sevilla,Andalucía,Warehouse,37.3891,-5.9845
+921,Tienda Chamartín,Chamartín,Comunidad de Madrid,Retail Store,40.4568,-3.6883
+922,Tienda Salamanca,Salamanca,Comunidad de Madrid,Retail Store,40.4260,-3.6795
+923,Tienda Retiro,Retiro,Comunidad de Madrid,Retail Store,40.4145,-3.6823
+924,Tienda Xanadú,Arroyomolinos,Comunidad de Madrid,Retail Store,40.3340,-3.8740
+925,Tienda La Vaguada,Fuencarral,Comunidad de Madrid,Retail Store,40.4810,-3.7100
+926,Tienda Parquesur,Leganés,Comunidad de Madrid,Retail Store,40.3470,-3.7630
+927,Remoto España,Remote,Multiple,Remote Work,40.4168,-3.7038
+928,Centro de Monitoreo NOC,Chamartín,Comunidad de Madrid,NOC,40.4568,-3.6883
+929,Data Center Principal,Coslada,Comunidad de Madrid,Data Center,40.4240,-3.5610
+930,Data Center Backup,Getafe,Comunidad de Madrid,Data Center,40.3080,-3.7327
+931,Oficina Administrativa Chamberí,Chamberí,Comunidad de Madrid,Administrative Office,40.4350,-3.7050
