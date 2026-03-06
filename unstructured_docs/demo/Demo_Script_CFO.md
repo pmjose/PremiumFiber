@@ -5,21 +5,21 @@
 
 ## Overview
 
-This demo is designed for CFO and Finance leadership at PremiumFiber Spain, focusing on Q4 2024 financial performance, segment profitability, unit economics, and cash generation metrics.
+This demo is designed for CFO and Finance leadership at PremiumFiber Spain, focusing on Q4 2026 financial performance, segment profitability, unit economics, and cash generation metrics.
 
 ---
 
 ## Opening (1 minute)
 
 **Presenter Says:**
-"Today I'll demonstrate how our Snowflake Intelligence Platform provides instant access to financial insights - from our Q4 2024 results through to segment profitability, regional performance, and subscriber economics - all through natural language queries."
+"Today I'll demonstrate how our Snowflake Intelligence Platform provides instant access to financial insights - from our Q4 2026 results through to segment profitability, regional performance, and subscriber economics - all through natural language queries."
 
 ---
 
 ## Demo Questions
 
-### Question 1: Q4 2024 Financial Performance
-> "What was our Q4 2024 financial performance? Show me MRR, revenue by segment, and gross margin."
+### Question 1: Q4 2026 Financial Performance
+> "What was our Q4 2026 financial performance? Show me MRR, revenue by segment, and gross margin."
 
 **Expected Insights:**
 - Monthly Recurring Revenue: € 28.5M (+42% YoY)
@@ -118,7 +118,7 @@ This demo is designed for CFO and Finance leadership at PremiumFiber Spain, focu
 
 **Presenter Says:**
 "In 10 minutes, you've seen how this platform:
-- Delivers instant Q4 2024 financial reporting
+- Delivers instant Q4 2026 financial reporting
 - Tracks subscriber unit economics in real-time
 - Analyses regional profitability
 - Monitors cash generation and investment
@@ -128,9 +128,9 @@ This transforms Finance from report builders to real-time insight providers."
 
 ---
 
-## Key Metrics Reference (Q4 2024)
+## Key Metrics Reference (Q4 2026)
 
-| Metric | Q4 2024 | Q4 2023 | Change |
+| Metric | Q4 2026 | Q4 2023 | Change |
 |--------|---------|---------|--------|
 | MRR | € 28.5M | € 20.1M | +42% |
 | Quarterly Revenue | € 95.2M | € 69.0M | +38% |
@@ -152,7 +152,7 @@ This transforms Finance from report builders to real-time insight providers."
 
 ### Regional Revenue
 
-| Region | Q4 2024 | Margin | Subscribers |
+| Region | Q4 2026 | Margin | Subscribers |
 |--------|---------|--------|-------------|
 | Comunidad de Madrid | € 62M | 70% | 293K |
 | Barcelona | € 12M | 65% | 42K |

@@ -20,7 +20,7 @@ PremiumFiber is committed to responsible business practices and sustainable grow
 
 ### Carbon Intensity
 
-| Metric | 2024 | 2023 | Target 2025 |
+| Metric | 2024 | 2023 | Target 2027 |
 |--------|------|------|-------------|
 | tCO2e per €M revenue | 10.5 | 12.8 | 9.0 |
 | tCO2e per employee | 5.8 | 7.0 | 5.0 |
@@ -84,7 +84,7 @@ By helping customers migrate to cloud communications, PremiumFiber enables signi
 
 ### Workforce Diversity
 
-| Metric | 2024 | 2023 | Target 2025 |
+| Metric | 2024 | 2023 | Target 2027 |
 |--------|------|------|-------------|
 | Female employees | 38% | 36% | 40% |
 | Female leadership | 32% | 28% | 40% |
@@ -276,7 +276,7 @@ Climate risks are integrated into the enterprise risk framework. Key risks inclu
 
 ---
 
-**Report Period**: FY 2024  
+**Report Period**: FY 2026  
 **GRI Standards**: Core option  
 **External Assurance**: Limited assurance on carbon data  
 **Contact**: sustainability@premiumfiber.es

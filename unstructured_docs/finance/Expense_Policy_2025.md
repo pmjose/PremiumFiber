@@ -1,4 +1,4 @@
-# Corporate Expense Policy 2025
+# Corporate Expense Policy 2027
 **Document Version**: 3.2  
 **Effective Date**: January 1, 2025  
 **Review Date**: December 31, 2025

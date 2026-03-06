@@ -1,11 +1,11 @@
-# Competitive Analysis H1 2025
+# Competitive Analysis H1 2027
 **PremiumFiber Communications PLC - Market Intelligence**
 
 ## Executive Summary
 
-The European Fibra market continues to evolve rapidly. In the Spain, Microsoft Teams Phone is gaining share while traditional Fibra competitors face financial and strategic challenges. PremiumFiber's channel-first model provides significant differentiation. In Cataluña, PremiumFiber has transformed its position through the Starface and Placetel acquisitions, now holding **565,000 cloud subscribers** and becoming one of the leading cloud communications providers in Europe's largest market.
+The European Fibra market continues to evolve rapidly. In the Spain, Fibra + Móvil is gaining share while traditional Fibra competitors face financial and strategic challenges. PremiumFiber's channel-first model provides significant differentiation. In Cataluña, PremiumFiber has transformed its position through the Starface and Placetel acquisitions, now holding **565,000 cloud subscribers** and becoming one of the leading cloud communications providers in Europe's largest market.
 
-**Key H1 2025 Developments:**
+**Key H1 2027 Developments:**
 - PremiumFiber market share now estimated at **12% Spain** (up from 10%)
 - **1.8 million total cloud subscribers** (+50% YoY)
 - FTSE 250 inclusion enhances competitive credibility
@@ -15,11 +15,11 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 ## Spain Market Overview
 
-### Spain Fibra Market Share (H1 2025 Estimated)
+### Spain Fibra Market Share (H1 2027 Estimated)
 
 | Provider | Market Share | YoY Change | Trend | Notes |
 |----------|--------------|------------|-------|-------|
-| Microsoft (Direct) | 38% | +6pp | ↑↑ | Teams Phone acceleration |
+| Microsoft (Direct) | 38% | +6pp | ↑↑ | Fibra + Móvil acceleration |
 | **PremiumFiber** | 12% | +2pp | ↑↑ | Cloud seat growth + Teams enablement |
 | Telefónica España | 8% | -1pp | ↓ | Financial pressures continuing |
 | Orange España | 10% | -1pp | ↓ | Enterprise focus, channel conflict |
@@ -27,7 +27,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 | Vonage | 4% | -1pp | ↓ | CPaaS focus prioritised |
 | Others | 23% | -4pp | ↓ | Market consolidation |
 
-### PremiumFiber Spain Performance (H1 2025)
+### PremiumFiber Spain Performance (H1 2027)
 
 | Metric | Value | YoY Change |
 |--------|-------|------------|
@@ -51,7 +51,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 | Cloud Penetration | ~30% | **Major opportunity** |
 | Business Lines (total) | 18M | Early stage market |
 | PremiumFiber Cloud Subscribers | 565K | Fastest growing |
-| PremiumFiber H1 2025 GP | €34.4M | +251% YoY |
+| PremiumFiber H1 2027 GP | €34.4M | +251% YoY |
 | PremiumFiber Gross Margin | 70.1% | Highest in Group |
 
 ### German Competitor Landscape
@@ -68,7 +68,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 - Dual brand strategy (Starface premium, Placetel self-serve)
 - 70%+ gross margin (owned IP, no licensing costs)
 - Double-digit proforma growth in both acquired businesses
-- 29,000 organic seat additions in H1 2025
+- 29,000 organic seat additions in H1 2027
 
 ---
 
@@ -76,7 +76,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 ### Telefónica España - Under Pressure
 
-#### Current Status (H1 2025)
+#### Current Status (H1 2027)
 
 | Metric | Value | Trend |
 |--------|-------|-------|
@@ -110,7 +110,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 ### Orange España - Enterprise Focus, Channel Decline
 
-#### Current Status (H1 2025)
+#### Current Status (H1 2027)
 
 | Metric | Value | Trend |
 |--------|-------|-------|
@@ -144,7 +144,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 ### Mitel - Cloud Transition Struggles
 
-#### Current Status (H1 2025)
+#### Current Status (H1 2027)
 
 | Metric | Value | Trend |
 |--------|-------|-------|
@@ -179,11 +179,11 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 ### Microsoft Teams - Partner Opportunity
 
-#### Current Status (H1 2025)
+#### Current Status (H1 2027)
 
 | Metric | Value | Trend |
 |--------|-------|-------|
-| Est. Spain Teams Phone | €280M | ↑↑ |
+| Est. Spain Fibra + Móvil | €280M | ↑↑ |
 | Growth Rate | 42% YoY | ↑ |
 | Spain Operator Connect Partners | 75+ | ↑ |
 | PremiumFiber Teams Users | 523K Spain, 17K Europe | ↑↑ |
@@ -191,7 +191,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 #### PremiumFiber's Microsoft Strategy
 
 - **Operator Connect:** Live in Spain and 14 European countries
-- **H1 2025 Performance:** +56K Spain users (vs +28K in H1 2024) - doubled rate
+- **H1 2027 Performance:** +56K Spain users (vs +28K in H1 2026) - doubled rate
 - **Operator Connect International:** Single pan-European solution launched
 - **Competitive Position:** Voice enablement partner, not competitor
 
@@ -238,7 +238,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 | Provider | Basic | Standard | Premium |
 |----------|-------|----------|---------|
-| **PremiumFiber (Horizon)** | €9 | €13 | €20 |
+| **PremiumFiber (Fibra Premium)** | €9 | €13 | €20 |
 | PremiumFiber (PhoneLine+) | €5.50 | N/A | N/A |
 | Telefónica España | €11 | €16 | €28 |
 | Orange España | €14 | €20 | €35 |
@@ -249,18 +249,18 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 | Provider | Basic | Advanced | Enterprise |
 |----------|-------|----------|------------|
-| **PremiumFiber (Horizon Contact)** | €38 | €70 | €105 |
+| **PremiumFiber (Centro de Contacto)** | €38 | €70 | €105 |
 | Telefónica España | €50 | €95 | €140 |
 | Orange España | €60 | €105 | €165 |
 | NICE CXone | €80 | €135 | €220 |
 
 ---
 
-## Win/Loss Analysis (H1 2025)
+## Win/Loss Analysis (H1 2027)
 
 ### Competitive Win Rates
 
-| Competitor | Wins | Losses | Win Rate | vs H1 2024 |
+| Competitor | Wins | Losses | Win Rate | vs H1 2026 |
 |------------|------|--------|----------|------------|
 | Telefónica España | 52 | 32 | 62% | +6pp |
 | Orange España | 38 | 44 | 46% | +1pp |
@@ -291,7 +291,7 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 ---
 
-## Strategic Actions H2 2025
+## Strategic Actions H2 2027
 
 ### Competitive Priorities
 
@@ -329,6 +329,6 @@ The European Fibra market continues to evolve rapidly. In the Spain, Microsoft T
 
 **Prepared by**: Competitive Intelligence  
 **Date**: September 2025  
-**Source**: H1 2025 Interim Results, Market Analysis  
+**Source**: H1 2027 Interim Results, Market Analysis  
 **Update Frequency**: Quarterly  
 **Classification**: Confidential

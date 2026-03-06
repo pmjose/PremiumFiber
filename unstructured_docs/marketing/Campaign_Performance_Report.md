@@ -1,9 +1,9 @@
-# Campaign Performance Report Q4 2024
+# Campaign Performance Report Q4 2026
 **PremiumFiber Communications - Marketing Analytics**
 
 ## Executive Summary
 
-Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2M spend, achieving a 4.8x pipeline-to-spend ratio. Key successes include the PSTN switch-off campaign (2,100 MQLs) and Microsoft Teams Phone acceleration (1,450 MQLs).
+Q4 2026 marketing delivered strong results with 6,850 MQLs generated from €4.2M spend, achieving a 4.8x pipeline-to-spend ratio. Key successes include the PSTN switch-off campaign (2,100 MQLs) and Fibra + Móvil acceleration (1,450 MQLs).
 
 ---
 
@@ -11,7 +11,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 
 ### Key Metrics
 
-| Metric | Q4 2024 | Q4 2023 | YoY Change |
+| Metric | Q4 2026 | Q4 2023 | YoY Change |
 |--------|---------|---------|------------|
 | Marketing Spend | €4.2M | €3.8M | +11% |
 | MQLs Generated | 6,850 | 5,200 | +32% |
@@ -39,7 +39,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 | Campaign | Spend | MQLs | CPL | Pipeline | ROI |
 |----------|-------|------|-----|----------|-----|
 | PSTN Switch-Off | €850K | 2,100 | €405 | €14M | 16.5x |
-| Teams Phone Push | €620K | 1,450 | €428 | €9.5M | 15.3x |
+| Fibra + Móvil Push | €620K | 1,450 | €428 | €9.5M | 15.3x |
 | Partner Recruitment | €380K | 185 | €2,054 | €8M | 21.1x |
 | Contact Centre | €420K | 920 | €457 | €6.5M | 15.5x |
 | PremiumFiber Secure Launch | €280K | 650 | €431 | €3.8M | 13.6x |
@@ -94,7 +94,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 - LinkedIn thought leadership campaign
 - Google Ads migration-focused keywords
 
-### Microsoft Teams Phone Campaign
+### Fibra + Móvil Campaign
 
 | Metric | Target | Actual | Status |
 |--------|--------|--------|--------|
@@ -119,7 +119,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 | Content | Downloads | MQLs | Conv. |
 |---------|-----------|------|-------|
 | PSTN Migration Guide | 2,400 | 480 | 20% |
-| Teams Phone ROI Calculator | 1,800 | 285 | 16% |
+| Fibra + Móvil ROI Calculator | 1,800 | 285 | 16% |
 | Fibra Buyer's Guide | 1,250 | 188 | 15% |
 | Contact Centre Trends | 980 | 142 | 14% |
 | Partner Success Playbook | 850 | 95 | 11% |
@@ -129,7 +129,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 | Webinar | Registrations | Attendance | MQLs |
 |---------|---------------|------------|------|
 | PSTN Switch-Off Masterclass | 680 | 425 | 128 |
-| Teams Phone Deep Dive | 520 | 340 | 102 |
+| Fibra + Móvil Deep Dive | 520 | 340 | 102 |
 | Contact Centre AI | 450 | 285 | 85 |
 | Partner Success Summit | 380 | 245 | 74 |
 | Cyber Security Essentials | 320 | 195 | 58 |
@@ -164,7 +164,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 
 ### Awareness Tracking
 
-| Metric | Q4 2024 | Q3 2024 | Change |
+| Metric | Q4 2026 | Q3 2026 | Change |
 |--------|---------|---------|--------|
 | Aided awareness | 62% | 58% | +4pp |
 | Unaided awareness | 18% | 15% | +3pp |
@@ -218,7 +218,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 ### Campaign Focus
 
 1. **PSTN Acceleration** - Scale successful Q4 campaign
-2. **Teams Phone Enterprise** - Target 250+ seat opportunities
+2. **Fibra + Móvil Enterprise** - Target 250+ seat opportunities
 3. **Partner Recruitment Blitz** - Q1 push for 50 new partners
 4. **Contact Centre AI** - New feature launch campaign
 5. **International** - Netherlands and Spain focus
@@ -228,7 +228,7 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 | Campaign | Q1 Budget | Target MQLs |
 |----------|-----------|-------------|
 | PSTN Switch-Off | €950K | 2,500 |
-| Teams Phone | €700K | 1,800 |
+| Fibra + Móvil | €700K | 1,800 |
 | Partner Recruitment | €400K | 50 partners |
 | Contact Centre | €500K | 1,200 |
 | Brand/Awareness | €350K | N/A |

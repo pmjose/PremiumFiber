@@ -19,7 +19,7 @@ This demo is designed for CMO/Marketing leadership audiences at PremiumFiber Spa
 ## Demo Questions
 
 ### Question 1: Campaign Performance Overview
-> "What were our top performing marketing campaigns in Q4 2024 and their ROI?"
+> "What were our top performing marketing campaigns in Q4 2026 and their ROI?"
 
 **Expected Insights:**
 - Lanzamiento Plan 5000 Mbps: € 850K spend, 2,100 leads, 18.5x ROI
@@ -102,7 +102,7 @@ PremiumFiber's marketing success is built on data-driven decisions - this platfo
 
 ---
 
-## Key Metrics Reference (Q4 2024)
+## Key Metrics Reference (Q4 2026)
 
 | Metric | Value |
 |--------|-------|
@@ -116,7 +116,7 @@ PremiumFiber's marketing success is built on data-driven decisions - this platfo
 | Brand Awareness (Madrid) | 45% |
 | NPS Score | +62 |
 
-### Top Campaigns Q4 2024
+### Top Campaigns Q4 2026
 
 | Campaign | Spend | Leads | ROI |
 |----------|-------|-------|-----|

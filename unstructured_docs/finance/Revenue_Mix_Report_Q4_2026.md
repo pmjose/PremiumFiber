@@ -1,9 +1,9 @@
-# Revenue Mix Report Q4 2024
+# Revenue Mix Report Q4 2026
 **PremiumFiber Communications - Product and Segment Analysis**
 
 ## Executive Summary
 
-Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibra and Contact Centre products. Recurring revenue now represents 85% of total revenue, up from 82% in Q4 2023.
+Q4 2026 revenue of €132M reflects a continuing shift towards higher-value Fibra and Contact Centre products. Recurring revenue now represents 85% of total revenue, up from 82% in Q4 2023.
 
 ---
 
@@ -11,25 +11,25 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### PremiumFiber Elements Portfolio
 
-| Category | Q4 2024 | Q4 2023 | YoY | % Mix |
+| Category | Q4 2026 | Q4 2023 | YoY | % Mix |
 |----------|---------|---------|-----|-------|
-| **PremiumFiber Connect** | €60M | €50M | +20% | 45% |
-| - Horizon Cloud | €38M | €34M | +12% | 29% |
-| - Teams Phone | €12M | €8M | +50% | 9% |
-| - Webex for PremiumFiber | €6M | €5M | +20% | 5% |
-| - CircleLoop | €4M | €3M | +33% | 3% |
-| **PremiumFiber Enable** | €32M | €34M | -6% | 24% |
-| - SIP Trunking | €22M | €24M | -8% | 17% |
-| - Inbound Services | €6M | €6M | 0% | 5% |
-| - Other Voice | €4M | €4M | 0% | 3% |
+| **Fibra Hogar** | €60M | €50M | +20% | 45% |
+| - Fibra Premium | €38M | €34M | +12% | 29% |
+| - Fibra + Móvil | €12M | €8M | +50% | 9% |
+| - Fibra + TV | €6M | €5M | +20% | 5% |
+| - Fibra 300 Mbps | €4M | €3M | +33% | 3% |
+| **Fibra Negocio** | €32M | €34M | -6% | 24% |
+| - Telefonía Fija | €22M | €24M | -8% | 17% |
+| - Servicios Empresariales | €6M | €6M | 0% | 5% |
+| - Otros Servicios | €4M | €4M | 0% | 3% |
 | **Connectivity** | €24M | €22M | +9% | 18% |
 | - Broadband | €14M | €13M | +8% | 11% |
 | - Ethernet | €8M | €7M | +14% | 6% |
 | - Mobile | €2M | €2M | 0% | 2% |
-| **PremiumFiber Experience** | €11M | €9M | +22% | 8% |
-| - Horizon Contact | €7M | €5M | +40% | 5% |
-| - Cirrus | €3M | €3M | 0% | 2% |
-| - AWS Connect | €1M | €1M | 0% | 1% |
+| **Fibra Contact Center** | €11M | €9M | +22% | 8% |
+| - Centro de Contacto | €7M | €5M | +40% | 5% |
+| - Fibra Empresas | €3M | €3M | 0% | 2% |
+| - Cloud PBX | €1M | €1M | 0% | 1% |
 | **Other** | €5M | €5M | 0% | 4% |
 | **Total** | **€132M** | **€120M** | **+10%** | **100%** |
 
@@ -39,7 +39,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Recurring vs Non-Recurring
 
-| Type | Q4 2024 | Q4 2023 | YoY | % Mix |
+| Type | Q4 2026 | Q4 2023 | YoY | % Mix |
 |------|---------|---------|-----|-------|
 | Recurring subscriptions | €112M | €98M | +14% | 85% |
 | Usage revenue | €13M | €14M | -7% | 10% |
@@ -50,8 +50,8 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 | Product | Dec 2024 MRR | Sep 2024 MRR | Growth |
 |---------|--------------|--------------|--------|
-| Horizon | €12.8M | €12.2M | +4.9% |
-| Teams Phone | €4.0M | €3.5M | +14.3% |
+| Fibra Premium | €12.8M | €12.2M | +4.9% |
+| Fibra + Móvil | €4.0M | €3.5M | +14.3% |
 | Contact Centre | €3.8M | €3.5M | +8.6% |
 | SIP/Voice | €7.2M | €7.4M | -2.7% |
 | Connectivity | €8.0M | €7.8M | +2.6% |
@@ -64,7 +64,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Segment Mix
 
-| Segment | Q4 2024 | Q4 2023 | YoY | % Mix |
+| Segment | Q4 2026 | Q4 2023 | YoY | % Mix |
 |---------|---------|---------|-----|-------|
 | SMB (1-49) | €40M | €38M | +5% | 30% |
 | Mid-Market (50-249) | €48M | €42M | +14% | 36% |
@@ -88,7 +88,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Spain Regional Distribution
 
-| Region | Q4 2024 | % of Spain | YoY |
+| Region | Q4 2026 | % of Spain | YoY |
 |--------|---------|---------|-----|
 | Madrid | €28M | 24% | +12% |
 | Comunidad de Madrid | €18M | 15% | +10% |
@@ -102,7 +102,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### International Revenue
 
-| Market | Q4 2024 | Q4 2023 | YoY | % of Total |
+| Market | Q4 2026 | Q4 2023 | YoY | % of Total |
 |--------|---------|---------|-----|------------|
 | Spain | €118M | €108M | +9% | 89% |
 | Netherlands | €7M | €6M | +17% | 5% |
@@ -116,7 +116,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Partner vs Direct
 
-| Channel | Q4 2024 | Q4 2023 | YoY | % Mix |
+| Channel | Q4 2026 | Q4 2023 | YoY | % Mix |
 |---------|---------|---------|-----|-------|
 | Channel Partners | €118M | €108M | +9% | 89% |
 | Direct Enterprise | €11M | €9M | +22% | 8% |
@@ -139,7 +139,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Growth by Component
 
-| Component | Q4 2024 | Q4 2023 | Contribution |
+| Component | Q4 2026 | Q4 2023 | Contribution |
 |-----------|---------|---------|--------------|
 | New customer | €8M | €6M | +€2M |
 | Expansion | €6M | €4M | +€2M |
@@ -147,7 +147,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 | Price | €1M | €0.5M | +€0.5M |
 | **Net Growth** | **€11M** | **€7.5M** | **+€3.5M** |
 
-### Revenue Bridge (Q4 2023 to Q4 2024)
+### Revenue Bridge (Q4 2023 to Q4 2026)
 
 | Factor | Impact |
 |--------|--------|
@@ -156,7 +156,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 | Existing expansion | +€6M |
 | Churn | -€4M |
 | Price changes | +€2M |
-| **Closing (Q4 2024)** | **€132M** |
+| **Closing (Q4 2026)** | **€132M** |
 
 ---
 
@@ -164,18 +164,18 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Growing Products
 
-| Product | Q4 2024 | YoY Growth | Driver |
+| Product | Q4 2026 | YoY Growth | Driver |
 |---------|---------|------------|--------|
-| Teams Phone | €12M | +50% | Microsoft adoption |
-| Horizon Contact | €7M | +40% | Cloud CC migration |
-| CircleLoop | €4M | +33% | SMB simplicity |
+| Fibra + Móvil | €12M | +50% | Microsoft adoption |
+| Centro de Contacto | €7M | +40% | Cloud CC migration |
+| Fibra 300 Mbps | €4M | +33% | SMB simplicity |
 | Ethernet | €8M | +14% | Bandwidth demand |
 
 ### Declining Products
 
-| Product | Q4 2024 | YoY Growth | Reason |
+| Product | Q4 2026 | YoY Growth | Reason |
 |---------|---------|------------|--------|
-| SIP Trunking | €22M | -8% | ISDN decline |
+| Telefonía Fija | €22M | -8% | ISDN decline |
 | PSTN Services | €2M | -20% | Switch-off |
 
 ---
@@ -184,7 +184,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Recurring Revenue Analysis
 
-| Metric | Q4 2024 | Q4 2023 | Change |
+| Metric | Q4 2026 | Q4 2023 | Change |
 |--------|---------|---------|--------|
 | ARR | €448M | €392M | +14% |
 | MRR | €37.3M | €32.7M | +14% |
@@ -193,7 +193,7 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ### Revenue Concentration
 
-| Metric | Q4 2024 | Risk Level |
+| Metric | Q4 2026 | Risk Level |
 |--------|---------|------------|
 | Top 10 partners | 42% | Moderate |
 | Top 20 partners | 58% | Acceptable |
@@ -208,15 +208,15 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 | Category | 2024 Mix | 2025E Mix | Shift |
 |----------|----------|-----------|-------|
-| PremiumFiber Connect | 45% | 50% | +5pp |
-| PremiumFiber Enable | 24% | 21% | -3pp |
+| Fibra Hogar | 45% | 50% | +5pp |
+| Fibra Negocio | 24% | 21% | -3pp |
 | Connectivity | 18% | 17% | -1pp |
-| PremiumFiber Experience | 8% | 10% | +2pp |
+| Fibra Contact Center | 8% | 10% | +2pp |
 | Other | 4% | 2% | -2pp |
 
 ### Revenue Guidance
 
-| Metric | FY 2024 | FY 2025E | Growth |
+| Metric | FY 2026 | FY 2025E | Growth |
 |--------|---------|----------|--------|
 | Total Revenue | €500M | €550-575M | +10-15% |
 | Recurring % | 85% | 87% | +2pp |

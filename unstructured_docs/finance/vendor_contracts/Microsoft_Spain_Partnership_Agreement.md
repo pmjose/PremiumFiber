@@ -19,7 +19,7 @@
 
 | Product | Description | PremiumFiber Role |
 |---------|-------------|------------|
-| Microsoft Teams Phone | Enterprise voice for Teams | Operator Connect Partner |
+| Fibra + Móvil | Enterprise voice for Teams | Operator Connect Partner |
 | Microsoft 365 | Productivity integration | Integration Partner |
 | Azure Communications | Cloud services | Reseller |
 | Power Platform | Automation tools | Implementation Partner |
@@ -39,7 +39,7 @@
 
 | Product | PremiumFiber Margin | Microsoft Share |
 |---------|--------------|-----------------|
-| Teams Phone (calling) | 35% | 65% |
+| Fibra + Móvil (calling) | 35% | 65% |
 | Direct Routing | 100% | 0% |
 | Operator Connect | 30% | 70% |
 | Azure services | 15% | 85% |
@@ -48,7 +48,7 @@
 
 | Metric | Year 1 | Year 2 | Year 3 |
 |--------|--------|--------|--------|
-| Teams Phone Subscribers | 50,000 | 100,000 | 150,000 |
+| Fibra + Móvil Subscribers | 50,000 | 100,000 | 150,000 |
 | Active Partners | 100 | 150 | 200 |
 | Azure Consumption | €1M | €2M | €3M |
 

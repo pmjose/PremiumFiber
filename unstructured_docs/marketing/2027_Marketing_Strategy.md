@@ -1,15 +1,15 @@
-# 2025 Marketing Strategy
+# 2027 Marketing Strategy
 **PremiumFiber Communications - Partner-First Marketing**
 
 ## Executive Summary
 
-PremiumFiber's 2025 marketing strategy focuses on driving partner success, accelerating Microsoft Teams Phone adoption, and capitalising on the PSTN switch-off opportunity. With a €18M marketing investment, we target 20% revenue growth through partner enablement and demand generation.
+PremiumFiber's 2025 marketing strategy focuses on driving partner success, accelerating Fibra + Móvil adoption, and capitalising on the PSTN switch-off opportunity. With a €18M marketing investment, we target 20% revenue growth through partner enablement and demand generation.
 
 ---
 
 ## Strategic Priorities
 
-### 2025 Marketing Objectives
+### 2027 Marketing Objectives
 
 | Objective | Target | Measure |
 |-----------|--------|---------|
@@ -17,7 +17,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 | Lead generation | 25,000 MQLs | Pipeline value |
 | Brand awareness | +15pp aided | Survey |
 | Customer NPS | +50 | NPS score |
-| Teams Phone subscribers | 150,000 | Deployed subscribers |
+| Fibra + Móvil subscribers | 150,000 | Deployed subscribers |
 
 ---
 
@@ -50,7 +50,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 
 ### Partner Recruitment Target
 
-| Tier | Current | Target 2025 | Growth |
+| Tier | Current | Target 2027 | Growth |
 |------|---------|-------------|--------|
 | Platinum | 25 | 35 | +40% |
 | Gold | 85 | 120 | +41% |
@@ -58,7 +58,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 | Registered | 660 | 665 | +1% |
 | **Total** | **1,050** | **1,200** | **+14%** |
 
-### PremiumFiber Connect 2025
+### Fibra Hogar 2025
 
 **Flagship Partner Event**
 - Date: September 2025
@@ -76,7 +76,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 | Campaign | Budget | Target MQLs | Timeline |
 |----------|--------|-------------|----------|
 | PSTN Switch-Off | €1.2M | 8,000 | Full year |
-| Teams Phone | €800K | 5,000 | H1 focus |
+| Fibra + Móvil | €800K | 5,000 | H1 focus |
 | Contact Centre | €600K | 3,500 | Q2-Q4 |
 | PremiumFiber Secure | €400K | 2,500 | Q2-Q4 |
 | Partner Recruitment | €600K | 500 | Full year |
@@ -174,7 +174,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 
 | Event | Type | Budget | Attendees |
 |-------|------|--------|-----------|
-| PremiumFiber Connect | Flagship partner | €1.2M | 2,000 |
+| Fibra Hogar | Flagship partner | €1.2M | 2,000 |
 | Partner roadshows (6) | Regional | €400K | 1,200 |
 | UC Expo | Industry | €200K | Exhibition |
 | Channel Live | Industry | €150K | Exhibition |
@@ -249,17 +249,17 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 
 - PSTN switch-off campaign launch
 - Partner portal 2.0 go-live
-- Teams Phone acceleration
+- Fibra + Móvil acceleration
 
 ### Q2 2025
 
-- PremiumFiber Connect planning
+- Fibra Hogar planning
 - Contact Centre campaign
 - Mid-year brand refresh
 
 ### Q3 2025
 
-- PremiumFiber Connect 2025 (September)
+- Fibra Hogar 2025 (September)
 - Partner recruitment push
 - International expansion support
 

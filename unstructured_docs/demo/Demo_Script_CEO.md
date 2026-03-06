@@ -5,7 +5,7 @@
 
 ## Overview
 
-This demo is designed for CEO/Board-level audiences at PremiumFiber Spain, focusing on strategic insights, market position, subscriber growth, and business performance based on the latest Q4 2024 results and Spain market positioning.
+This demo is designed for CEO/Board-level audiences at PremiumFiber Spain, focusing on strategic insights, market position, subscriber growth, and business performance based on the latest Q4 2026 results and Spain market positioning.
 
 ---
 
@@ -19,7 +19,7 @@ This demo is designed for CEO/Board-level audiences at PremiumFiber Spain, focus
 ## Demo Questions
 
 ### Question 1: Business Health Overview
-> "Give me an executive summary of PremiumFiber's Q4 2024 performance - subscriber count, MRR, ARPU, and our key growth metrics."
+> "Give me an executive summary of PremiumFiber's Q4 2026 performance - subscriber count, MRR, ARPU, and our key growth metrics."
 
 **Expected Insights:**
 - 450K total subscribers, up 35% YoY
@@ -98,7 +98,7 @@ This demo is designed for CEO/Board-level audiences at PremiumFiber Spain, focus
 
 **Presenter Says:**
 "In 10 minutes, you've seen how this platform:
-- Provides instant strategic insights from our Q4 2024 results
+- Provides instant strategic insights from our Q4 2026 results
 - Tracks our regional expansion in real-time
 - Enables competitive analysis across Spain's telecom market
 - Supports board-level decision making
@@ -107,9 +107,9 @@ As Spain continues its digital transformation, PremiumFiber is positioned to be 
 
 ---
 
-## Key Metrics Reference (Q4 2024 Actuals)
+## Key Metrics Reference (Q4 2026 Actuals)
 
-| Metric | Q4 2024 | Q4 2023 | Change |
+| Metric | Q4 2026 | Q4 2023 | Change |
 |--------|---------|---------|--------|
 | Total Subscribers | 450K | 333K | +35% |
 | Residential Subscribers | 360K | 273K | +32% |
@@ -125,7 +125,7 @@ As Spain continues its digital transformation, PremiumFiber is positioned to be 
 
 ### Regional Subscriber Distribution
 
-| Region | Q4 2024 | Q4 2023 | Change |
+| Region | Q4 2026 | Q4 2023 | Change |
 |--------|---------|---------|--------|
 | Comunidad de Madrid | 293K | 240K | +22% |
 | Barcelona | 42K | 23K | +85% |
@@ -138,4 +138,4 @@ As Spain continues its digital transformation, PremiumFiber is positioned to be 
 **Demo Duration:** 10 minutes  
 **Audience:** CEO, Board members, Investors  
 **Key Message:** Spain's fiber leader delivering strategic intelligence  
-**Source:** Q4 2024 Results, Currency: Spanish Euros (€)
+**Source:** Q4 2026 Results, Currency: Spanish Euros (€)

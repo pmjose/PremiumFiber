@@ -22,8 +22,8 @@ PremiumFiber Communications PLC maintains full compliance with CNMC regulatory r
 
 | Service | CNMC Classification |
 |---------|---------------------|
-| Voice (SIP Trunking) | PECS |
-| Fibra (Horizon) | PECS |
+| Voice (Telefonía Fija) | PECS |
+| Fibra (Fibra Premium) | PECS |
 | Contact Centre | PECS |
 | Connectivity | PECN |
 | Number Hosting | Numbering |

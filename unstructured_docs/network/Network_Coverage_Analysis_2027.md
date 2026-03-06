@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-PremiumFiber's fiber optic network serves over 450,000 active subscribers across Spain's major departments. Recognized by Ookla® Speedtest Awards™ as the fastest, best-rated, and most stable network in Latin America (H1 2025), our 100% fiber infrastructure delivers consistent gigabit speeds with industry-leading reliability.
+PremiumFiber's fiber optic network serves over 450,000 active subscribers across Spain's major departments. Recognized by Ookla® Speedtest Awards™ as the fastest, best-rated, and most stable network in Latin America (H1 2027), our 100% fiber infrastructure delivers consistent gigabit speeds with industry-leading reliability.
 
 ---
 
@@ -72,7 +72,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 
 ### Quality of Service
 
-| Metric | Q4 2024 | FY 2024 | SLA Target | Rating |
+| Metric | Q4 2026 | FY 2026 | SLA Target | Rating |
 |--------|---------|---------|------------|--------|
 | Network Uptime | 99.92% | 99.90% | 99.9% | ✓ Excellent |
 | Average Latency | 3.2ms | 3.5ms | <5ms | ✓ Excellent |
@@ -90,7 +90,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 | 5000 Mbps | 5000 Mbps | 4,920 Mbps | 98.4% |
 | Empresas (all) | 100% guaranteed | 100% | 100.0% |
 
-### Ookla Speedtest Results (H1 2025)
+### Ookla Speedtest Results (H1 2027)
 
 | Metric | PremiumFiber | Telefónica | Orange | Win |
 |--------|---------|-------|----------|-----|
@@ -140,7 +140,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 
 ### Incident History
 
-| Severity | Q4 2024 | Q3 2024 | Q2 2024 | Q1 2024 |
+| Severity | Q4 2026 | Q3 2026 | Q2 2026 | Q1 2026 |
 |----------|---------|---------|---------|---------|
 | P1 (Network Outage) | 0 | 0 | 1 | 0 |
 | P2 (Regional Impact) | 2 | 3 | 2 | 4 |

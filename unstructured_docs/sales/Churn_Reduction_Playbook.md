@@ -11,7 +11,7 @@ This playbook provides strategies and tactics for reducing customer churn across
 
 ### Current Churn Metrics
 
-| Metric | Q4 2024 | Q4 2023 | Change |
+| Metric | Q4 2026 | Q4 2023 | Change |
 |--------|---------|---------|--------|
 | Monthly Churn | 0.9% | 1.1% | -0.2pp |
 | Annual Churn | 10.8% | 12.5% | -1.7pp |
@@ -31,17 +31,17 @@ This playbook provides strategies and tactics for reducing customer churn across
 
 | Product | Monthly Churn | Trend | Action |
 |---------|---------------|-------|--------|
-| Horizon | 0.8% | → | Monitor |
-| Teams Phone | 0.4% | ↓ | Maintain |
+| Fibra Premium | 0.8% | → | Monitor |
+| Fibra + Móvil | 0.4% | ↓ | Maintain |
 | Contact Centre | 1.2% | → | Improve |
 | SIP Only | 2.0% | ↓ | Bundle strategy |
-| CircleLoop | 2.5% | ↑ | Intervention |
+| Fibra 300 Mbps | 2.5% | ↑ | Intervention |
 
 ---
 
 ## Churn Drivers
 
-### Primary Drivers (Q4 2024)
+### Primary Drivers (Q4 2026)
 
 | Driver | % of Churn | Change | Action |
 |--------|------------|--------|--------|

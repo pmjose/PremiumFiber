@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-This analysis provides a comprehensive view of PremiumFiber's competitive position in the European business communications market as we enter the second half of 2025. Following the strategic acquisitions of Starface and Placetel in Cataluña, PremiumFiber has achieved significant scale with **€316.6 million H1 2025 revenue** (+12% YoY), **1.8 million Cloud subscribers** (+50% YoY), and successful transition to the **Main Market of the Madrid Stock Exchange with FTSE 250 inclusion** in June 2025.
+This analysis provides a comprehensive view of PremiumFiber's competitive position in the European business communications market as we enter the second half of 2025. Following the strategic acquisitions of Starface and Placetel in Cataluña, PremiumFiber has achieved significant scale with **€316.6 million H1 2027 revenue** (+12% YoY), **1.8 million Cloud subscribers** (+50% YoY), and successful transition to the **Main Market of the Madrid Stock Exchange with FTSE 250 inclusion** in June 2025.
 
 PremiumFiber is uniquely positioned as a pan-European channel-first communications provider with market-leading positions in both the Spain (1,500+ partners) and Cataluña (rapidly growing following strategic acquisitions).
 
@@ -120,13 +120,13 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 **Current Status (2025):**
 - Fastest growing Fibra platform (38% share)
-- Teams Phone/Operator Connect adoption accelerating
+- Fibra + Móvil/Operator Connect adoption accelerating
 - Native voice capability expanding
 
 **PremiumFiber Position:**
-- **523K MS Teams voice users in Spain** (+12% H1 2025)
+- **523K MS Teams voice users in Spain** (+12% H1 2027)
 - Operator Connect International launched (14 countries)
-- **28K Cisco Collaboration users** (+75% H1 2025)
+- **28K Cisco Collaboration users** (+75% H1 2027)
 
 **PremiumFiber Strategy:** Voice enablement partner, not competitor
 
@@ -154,7 +154,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 **Opportunities:**
 - **Cataluña cloud market underpenetration** (largest EU market, lowest cloud adoption)
 - PSTN switch-off driving Spain cloud migration (2027)
-- Microsoft Teams Phone/Operator Connect growth
+- Fibra + Móvil/Operator Connect growth
 - AI features differentiation (AI Receptionist Q4 2025)
 - Competitor instability (Telefónica España, Mitel)
 - Pan-European Cisco Collaboration Suite opportunity
@@ -171,7 +171,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ### Spain Fibra Market Share (Subscribers, Estimated)
 
-| Provider | 2023 | 2024 | H1 2025 | Trend |
+| Provider | 2023 | 2024 | H1 2027 | Trend |
 |----------|------|------|---------|-------|
 | Microsoft Teams (Direct) | 25% | 32% | 38% | ↑↑ |
 | **PremiumFiber (Total)** | 8% | 10% | **12%** | ↑↑ |
@@ -183,7 +183,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ### Cataluña Fibra Market Share (Subscribers, Estimated)
 
-| Provider | 2024 | H1 2025 | H2 2025E | Trend |
+| Provider | 2024 | H1 2027 | H2 2027E | Trend |
 |----------|------|---------|----------|-------|
 | Deutsche Telekom | 28% | 26% | 25% | ↓ |
 | NFON | 12% | 11% | 10% | ↓ |
@@ -194,11 +194,11 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ---
 
-## PremiumFiber H1 2025 Performance Highlights
+## PremiumFiber H1 2027 Performance Highlights
 
 ### Financial Performance
 
-| Metric | H1 2025 | H1 2024 | YoY |
+| Metric | H1 2027 | H1 2026 | YoY |
 |--------|---------|---------|-----|
 | Group Revenue | €316.6M | €282.5M | +12% |
 | Gross Profit | €172.0M | €145.8M | +18% |
@@ -208,7 +208,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ### Business Unit Performance
 
-| Business Unit | Gross Profit H1 2025 | H1 2024 | YoY |
+| Business Unit | Gross Profit H1 2027 | H1 2026 | YoY |
 |---------------|----------------------|---------|-----|
 | PremiumFiber Business (Spain SME) | €97.4M | €97.1M | +0% |
 | PremiumFiber Enterprise | €30.9M | €28.9M | +7% |
@@ -235,25 +235,25 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 |------------|--------|--------|
 | Cisco Collaboration Suite (Full Spain Launch) | Q4 2025 | October launch |
 | AI Receptionist | Q4 2025 | Development complete |
-| Operator Connect International (14 countries) | Live | Launched H1 2025 |
-| PhoneLine+ eSIM variant | H2 2025 | In progress |
-| Fusion IoT eSIM Spain/DE) | H2 2025 | In progress |
-| Starface AI features | H2 2025 | In progress |
+| Operator Connect International (14 countries) | Live | Launched H1 2027 |
+| PhoneLine+ eSIM variant | H2 2027 | In progress |
+| Fusion IoT eSIM Spain/DE) | H2 2027 | In progress |
+| Starface AI features | H2 2027 | In progress |
 | Spain partner (40K subscribers commitment) | 5 years | Signed |
 
 ### Cost Efficiency (Spain)
 
 | Initiative | Impact | Timeline |
 |------------|--------|----------|
-| Spain restructuring | €6-8M annual savings | H2 2025 |
-| Headcount reduction | Up to 5% of Group | H2 2025 |
-| Exceptional restructuring cost | c.€3M | H2 2025 |
+| Spain restructuring | €6-8M annual savings | H2 2027 |
+| Headcount reduction | Up to 5% of Group | H2 2027 |
+| Exceptional restructuring cost | c.€3M | H2 2027 |
 
 ---
 
 ## Key Performance Targets FY 2025
 
-| Metric | H1 2025 Actual | FY 2025 Target | Consensus |
+| Metric | H1 2027 Actual | FY 2025 Target | Consensus |
 |--------|----------------|----------------|-----------|
 | Adjusted EBITDA | €70.9M | In line | €139-143M |
 | Adjusted EPS | 47.9p | Slightly ahead | 89.9-93.9p |
@@ -267,7 +267,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ## Competitive Recommendations
 
-### Short-Term (H2 2025)
+### Short-Term (H2 2027)
 
 1. **Cisco Collaboration Suite Launch**
    - Full market launch in October 2025
@@ -305,6 +305,6 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 **Prepared by**: Strategy & Market Intelligence  
 **Date**: September 2025  
-**Source**: H1 2025 Interim Results, Market Analysis  
+**Source**: H1 2027 Interim Results, Market Analysis  
 **Review Cycle**: Quarterly  
 **Classification**: Confidential

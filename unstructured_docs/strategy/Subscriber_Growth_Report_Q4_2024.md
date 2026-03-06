@@ -1,9 +1,9 @@
-# Seat Growth Report Q4 2024
+# Seat Growth Report Q4 2026
 **PremiumFiber Communications - Business Performance Analysis**
 
 ## Executive Summary
 
-Q4 2024 delivered strong seat growth across all product categories, with total Fibra subscribers reaching 850,000 and Microsoft Teams Phone subscribers exceeding 80,000. Growth was driven by PSTN switch-off migrations, partner expansion, and successful product launches.
+Q4 2026 delivered strong seat growth across all product categories, with total Fibra subscribers reaching 850,000 and Fibra + Móvil subscribers exceeding 80,000. Growth was driven by PSTN switch-off migrations, partner expansion, and successful product launches.
 
 ---
 
@@ -11,26 +11,26 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ### Total Seat Count
 
-| Period | Horizon | Teams Phone | Webex | CircleLoop | Total |
+| Period | Fibra Premium | Fibra + Móvil | Webex | Fibra 300 Mbps | Total |
 |--------|---------|-------------|-------|------------|-------|
-| Q1 2024 | 620,000 | 52,000 | 35,000 | 18,000 | 725,000 |
-| Q2 2024 | 650,000 | 62,000 | 38,000 | 20,000 | 770,000 |
-| Q3 2024 | 680,000 | 72,000 | 40,000 | 22,000 | 814,000 |
-| Q4 2024 | 710,000 | 82,000 | 42,000 | 24,000 | 858,000 |
+| Q1 2026 | 620,000 | 52,000 | 35,000 | 18,000 | 725,000 |
+| Q2 2026 | 650,000 | 62,000 | 38,000 | 20,000 | 770,000 |
+| Q3 2026 | 680,000 | 72,000 | 40,000 | 22,000 | 814,000 |
+| Q4 2026 | 710,000 | 82,000 | 42,000 | 24,000 | 858,000 |
 
 ### Quarterly Net Adds
 
-| Product | Q4 2024 | Q3 2024 | Q2 2024 | Q1 2024 |
+| Product | Q4 2026 | Q3 2026 | Q2 2026 | Q1 2026 |
 |---------|---------|---------|---------|---------|
-| Horizon | +30,000 | +30,000 | +30,000 | +25,000 |
-| Teams Phone | +10,000 | +10,000 | +10,000 | +8,000 |
+| Fibra Premium | +30,000 | +30,000 | +30,000 | +25,000 |
+| Fibra + Móvil | +10,000 | +10,000 | +10,000 | +8,000 |
 | Webex | +2,000 | +2,000 | +3,000 | +2,000 |
-| CircleLoop | +2,000 | +2,000 | +2,000 | +1,000 |
+| Fibra 300 Mbps | +2,000 | +2,000 | +2,000 | +1,000 |
 | **Total** | **+34,000** | **+34,000** | **+45,000** | **+36,000** |
 
 ### Seat Growth by Customer Segment
 
-| Segment | Q4 2024 Subscribers | YoY Growth | Mix |
+| Segment | Q4 2026 Subscribers | YoY Growth | Mix |
 |---------|---------------|------------|-----|
 | SMB (1-49 users) | 320,000 | +15% | 37% |
 | Mid-Market (50-249) | 285,000 | +22% | 33% |
@@ -73,7 +73,7 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ### Subscribers by Spain Region
 
-| Region | Q4 2024 | YoY Growth | % of Total |
+| Region | Q4 2026 | YoY Growth | % of Total |
 |--------|---------|------------|------------|
 | Madrid | 198,000 | +22% | 23% |
 | Comunidad de Madrid | 137,000 | +18% | 16% |
@@ -88,7 +88,7 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ### European Markets
 
-| Market | Q4 2024 | YoY Growth |
+| Market | Q4 2026 | YoY Growth |
 |--------|---------|------------|
 | Netherlands | 42,000 | +25% |
 | Spain | 28,000 | +45% |
@@ -99,9 +99,9 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ## Product Deep Dive
 
-### Horizon Cloud Phone System
+### Fibra 1 Gbps System
 
-| Metric | Q4 2024 | Q3 2024 | Trend |
+| Metric | Q4 2026 | Q3 2026 | Trend |
 |--------|---------|---------|-------|
 | Total Subscribers | 710,000 | 680,000 | +4.4% |
 | New Customers | 850 | 820 | +3.7% |
@@ -114,9 +114,9 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 - Nationwide Building Society: 1,800 subscribers (expansion)
 - Halfords: 1,200 subscribers
 
-### Microsoft Teams Phone
+### Fibra + Móvil
 
-| Metric | Q4 2024 | Q3 2024 | Trend |
+| Metric | Q4 2026 | Q3 2026 | Trend |
 |--------|---------|---------|-------|
 | Total Subscribers | 82,000 | 72,000 | +13.9% |
 | New Customers | 180 | 165 | +9.1% |
@@ -131,11 +131,11 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ### Contact Centre
 
-| Metric | Q4 2024 | Q3 2024 | Trend |
+| Metric | Q4 2026 | Q3 2026 | Trend |
 |--------|---------|---------|-------|
-| Horizon Contact Subscribers | 38,000 | 35,000 | +8.6% |
-| Cirrus Subscribers | 7,000 | 6,500 | +7.7% |
-| AWS Connect (managed) | 25 deployments | 22 | +13.6% |
+| Centro de Contacto Subscribers | 38,000 | 35,000 | +8.6% |
+| Fibra Empresas Subscribers | 7,000 | 6,500 | +7.7% |
+| Cloud PBX (managed) | 25 deployments | 22 | +13.6% |
 | ARPU | €85 | €82 | +3.7% |
 
 ---
@@ -144,12 +144,12 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ### Churn by Product
 
-| Product | Q4 2024 | Q3 2024 | Benchmark |
+| Product | Q4 2026 | Q3 2026 | Benchmark |
 |---------|---------|---------|-----------|
-| Horizon | 0.8% | 0.9% | 1.2% |
-| Teams Phone | 0.4% | 0.5% | 0.8% |
+| Fibra Premium | 0.8% | 0.9% | 1.2% |
+| Fibra + Móvil | 0.4% | 0.5% | 0.8% |
 | Webex | 1.2% | 1.1% | 1.5% |
-| CircleLoop | 2.5% | 2.8% | 3.0% |
+| Fibra 300 Mbps | 2.5% | 2.8% | 3.0% |
 | **Blended** | **0.9%** | **1.0%** | **1.3%** |
 
 ### Churn Drivers
@@ -181,7 +181,7 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 | Product | 2024 Actual | 2025 Forecast | Growth |
 |---------|-------------|---------------|--------|
 | Fibra Subscribers | 858,000 | 1,050,000 | +22% |
-| Teams Phone | 82,000 | 150,000 | +83% |
+| Fibra + Móvil | 82,000 | 150,000 | +83% |
 | Contact Centre | 45,000 | 60,000 | +33% |
 | SIP Channels | 1.2M | 1.15M | -4% |
 
@@ -191,7 +191,7 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ### PSTN Switch-Off Migrations
 
-| Metric | Q4 2024 | FY 2024 |
+| Metric | Q4 2026 | FY 2026 |
 |--------|---------|---------|
 | Lines Migrated | 18,000 | 52,000 |
 | Avg Revenue/Line | €16 | €16 |
@@ -200,7 +200,7 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ### Partner Recruitment
 
-| Metric | Q4 2024 | Target | Status |
+| Metric | Q4 2026 | Target | Status |
 |--------|---------|--------|--------|
 | New Partners | 32 | 30 | ✓ |
 | Reactivated Partners | 18 | 15 | ✓ |

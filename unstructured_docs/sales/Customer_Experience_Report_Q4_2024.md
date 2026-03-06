@@ -1,9 +1,9 @@
-# Customer Experience Report Q4 2024
+# Customer Experience Report Q4 2026
 **PremiumFiber Communications - Quarterly CX Performance Analysis**
 
 ## Executive Summary
 
-Q4 2024 delivered continued improvement in customer experience metrics, with **customer NPS reaching +45** (up 3 points) and **partner NPS at +52** (up 2 points). Support CSAT achieved 4.4/5, and first contact resolution improved to 72%. This report analyses performance across all touchpoints for both end customers and channel partners.
+Q4 2026 delivered continued improvement in customer experience metrics, with **customer NPS reaching +45** (up 3 points) and **partner NPS at +52** (up 2 points). Support CSAT achieved 4.4/5, and first contact resolution improved to 72%. This report analyses performance across all touchpoints for both end customers and channel partners.
 
 ---
 
@@ -11,7 +11,7 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 
 ### Key Metrics Summary
 
-| Metric | Q4 2024 | Target | vs Target | YoY Change |
+| Metric | Q4 2026 | Target | vs Target | YoY Change |
 |--------|---------|--------|-----------|------------|
 | Customer NPS | +45 | +45 | Met | +5 |
 | Partner NPS | +52 | +50 | +2 | +4 |
@@ -23,10 +23,10 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 
 | Quarter | Customer NPS | Partner NPS | CSAT | FCR |
 |---------|--------------|-------------|------|-----|
-| Q1 2024 | +40 | +48 | 4.2 | 66% |
-| Q2 2024 | +42 | +50 | 4.3 | 68% |
-| Q3 2024 | +42 | +34 | 4.3 | 70% |
-| Q4 2024 | +45 | +52 | 4.4 | 72% |
+| Q1 2026 | +40 | +48 | 4.2 | 66% |
+| Q2 2026 | +42 | +50 | 4.3 | 68% |
+| Q3 2026 | +42 | +34 | 4.3 | 70% |
+| Q4 2026 | +45 | +52 | 4.4 | 72% |
 
 ---
 
@@ -43,7 +43,7 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 
 ### Partner Portal Experience
 
-| Metric | Q4 2024 | Q3 2024 | Target |
+| Metric | Q4 2026 | Q3 2026 | Target |
 |--------|---------|---------|--------|
 | Portal NPS | +42 | +38 | +45 |
 | Monthly Active Partners | 845 | 780 | 900 |
@@ -53,7 +53,7 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 
 ### Partner Support Performance
 
-| Metric | Q4 2024 | Target | Status |
+| Metric | Q4 2026 | Target | Status |
 |--------|---------|--------|--------|
 | First Response Time | 45 min | 60 min | ✓ |
 | Resolution Time (P1) | 2.8 hrs | 4 hrs | ✓ |
@@ -78,11 +78,11 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 
 | Product | NPS | vs Q3 | Trend |
 |---------|-----|-------|-------|
-| Microsoft Teams Phone | +58 | +3 | ↑ |
-| Horizon Cloud | +48 | +2 | ↑ |
-| Horizon Contact | +42 | +4 | ↑ |
-| Webex for PremiumFiber | +45 | +1 | → |
-| SIP Trunking | +38 | -1 | ↓ |
+| Fibra + Móvil | +58 | +3 | ↑ |
+| Fibra Premium | +48 | +2 | ↑ |
+| Centro de Contacto | +42 | +4 | ↑ |
+| Fibra + TV | +45 | +1 | → |
+| Telefonía Fija | +38 | -1 | ↓ |
 | Connectivity | +35 | +2 | ↑ |
 
 ### Customer Journey Experience
@@ -140,7 +140,7 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 
 ### Platform Reliability
 
-| Metric | Q4 2024 | Target | CX Impact |
+| Metric | Q4 2026 | Target | CX Impact |
 |--------|---------|--------|-----------|
 | Platform Uptime | 99.97% | 99.95% | +5 NPS points |
 | Mean Time to Resolve | 4.2 hrs | 6 hrs | +3 NPS points |
@@ -237,7 +237,7 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 | Partner Portal 2.0 | €800K | Q2 2025 | Partner NPS +5 |
 | Enhanced Reporting | €400K | Q2 2025 | CSAT +0.2 |
 | Mobile App Upgrade | €350K | Q2 2025 | Customer NPS +3 |
-| AI Support Assistant | €600K | H2 2025 | FCR +8pp |
+| AI Support Assistant | €600K | H2 2027 | FCR +8pp |
 | Onboarding Automation | €250K | Q1 2025 | CES -0.3 |
 
 ### 2025 Targets

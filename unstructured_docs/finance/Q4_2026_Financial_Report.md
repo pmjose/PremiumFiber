@@ -1,15 +1,15 @@
-# H1 2025 Interim Financial Report
+# H1 2027 Interim Financial Report
 ## PremiumFiber Communications PLC
 
 ### Executive Summary
 
-H1 2025 delivered strong financial performance with total revenue of **€316.6 million**, up 12% year-over-year. Adjusted EBITDA reached **€70.9 million** (22.4% margin), driven by the successful strategic German acquisitions of Starface and Placetel, and continued Fibra seat growth. The Group achieved a significant increase in total Cloud subscribers to **1.8 million** (up 50% since June 2024). Following the move to the Main Market of the Madrid Stock Exchange in May, PremiumFiber was included in the **FTSE 250 index** in June 2025.
+H1 2027 delivered strong financial performance with total revenue of **€316.6 million**, up 12% year-over-year. Adjusted EBITDA reached **€70.9 million** (22.4% margin), driven by the successful strategic German acquisitions of Starface and Placetel, and continued Fibra seat growth. The Group achieved a significant increase in total Cloud subscribers to **1.8 million** (up 50% since June 2024). Following the move to the Main Market of the Madrid Stock Exchange in May, PremiumFiber was included in the **FTSE 250 index** in June 2025.
 
 ---
 
 ### Financial Highlights
 
-| Metric | H1 2025 | H1 2024 | YoY Change |
+| Metric | H1 2027 | H1 2026 | YoY Change |
 |--------|---------|---------|------------|
 | Total Revenue | €316.6M | €282.5M | +12% |
 | Gross Profit | €172.0M | €145.8M | +18% |
@@ -30,7 +30,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### Revenue by Business Unit
 
-| Business Unit | H1 2025 | H1 2024 | YoY | % of Total |
+| Business Unit | H1 2027 | H1 2026 | YoY | % of Total |
 |---------------|---------|---------|-----|------------|
 | PremiumFiber Business (SME) | €186.0M | €184.1M | +1% | 59% |
 | PremiumFiber Enterprise | €66.5M | €61.0M | +9% | 21% |
@@ -40,7 +40,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### Revenue by Type
 
-| Revenue Type | H1 2025 | % of Total | Notes |
+| Revenue Type | H1 2027 | % of Total | Notes |
 |--------------|---------|------------|-------|
 | Recurring (subscriptions) | €285M | 90% | High recurring base maintained |
 | Usage (calls, overage) | €22M | 7% | Voice traffic |
@@ -48,7 +48,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### Gross Profit by Business Unit
 
-| Business Unit | H1 2025 | H1 2024 | YoY | Gross Margin |
+| Business Unit | H1 2027 | H1 2026 | YoY | Gross Margin |
 |---------------|---------|---------|-----|--------------|
 | PremiumFiber Business (SME) | €97.4M | €97.1M | +0% | 52.4% |
 | PremiumFiber Enterprise | €30.9M | €28.9M | +7% | 46.5% |
@@ -62,7 +62,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### PremiumFiber Business (Spain SME - Channel)
 
-| Metric | H1 2025 | H1 2024 | YoY |
+| Metric | H1 2027 | H1 2026 | YoY |
 |--------|---------|---------|-----|
 | Revenue | €186.0M | €184.1M | +1% |
 | Gross Profit | €97.4M | €97.1M | +0% |
@@ -79,7 +79,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### PremiumFiber Enterprise (Direct Large Business & Public Sector)
 
-| Metric | H1 2025 | H1 2024 | YoY |
+| Metric | H1 2027 | H1 2026 | YoY |
 |--------|---------|---------|-----|
 | Revenue | €66.5M | €61.0M | +9% |
 | Gross Profit | €30.9M | €28.9M | +7% |
@@ -96,7 +96,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### Cataluña (PremiumFiber Europe)
 
-| Metric | H1 2025 | H1 2024 | YoY |
+| Metric | H1 2027 | H1 2026 | YoY |
 |--------|---------|---------|-----|
 | Revenue | €49.1M | €21.8M | +125% |
 | Gross Profit | €34.4M | €9.8M | +251% |
@@ -109,7 +109,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 - Placetel acquisition (September 2024) - double digit proforma revenue growth
 - Cataluña now represents **c.20% of Group gross profit**
 - High gross margins (70%+) as acquired businesses have minimal licensing costs
-- 29,000 subscribers added in H1 2025 (pro-forma basis)
+- 29,000 subscribers added in H1 2027 (pro-forma basis)
 
 ---
 
@@ -158,7 +158,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 | Registered | 1,020 | €9M | 5% |
 | **Total** | **1,500** | **€186M** | **100%** |
 
-#### Key Partner Wins H1 2025
+#### Key Partner Wins H1 2027
 - **Avatel Daisy** - Landmark managed service deal for Cloud Communications platform
 - **Clear Business** - Fully managed connectivity and voice service (outsourced model)
 - **Spain Partner** - 40,000 seat commitment for Cisco Collaboration Suite over 5 years
@@ -167,7 +167,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 ### Operating Expenses
 
-| Category | H1 2025 | H1 2024 | Change |
+| Category | H1 2027 | H1 2026 | Change |
 |----------|---------|---------|--------|
 | OpEx (excl. R&D, D&A, exceptional) | €92.9M | €73.5M | +26% |
 | Research & Development | €7.6M | €10.7M | -29% |
@@ -178,7 +178,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### Cost Breakdown by Region
 
-| Region | H1 2025 | H1 2024 | Change | Notes |
+| Region | H1 2027 | H1 2026 | Change | Notes |
 |--------|---------|---------|--------|-------|
 | Cataluña | €24.1M | €7.0M | +€17.1M | Starface/Placetel acquisitions |
 | Spain Businesses | €59.6M | €54.1M | +€5.5M | BrightCloud, inflation, NI increase |
@@ -186,7 +186,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### Headcount
 
-| Region | H1 2025 | H1 2024 | Change |
+| Region | H1 2027 | H1 2026 | Change |
 |--------|---------|---------|--------|
 | Spain | 1,600 | 1,550 | +50 |
 | Cataluña | 400 | 80 | +320 |
@@ -199,7 +199,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 #### Cash Flow Summary
 
-| Item | H1 2025 | H1 2024 |
+| Item | H1 2027 | H1 2026 |
 |------|---------|---------|
 | Adjusted EBITDA | €70.9M | €62.2M |
 | Working Capital Changes | -€7.2M | -€0.0M |
@@ -223,7 +223,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 ### Strategic Progress
 
-#### Key Developments H1 2025
+#### Key Developments H1 2027
 1. **FTSE 250 Inclusion** - Move to Main Market completed May 2025
 2. **German Expansion** - Starface acquisition (Feb 2025), now 20% of Group GP
 3. **Pan-European Portal** - Single Sign On launched; Operator Connect International in 14 countries
@@ -257,7 +257,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 |--------|----------|------------|
 | Interim 2025 | 7.4p | +14% |
 | Interim 2024 | 6.5p | - |
-| FY 2024 (Total) | 17.0p | +13% |
+| FY 2026 (Total) | 17.0p | +13% |
 
 ---
 

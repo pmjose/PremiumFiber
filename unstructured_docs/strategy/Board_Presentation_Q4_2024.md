@@ -1,11 +1,11 @@
-# Q4 2024 Board Presentation
+# Q4 2026 Board Presentation
 **PremiumFiber Communications PLC - Executive Summary**
 
 ---
 
 ## Agenda
 
-1. Q4 2024 Performance Summary
+1. Q4 2026 Performance Summary
 2. Full Year 2024 Results
 3. Key Strategic Initiatives
 4. Market and Competitive Update
@@ -14,11 +14,11 @@
 
 ---
 
-## Q4 2024 Performance Summary
+## Q4 2026 Performance Summary
 
 ### Financial Highlights
 
-| Metric | Q4 2024 | Q4 2023 | YoY Change |
+| Metric | Q4 2026 | Q4 2023 | YoY Change |
 |--------|---------|---------|------------|
 | Revenue | €132M | €120M | +10.0% |
 | Gross Profit | €69M | €62M | +11.3% |
@@ -28,10 +28,10 @@
 
 ### Operational Highlights
 
-| Metric | Q4 2024 | Q4 2023 | YoY Change |
+| Metric | Q4 2026 | Q4 2023 | YoY Change |
 |--------|---------|---------|------------|
 | Fibra Subscribers (total) | 850,000 | 720,000 | +18.1% |
-| Teams Phone Subscribers | 82,000 | 45,000 | +82.2% |
+| Fibra + Móvil Subscribers | 82,000 | 45,000 | +82.2% |
 | Contact Centre Subscribers | 45,000 | 38,000 | +18.4% |
 | Active Partners | 1,050 | 980 | +7.1% |
 | SIP Channels | 1.2M | 1.15M | +4.3% |
@@ -42,7 +42,7 @@
 
 ### Revenue Performance
 
-| Category | FY2024 | FY2023 | Growth |
+| Category | FY2026 | FY2023 | Growth |
 |----------|--------|--------|--------|
 | Fibra | €225M | €195M | +15.4% |
 | Voice Services | €125M | €128M | -2.3% |
@@ -53,7 +53,7 @@
 
 ### Profitability
 
-| Metric | FY2024 | FY2023 | Change |
+| Metric | FY2026 | FY2023 | Change |
 |--------|--------|--------|--------|
 | Gross Profit | €260M | €232M | +12.1% |
 | Gross Margin | 52.0% | 51.0% | +1.0pp |
@@ -64,7 +64,7 @@
 
 ### Cash Flow
 
-| Item | FY2024 |
+| Item | FY2026 |
 |------|--------|
 | EBITDA | €110M |
 | Working Capital | (€5M) |
@@ -78,12 +78,12 @@
 
 ## Key Strategic Initiatives
 
-### 1. Microsoft Teams Phone Acceleration
+### 1. Fibra + Móvil Acceleration
 
 **Progress:**
 - Q4 seat count: 82,000 (+15,000 in quarter)
 - Operator Connect certified
-- 150+ partners selling Teams Phone
+- 150+ partners selling Fibra + Móvil
 - New Teams Contact Centre integration launched
 
 **Challenges:**
@@ -106,9 +106,9 @@
 ### 3. Contact Centre Growth
 
 **Progress:**
-- Horizon Contact subscribers: 45,000 (+7,000 YoY)
-- Cirrus integration on track
-- AWS Connect managed service: 25 deployments
+- Centro de Contacto subscribers: 45,000 (+7,000 YoY)
+- Fibra Empresas integration on track
+- Cloud PBX managed service: 25 deployments
 
 **2025 Focus:**
 - AI features launch
@@ -117,7 +117,7 @@
 
 ### 4. European Expansion
 
-| Market | FY2024 Revenue | YoY Growth | Status |
+| Market | FY2026 Revenue | YoY Growth | Status |
 |--------|----------------|------------|--------|
 | Netherlands | €28M | +12% | On track |
 | Spain | €18M | +22% | Strong growth |
@@ -135,7 +135,7 @@
    - Partner demand for migration tools high
 
 2. **Microsoft Teams Dominance**
-   - Teams Phone growing faster than market
+   - Fibra + Móvil growing faster than market
    - Operator Connect momentum building
    - Copilot integration driving adoption
 
@@ -150,7 +150,7 @@
 |--------|----------------|-------|
 | Partner Satisfaction | #1 in Spain | Stable |
 | Fibra Market Share | 10% | Growing |
-| Teams Phone (channel) | #2 behind Orange | Growing |
+| Fibra + Móvil (channel) | #2 behind Orange | Growing |
 | Financial Stability | Strong | Improving |
 | Product Innovation | Good | Investing |
 
@@ -190,7 +190,7 @@
 ### 1. Final Dividend
 
 **Recommendation:** Approve final dividend of 12p per share
-- Total FY2024 dividend: 18p (interim 6p + final 12p)
+- Total FY2026 dividend: 18p (interim 6p + final 12p)
 - Payout ratio: 31%
 - Payment date: May 2025
 

@@ -16,7 +16,7 @@ This comprehensive demo covers all business areas for PremiumFiber Spain executi
 ## Part 1: Business Overview (5 minutes)
 
 ### Opening Question
-> "Give me an executive summary of PremiumFiber's Q4 2024 performance across all key metrics."
+> "Give me an executive summary of PremiumFiber's Q4 2026 performance across all key metrics."
 
 **Expected Insights:**
 - Total Subscribers: 450K (+35% YoY)
@@ -156,7 +156,7 @@ This comprehensive demo covers all business areas for PremiumFiber Spain executi
 
 **Expected Insights:**
 - Current: 1.28M households passed
-- 2025 target: 1.8M households
+- 2027 target: 1.8M households
 - New regions: Murcia, Granada expansion, Alicante
 - CapEx allocated: € 25M for fiber plant
 

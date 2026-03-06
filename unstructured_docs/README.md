@@ -13,7 +13,7 @@ This directory contains comprehensive business documents across multiple formats
 
 ### 📊 Finance Department
 **Documents:**
-- `Q4_2024_Financial_Report.md/pdf` - Q4 2024 financial analysis with segment performance
+- `Q4_2024_Financial_Report.md/pdf` - Q4 2026 financial analysis with segment performance
 - `ARPU_Trends_Analysis_Q4_2024.md` - Subscriber-based revenue analysis by segment
 - `Revenue_Mix_Report_Q4_2024.md` - Revenue breakdown by product and region
 - `Expense_Policy_2025.md/pdf` - Corporate expense guidelines
@@ -25,7 +25,7 @@ This directory contains comprehensive business documents across multiple formats
 - **AWS Spain** - Cloud consumption partnership
 
 **Content Highlights:**
-- MRR: €28.5M (Q4 2024)
+- MRR: €28.5M (Q4 2026)
 - Gross Margin: 68%
 - Subscribers: ~5M total
 - ARPU: €35 Residential, €120 Enterprise
@@ -99,7 +99,7 @@ This directory contains comprehensive business documents across multiple formats
 ## Search Use Cases
 
 ### Executive Queries
-- "What is our Q4 2024 subscriber growth and MRR?"
+- "What is our Q4 2026 subscriber growth and MRR?"
 - "How are we positioned against Telefónica and Digi?"
 - "What is our regional expansion progress?"
 - "What are our ARPU trends by segment?"

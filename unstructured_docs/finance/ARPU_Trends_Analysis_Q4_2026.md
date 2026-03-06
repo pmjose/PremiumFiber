@@ -1,4 +1,4 @@
-# ARPU Trends Analysis H1 2025
+# ARPU Trends Analysis H1 2027
 **PremiumFiber Communications - Revenue Per Seat Analysis**
 
 ## Executive Summary
@@ -9,7 +9,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ## Overall ARPU Performance
 
-### Cloud Subscribers Summary (H1 2025)
+### Cloud Subscribers Summary (H1 2027)
 
 | Region | Cloud PBX Subscribers | H1 Change | YoY Change |
 |--------|-----------------|-----------|------------|
@@ -22,10 +22,10 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ### Estimated ARPU by Product
 
-| Product | H1 2025 ARPU/Seat | H1 2024 | YoY | Trend |
+| Product | H1 2027 ARPU/Seat | H1 2026 | YoY | Trend |
 |---------|-------------------|---------|-----|-------|
-| Horizon Cloud | €12.80 | €12.50 | +2.4% | ↑ |
-| Teams Phone (Operator Connect) | €8.50 | €8.00 | +6.3% | ↑ |
+| Fibra Premium | €12.80 | €12.50 | +2.4% | ↑ |
+| Fibra + Móvil (Operator Connect) | €8.50 | €8.00 | +6.3% | ↑ |
 | Cisco Collaboration Suite | €14.20 | N/A | - | New |
 | PhoneLine+ | €5.80 | €5.50 | +5.5% | ↑ |
 | Contact Centre (Internet Empresas) | €88.00 | €82.00 | +7.3% | ↑ |
@@ -39,7 +39,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ### PremiumFiber Business (Spain SME Channel)
 
-| Metric | H1 2025 | H1 2024 | Change |
+| Metric | H1 2027 | H1 2026 | Change |
 |--------|---------|---------|--------|
 | Revenue | €186.0M | €184.1M | +1% |
 | Gross Profit | €97.4M | €97.1M | +0% |
@@ -54,7 +54,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ### PremiumFiber Enterprise (Direct)
 
-| Metric | H1 2025 | H1 2024 | Change |
+| Metric | H1 2027 | H1 2026 | Change |
 |--------|---------|---------|--------|
 | Revenue | €66.5M | €61.0M | +9% |
 | Gross Profit | €30.9M | €28.9M | +7% |
@@ -67,7 +67,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ### Cataluña
 
-| Metric | H1 2025 | H1 2024 | Change |
+| Metric | H1 2027 | H1 2026 | Change |
 |--------|---------|---------|--------|
 | Revenue | €49.1M | €21.8M | +125% |
 | Gross Profit | €34.4M | €9.8M | +251% |
@@ -143,9 +143,9 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 | Driver | Impact | Products |
 |--------|--------|----------|
 | Cisco Collaboration Suite launch | +€0.40 | Fibra + Internet Empresas |
-| AI Receptionist (Q4 2025) | +€0.35 | Horizon, Starface |
+| AI Receptionist (Q4 2025) | +€0.35 | Fibra Premium, Starface |
 | Microsoft Teams growth | +12% users | Operator Connect |
-| Contact Centre expansion | +7% subscribers | Horizon Contact |
+| Contact Centre expansion | +7% subscribers | Centro de Contacto |
 | Premium plan upsells | +€0.25 | Call recording, analytics |
 
 ### ARPU Drivers - Negative
@@ -169,7 +169,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 | Orange España | €20.20 | +46% | Premium positioning |
 | Mitel (cloud) | €14.80 | +7% | Legacy transition |
 | Vonage | €12.50 | -9% | SMB focus |
-| Microsoft Teams Phone | €9.50 | -31% | Bundled pricing pressure |
+| Fibra + Móvil | €9.50 | -31% | Bundled pricing pressure |
 | **PremiumFiber (blended)** | **€13.80** | **-** | **Channel efficiency** |
 
 ### Cataluña Fibra Market
@@ -192,9 +192,9 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 |------------|-------------------|-------------|
 | AI Receptionist Spain/DE) | +€0.40/seat | Q4 2025 |
 | Cisco Collaboration Suite (full launch) | +€2.00/seat | Oct 2025 |
-| PhoneLine+ eSIM variant | +€0.25/seat | H2 2025 |
-| Starface AI features | +€0.50/seat | H2 2025 |
-| Fusion IoT eSIM Spain/DE) | +€0.30/seat | H2 2025 |
+| PhoneLine+ eSIM variant | +€0.25/seat | H2 2027 |
+| Starface AI features | +€0.50/seat | H2 2027 |
+| Fusion IoT eSIM Spain/DE) | +€0.30/seat | H2 2027 |
 
 ### Segment-Led Initiatives
 
@@ -210,10 +210,10 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 ## Key Observations
 
 ### Spain Market
-- Cloud seat additions slowed to 23,000 (H1 2025) vs 48,000 (H1 2024) due to macro pressures
+- Cloud seat additions slowed to 23,000 (H1 2027) vs 48,000 (H1 2026) due to macro pressures
 - PhoneLine+ benefiting from "spend less" trend (+32% subscribers in half)
 - PSTN switch-off driving fibre migration but at lower margins
-- MS Teams voice enablement accelerating (+56k users vs +28k H1 2024)
+- MS Teams voice enablement accelerating (+56k users vs +28k H1 2026)
 
 ### Cataluña Market
 - Double-digit proforma revenue growth in both Starface and Placetel
@@ -225,5 +225,5 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 **Prepared by**: Commercial Finance  
 **Date**: September 2025  
-**Source**: PremiumFiber Communications H1 2025 Interim Results  
+**Source**: PremiumFiber Communications H1 2027 Interim Results  
 **Classification**: Internal

@@ -52,7 +52,7 @@ The Spain Fibra and business communications market is experiencing significant c
 
 **PremiumFiber Opportunity:**
 - Target Mitel partners for recruitment
-- Horizon as MiCloud alternative
+- Fibra Premium as MiCloud alternative
 - Migration tools for MiVoice customers
 - Partner acquisition programme
 
@@ -71,7 +71,7 @@ The Spain Fibra and business communications market is experiencing significant c
 | Mitel | 6% | 4% | Cloud transition struggles |
 | Others | 32% | 24% | Consolidation |
 
-### Partner Sentiment Survey (Q4 2024)
+### Partner Sentiment Survey (Q4 2026)
 
 | Provider | "Likely to Remain Partner" | Trend |
 |----------|---------------------------|-------|
@@ -85,22 +85,22 @@ The Spain Fibra and business communications market is experiencing significant c
 
 ## Microsoft Threat Analysis
 
-### Microsoft Teams Phone Growth
+### Fibra + Móvil Growth
 
 | Metric | 2023 | 2024 | 2025E |
 |--------|------|------|-------|
-| Spain Teams Phone Users | 2.1M | 3.8M | 5.5M |
+| Spain Fibra + Móvil Users | 2.1M | 3.8M | 5.5M |
 | Operator Connect Partners | 45 | 68 | 90 |
 | Direct Routing Share | 60% | 45% | 35% |
 | Operator Connect Share | 25% | 38% | 48% |
-| Teams Phone Mobile | N/A | 5% | 20% |
+| Fibra + Móvil Mobile | N/A | 5% | 20% |
 
 ### Microsoft Native Voice Threat
 
 **Risk Factors:**
 - Microsoft bundling voice with E5 licences
 - Improved calling plan quality
-- Teams Phone Mobile reducing need for SIP
+- Fibra + Móvil Mobile reducing need for SIP
 - Copilot integration driving platform stickiness
 
 **PremiumFiber Response:**
@@ -122,8 +122,8 @@ The Spain Fibra and business communications market is experiencing significant c
    - Marketing development fund top-up
 
 2. **Customer Migration Programme**
-   - Telefónica España to Horizon migration toolkit
-   - MiCloud to Horizon migration path
+   - Telefónica España to Fibra Premium migration toolkit
+   - MiCloud to Fibra Premium migration path
    - Competitive displacement pricing
    - Professional services subsidy
 
@@ -133,7 +133,7 @@ The Spain Fibra and business communications market is experiencing significant c
    - Partner commitment reinforcement
    - Customer retention programme
 
-### Medium-Term (H2 2025 - 2026)
+### Medium-Term (H2 2027 - 2026)
 
 1. **Opportunistic Acquisitions**
    - Telefónica España Spain partner base (if available)

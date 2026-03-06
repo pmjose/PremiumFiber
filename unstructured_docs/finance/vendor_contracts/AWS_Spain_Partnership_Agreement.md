@@ -105,7 +105,7 @@
 
 ### Customer Metrics
 
-| Metric | Current | Target 2025 |
+| Metric | Current | Target 2027 |
 |--------|---------|-------------|
 | Active Deployments | 25 | 75 |
 | Total Agent Subscribers | 3,800 | 12,000 |

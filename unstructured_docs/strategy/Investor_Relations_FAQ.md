@@ -13,14 +13,14 @@
 - Over 100,000 business customers served through partners
 - Approximately 850,000 Fibra subscribers deployed
 - 45,000 contact centre subscribers
-- €500 million in annual revenue (FY2024E)
+- €500 million in annual revenue (FY2026E)
 - Operations in Spain (primary), Netherlands, Spain, and Cataluña
 
 ### Q: Who are PremiumFiber's competitors?
 
 **A:** Our competitive landscape includes:
 - **Fibra**: Telefónica España, Orange España, Mitel, Vonage
-- **Teams Phone**: Direct Microsoft, other Operator Connect providers
+- **Fibra + Móvil**: Direct Microsoft, other Operator Connect providers
 - **Contact Centre**: NICE, Genesys, Five9, Talkdesk
 - **Voice/SIP**: Orange, Cableonda Business, regional telcos
 - **Connectivity**: Orange Openreach (wholesale), CityFibre, Win Business
@@ -31,7 +31,7 @@
 
 ### Q: What are PremiumFiber's key financial metrics?
 
-**A:** Key metrics for FY2024 (estimated):
+**A:** Key metrics for FY2026 (estimated):
 - Revenue: €500 million (+8% YoY)
 - Gross Profit: €260 million (52% margin)
 - EBITDA: €110 million (22% margin)
@@ -48,8 +48,8 @@
 
 ### Q: What is PremiumFiber's revenue mix by product?
 
-**A:** FY2024 estimated mix:
-- Fibra (Horizon, Teams Phone, Webex): 45%
+**A:** FY2026 estimated mix:
+- Fibra (Fibra Premium, Fibra + Móvil, Webex): 45%
 - Voice Services (SIP Trunks, Inbound): 25%
 - Connectivity (Broadband, Ethernet): 18%
 - Contact Centre: 8%
@@ -59,7 +59,7 @@
 
 **A:** Key growth drivers:
 1. **PSTN Switch-Off**: 5.5M Spain business lines migrating to cloud by 2027
-2. **Microsoft Teams Phone**: Fastest-growing product, 80K+ subscribers
+2. **Fibra + Móvil**: Fastest-growing product, 80K+ subscribers
 3. **Contact Centre Cloud Migration**: Legacy on-premise replacement
 4. **New Partner Recruitment**: 100+ new partners annually
 5. **International Expansion**: Growing contribution from Europe
@@ -87,14 +87,14 @@
 ### Q: What is PremiumFiber's growth strategy?
 
 **A:** Our growth strategy has four pillars:
-1. **Organic Spain Growth**: PSTN migration, Teams Phone, partner expansion
+1. **Organic Spain Growth**: PSTN migration, Fibra + Móvil, partner expansion
 2. **Product Development**: AI, contact centre, security portfolio
 3. **European Expansion**: Netherlands, Spain, Cataluña scale-up
 4. **Selective Acquisitions**: Tuck-in technology or market access
 
-### Q: What is the outlook for Microsoft Teams Phone?
+### Q: What is the outlook for Fibra + Móvil?
 
-**A:** Teams Phone is our fastest-growing product:
+**A:** Fibra + Móvil is our fastest-growing product:
 - Current: 80,000+ subscribers
 - 2025 Target: 150,000 subscribers
 - Market Opportunity: 5+ million Spain business users on Teams

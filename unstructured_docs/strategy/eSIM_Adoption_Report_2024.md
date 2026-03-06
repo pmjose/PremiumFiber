@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-This report analyses digital transformation trends affecting PremiumFiber's customer base and the adoption of cloud communications technologies. Key findings include accelerating Teams Phone adoption, strong partner portal engagement, and growing demand for AI-powered features.
+This report analyses digital transformation trends affecting PremiumFiber's customer base and the adoption of cloud communications technologies. Key findings include accelerating Fibra + Móvil adoption, strong partner portal engagement, and growing demand for AI-powered features.
 
 ---
 
@@ -30,17 +30,17 @@ This report analyses digital transformation trends affecting PremiumFiber's cust
 
 ## Microsoft Teams Adoption
 
-### Teams Phone Deployment Trends
+### Fibra + Móvil Deployment Trends
 
-| Metric | Q4 2023 | Q4 2024 | Growth |
+| Metric | Q4 2023 | Q4 2026 | Growth |
 |--------|---------|---------|--------|
 | Customers with Teams | 85% | 92% | +7pp |
-| Teams Phone Enabled | 18% | 35% | +17pp |
-| PremiumFiber Teams Phone | 8% | 15% | +7pp |
+| Fibra + Móvil Enabled | 18% | 35% | +17pp |
+| PremiumFiber Fibra + Móvil | 8% | 15% | +7pp |
 | Direct Routing | 60% | 45% | -15pp |
 | Operator Connect | 40% | 55% | +15pp |
 
-### Teams Phone Customer Profile
+### Fibra + Móvil Customer Profile
 
 | Segment | Adoption Rate | Avg Subscribers |
 |---------|---------------|-----------|
@@ -49,7 +49,7 @@ This report analyses digital transformation trends affecting PremiumFiber's cust
 | SMB (1-49) | 18% | 25 |
 | Public Sector | 28% | 400 |
 
-### Reasons for Teams Phone Adoption
+### Reasons for Fibra + Móvil Adoption
 
 | Reason | % Citing |
 |--------|----------|
@@ -65,7 +65,7 @@ This report analyses digital transformation trends affecting PremiumFiber's cust
 
 ### Partner Portal Usage
 
-| Metric | Q4 2023 | Q4 2024 | Growth |
+| Metric | Q4 2023 | Q4 2026 | Growth |
 |--------|---------|---------|--------|
 | Monthly Active Partners | 680 | 845 | +24% |
 | Orders Placed Online | 65% | 82% | +17pp |
@@ -237,7 +237,7 @@ This report analyses digital transformation trends affecting PremiumFiber's cust
 | Technology | 2024 | 2025 Forecast | Driver |
 |------------|------|---------------|--------|
 | Cloud Fibra | 48% | 62% | PSTN switch-off |
-| Teams Phone | 35% | 52% | Microsoft momentum |
+| Fibra + Móvil | 35% | 52% | Microsoft momentum |
 | AI Features | 15% | 35% | Contact centre |
 | Video Meetings | 42% | 55% | Hybrid work |
 | API Integration | 18% | 32% | Automation |

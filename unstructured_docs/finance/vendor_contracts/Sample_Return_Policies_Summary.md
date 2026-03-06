@@ -11,7 +11,7 @@ This document summarises the service level agreements and credit policies for Pr
 ### Service Level Agreement
 | Metric | Target | Credit |
 |--------|--------|--------|
-| Teams Phone Uptime | 99.99% | Service credits |
+| Fibra + Móvil Uptime | 99.99% | Service credits |
 | Operator Connect Availability | 99.99% | Service credits |
 | Provisioning Time | <4 hours | Review |
 | Support Response (P1) | <1 hour | Review |

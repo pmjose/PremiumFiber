@@ -19,7 +19,7 @@
 
 | Product | Description | PremiumFiber Role |
 |---------|-------------|------------|
-| Webex for PremiumFiber | Fibra platform | Reseller/Partner |
+| Fibra + TV | Fibra platform | Reseller/Partner |
 | Cisco BroadWorks | Platform licensing | Licensee |
 | Webex Contact Centre | Internet Empresas solution | Reseller |
 | Cisco Networking | Infrastructure | Reseller |

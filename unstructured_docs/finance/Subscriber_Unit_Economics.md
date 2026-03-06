@@ -33,10 +33,10 @@ This analysis examines customer lifetime value (LTV), customer acquisition cost 
 
 | Product | Avg LTV | Trend | Driver |
 |---------|---------|-------|--------|
-| Horizon + CC | €125,000 | ↑ | High retention, expansion |
-| Teams Phone | €28,500 | ↑ | Growing adoption |
-| Horizon Only | €35,200 | → | Stable base |
-| SIP Trunking | €18,500 | ↓ | Declining market |
+| Fibra Premium + CC | €125,000 | ↑ | High retention, expansion |
+| Fibra + Móvil | €28,500 | ↑ | Growing adoption |
+| Fibra Premium Only | €35,200 | → | Stable base |
+| Telefonía Fija | €18,500 | ↓ | Declining market |
 | Connectivity | €22,800 | ↑ | Bundling effect |
 
 ---
@@ -97,10 +97,10 @@ This analysis examines customer lifetime value (LTV), customer acquisition cost 
 | Q2 2023 | 15 months | ↓ |
 | Q3 2023 | 15 months | → |
 | Q4 2023 | 14 months | ↓ |
-| Q1 2024 | 14 months | → |
-| Q2 2024 | 14 months | → |
-| Q3 2024 | 14 months | → |
-| Q4 2024 | 14 months | → |
+| Q1 2026 | 14 months | → |
+| Q2 2026 | 14 months | → |
+| Q3 2026 | 14 months | → |
+| Q4 2026 | 14 months | → |
 
 ---
 
@@ -230,7 +230,7 @@ This analysis examines customer lifetime value (LTV), customer acquisition cost 
 
 ## 2025 Targets
 
-| Metric | Q4 2024 | Target Q4 2025 | Improvement |
+| Metric | Q4 2026 | Target Q4 2025 | Improvement |
 |--------|---------|----------------|-------------|
 | LTV (blended) | €56,500 | €65,000 | +15% |
 | CAC (blended) | €9,100 | €8,500 | -7% |

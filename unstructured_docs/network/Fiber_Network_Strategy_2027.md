@@ -1,4 +1,4 @@
-# PremiumFiber Spain - Fiber Network Strategy 2025
+# PremiumFiber Spain - Fiber Network Strategy 2027
 
 ## Executive Summary
 
@@ -26,7 +26,7 @@ PremiumFiber's 2025 network strategy focuses on expanding 100% fiber optic infra
 
 ## Regional Coverage
 
-### Current Coverage (Q4 2024)
+### Current Coverage (Q4 2026)
 | Department | Households Passed | Active Subscribers | Penetration |
 |------------|------------------|-------------------|-------------|
 | Comunidad de Madrid | 850K | 293K | 34% |
@@ -52,7 +52,7 @@ PremiumFiber's 2025 network strategy focuses on expanding 100% fiber optic infra
 - **Capabilities**: Real-time network monitoring, automated alerts, incident management
 
 ### Key Performance Indicators
-| Metric | Target | Q4 2024 Actual |
+| Metric | Target | Q4 2026 Actual |
 |--------|--------|----------------|
 | Network Uptime | 99.9% | 99.92% |
 | Average Latency | <5ms | 3.2ms |

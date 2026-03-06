@@ -24,10 +24,10 @@ Full year 2024 marketing investment of **€18 million** generated **25,500 MQLs
 
 | Quarter | Spend | MQLs | CPL | Pipeline | ROI |
 |---------|-------|------|-----|----------|-----|
-| Q1 2024 | €4.0M | 5,800 | €690 | €48M | 12.0x |
-| Q2 2024 | €4.3M | 6,200 | €694 | €52M | 12.1x |
-| Q3 2024 | €4.8M | 6,650 | €722 | €55M | 11.5x |
-| Q4 2024 | €4.9M | 6,850 | €715 | €55M | 11.2x |
+| Q1 2026 | €4.0M | 5,800 | €690 | €48M | 12.0x |
+| Q2 2026 | €4.3M | 6,200 | €694 | €52M | 12.1x |
+| Q3 2026 | €4.8M | 6,650 | €722 | €55M | 11.5x |
+| Q4 2026 | €4.9M | 6,850 | €715 | €55M | 11.2x |
 | **Total** | **€18M** | **25,500** | **€706** | **€210M** | **11.7x** |
 
 ---
@@ -50,10 +50,10 @@ Full year 2024 marketing investment of **€18 million** generated **25,500 MQLs
 |----------|-------|---------------|-----|-----|
 | PSTN Switch-Off | €2.8M | 5,800 | €483 | 18.2x |
 | Partner Recruitment Blitz | €1.2M | 125 partners | €9,600 | 22.5x |
-| Teams Phone Acceleration | €2.1M | 4,200 | €500 | 15.8x |
+| Fibra + Móvil Acceleration | €2.1M | 4,200 | €500 | 15.8x |
 | Contact Centre Cloud | €1.5M | 2,800 | €536 | 14.2x |
-| PremiumFiber Connect 2024 | €1.2M | 85 partners + 1,200 MQLs | - | 12.5x |
-| Horizon Cloud Launch | €0.9M | 1,500 | €600 | 11.8x |
+| Fibra Hogar 2024 | €1.2M | 85 partners + 1,200 MQLs | - | 12.5x |
+| Fibra Premium Launch | €0.9M | 1,500 | €600 | 11.8x |
 
 ### Underperforming Campaigns
 
@@ -111,11 +111,11 @@ Full year 2024 marketing investment of **€18 million** generated **25,500 MQLs
 
 | Vertical | MQLs | Conversion | Avg Deal | Top Products |
 |----------|------|------------|----------|--------------|
-| Financial Services | 3,200 | 28% | €52,000 | Horizon, Secure |
-| Legal | 2,800 | 32% | €38,000 | Teams Phone |
-| Healthcare | 2,500 | 25% | €35,000 | Horizon Contact |
-| Technology | 4,200 | 22% | €28,000 | Teams Phone, Fibra |
-| Professional Services | 3,800 | 26% | €22,000 | Horizon |
+| Financial Services | 3,200 | 28% | €52,000 | Fibra Premium, Secure |
+| Legal | 2,800 | 32% | €38,000 | Fibra + Móvil |
+| Healthcare | 2,500 | 25% | €35,000 | Centro de Contacto |
+| Technology | 4,200 | 22% | €28,000 | Fibra + Móvil, Fibra |
+| Professional Services | 3,800 | 26% | €22,000 | Fibra Premium |
 | Manufacturing | 2,200 | 20% | €32,000 | SIP, Connectivity |
 
 ---
@@ -150,7 +150,7 @@ Full year 2024 marketing investment of **€18 million** generated **25,500 MQLs
 
 | Event | Investment | Attendees | MQLs | Pipeline | ROI |
 |-------|------------|-----------|------|----------|-----|
-| PremiumFiber Connect 2024 | €1.2M | 1,800 | 1,450 | €15M | 12.5x |
+| Fibra Hogar 2024 | €1.2M | 1,800 | 1,450 | €15M | 12.5x |
 | Partner Roadshows (6) | €480K | 950 | 580 | €4.8M | 10.0x |
 | UC Expo | €185K | 350 | 180 | €1.5M | 8.1x |
 | Channel Live | €125K | 280 | 120 | €0.9M | 7.2x |
@@ -162,7 +162,7 @@ Full year 2024 marketing investment of **€18 million** generated **25,500 MQLs
 | Webinar Series | Sessions | Registrations | Attendees | MQLs |
 |----------------|----------|---------------|-----------|------|
 | PSTN Switch-Off | 8 | 4,200 | 2,650 | 850 |
-| Teams Phone Deep Dive | 6 | 2,800 | 1,750 | 520 |
+| Fibra + Móvil Deep Dive | 6 | 2,800 | 1,750 | 520 |
 | Contact Centre Trends | 4 | 1,500 | 920 | 285 |
 | Partner Success | 6 | 1,200 | 780 | 210 |
 | Security Essentials | 4 | 980 | 580 | 165 |
@@ -223,7 +223,7 @@ Full year 2024 marketing investment of **€18 million** generated **25,500 MQLs
 |--------------|------------|------------------|--------|-----------|
 | LinkedIn | €3.5M | €4.5M | +29% | Best B2B performance |
 | Partner Marketing | €2.8M | €3.5M | +25% | Partner growth focus |
-| Events | €2.2M | €2.8M | +27% | PremiumFiber Connect expansion |
+| Events | €2.2M | €2.8M | +27% | Fibra Hogar expansion |
 | Email/Nurture | €1.2M | €1.8M | +50% | Highest efficiency |
 | Google/Search | €2.5M | €2.5M | 0% | Maintain |
 | Webinars | €1.0M | €1.5M | +50% | Scale success |

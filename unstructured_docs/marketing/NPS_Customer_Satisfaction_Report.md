@@ -1,9 +1,9 @@
-# Customer Satisfaction Report Q4 2024
+# Customer Satisfaction Report Q4 2026
 **PremiumFiber Communications - NPS and Customer Experience Analysis**
 
 ## Executive Summary
 
-Q4 2024 customer satisfaction remained strong with overall NPS of +45, up 3 points from Q3. Partner satisfaction reached +52, demonstrating PremiumFiber's commitment to the channel-first model. Key improvement areas include onboarding speed and contact centre features.
+Q4 2026 customer satisfaction remained strong with overall NPS of +45, up 3 points from Q3. Partner satisfaction reached +52, demonstrating PremiumFiber's commitment to the channel-first model. Key improvement areas include onboarding speed and contact centre features.
 
 ---
 
@@ -13,10 +13,10 @@ Q4 2024 customer satisfaction remained strong with overall NPS of +45, up 3 poin
 
 | Quarter | Customer NPS | Partner NPS | Target |
 |---------|--------------|-------------|--------|
-| Q1 2024 | +40 | +48 | +45 |
-| Q2 2024 | +42 | +50 | +45 |
-| Q3 2024 | +42 | +34 | +45 |
-| Q4 2024 | +45 | +52 | +45 |
+| Q1 2026 | +40 | +48 | +45 |
+| Q2 2026 | +42 | +50 | +45 |
+| Q3 2026 | +42 | +34 | +45 |
+| Q4 2026 | +45 | +52 | +45 |
 
 ### NPS by Segment
 
@@ -47,10 +47,10 @@ Q4 2024 customer satisfaction remained strong with overall NPS of +45, up 3 poin
 
 | Product | CSAT | NPS | Trend |
 |---------|------|-----|-------|
-| Horizon | 4.4/5 | +48 | → |
-| Teams Phone | 4.5/5 | +52 | ↑ |
+| Fibra Premium | 4.4/5 | +48 | → |
+| Fibra + Móvil | 4.5/5 | +52 | ↑ |
 | Contact Centre | 4.2/5 | +38 | ↑ |
-| SIP Trunking | 4.3/5 | +42 | → |
+| Telefonía Fija | 4.3/5 | +42 | → |
 | Connectivity | 4.1/5 | +35 | ↑ |
 
 ---
@@ -109,7 +109,7 @@ Q4 2024 customer satisfaction remained strong with overall NPS of +45, up 3 poin
 | Theme | Frequency | Example |
 |-------|-----------|---------|
 | Partner support | 28% | "PremiumFiber treats us as partners, not just resellers" |
-| Product reliability | 24% | "Horizon just works - no complaints from our customers" |
+| Product reliability | 24% | "Fibra Premium just works - no complaints from our customers" |
 | Spain-based support | 18% | "Speaking to someone in Spain who understands our needs" |
 | Competitive pricing | 15% | "Fair margins that make the business work" |
 | Innovation | 8% | "Regular updates and new features" |
@@ -154,7 +154,7 @@ Q4 2024 customer satisfaction remained strong with overall NPS of +45, up 3 poin
 
 ### Support Metrics
 
-| Metric | Q4 2024 | Target | Status |
+| Metric | Q4 2026 | Target | Status |
 |--------|---------|--------|--------|
 | First Response Time | 18 mins | 30 mins | ✓ |
 | Resolution Time (P2) | 4.2 hrs | 8 hrs | ✓ |

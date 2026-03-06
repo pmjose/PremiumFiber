@@ -70,7 +70,7 @@ This playbook provides performance benchmarks, best practices, and improvement s
 | MDF utilisation | 100% of allocation | +30% leads |
 | Co-marketing | 2+ campaigns/quarter | +25% pipeline |
 | Content creation | Case studies, blogs | +20% credibility |
-| Event participation | PremiumFiber Connect + local | +15% relationships |
+| Event participation | Fibra Hogar + local | +15% relationships |
 
 #### 5. Operational Excellence
 

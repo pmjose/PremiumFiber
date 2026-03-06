@@ -20,7 +20,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Cataluña re
 
 ### PremiumFiber European Revenue
 
-| Market | FY2024 | FY2023 | Growth | % of Group |
+| Market | FY2026 | FY2023 | Growth | % of Group |
 |--------|--------|--------|--------|------------|
 | Spain | €446M | €405M | +10% | 89% |
 | Netherlands | €28M | €25M | +12% | 6% |
@@ -34,7 +34,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Cataluña re
 
 ### Market Position
 
-| Metric | 2024 | 2023 | Target 2025 |
+| Metric | 2024 | 2023 | Target 2027 |
 |--------|------|------|-------------|
 | Revenue | €32M | €28M | €38M |
 | Fibra Subscribers | 42,000 | 35,000 | 55,000 |
@@ -55,7 +55,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Cataluña re
 
 1. **Partner Expansion**: Target 150 active partners by Q4 2025
 2. **Microsoft Teams**: Launch Operator Connect in Netherlands
-3. **Contact Centre**: Horizon Contact localisation complete
+3. **Contact Centre**: Centro de Contacto localisation complete
 4. **Enterprise Push**: Hire direct enterprise team (5 FTE)
 
 ---
@@ -64,7 +64,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Cataluña re
 
 ### Market Position
 
-| Metric | 2024 | 2023 | Target 2025 |
+| Metric | 2024 | 2023 | Target 2027 |
 |--------|------|------|-------------|
 | Revenue | €20M | €16M | €28M |
 | Fibra Subscribers | 28,000 | 18,000 | 42,000 |
@@ -94,7 +94,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Cataluña re
 
 ### Market Position
 
-| Metric | 2024 | 2023 | Target 2025 |
+| Metric | 2024 | 2023 | Target 2027 |
 |--------|------|------|-------------|
 | Revenue | €9M | €5M | €15M |
 | Fibra Subscribers | 12,000 | 6,000 | 22,000 |

@@ -1,4 +1,4 @@
-# Channel Partner Sales Playbook 2025
+# Channel Partner Sales Playbook 2027
 **PremiumFiber Communications - Partner Success Guide**
 
 ## Executive Summary
@@ -15,7 +15,7 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 |--------|-------------|-------------|--------|
 | Total Revenue | €500M | €550M | +10% |
 | Fibra Subscribers | 858K | 1.05M | +22% |
-| Teams Phone Subscribers | 82K | 150K | +83% |
+| Fibra + Móvil Subscribers | 82K | 150K | +83% |
 | Contact Centre Subscribers | 45K | 60K | +33% |
 | New Partners | 125 | 150 | +20% |
 | Partner Revenue | €450M | €495M | +10% |
@@ -49,39 +49,39 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 
 | Product | Platinum | Gold | Silver | Registered |
 |---------|----------|------|--------|------------|
-| Horizon | 42% | 38% | 32% | 25% |
-| Teams Phone | 35% | 32% | 28% | 22% |
+| Fibra Premium | 42% | 38% | 32% | 25% |
+| Fibra + Móvil | 35% | 32% | 28% | 22% |
 | Contact Centre | 40% | 36% | 30% | 24% |
-| SIP Trunking | 45% | 42% | 38% | 32% |
+| Telefonía Fija | 45% | 42% | 38% | 32% |
 | Connectivity | 35% | 32% | 28% | 22% |
 
 ---
 
 ## PremiumFiber Elements Portfolio
 
-### PremiumFiber Connect (Fibra)
+### Fibra Hogar (Fibra)
 
 | Product | Target Customer | Key USPs | Pricing |
 |---------|-----------------|----------|---------|
-| Horizon Cloud | SMB-Enterprise | Spain platform, reliability | €8-18/seat |
-| Teams Phone | 50+ subscribers | Native MS integration | €6-12/seat |
-| Webex for PremiumFiber | Video-heavy | Cisco partnership | €12-20/seat |
-| CircleLoop | Micro-SMB | Simple, mobile-first | €5-8/seat |
+| Fibra Premium | SMB-Enterprise | Spain platform, reliability | €8-18/seat |
+| Fibra + Móvil | 50+ subscribers | Native MS integration | €6-12/seat |
+| Fibra + TV | Video-heavy | Cisco partnership | €12-20/seat |
+| Fibra 300 Mbps | Micro-SMB | Simple, mobile-first | €5-8/seat |
 
-### PremiumFiber Experience (Internet Empresas)
+### Fibra Contact Center (Internet Empresas)
 
 | Product | Target Customer | Key USPs | Pricing |
 |---------|-----------------|----------|---------|
-| Horizon Contact | SMB-Mid | Simple, integrated | €35-95/seat |
-| Cirrus | Mid-Enterprise | Advanced routing | €65-150/seat |
-| AWS Connect | Enterprise | Scalable, AI-ready | Custom |
+| Centro de Contacto | SMB-Mid | Simple, integrated | €35-95/seat |
+| Fibra Empresas | Mid-Enterprise | Advanced routing | €65-150/seat |
+| Cloud PBX | Enterprise | Scalable, AI-ready | Custom |
 
-### PremiumFiber Enable (Voice)
+### Fibra Negocio (Voice)
 
 | Product | Target Customer | Key USPs | Pricing |
 |---------|-----------------|----------|---------|
 | SIP Trunks | All | Quality, flexibility | €3-6/channel |
-| Inbound Services | All | Geographic numbers | From €5/DDI |
+| Servicios Empresariales | All | Geographic numbers | From €5/DDI |
 | Phoneline+ | Micro-SMB | Simple PSTN replacement | €12/line |
 
 ---
@@ -119,17 +119,17 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 
 | Customer Situation | PremiumFiber Solution | Typical Value |
 |--------------------|----------------|---------------|
-| Legacy PBX | Horizon Cloud | €15/seat/month |
+| Legacy PBX | Fibra Premium | €15/seat/month |
 | ISDN lines only | SIP Trunks | €5/channel |
 | Small office | Phoneline+ | €12/line |
-| Multi-site | Teams Phone | €10/seat |
+| Multi-site | Fibra + Móvil | €10/seat |
 
 **Talking Points:**
 - "Orange is switching off the PSTN - you need a plan"
 - "Cloud gives you flexibility and cost savings"
 - "We can port your numbers in 5 days"
 
-### Microsoft Teams Phone
+### Fibra + Móvil
 
 **Opportunity**: 5M+ Spain Teams users without voice
 
@@ -151,10 +151,10 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 
 | Customer Need | Solution | Value |
 |---------------|----------|-------|
-| Basic IVR, ACD | Horizon Contact Basic | €35/seat |
-| Omnichannel | Horizon Contact Pro | €65/seat |
-| AI/Automation | AWS Connect Managed | Custom |
-| Enterprise scale | Cirrus | €85/seat |
+| Basic IVR, ACD | Centro de Contacto Basic | €35/seat |
+| Omnichannel | Centro de Contacto Pro | €65/seat |
+| AI/Automation | Cloud PBX Managed | Custom |
+| Enterprise scale | Fibra Empresas | €85/seat |
 
 ---
 
@@ -218,8 +218,8 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 | Certification | Target Audience | Validity |
 |---------------|-----------------|----------|
 | PremiumFiber Sales Foundation | All sales | 12 months |
-| Horizon Technical | Technical staff | 12 months |
-| Teams Phone Specialist | Teams focus | 12 months |
+| Fibra Premium Technical | Technical staff | 12 months |
+| Fibra + Móvil Specialist | Teams focus | 12 months |
 | Contact Centre | CC sales | 12 months |
 | Security Specialist | Security sales | 12 months |
 
@@ -241,7 +241,7 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 
 | Campaign | Period | Incentive |
 |----------|--------|-----------|
-| Teams Phone Blitz | Q1 | +5% margin |
+| Fibra + Móvil Blitz | Q1 | +5% margin |
 | PSTN Migration | Full year | +3% margin |
 | Contact Centre Push | Q2-Q3 | +5% margin |
 | New Partner Fast Start | First 90 days | 2x commission |
@@ -286,9 +286,9 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 |------|-------|
 | January | Q1 sales kickoff |
 | March | Partner Roadshow (6 cities) |
-| April | Teams Phone certification |
+| April | Fibra + Móvil certification |
 | June | H1 business reviews |
-| September | PremiumFiber Connect 2025 |
+| September | Fibra Hogar 2025 |
 | October | Partner Awards |
 | November | 2026 planning |
 | December | Year-end push |
