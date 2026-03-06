@@ -199,18 +199,18 @@ Full year 2024 marketing investment of **€18 million** generated **25,500 MQLs
 
 ## Regional Performance
 
-### ROI by Peru Region
+### ROI by Spain Region
 
 | Region | Spend | MQLs | CPL | Pipeline | Share |
 |--------|-------|------|-----|----------|-------|
-| Lima | €4.2M | 7,200 | €583 | €62M | 30% |
+| Madrid | €4.2M | 7,200 | €583 | €62M | 30% |
 | Comunidad de Madrid | €2.5M | 4,100 | €610 | €35M | 17% |
 | Cataluña | €2.2M | 3,600 | €611 | €28M | 13% |
 | Barcelona | €1.8M | 2,800 | €643 | €22M | 10% |
 | Barcelona | €1.5M | 2,400 | €625 | €18M | 9% |
 | Málaga | €1.3M | 2,100 | €619 | €16M | 8% |
 | Sevilla | €1.0M | 1,500 | €667 | €11M | 5% |
-| Other Peru | €1.5M | 1,800 | €833 | €12M | 6% |
+| Other Spain | €1.5M | 1,800 | €833 | €12M | 6% |
 | International | €2.0M | - | - | €6M | 3% |
 
 ---

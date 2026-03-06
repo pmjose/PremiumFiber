@@ -86,28 +86,28 @@ Q4 2024 revenue of €132M reflects a continuing shift towards higher-value Fibr
 
 ## Geographic Revenue Mix
 
-### Peru Regional Distribution
+### Spain Regional Distribution
 
-| Region | Q4 2024 | % of Peru | YoY |
+| Region | Q4 2024 | % of Spain | YoY |
 |--------|---------|---------|-----|
-| Lima | €28M | 24% | +12% |
+| Madrid | €28M | 24% | +12% |
 | Comunidad de Madrid | €18M | 15% | +10% |
 | Cataluña | €16M | 14% | +8% |
 | Barcelona | €12M | 10% | +7% |
 | Málaga | €10M | 8% | +11% |
 | Barcelona | €9M | 8% | +15% |
 | Sevilla | €8M | 7% | +6% |
-| Other Peru | €17M | 14% | +5% |
-| **Total Peru** | **€118M** | **100%** | **+9%** |
+| Other Spain | €17M | 14% | +5% |
+| **Total Spain** | **€118M** | **100%** | **+9%** |
 
 ### International Revenue
 
 | Market | Q4 2024 | Q4 2023 | YoY | % of Total |
 |--------|---------|---------|-----|------------|
-| Peru | €118M | €108M | +9% | 89% |
+| Spain | €118M | €108M | +9% | 89% |
 | Netherlands | €7M | €6M | +17% | 5% |
 | Spain | €5M | €4M | +25% | 4% |
-| Germany | €2M | €2M | 0% | 2% |
+| Cataluña | €2M | €2M | 0% | 2% |
 | **Total** | **€132M** | **€120M** | **+10%** | **100%** |
 
 ---

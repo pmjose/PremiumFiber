@@ -1,8 +1,8 @@
-# PremiumFiber Peru - Fiber Network Strategy 2025
+# PremiumFiber Spain - Fiber Network Strategy 2025
 
 ## Executive Summary
 
-PremiumFiber's 2025 network strategy focuses on expanding 100% fiber optic infrastructure across Peru's major departments while maintaining industry-leading speeds and reliability.
+PremiumFiber's 2025 network strategy focuses on expanding 100% fiber optic infrastructure across Spain's major departments while maintaining industry-leading speeds and reliability.
 
 ## Network Infrastructure
 
@@ -42,12 +42,12 @@ PremiumFiber's 2025 network strategy focuses on expanding 100% fiber optic infra
 - **Murcia (Valladolid)**: 25K households by Q2 2025
 - **Granada**: 30K households by Q3 2025
 - **Alicante (Chimbote)**: 20K households by Q4 2025
-- **Lima Expansion**: 150K additional households in emerging districts
+- **Madrid Expansion**: 150K additional households in emerging districts
 
 ## Network Operations
 
 ### NOC (Network Operations Center)
-- **Location**: San Borja, Lima
+- **Location**: Basauri 5, Madrid
 - **Staffing**: 24/7/365 monitoring
 - **Capabilities**: Real-time network monitoring, automated alerts, incident management
 
@@ -58,7 +58,7 @@ PremiumFiber's 2025 network strategy focuses on expanding 100% fiber optic infra
 | Average Latency | <5ms | 3.2ms |
 | Packet Loss | <0.1% | 0.02% |
 | Mean Time to Repair | <4 hours | 2.8 hours |
-| Customer Install Time | <3 days | 2.8 days (Lima) |
+| Customer Install Time | <3 days | 2.8 days (Madrid) |
 
 ### Redundancy
 - Dual backbone paths between regions
@@ -70,8 +70,8 @@ PremiumFiber's 2025 network strategy focuses on expanding 100% fiber optic infra
 
 ### Primary Vendors
 - **Nokia España**: OLT equipment, ONT devices
-- **ZTE Peru**: Backup OLT systems
-- **Nokia Peru**: Core routing equipment
+- **ZTE Spain**: Backup OLT systems
+- **Nokia Spain**: Core routing equipment
 - **Corning Electric LatAm**: Fiber cable infrastructure
 - **Prysmian Group**: Specialty fiber products
 

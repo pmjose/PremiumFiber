@@ -71,20 +71,20 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 
 ## Regional Analysis
 
-### Subscribers by Peru Region
+### Subscribers by Spain Region
 
 | Region | Q4 2024 | YoY Growth | % of Total |
 |--------|---------|------------|------------|
-| Lima | 198,000 | +22% | 23% |
+| Madrid | 198,000 | +22% | 23% |
 | Comunidad de Madrid | 137,000 | +18% | 16% |
 | Cataluña | 120,000 | +20% | 14% |
 | Barcelona | 94,000 | +17% | 11% |
 | Málaga | 77,000 | +19% | 9% |
 | Barcelona | 68,000 | +24% | 8% |
 | Sevilla | 60,000 | +16% | 7% |
-| East of Lima | 52,000 | +21% | 6% |
+| East of Madrid | 52,000 | +21% | 6% |
 | Other | 52,000 | +15% | 6% |
-| **Total Peru** | **858,000** | **+19%** | **100%** |
+| **Total Spain** | **858,000** | **+19%** | **100%** |
 
 ### European Markets
 
@@ -92,7 +92,7 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 |--------|---------|------------|
 | Netherlands | 42,000 | +25% |
 | Spain | 28,000 | +45% |
-| Germany | 12,000 | +80% |
+| Cataluña | 12,000 | +80% |
 | **Total Europe** | **82,000** | **+35%** |
 
 ---

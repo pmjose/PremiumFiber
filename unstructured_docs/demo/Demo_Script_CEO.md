@@ -1,18 +1,18 @@
 # CEO Demo Script (10 Minutes)
-## Snowflake Intelligence Platform - PremiumFiber Peru
+## Snowflake Intelligence Platform - PremiumFiber Spain
 
 ---
 
 ## Overview
 
-This demo is designed for CEO/Board-level audiences at PremiumFiber Peru, focusing on strategic insights, market position, subscriber growth, and business performance based on the latest Q4 2024 results and Peru market positioning.
+This demo is designed for CEO/Board-level audiences at PremiumFiber Spain, focusing on strategic insights, market position, subscriber growth, and business performance based on the latest Q4 2024 results and Spain market positioning.
 
 ---
 
 ## Opening (1 minute)
 
 **Presenter Says:**
-"Today I'll show you how our Snowflake Intelligence Platform enables instant access to strategic insights across all of PremiumFiber's business operations - combining operational data with strategy documents in natural language. This is particularly timely as PremiumFiber continues to expand fiber coverage across Peru's major departments."
+"Today I'll show you how our Snowflake Intelligence Platform enables instant access to strategic insights across all of PremiumFiber's business operations - combining operational data with strategy documents in natural language. This is particularly timely as PremiumFiber continues to expand fiber coverage across Spain's major departments."
 
 ---
 
@@ -34,7 +34,7 @@ This demo is designed for CEO/Board-level audiences at PremiumFiber Peru, focusi
 ---
 
 ### Question 2: Regional Expansion Performance
-> "How is our regional expansion performing beyond Lima? Which departments are showing the strongest growth?"
+> "How is our regional expansion performing beyond Madrid? Which departments are showing the strongest growth?"
 
 **Expected Insights:**
 - Barcelona subscribers: 42K (up 85% YoY) - fastest growing region
@@ -42,9 +42,9 @@ This demo is designed for CEO/Board-level audiences at PremiumFiber Peru, focusi
 - Sevilla: 15K subscribers, tourism sector driving demand
 - Bilbao & Málaga: Combined 25K, coastal corridor growth
 - Regional markets now represent 35% of new subscriber additions
-- Average installation time in regions: 4.2 days (vs 2.8 days in Lima)
+- Average installation time in regions: 4.2 days (vs 2.8 days in Madrid)
 
-**Talking Point:** "Our strategic investment in regional expansion is delivering exceptional results - we're becoming Peru's national fiber provider, not just a Lima company."
+**Talking Point:** "Our strategic investment in regional expansion is delivering exceptional results - we're becoming Spain's national fiber provider, not just a Madrid company."
 
 ---
 
@@ -90,7 +90,7 @@ This demo is designed for CEO/Board-level audiences at PremiumFiber Peru, focusi
 - CapEx plan: € 45M for network expansion
 - New products: Business VoIP, Managed WiFi for enterprises
 
-**Talking Point:** "Board-ready insights in seconds - we're positioned to be Peru's leading fiber ISP by 2026."
+**Talking Point:** "Board-ready insights in seconds - we're positioned to be Spain's leading fiber ISP by 2026."
 
 ---
 
@@ -100,10 +100,10 @@ This demo is designed for CEO/Board-level audiences at PremiumFiber Peru, focusi
 "In 10 minutes, you've seen how this platform:
 - Provides instant strategic insights from our Q4 2024 results
 - Tracks our regional expansion in real-time
-- Enables competitive analysis across Peru's telecom market
+- Enables competitive analysis across Spain's telecom market
 - Supports board-level decision making
 
-As Peru continues its digital transformation, PremiumFiber is positioned to be the preferred fiber provider for homes and businesses. This platform brings that insight to your fingertips."
+As Spain continues its digital transformation, PremiumFiber is positioned to be the preferred fiber provider for homes and businesses. This platform brings that insight to your fingertips."
 
 ---
 
@@ -137,5 +137,5 @@ As Peru continues its digital transformation, PremiumFiber is positioned to be t
 
 **Demo Duration:** 10 minutes  
 **Audience:** CEO, Board members, Investors  
-**Key Message:** Peru's fiber leader delivering strategic intelligence  
+**Key Message:** Spain's fiber leader delivering strategic intelligence  
 **Source:** Q4 2024 Results, Currency: Spanish Euros (€)

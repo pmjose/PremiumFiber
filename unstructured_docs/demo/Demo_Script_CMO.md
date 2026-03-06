@@ -1,18 +1,18 @@
 # CMO Demo Script (10 Minutes)
-## Snowflake Intelligence Platform - PremiumFiber Peru
+## Snowflake Intelligence Platform - PremiumFiber Spain
 
 ---
 
 ## Overview
 
-This demo is designed for CMO/Marketing leadership audiences at PremiumFiber Peru, focusing on campaign performance, customer acquisition, competitive positioning, and marketing ROI.
+This demo is designed for CMO/Marketing leadership audiences at PremiumFiber Spain, focusing on campaign performance, customer acquisition, competitive positioning, and marketing ROI.
 
 ---
 
 ## Opening (1 minute)
 
 **Presenter Says:**
-"Today I'll show you how our Snowflake Intelligence Platform provides instant marketing intelligence - from campaign ROI to competitive analysis to customer acquisition metrics. Let's see how data-driven marketing is fueling PremiumFiber's growth across Peru."
+"Today I'll show you how our Snowflake Intelligence Platform provides instant marketing intelligence - from campaign ROI to competitive analysis to customer acquisition metrics. Let's see how data-driven marketing is fueling PremiumFiber's growth across Spain."
 
 ---
 
@@ -42,12 +42,12 @@ This demo is designed for CMO/Marketing leadership audiences at PremiumFiber Per
 - TV Nacional: € 85 CPL, 2.1% conversion (brand awareness)
 - Referidos: € 25 CPL, 12.5% conversion (best quality)
 
-**Talking Point:** "Real-time channel optimization ensures we're investing in what works best for Peru market."
+**Talking Point:** "Real-time channel optimization ensures we're investing in what works best for Spain market."
 
 ---
 
 ### Question 3: Regional Marketing Performance
-> "How are our marketing campaigns performing across different Peru regions?"
+> "How are our marketing campaigns performing across different Spain regions?"
 
 **Expected Insights:**
 - Comunidad de Madrid: 65% of leads, € 48 avg CPL
@@ -64,7 +64,7 @@ This demo is designed for CMO/Marketing leadership audiences at PremiumFiber Per
 > "How does our brand awareness compare to Telefónica and Orange? What is our share of voice?"
 
 **Expected Insights:**
-- PremiumFiber brand awareness: 45% in Lima (up from 32% YoY)
+- PremiumFiber brand awareness: 45% in Madrid (up from 32% YoY)
 - Share of voice (digital): 22% vs Telefónica 35%, Orange 30%
 - Customer preference (fiber): PremiumFiber 38%, Telefónica 28%, Orange 25%
 - NPS advantage: +62 vs industry +35
@@ -113,7 +113,7 @@ PremiumFiber's marketing success is built on data-driven decisions - this platfo
 | New Subscribers (Q4) | 32,000 |
 | CAC Residential | € 180 |
 | CAC Enterprise | € 850 |
-| Brand Awareness (Lima) | 45% |
+| Brand Awareness (Madrid) | 45% |
 | NPS Score | +62 |
 
 ### Top Campaigns Q4 2024
@@ -130,5 +130,5 @@ PremiumFiber's marketing success is built on data-driven decisions - this platfo
 
 **Demo Duration:** 10 minutes  
 **Audience:** CMO, Marketing Directors, Brand Managers  
-**Key Message:** Data-driven marketing intelligence for Peru's fastest growing fiber ISP  
+**Key Message:** Data-driven marketing intelligence for Spain's fastest growing fiber ISP  
 **Currency:** Spanish Euros (€)

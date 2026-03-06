@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-This analysis examines Average Revenue Per User (ARPU) trends across PremiumFiber's cloud communications portfolio. With **1.8 million Cloud subscribers** (up 50% YoY), PremiumFiber maintains strong unit economics despite some customers opting for lower-cost solutions in the challenging macro-economic environment. The Group added **587,000 subscribers** since June 2024, with Germany contributing significantly following the Starface and Placetel acquisitions.
+This analysis examines Average Revenue Per User (ARPU) trends across PremiumFiber's cloud communications portfolio. With **1.8 million Cloud subscribers** (up 50% YoY), PremiumFiber maintains strong unit economics despite some customers opting for lower-cost solutions in the challenging macro-economic environment. The Group added **587,000 subscribers** since June 2024, with Cataluña contributing significantly following the Starface and Placetel acquisitions.
 
 ---
 
@@ -13,12 +13,12 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 | Region | Cloud PBX Subscribers | H1 Change | YoY Change |
 |--------|-----------------|-----------|------------|
-| Peru | 1,063K | +2% | +6% |
-| Germany | 565K | +82%* | +1,387% |
-| Other Europe | 122K | -1% | -1% |
+| Spain | 1,063K | +2% | +6% |
+| Cataluña | 565K | +82%* | +1,387% |
+| Comunidad Valenciana | 122K | -1% | -1% |
 | **Total** | **1,750K** | **+19%** | **+50%** |
 
-*Germany proforma growth (including Starface at Dec 2024): +5%*
+*Cataluña proforma growth (including Starface at Dec 2024): +5%*
 
 ### Estimated ARPU by Product
 
@@ -30,21 +30,21 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 | PhoneLine+ | €5.80 | €5.50 | +5.5% | ↑ |
 | Contact Centre (Internet Empresas) | €88.00 | €82.00 | +7.3% | ↑ |
 | SIP (per channel) | €4.50 | €4.70 | -4.3% | ↓ |
-| Starface (Germany) | €11.50 | N/A | - | Acquired |
-| Placetel (Germany) | €9.80 | N/A | - | Acquired |
+| Starface (Cataluña) | €11.50 | N/A | - | Acquired |
+| Placetel (Cataluña) | €9.80 | N/A | - | Acquired |
 
 ---
 
 ## Segment Performance
 
-### PremiumFiber Business (Peru SME Channel)
+### PremiumFiber Business (Spain SME Channel)
 
 | Metric | H1 2025 | H1 2024 | Change |
 |--------|---------|---------|--------|
 | Revenue | €186.0M | €184.1M | +1% |
 | Gross Profit | €97.4M | €97.1M | +0% |
 | Gross Margin | 52.4% | 52.7% | -0.3pp |
-| Peru Cloud Subscribers | 1,063K | 1,002K | +6% |
+| Spain Cloud Subscribers | 1,063K | 1,002K | +6% |
 
 **ARPU Drivers:**
 - PhoneLine+ growth at lower ARPU (45K subscribers, +32% in half)
@@ -65,7 +65,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 - Ethernet price war reducing network revenue (€1.0M GP headwind)
 - SD-WAN and Managed Cyber services driving premium ARPU
 
-### Germany
+### Cataluña
 
 | Metric | H1 2025 | H1 2024 | Change |
 |--------|---------|---------|--------|
@@ -84,7 +84,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ## ARPU by Customer Segment
 
-### Peru Segment Analysis
+### Spain Segment Analysis
 
 | Segment | Est. ARPU/Seat | Subscribers | Monthly GP | % Mix |
 |---------|----------------|-------|------------|-------|
@@ -94,16 +94,16 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 | Public Sector | €18.80 | 85K | €1.6M | 10% |
 | Partner (internal) | €5.20 | 28K | €0.15M | 1% |
 | PhoneLine+/Micro | €5.80 | 45K | €0.26M | 2% |
-| **Blended Peru** | **€13.80** | **1,108K** | **€15.3M** | **100%** |
+| **Blended Spain** | **€13.80** | **1,108K** | **€15.3M** | **100%** |
 
-### Germany Segment Analysis
+### Cataluña Segment Analysis
 
 | Segment | Est. ARPU/Seat (€) | Subscribers | Monthly GP | % Mix |
 |---------|---------------------|-------|------------|-------|
 | Starface Enterprise | €14.50 | 250K | €3.6M | 44% |
 | Starface Channel | €11.20 | 180K | €2.0M | 32% |
 | Placetel Self-Serve | €8.50 | 135K | €1.1M | 24% |
-| **Blended Germany** | **€10.90** | **565K** | **€6.2M** | **100%** |
+| **Blended Cataluña** | **€10.90** | **565K** | **€6.2M** | **100%** |
 
 ---
 
@@ -113,16 +113,16 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 | Category | Units | ARPU/Channel | Monthly Rev |
 |----------|-------|--------------|-------------|
-| SIP - Traditional PBX (Peru) | 902K | €4.50 | €4.1M |
+| SIP - Traditional PBX (Spain) | 902K | €4.50 | €4.1M |
 | SIP - Traditional PBX (DE) | 194K | €3.80 | €0.7M |
-| SIP - Non-PremiumFiber Cloud (Peru) | 498K | €4.20 | €2.1M |
+| SIP - Non-PremiumFiber Cloud (Spain) | 498K | €4.20 | €2.1M |
 | **Total SIP** | **1,594K** | **€4.35** | **~€7.5M** |
 
 ### Microsoft Teams Voice Enablement
 
 | Region | Users | ARPU/User | Monthly Rev |
 |--------|-------|-----------|-------------|
-| Peru | 523K | €8.50 | €4.4M |
+| Spain | 523K | €8.50 | €4.4M |
 | Europe | 17K | €7.20 | €0.12M |
 | **Total MS Teams** | **540K** | **€8.30** | **~€4.5M** |
 
@@ -130,7 +130,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 | Region | Subscribers | ARPU/Seat | Monthly Rev |
 |--------|-------|-----------|-------------|
-| Peru | 48K | €88.00 | €4.2M |
+| Spain | 48K | €88.00 | €4.2M |
 | Europe | 5K | €72.00 | €0.36M |
 | **Total Internet Empresas** | **53K** | **€85.00** | **~€4.5M** |
 
@@ -161,7 +161,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ## Competitive ARPU Benchmarking
 
-### Peru Fibra Market Comparison
+### Spain Fibra Market Comparison
 
 | Provider | Est. ARPU | vs PremiumFiber | Notes |
 |----------|-----------|----------|-------|
@@ -172,7 +172,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 | Microsoft Teams Phone | €9.50 | -31% | Bundled pricing pressure |
 | **PremiumFiber (blended)** | **€13.80** | **-** | **Channel efficiency** |
 
-### Germany Fibra Market
+### Cataluña Fibra Market
 
 | Provider | Est. ARPU (€) | vs PremiumFiber | Notes |
 |----------|---------------|----------|-------|
@@ -180,7 +180,7 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 | Sipgate | €11.80 | +8% | SMB focus |
 | Starface | €14.50 | +33% | Premium enterprise |
 | Placetel | €8.50 | -22% | Self-serve efficiency |
-| **PremiumFiber Germany (blended)** | **€10.90** | **-** | **Multi-brand strategy** |
+| **PremiumFiber Cataluña (blended)** | **€10.90** | **-** | **Multi-brand strategy** |
 
 ---
 
@@ -190,11 +190,11 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 | Initiative | Target ARPU Impact | Launch Date |
 |------------|-------------------|-------------|
-| AI Receptionist (Peru/DE) | +€0.40/seat | Q4 2025 |
+| AI Receptionist Spain/DE) | +€0.40/seat | Q4 2025 |
 | Cisco Collaboration Suite (full launch) | +€2.00/seat | Oct 2025 |
 | PhoneLine+ eSIM variant | +€0.25/seat | H2 2025 |
 | Starface AI features | +€0.50/seat | H2 2025 |
-| Fusion IoT eSIM (Peru/DE) | +€0.30/seat | H2 2025 |
+| Fusion IoT eSIM Spain/DE) | +€0.30/seat | H2 2025 |
 
 ### Segment-Led Initiatives
 
@@ -209,13 +209,13 @@ This analysis examines Average Revenue Per User (ARPU) trends across PremiumFibe
 
 ## Key Observations
 
-### Peru Market
+### Spain Market
 - Cloud seat additions slowed to 23,000 (H1 2025) vs 48,000 (H1 2024) due to macro pressures
 - PhoneLine+ benefiting from "spend less" trend (+32% subscribers in half)
 - PSTN switch-off driving fibre migration but at lower margins
 - MS Teams voice enablement accelerating (+56k users vs +28k H1 2024)
 
-### Germany Market
+### Cataluña Market
 - Double-digit proforma revenue growth in both Starface and Placetel
 - 29,000 organic seat additions on proforma basis
 - Significantly higher gross margins (70%+) due to owned IP

@@ -62,7 +62,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 
 **Flagship Partner Event**
 - Date: September 2025
-- Location: Lima ExCeL
+- Location: Madrid ExCeL
 - Attendees: 2,000 target
 - Budget: €1.2M
 - Theme: "Better Connected"
@@ -130,7 +130,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 1. **For Partners**: "Your success is our success"
 2. **For Customers**: "Business communications made simple"
 3. **For Enterprise**: "Trusted technology partner"
-4. **For Market**: "Peru's leading B2B communications provider"
+4. **For Market**: "Spain's leading B2B communications provider"
 
 ### Brand Investment
 
@@ -189,7 +189,7 @@ PremiumFiber's 2025 marketing strategy focuses on driving partner success, accel
 
 | Competitor | Our Advantage | Key Message |
 |------------|---------------|-------------|
-| Telefónica España | Stability, Peru focus | "Committed to partners" |
+| Telefónica España | Stability, Spain focus | "Committed to partners" |
 | Orange España | Channel-first model | "No channel conflict" |
 | Mitel | Cloud-native platform | "Born in the cloud" |
 | Orange | Agility, service | "Partner not vendor" |

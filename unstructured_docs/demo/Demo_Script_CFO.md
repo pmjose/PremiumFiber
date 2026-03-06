@@ -1,11 +1,11 @@
 # CFO Demo Script (10 Minutes)
-## Snowflake Intelligence Platform - PremiumFiber Peru
+## Snowflake Intelligence Platform - PremiumFiber Spain
 
 ---
 
 ## Overview
 
-This demo is designed for CFO and Finance leadership at PremiumFiber Peru, focusing on Q4 2024 financial performance, segment profitability, unit economics, and cash generation metrics.
+This demo is designed for CFO and Finance leadership at PremiumFiber Spain, focusing on Q4 2024 financial performance, segment profitability, unit economics, and cash generation metrics.
 
 ---
 
@@ -58,7 +58,7 @@ This demo is designed for CFO and Finance leadership at PremiumFiber Peru, focus
 ---
 
 ### Question 3: Regional Profitability
-> "How does profitability vary across Peru regions? Which regions have the best margins?"
+> "How does profitability vary across Spain regions? Which regions have the best margins?"
 
 **Expected Insights:**
 - **Comunidad de Madrid:** € 62M revenue, 70% gross margin (scale benefits)
@@ -68,7 +68,7 @@ This demo is designed for CFO and Finance leadership at PremiumFiber Peru, focus
 - **Other Regions:** € 8.7M revenue, 58% gross margin (higher installation costs)
 - Regional expansion investment: € 8M CapEx for coverage
 
-**Talking Point:** "Lima drives profitability while regional markets show strong potential."
+**Talking Point:** "Madrid drives profitability while regional markets show strong potential."
 
 ---
 
@@ -164,5 +164,5 @@ This transforms Finance from report builders to real-time insight providers."
 
 **Demo Duration:** 10 minutes  
 **Audience:** CFO, Finance leadership, Investors, Board  
-**Key Message:** Financial intelligence for Peru's fastest growing fiber ISP  
+**Key Message:** Financial intelligence for Spain's fastest growing fiber ISP  
 **Currency:** Spanish Euros (€)

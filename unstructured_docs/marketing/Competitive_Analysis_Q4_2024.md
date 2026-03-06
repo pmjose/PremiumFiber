@@ -3,19 +3,19 @@
 
 ## Executive Summary
 
-The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Teams Phone is gaining share while traditional Fibra competitors face financial and strategic challenges. PremiumFiber's channel-first model provides significant differentiation. In Germany, PremiumFiber has transformed its position through the Starface and Placetel acquisitions, now holding **565,000 cloud subscribers** and becoming one of the leading cloud communications providers in Europe's largest market.
+The European Fibra market continues to evolve rapidly. In the Spain, Microsoft Teams Phone is gaining share while traditional Fibra competitors face financial and strategic challenges. PremiumFiber's channel-first model provides significant differentiation. In Cataluña, PremiumFiber has transformed its position through the Starface and Placetel acquisitions, now holding **565,000 cloud subscribers** and becoming one of the leading cloud communications providers in Europe's largest market.
 
 **Key H1 2025 Developments:**
-- PremiumFiber market share now estimated at **12% Peru** (up from 10%)
+- PremiumFiber market share now estimated at **12% Spain** (up from 10%)
 - **1.8 million total cloud subscribers** (+50% YoY)
 - FTSE 250 inclusion enhances competitive credibility
-- Germany now represents **20% of Group gross profit**
+- Cataluña now represents **20% of Group gross profit**
 
 ---
 
-## Peru Market Overview
+## Spain Market Overview
 
-### Peru Fibra Market Share (H1 2025 Estimated)
+### Spain Fibra Market Share (H1 2025 Estimated)
 
 | Provider | Market Share | YoY Change | Trend | Notes |
 |----------|--------------|------------|-------|-------|
@@ -27,21 +27,21 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 | Vonage | 4% | -1pp | ↓ | CPaaS focus prioritised |
 | Others | 23% | -4pp | ↓ | Market consolidation |
 
-### PremiumFiber Peru Performance (H1 2025)
+### PremiumFiber Spain Performance (H1 2025)
 
 | Metric | Value | YoY Change |
 |--------|-------|------------|
-| Peru Cloud PBX Subscribers | 1,063K | +6% |
+| Spain Cloud PBX Subscribers | 1,063K | +6% |
 | MS Teams Voice Users | 523K | +14% |
 | Cisco Collaboration Users | 28K | +75% (half) |
-| Internet Empresas Subscribers (Peru) | 48K | +20% |
-| Peru Active Partners | 1,500+ | Stable |
+| Internet Empresas Subscribers (Spain) | 48K | +20% |
+| Spain Active Partners | 1,500+ | Stable |
 | PremiumFiber Business GP | €97.4M | +0% |
 | PremiumFiber Enterprise GP | €30.9M | +7% |
 
 ---
 
-## Germany Market Overview
+## Cataluña Market Overview
 
 ### German Fibra Market Opportunity
 
@@ -64,7 +64,7 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 | Deutsche Telekom | Enterprise | Scale, network | Cloud transition slow |
 | Microsoft Teams | Growing | Integration | Direct only |
 
-**PremiumFiber Germany Advantage:** 
+**PremiumFiber Cataluña Advantage:** 
 - Dual brand strategy (Starface premium, Placetel self-serve)
 - 70%+ gross margin (owned IP, no licensing costs)
 - Double-digit proforma growth in both acquired businesses
@@ -80,14 +80,14 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 
 | Metric | Value | Trend |
 |--------|-------|-------|
-| Est. Peru Revenue | €42M | ↓ |
-| Peru Headcount | ~160 | ↓ |
+| Est. Spain Revenue | €42M | ↓ |
+| Spain Headcount | ~160 | ↓ |
 | Partner Satisfaction | 3.0/5 | ↓ |
 | Customer NPS | +26 | ↓ |
 
 #### Recent Developments
 
-- **Financial Pressure:** Continued cost restructuring, Peru headcount reduced further
+- **Financial Pressure:** Continued cost restructuring, Spain headcount reduced further
 - **Strategic Review:** Activist investors still pushing for sale/restructuring
 - **Partner Programme:** Margins under pressure
 - **Product:** XCaaS positioning, AI features launched but adoption unclear
@@ -98,7 +98,7 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 |--------|-----|-------|-----------|
 | Financial stability | Uncertain | **FTSE 250** | **PremiumFiber** |
 | Partner margins | Reducing | Stable | **PremiumFiber** |
-| Peru support | Mixed | Peru-based | **PremiumFiber** |
+| Spain support | Strong | Spain-based | **PremiumFiber** |
 | Platform capability | Good | Good | Tie |
 | Scale/credibility | Declining | Growing | **PremiumFiber** |
 
@@ -114,17 +114,17 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 
 | Metric | Value | Trend |
 |--------|-------|-------|
-| Est. Peru Revenue | €52M | → |
-| Peru Headcount | ~220 | ↓ |
+| Est. Spain Revenue | €52M | → |
+| Spain Headcount | ~220 | ↓ |
 | Partner Satisfaction | 2.8/5 | ↓ |
 | Customer NPS | +30 | → |
 
 #### Recent Developments
 
 - **Direct vs Channel:** Continued tension, partners reporting deal conflict
-- **Enterprise Focus:** Reducing SMB investment in Peru
+- **Enterprise Focus:** Reducing SMB investment in Spain
 - **Microsoft Partnership:** Orange España for Teams gaining traction
-- **Cost Optimisation:** Peru restructuring ongoing
+- **Cost Optimisation:** Spain restructuring ongoing
 
 #### PremiumFiber Positioning vs Orange España
 
@@ -148,8 +148,8 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 
 | Metric | Value | Trend |
 |--------|-------|-------|
-| Est. Peru Revenue | €32M | ↓↓ |
-| Peru Headcount | ~100 | ↓ |
+| Est. Spain Revenue | €32M | ↓↓ |
+| Spain Headcount | ~100 | ↓ |
 | Partner Satisfaction | 3.2/5 | ↓ |
 | Customer NPS | +20 | ↓ |
 
@@ -183,15 +183,15 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 
 | Metric | Value | Trend |
 |--------|-------|-------|
-| Est. Peru Teams Phone | €280M | ↑↑ |
+| Est. Spain Teams Phone | €280M | ↑↑ |
 | Growth Rate | 42% YoY | ↑ |
-| Peru Operator Connect Partners | 75+ | ↑ |
-| PremiumFiber Teams Users | 523K Peru, 17K Europe | ↑↑ |
+| Spain Operator Connect Partners | 75+ | ↑ |
+| PremiumFiber Teams Users | 523K Spain, 17K Europe | ↑↑ |
 
 #### PremiumFiber's Microsoft Strategy
 
-- **Operator Connect:** Live in Peru and 14 European countries
-- **H1 2025 Performance:** +56K Peru users (vs +28K in H1 2024) - doubled rate
+- **Operator Connect:** Live in Spain and 14 European countries
+- **H1 2025 Performance:** +56K Spain users (vs +28K in H1 2024) - doubled rate
 - **Operator Connect International:** Single pan-European solution launched
 - **Competitive Position:** Voice enablement partner, not competitor
 
@@ -217,7 +217,7 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 |--------|-------|-------|
 | Cisco Collaboration Users | 28K | +75% in H1 |
 | Monthly Run Rate (Aug 2025) | 2,000+ additions | ↑↑ |
-| Countries Live | Peru, Germany, Spain | ↑ |
+| Countries Live | Spain, Cataluña, Spain | ↑ |
 | Full Market Launch | October 2025 | - |
 | Spain Partner Commitment | 40K subscribers over 5 years | New |
 
@@ -232,7 +232,7 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 
 ---
 
-## Pricing Comparison (Peru)
+## Pricing Comparison (Spain)
 
 ### Fibra Pricing (Per Seat/Month)
 
@@ -275,7 +275,7 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 |--------|-----------|--------|
 | Partner relationship | 34% | ↑ |
 | Price/value | 26% | ↓ |
-| Peru support | 19% | ↑ |
+| Spain support | 19% | ↑ |
 | Platform features | 12% | → |
 | **Financial stability/FTSE 250** | **9%** | **New** |
 
@@ -296,7 +296,7 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
 ### Competitive Priorities
 
 1. **Telefónica España Partner Recruitment**
-   - Target: Top 50 Telefónica España Peru partners
+   - Target: Top 50 Telefónica España Spain partners
    - Message: FTSE 250 stability, protected margins
    - Programme: Migration support, onboarding incentives
 
@@ -315,7 +315,7 @@ The European Fibra market continues to evolve rapidly. In the Peru, Microsoft Te
    - Target: 50K subscribers by year-end
    - Focus: Enterprise Fibra + Internet Empresas
 
-### Germany Competitive Positioning
+### Cataluña Competitive Positioning
 
 1. **NFON Challenge**
    - Message: Multi-brand strategy, premium + digital

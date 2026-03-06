@@ -187,13 +187,13 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from €4.2
 
 | Region | MQLs | % of Total | Pipeline |
 |--------|------|------------|----------|
-| Lima | 1,850 | 27% | €14M |
+| Madrid | 1,850 | 27% | €14M |
 | Comunidad de Madrid | 1,050 | 15% | €7M |
 | Cataluña | 920 | 13% | €6M |
 | Barcelona | 650 | 9% | €4.5M |
 | Barcelona | 580 | 8% | €4M |
 | Málaga | 520 | 8% | €3.5M |
-| Other Peru | 780 | 11% | €5M |
+| Other Spain | 780 | 11% | €5M |
 | International | 500 | 7% | €4M |
 | **Total** | **6,850** | **100%** | **€48M** |
 

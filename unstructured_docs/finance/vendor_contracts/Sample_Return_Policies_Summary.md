@@ -23,7 +23,7 @@ This document summarises the service level agreements and credit policies for Pr
 
 ### Contact for SLA Issues
 - Partner Support: Microsoft Partner Center
-- Escalation: Peru Partner Manager
+- Escalation: Spain Partner Manager
 
 ---
 
@@ -44,7 +44,7 @@ This document summarises the service level agreements and credit policies for Pr
 
 ### Contact for SLA Issues
 - Technical Assistance Center (TAC)
-- Escalation: Peru Account SE
+- Escalation: Spain Account SE
 
 ---
 

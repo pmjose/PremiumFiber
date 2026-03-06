@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-PremiumFiber Communications PLC maintains full compliance with CNMC regulatory requirements as a provider of electronic communications services in the Peru. This report summarises our compliance status, regulatory obligations, and performance against CNMC standards.
+PremiumFiber Communications PLC maintains full compliance with CNMC regulatory requirements as a provider of electronic communications services in Spain. This report summarises our compliance status, regulatory obligations, and performance against CNMC standards.
 
 ---
 

@@ -39,7 +39,7 @@ Q4 2024 customer satisfaction remained strong with overall NPS of +45, up 3 poin
 | Sales Process | 4.5/5 | +0.1 | Partner quality |
 | Onboarding | 4.0/5 | +0.2 | Speed improvement |
 | Product Usage | 4.3/5 | +0.1 | Feature enhancements |
-| Support | 4.4/5 | +0.1 | Peru-based team |
+| Support | 4.4/5 | +0.1 | Spain-based team |
 | Billing | 4.1/5 | +0.2 | Portal improvements |
 | Account Management | 4.5/5 | 0 | Stable |
 
@@ -110,7 +110,7 @@ Q4 2024 customer satisfaction remained strong with overall NPS of +45, up 3 poin
 |-------|-----------|---------|
 | Partner support | 28% | "PremiumFiber treats us as partners, not just resellers" |
 | Product reliability | 24% | "Horizon just works - no complaints from our customers" |
-| Peru-based support | 18% | "Speaking to someone in the Peru who understands our needs" |
+| Spain-based support | 18% | "Speaking to someone in Spain who understands our needs" |
 | Competitive pricing | 15% | "Fair margins that make the business work" |
 | Innovation | 8% | "Regular updates and new features" |
 

@@ -1,6 +1,6 @@
 # IT Ops, Vendors, and BI Adoption (Gamma)
 
-Use these reference points for Snowflake Intelligence questions in the Gamma demo. All amounts in PEN unless stated.
+Use these reference points for Snowflake Intelligence questions in the Gamma demo. All amounts in EUR unless stated.
 
 ## IT Operational Expenses (finance_transactions)
 - Use `FINANCE_SEMANTIC_VIEW` and slice by `account_type`, `department_name`, `vendor_name` / `vendor_dim.vertical`, and `product_category_dim.category_name`.
@@ -11,9 +11,9 @@ Use these reference points for Snowflake Intelligence questions in the Gamma dem
   - **Hardware & Endpoints:** Hardware Partner.
   - **Contact Centre & Fibra Partners:** Contact Centre, Fibra Partner.
 - Metrics: total spend, average transaction, transaction count, vendor, department, month/quarter.
-- Example prompt: “Break down IT opex by connectivity, cloud/platform, security, and hardware for last quarter (PEN).”
+- Example prompt: “Break down IT opex by connectivity, cloud/platform, security, and hardware for last quarter (EUR).”
 
-**Illustrative Q4 IT opex (PEN):**
+**Illustrative Q4 IT opex (EUR):**
 - Connectivity & Carrier Services: €12.9M
 - Cloud & Platform: €8.1M
 - Security & Compliance: €3.4M
@@ -26,13 +26,13 @@ Use these reference points for Snowflake Intelligence questions in the Gamma dem
 - Largest tech spend: sum `amount` by `vendor_name`; join to `vendor_dim` for `vertical`.
 - Supplier exposure: % of spend by vendor and by vertical; flag single-source categories (Cloud Provider, Security Partner, Contact Centre).
 - Example prompts:
-  - “Top 10 vendors by IT spend last quarter; show PEN, category, and % of total.”
+  - “Top 10 vendors by IT spend last quarter; show EUR, category, and % of total.”
   - “Which vendor categories are single-source, and what % of total IT spend do they represent?”
 
-**Illustrative top vendors (Q4, PEN):**
-- Microsoft Peru: €4.1M (Platform Partner)
-- Amazon Web Services Peru: €3.5M (Cloud Provider)
-- Cisco Peru: €2.6M (Network Equipment)
+**Illustrative top vendors (Q4, EUR):**
+- Microsoft Spain: €4.1M (Platform Partner)
+- Amazon Web Services Spain: €3.5M (Cloud Provider)
+- Cisco Spain: €2.6M (Network Equipment)
 - Orange Openreach: €2.2M (Connectivity Provider)
 - Telefónica Business: €1.9M (Connectivity Provider)
 
@@ -47,10 +47,10 @@ Use these reference points for Snowflake Intelligence questions in the Gamma dem
   - Revenue: `sales_fact` joined to `product_dim` + `product_category_dim`.
   - Use the same time window (e.g., last two quarters) and segment splits (vertical, region).
 - Example prompts:
-  - “Compare spend vs revenue by product category for the last two quarters; show correlation and PEN.”
+  - “Compare spend vs revenue by product category for the last two quarters; show correlation and EUR.”
   - “Revenue per € of platform spend by customer vertical (SMB, Enterprise, Public Sector, Partner).”
 
-**Illustrative spend vs revenue (Q4, PEN):**
+**Illustrative spend vs revenue (Q4, EUR):**
 - Connect: €6.8M spend vs €52.0M revenue (7.6x)
 - Enable: €4.9M spend vs €31.5M revenue (6.4x)
 - Connectivity: €3.7M spend vs €18.2M revenue (4.9x)

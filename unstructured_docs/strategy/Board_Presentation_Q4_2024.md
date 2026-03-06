@@ -121,7 +121,7 @@
 |--------|----------------|------------|--------|
 | Netherlands | €28M | +12% | On track |
 | Spain | €18M | +22% | Strong growth |
-| Germany | €8M | +35% | Early stage |
+| Cataluña | €8M | +35% | Early stage |
 
 ---
 
@@ -142,13 +142,13 @@
 3. **Competitor Challenges**
    - Telefónica España strategic review ongoing
    - Mitel financial pressures
-   - Orange España Peru scaling back
+   - Orange España Spain scaling back
 
 ### Competitive Position
 
 | Factor | PremiumFiber Position | Trend |
 |--------|----------------|-------|
-| Partner Satisfaction | #1 in Peru | Stable |
+| Partner Satisfaction | #1 in Spain | Stable |
 | Fibra Market Share | 10% | Growing |
 | Teams Phone (channel) | #2 behind Orange | Growing |
 | Financial Stability | Strong | Improving |
@@ -177,7 +177,7 @@
 
 ### Key Assumptions
 
-1. Peru economy stable (no recession)
+1. Spain economy stable (no recession)
 2. PSTN switch-off proceeds as planned
 3. No major competitor disruption
 4. Successful product launches (AI, security)

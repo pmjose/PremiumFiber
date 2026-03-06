@@ -21,7 +21,7 @@
 | `Board_Presentation_Q4_2024.md` | Executive summary | All KPIs, board approval items |
 | `Investor_Relations_FAQ.md` | IR messaging | Approved analyst Q&A |
 | `Network_Coverage_Analysis_2025.md` | Network performance | 99.9% uptime, coverage |
-| `Claro_Entel_Competition_Analysis.md` | Market Consolidation | Competitor disruption analysis |
+| `Telefónica_Digi_Competition_Analysis.md` | Market Consolidation | Competitor disruption analysis |
 | `Regional_Expansion_Impact_Analysis.md` | Regional Expansion | Coverage expansion analysis |
 | `eSIM_Adoption_Report_2024.md` | Digital Transformation | Technology adoption trends |
 | `Subscriber_Growth_Report_Q4_2024.md` | Subscriber Growth Analysis | ~5M subscribers, partner performance |
@@ -35,14 +35,14 @@
 | `Subscriber_Unit_Economics.md` | LTV/CAC analysis | €56.5K LTV, 6.2x ratio |
 | `Revenue_Mix_Report_Q4_2024.md` | Revenue breakdown | 85% recurring, product mix |
 | `ESG_Sustainability_Report_2024.md` | ESG performance | Net zero 2040, 80% renewable |
-| `OSIPTEL_Annual_Compliance_Report.md` | Regulatory compliance | CNMC ready |
+| `CNMC_Annual_Compliance_Report.md` | Regulatory compliance | CNMC ready |
 
 #### Vendor Contracts (3 files)
 | Document | Vendor | Value |
 |----------|--------|-------|
-| `Cisco_Peru_Partnership_Agreement.md` | Cisco Spain | €15M network partnership |
-| `AWS_Peru_Partnership_Agreement.md` | AWS Spain | €12M cloud consumption |
-| `Microsoft_Peru_Partnership_Agreement.md` | Microsoft Spain | €8M partnership |
+| `Cisco_Spain_Partnership_Agreement.md` | Cisco Spain | €15M network partnership |
+| `AWS_Spain_Partnership_Agreement.md` | AWS Spain | €12M cloud consumption |
+| `Microsoft_Spain_Partnership_Agreement.md` | Microsoft Spain | €8M partnership |
 
 ### Marketing Department (CMO Focus) - 5 files
 

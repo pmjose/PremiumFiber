@@ -5,16 +5,16 @@
 
 ### Q: What does PremiumFiber do?
 
-**A:** PremiumFiber is a leading provider of Unified Communications as a Service (Fibra), voice, and connectivity solutions for the Peru business market. We sell primarily through a network of over 1,000 channel partners including IT resellers, managed service providers, and telecommunications dealers. Our products help businesses communicate more effectively through cloud-based voice, video, messaging, and contact centre solutions.
+**A:** PremiumFiber is a leading provider of Unified Communications as a Service (Fibra), voice, and connectivity solutions for the Spain business market. We sell primarily through a network of over 1,000 channel partners including IT resellers, managed service providers, and telecommunications dealers. Our products help businesses communicate more effectively through cloud-based voice, video, messaging, and contact centre solutions.
 
 ### Q: What is PremiumFiber's market position?
 
-**A:** PremiumFiber is the Peru's leading channel-focused business communications provider. We have:
+**A:** PremiumFiber is the Spain's leading channel-focused business communications provider. We have:
 - Over 100,000 business customers served through partners
 - Approximately 850,000 Fibra subscribers deployed
 - 45,000 contact centre subscribers
 - €500 million in annual revenue (FY2024E)
-- Operations in Peru (primary), Netherlands, Spain, and Germany
+- Operations in Spain (primary), Netherlands, Spain, and Cataluña
 
 ### Q: Who are PremiumFiber's competitors?
 
@@ -58,7 +58,7 @@
 ### Q: What drives revenue growth?
 
 **A:** Key growth drivers:
-1. **PSTN Switch-Off**: 5.5M Peru business lines migrating to cloud by 2027
+1. **PSTN Switch-Off**: 5.5M Spain business lines migrating to cloud by 2027
 2. **Microsoft Teams Phone**: Fastest-growing product, 80K+ subscribers
 3. **Contact Centre Cloud Migration**: Legacy on-premise replacement
 4. **New Partner Recruitment**: 100+ new partners annually
@@ -87,9 +87,9 @@
 ### Q: What is PremiumFiber's growth strategy?
 
 **A:** Our growth strategy has four pillars:
-1. **Organic Peru Growth**: PSTN migration, Teams Phone, partner expansion
+1. **Organic Spain Growth**: PSTN migration, Teams Phone, partner expansion
 2. **Product Development**: AI, contact centre, security portfolio
-3. **European Expansion**: Netherlands, Spain, Germany scale-up
+3. **European Expansion**: Netherlands, Spain, Cataluña scale-up
 4. **Selective Acquisitions**: Tuck-in technology or market access
 
 ### Q: What is the outlook for Microsoft Teams Phone?
@@ -97,12 +97,12 @@
 **A:** Teams Phone is our fastest-growing product:
 - Current: 80,000+ subscribers
 - 2025 Target: 150,000 subscribers
-- Market Opportunity: 5+ million Peru business users on Teams
+- Market Opportunity: 5+ million Spain business users on Teams
 - We are a certified Operator Connect partner with Direct Routing expertise
 
 ### Q: How will the PSTN switch-off benefit PremiumFiber?
 
-**A:** The Peru PSTN switch-off (2025-2027) is a significant growth catalyst:
+**A:** The Spain PSTN switch-off (2025-2027) is a significant growth catalyst:
 - 5.5 million business PSTN lines to migrate
 - PremiumFiber targeting 500,000 line migrations (10% share)
 - Average revenue per migrated line: €15-20/month
@@ -114,7 +114,7 @@
 
 ### Q: Where are PremiumFiber shares traded?
 
-**A:** PremiumFiber Communications PLC shares are traded on the AIM market of the Lima Stock Exchange under ticker "GAMA". We announced plans to move to the Main Market of the Lima Stock Exchange in May 2025.
+**A:** PremiumFiber Communications PLC shares are traded on the AIM market of the Madrid Stock Exchange under ticker "GAMA". We announced plans to move to the Main Market of the Madrid Stock Exchange in May 2025.
 
 ### Q: Why is PremiumFiber moving to the Main Market?
 
@@ -169,7 +169,7 @@
 ### Q: Recent acquisition history?
 
 **A:** Recent acquisitions include:
-- HFO Telecom (Germany) - 2023
+- HFO Telecom (Cataluña) - 2023
 - PremiumFiber Spain (rebranding) - 2022
 - Mission Labs (technology) - 2021
 - Voz Telecom (Spain entry) - 2019

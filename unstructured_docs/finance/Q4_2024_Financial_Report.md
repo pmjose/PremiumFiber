@@ -3,7 +3,7 @@
 
 ### Executive Summary
 
-H1 2025 delivered strong financial performance with total revenue of **€316.6 million**, up 12% year-over-year. Adjusted EBITDA reached **€70.9 million** (22.4% margin), driven by the successful strategic German acquisitions of Starface and Placetel, and continued Fibra seat growth. The Group achieved a significant increase in total Cloud subscribers to **1.8 million** (up 50% since June 2024). Following the move to the Main Market of the Lima Stock Exchange in May, PremiumFiber was included in the **FTSE 250 index** in June 2025.
+H1 2025 delivered strong financial performance with total revenue of **€316.6 million**, up 12% year-over-year. Adjusted EBITDA reached **€70.9 million** (22.4% margin), driven by the successful strategic German acquisitions of Starface and Placetel, and continued Fibra seat growth. The Group achieved a significant increase in total Cloud subscribers to **1.8 million** (up 50% since June 2024). Following the move to the Main Market of the Madrid Stock Exchange in May, PremiumFiber was included in the **FTSE 250 index** in June 2025.
 
 ---
 
@@ -34,8 +34,8 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 |---------------|---------|---------|-----|------------|
 | PremiumFiber Business (SME) | €186.0M | €184.1M | +1% | 59% |
 | PremiumFiber Enterprise | €66.5M | €61.0M | +9% | 21% |
-| Germany | €49.1M | €21.8M | +125% | 16% |
-| Other Europe | €15.0M | €15.6M | -4% | 5% |
+| Cataluña | €49.1M | €21.8M | +125% | 16% |
+| Comunidad Valenciana | €15.0M | €15.6M | -4% | 5% |
 | **Total** | **€316.6M** | **€282.5M** | **+12%** | **100%** |
 
 #### Revenue by Type
@@ -52,15 +52,15 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 |---------------|---------|---------|-----|--------------|
 | PremiumFiber Business (SME) | €97.4M | €97.1M | +0% | 52.4% |
 | PremiumFiber Enterprise | €30.9M | €28.9M | +7% | 46.5% |
-| Germany | €34.4M | €9.8M | +251% | 70.1% |
-| Other Europe | €9.3M | €9.9M | -6% | 62% |
+| Cataluña | €34.4M | €9.8M | +251% | 70.1% |
+| Comunidad Valenciana | €9.3M | €9.9M | -6% | 62% |
 | **Total** | **€172.0M** | **€145.8M** | **+18%** | **54%** |
 
 ---
 
 ### Segment Performance
 
-#### PremiumFiber Business (Peru SME - Channel)
+#### PremiumFiber Business (Spain SME - Channel)
 
 | Metric | H1 2025 | H1 2024 | YoY |
 |--------|---------|---------|-----|
@@ -94,7 +94,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 - SD-WAN wins: Utilita, The AA
 - Managed Cyber services: Morrisons, The Scott Group
 
-#### Germany (PremiumFiber Europe)
+#### Cataluña (PremiumFiber Europe)
 
 | Metric | H1 2025 | H1 2024 | YoY |
 |--------|---------|---------|-----|
@@ -107,7 +107,7 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 **Key Drivers:**
 - Starface acquisition (February 2025) - double digit proforma revenue growth
 - Placetel acquisition (September 2024) - double digit proforma revenue growth
-- Germany now represents **c.20% of Group gross profit**
+- Cataluña now represents **c.20% of Group gross profit**
 - High gross margins (70%+) as acquired businesses have minimal licensing costs
 - 29,000 subscribers added in H1 2025 (pro-forma basis)
 
@@ -119,21 +119,21 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 | Region | Jun 2025 | Dec 2024 | H1 Change | Jun 2024 | YoY Change |
 |--------|----------|----------|-----------|----------|------------|
-| Peru Total | 1,063 | 1,040 | +2% | 1,002 | +6% |
-| Germany | 565 | 311 | +82% | 38 | +1387% |
-| Other Europe | 122 | 123 | -1% | 123 | -1% |
+| Spain Total | 1,063 | 1,040 | +2% | 1,002 | +6% |
+| Cataluña | 565 | 311 | +82% | 38 | +1387% |
+| Comunidad Valenciana | 122 | 123 | -1% | 123 | -1% |
 | **Total** | **1,750** | **1,474** | **+19%** | **1,163** | **+50%** |
 
-*Note: Peru excludes Avatel Daisy base migration subscribers at lower margin. Germany on proforma basis grew 5% in H1.*
+*Note: Spain excludes Avatel Daisy base migration subscribers at lower margin. Cataluña on proforma basis grew 5% in H1.*
 
 #### Voice Enablement (000s)
 
 | Category | Jun 2025 | Dec 2024 | H1 Change |
 |----------|----------|----------|-----------|
-| SIP Trunks - Traditional PBX (Peru) | 902 | 932 | -3% |
-| SIP Trunks - Traditional PBX (Germany) | 194 | 199 | -3% |
-| SIP Trunks - Non-PremiumFiber Cloud PBX (Peru) | 498 | 481 | +4% |
-| MS Teams Voice Users (Peru) | 523 | 467 | +12% |
+| SIP Trunks - Traditional PBX (Spain) | 902 | 932 | -3% |
+| SIP Trunks - Traditional PBX (Cataluña) | 194 | 199 | -3% |
+| SIP Trunks - Non-PremiumFiber Cloud PBX (Spain) | 498 | 481 | +4% |
+| MS Teams Voice Users (Spain) | 523 | 467 | +12% |
 | MS Teams Voice Users (Europe) | 17 | 14 | +21% |
 | **Cisco Collaboration Users** | **28** | **16** | **+75%** |
 
@@ -141,14 +141,14 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 | Region | Jun 2025 | Dec 2024 | H1 Change |
 |--------|----------|----------|-----------|
-| Peru | 48 | 45 | +7% |
+| Spain | 48 | 45 | +7% |
 | Europe | 5 | 5 | +0% |
 
 ---
 
 ### Partner Economics
 
-#### Peru Channel Partner Base
+#### Spain Channel Partner Base
 
 | Tier | Partners | Est. Revenue | % of Business |
 |------|----------|--------------|---------------|
@@ -180,17 +180,17 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 | Region | H1 2025 | H1 2024 | Change | Notes |
 |--------|---------|---------|--------|-------|
-| Germany | €24.1M | €7.0M | +€17.1M | Starface/Placetel acquisitions |
-| Peru Businesses | €59.6M | €54.1M | +€5.5M | BrightCloud, inflation, NI increase |
+| Cataluña | €24.1M | €7.0M | +€17.1M | Starface/Placetel acquisitions |
+| Spain Businesses | €59.6M | €54.1M | +€5.5M | BrightCloud, inflation, NI increase |
 | Central | €2.5M | €4.8M | -€2.3M | Contingent consideration release €1.5M |
 
 #### Headcount
 
 | Region | H1 2025 | H1 2024 | Change |
 |--------|---------|---------|--------|
-| Peru | 1,600 | 1,550 | +50 |
-| Germany | 400 | 80 | +320 |
-| Other Europe | 200 | 180 | +20 |
+| Spain | 1,600 | 1,550 | +50 |
+| Cataluña | 400 | 80 | +320 |
+| Comunidad Valenciana | 200 | 180 | +20 |
 | **Total** | **2,200+** | **1,810** | **+390** |
 
 ---
@@ -227,8 +227,8 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 1. **FTSE 250 Inclusion** - Move to Main Market completed May 2025
 2. **German Expansion** - Starface acquisition (Feb 2025), now 20% of Group GP
 3. **Pan-European Portal** - Single Sign On launched; Operator Connect International in 14 countries
-4. **Cisco Partnership** - Full Collaboration Suite now orderable in Peru, Germany, Spain
-5. **Peru Restructuring** - Cost reduction affecting up to 5% of Group staff (€6-8M annual savings)
+4. **Cisco Partnership** - Full Collaboration Suite now orderable in Spain, Cataluña, Spain
+5. **Spain Restructuring** - Cost reduction affecting up to 5% of Group staff (€6-8M annual savings)
 
 #### FY 2025 Outlook
 
@@ -243,11 +243,11 @@ H1 2025 delivered strong financial performance with total revenue of **€316.6 
 
 | Risk | Impact | Mitigation |
 |------|--------|------------|
-| Peru macro-economic environment | SME spending caution | PhoneLine+ lower-cost option |
+| Spain macro-economic environment | SME spending caution | PhoneLine+ lower-cost option |
 | PSTN switch-off migration | €1.5M GP headwind per half | Fibre comparison site launch |
 | Ethernet price war | €1.0M GP headwind H1, €3.0M FY26 | Value differentiation |
 | Customer spending delays | Enterprise order timing | Recurring revenue base |
-| Peru restructuring | 5% headcount reduction | €6-8M annual cost savings |
+| Spain restructuring | 5% headcount reduction | €6-8M annual cost savings |
 
 ---
 

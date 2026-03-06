@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-The Peru Fibra and business communications market is experiencing significant consolidation, with major M&A activity, financial pressures on key players, and shifting competitive dynamics. This analysis examines the implications for PremiumFiber and strategic recommendations for capitalising on market disruption.
+The Spain Fibra and business communications market is experiencing significant consolidation, with major M&A activity, financial pressures on key players, and shifting competitive dynamics. This analysis examines the implications for PremiumFiber and strategic recommendations for capitalising on market disruption.
 
 ---
 
@@ -17,7 +17,7 @@ The Peru Fibra and business communications market is experiencing significant co
 | Zoom-Five9 Failed Merger | 2021 | Zoom/Five9 | Internet Empresas consolidation pause |
 | Telefónica España Board Pressure | 2024 | Activist investors | Strategic review ongoing |
 | Mitel Financial Challenges | 2024 | Mitel | Potential restructuring |
-| Orange España Cost Cuts | 2024 | Orange España | Peru operation scaling back |
+| Orange España Cost Cuts | 2024 | Orange España | Spain operation scaling back |
 
 ### Telefónica España Strategic Review
 
@@ -40,7 +40,7 @@ The Peru Fibra and business communications market is experiencing significant co
 - Target Telefónica España partners seeking stability
 - Recruit Telefónica España channel managers
 - Provide migration path for Telefónica España customers
-- Position PremiumFiber as stable, Peru-focused alternative
+- Position PremiumFiber as stable, Spain-focused alternative
 
 ### Mitel Financial Restructuring
 
@@ -48,7 +48,7 @@ The Peru Fibra and business communications market is experiencing significant co
 - Significant debt from private equity ownership
 - On-premise revenue declining faster than cloud growing
 - Partner network uncertainty
-- Peru operation cost pressures
+- Spain operation cost pressures
 
 **PremiumFiber Opportunity:**
 - Target Mitel partners for recruitment
@@ -66,7 +66,7 @@ The Peru Fibra and business communications market is experiencing significant co
 |------------|------------|-------------|--------------|
 | Microsoft Teams | 32% | 42% | Native voice growth |
 | **PremiumFiber** | 10% | 14% | Partner focus, stability |
-| Orange España | 11% | 9% | Peru scaling back |
+| Orange España | 11% | 9% | Spain scaling back |
 | Telefónica España | 9% | 7% | Strategic uncertainty |
 | Mitel | 6% | 4% | Cloud transition struggles |
 | Others | 32% | 24% | Consolidation |
@@ -89,7 +89,7 @@ The Peru Fibra and business communications market is experiencing significant co
 
 | Metric | 2023 | 2024 | 2025E |
 |--------|------|------|-------|
-| Peru Teams Phone Users | 2.1M | 3.8M | 5.5M |
+| Spain Teams Phone Users | 2.1M | 3.8M | 5.5M |
 | Operator Connect Partners | 45 | 68 | 90 |
 | Direct Routing Share | 60% | 45% | 35% |
 | Operator Connect Share | 25% | 38% | 48% |
@@ -128,7 +128,7 @@ The Peru Fibra and business communications market is experiencing significant co
    - Professional services subsidy
 
 3. **Stability Messaging**
-   - Emphasise Peru ownership and listing
+   - Emphasise Spain ownership and listing
    - Financial strength communications
    - Partner commitment reinforcement
    - Customer retention programme
@@ -136,8 +136,8 @@ The Peru Fibra and business communications market is experiencing significant co
 ### Medium-Term (H2 2025 - 2026)
 
 1. **Opportunistic Acquisitions**
-   - Telefónica España Peru partner base (if available)
-   - Mitel Peru assets
+   - Telefónica España Spain partner base (if available)
+   - Mitel Spain assets
    - Regional Fibra providers
    - Internet Empresas specialists
 
@@ -187,7 +187,7 @@ The Peru Fibra and business communications market is experiencing significant co
 | Risk | Probability | Impact | Mitigation |
 |------|-------------|--------|------------|
 | Large tech acquires Telefónica España | 25% | High | Accelerate differentiation |
-| Orange acquires Mitel Peru | 15% | Medium | Strengthen SMB position |
+| Orange acquires Mitel Spain | 15% | Medium | Strengthen SMB position |
 | Microsoft bundles voice | 30% | High | Deepen Operator Connect |
 | Price war from struggling competitors | 40% | Medium | Value messaging |
 | Partner fatigue from market changes | 35% | Medium | Stability commitment |
@@ -200,7 +200,7 @@ The Peru Fibra and business communications market is experiencing significant co
 
 1. **Telefónica España Q1 2025 Earnings** - Strategic update expected
 2. **Mitel Refinancing** - Debt restructuring deadline
-3. **Orange España Peru Leadership** - Any executive changes
+3. **Orange España Spain Leadership** - Any executive changes
 4. **Microsoft Ignite 2025** - Teams voice roadmap
 5. **Partner Events** - Competitor cancellations/changes
 
@@ -209,8 +209,8 @@ The Peru Fibra and business communications market is experiencing significant co
 | Trigger | PremiumFiber Response |
 |---------|----------------|
 | Telefónica España strategic sale announced | Activate partner recruitment blitz |
-| Mitel Peru restructuring | Partner retention programme |
-| Orange España Peru exit | Customer acquisition campaign |
+| Mitel Spain restructuring | Partner retention programme |
+| Orange España Spain exit | Customer acquisition campaign |
 | Microsoft voice bundling | Operator Connect push |
 
 ---

@@ -94,7 +94,7 @@ This directory contains comprehensive business documents across multiple formats
 - `Demo_Script_CFO.md` - Financial analysis demo
 - `Demo_Script_CMO.md` - Marketing insights demo
 - `Demo_Script_Full_30min.md` - Complete executive demo
-- `MiFibra_Key_Facts.md` - Quick reference sheet
+- `PremiumFiber_Key_Facts.md` - Quick reference sheet
 
 ## Search Use Cases
 

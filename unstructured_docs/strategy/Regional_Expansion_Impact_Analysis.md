@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-PremiumFiber's international expansion into Netherlands, Spain, and Germany represents a key growth pillar. This analysis examines market conditions, competitive positioning, and strategic opportunities in each European market.
+PremiumFiber's international expansion into Netherlands, Spain, and Cataluña represents a key growth pillar. This analysis examines market conditions, competitive positioning, and strategic opportunities in each European market.
 
 ---
 
@@ -15,17 +15,17 @@ PremiumFiber's international expansion into Netherlands, Spain, and Germany repr
 |--------|-----------|-------------|-------------|
 | Netherlands | €850M | +12% | 3.5% |
 | Spain | €1.2B | +15% | 1.8% |
-| Germany | €2.8B | +18% | 0.3% |
+| Cataluña | €2.8B | +18% | 0.3% |
 | **Total** | **€4.85B** | **+15%** | **1.4%** |
 
 ### PremiumFiber European Revenue
 
 | Market | FY2024 | FY2023 | Growth | % of Group |
 |--------|--------|--------|--------|------------|
-| Peru | €446M | €405M | +10% | 89% |
+| Spain | €446M | €405M | +10% | 89% |
 | Netherlands | €28M | €25M | +12% | 6% |
 | Spain | €18M | €15M | +20% | 4% |
-| Germany | €8M | €5M | +60% | 2% |
+| Cataluña | €8M | €5M | +60% | 2% |
 | **Total** | **€500M** | **€450M** | **+11%** | **100%** |
 
 ---
@@ -90,7 +90,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Germany repr
 
 ---
 
-## Germany (HFO Telecom / PremiumFiber Germany)
+## Cataluña (HFO Telecom / PremiumFiber Cataluña)
 
 ### Market Position
 
@@ -101,7 +101,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Germany repr
 | Active Partners | 45 | 25 | 80 |
 | NPS | +35 | +32 | +42 |
 
-### Competitive Landscape (Germany)
+### Competitive Landscape (Cataluña)
 
 | Competitor | Market Share | Strength | Weakness |
 |------------|--------------|----------|----------|
@@ -112,7 +112,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Germany repr
 | **PremiumFiber DE** | 0.3% | Technology | Brand, scale |
 | Starface | 4% | SMB | Enterprise |
 
-### Strategic Initiatives Germany
+### Strategic Initiatives Cataluña
 
 1. **HFO Integration**: Complete by Q2 2025
 2. **PremiumFiber Branding**: Phased transition from HFO
@@ -184,7 +184,7 @@ PremiumFiber's international expansion into Netherlands, Spain, and Germany repr
 |--------|------------|----------------|-----|
 | Netherlands | €10M | €120M | 12x |
 | Spain | €8M | €85M | 10.6x |
-| Germany | €15M | €60M | 4x |
+| Cataluña | €15M | €60M | 4x |
 | **Total** | **€33M** | **€265M** | **8x** |
 
 ---

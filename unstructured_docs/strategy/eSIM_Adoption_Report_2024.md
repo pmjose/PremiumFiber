@@ -213,7 +213,7 @@ This report analyses digital transformation trends affecting PremiumFiber's cust
 | Priority | Very Important | Important |
 |----------|----------------|-----------|
 | Call Encryption | 85% | 12% |
-| Data Residency (Peru) | 72% | 18% |
+| Data Residency (Spain) | 72% | 18% |
 | Access Controls | 68% | 25% |
 | Audit Logging | 55% | 32% |
 | Fraud Protection | 62% | 28% |

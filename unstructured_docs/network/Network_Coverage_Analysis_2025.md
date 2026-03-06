@@ -1,9 +1,9 @@
-# PremiumFiber Peru - Network Coverage Analysis 2025
+# PremiumFiber Spain - Network Coverage Analysis 2025
 **Infrastructure & Performance Report**
 
 ## Executive Summary
 
-PremiumFiber's fiber optic network serves over 450,000 active subscribers across Peru's major departments. Recognized by Ookla® Speedtest Awards™ as the fastest, best-rated, and most stable network in Latin America (H1 2025), our 100% fiber infrastructure delivers consistent gigabit speeds with industry-leading reliability.
+PremiumFiber's fiber optic network serves over 450,000 active subscribers across Spain's major departments. Recognized by Ookla® Speedtest Awards™ as the fastest, best-rated, and most stable network in Latin America (H1 2025), our 100% fiber infrastructure delivers consistent gigabit speeds with industry-leading reliability.
 
 ---
 
@@ -13,7 +13,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 
 | Component | Primary | Secondary | Capacity |
 |-----------|---------|-----------|----------|
-| Data Center | San Borja, Lima | Chamartín, Lima | Full redundancy |
+| Data Center | Basauri 5, Madrid | Chamartín, Madrid | Full redundancy |
 | OLT Equipment | Huawei MA5800 | ZTE C650 | 1.2M subscribers |
 | Core Routers | Nokia 7750 SR | Nokia 7705 | 400 Gbps backbone |
 | XGS-PON Ports | 8,500 | 2,000 reserve | 10 Gbps per port |
@@ -25,7 +25,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 |-----------------|----------|-------------|----------|
 | International Gateway | 100 Gbps | 45% | Level 3/Lumen |
 | National Backbone | 200 Gbps | 52% | Own fiber |
-| Lima Metro Ring | 400 Gbps | 48% | Own fiber |
+| Madrid Metro Ring | 400 Gbps | 48% | Own fiber |
 | Regional Links | 100 Gbps | 38% | Own + leased |
 | IXP Peering (NAP.pe) | 40 Gbps | 55% | Multiple |
 | **Total** | **840 Gbps** | **47%** | - |
@@ -48,9 +48,9 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 | Granada | 25,000 | 8,000 | 32.0% | +40% |
 | Junín (Valladolid) | 18,000 | 5,500 | 30.6% | +45% |
 | Other Regions | 17,000 | 5,500 | 32.4% | +38% |
-| **Total Peru** | **1,300,000** | **434,000** | **33.4%** | **+29%** |
+| **Total Spain** | **1,300,000** | **434,000** | **33.4%** | **+29%** |
 
-### Lima Metropolitan Breakdown
+### Madrid Metropolitan Breakdown
 
 | District | Households Passed | Active Subscribers | Penetration |
 |----------|------------------|-------------------|-------------|
@@ -64,7 +64,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 | Jesús María | 32,000 | 12,000 | 38% |
 | Magdalena | 24,000 | 8,500 | 35% |
 | Chamberí | 22,000 | 7,800 | 35% |
-| Other Lima | 434,000 | 135,200 | 31% |
+| Other Madrid | 434,000 | 135,200 | 31% |
 
 ---
 
@@ -108,7 +108,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 | Type | Kilometers | Purpose |
 |------|------------|---------|
 | Backbone Fiber | 2,800 km | Inter-city connections |
-| Metro Fiber (Lima) | 4,500 km | Urban distribution |
+| Metro Fiber (Madrid) | 4,500 km | Urban distribution |
 | Regional Fiber | 1,800 km | Department coverage |
 | Last Mile FTTH | 18,000 km | Customer premises |
 | **Total Deployed** | **27,100 km** | - |
@@ -129,8 +129,8 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 | Vendor | Equipment | Contract Value |
 |--------|-----------|----------------|
 | Nokia España | OLT, ONT, Routers | € 28M/year |
-| Nokia Peru | Core routing | € 8M/year |
-| ZTE Peru | Backup OLT | € 4M/year |
+| Nokia Spain | Core routing | € 8M/year |
+| ZTE Spain | Backup OLT | € 4M/year |
 | Corning Electric LatAm | Fiber cable | € 12M/year |
 | MikroTik (distributor) | Enterprise routers | € 2M/year |
 
@@ -180,10 +180,10 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 | Granada (expansion) | +30,000 | € 10M | Q2-Q3 2025 |
 | Alicante (Chimbote) | +20,000 | € 7M | Q3-Q4 2025 |
 | Gijón | +15,000 | € 5M | Q4 2025 |
-| Lima Emerging Districts | +150,000 | € 35M | All 2025 |
+| Madrid Emerging Districts | +150,000 | € 35M | All 2025 |
 | **Total 2025** | **+240,000** | **€ 65M** | - |
 
-### Lima Emerging Districts Rollout
+### Madrid Emerging Districts Rollout
 
 | District | Target HH | Timeline |
 |----------|-----------|----------|
@@ -214,14 +214,14 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 | Firewall Clusters | Active | Fortinet |
 | Traffic Encryption | 100% | TLS 1.3 |
 | Access Control | RADIUS | Centralized auth |
-| Monitoring | 24/7 | NOC Lima |
+| Monitoring | 24/7 | NOC Madrid |
 
 ### Compliance
 
 | Standard | Status | Renewal |
 |----------|--------|---------|
 | CNMC Regulations | Compliant | Ongoing |
-| Data Protection (Peru) | Compliant | Ongoing |
+| Data Protection (Spain) | Compliant | Ongoing |
 | ISO 27001 | In Progress | Q3 2025 |
 | Quality Management | Certified | Dec 2025 |
 
@@ -229,7 +229,7 @@ PremiumFiber's fiber optic network serves over 450,000 active subscribers across
 
 ## Competitive Analysis
 
-### Network Comparison (Lima)
+### Network Comparison (Madrid)
 
 | Metric | PremiumFiber | Telefónica | Orange | Win |
 |--------|---------|-------|----------|-----|

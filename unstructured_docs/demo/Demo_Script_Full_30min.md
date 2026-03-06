@@ -1,11 +1,11 @@
 # Full Executive Demo Script (30 Minutes)
-## Snowflake Intelligence Platform - PremiumFiber Peru
+## Snowflake Intelligence Platform - PremiumFiber Spain
 
 ---
 
 ## Overview
 
-This comprehensive demo covers all business areas for PremiumFiber Peru executive leadership. It demonstrates the full power of Snowflake Intelligence combining structured data analysis with unstructured document search.
+This comprehensive demo covers all business areas for PremiumFiber Spain executive leadership. It demonstrates the full power of Snowflake Intelligence combining structured data analysis with unstructured document search.
 
 **Duration:** 30 minutes  
 **Audience:** C-Suite, Board Members, Investors  
@@ -63,7 +63,7 @@ This comprehensive demo covers all business areas for PremiumFiber Peru executiv
 > "Which regions are most profitable and where should we invest?"
 
 **Expected Insights:**
-- Lima: 70% margin, mature market
+- Madrid: 70% margin, mature market
 - Barcelona: 65% margin, fastest growing
 - Sevilla: 62% margin, tourism opportunity
 - New regions: Initial 55% margin target
@@ -126,7 +126,7 @@ This comprehensive demo covers all business areas for PremiumFiber Peru executiv
 **Expected Insights:**
 - Speed perception: PremiumFiber #1 in "fastest internet"
 - Customer satisfaction: +62 NPS vs +35 industry
-- Brand awareness Lima: 45% (up from 32%)
+- Brand awareness Madrid: 45% (up from 32%)
 - Share of voice: 22% digital
 
 ---
@@ -146,7 +146,7 @@ This comprehensive demo covers all business areas for PremiumFiber Peru executiv
 > "What is our installation backlog and average time to install?"
 
 **Expected Insights:**
-- Average install time Lima: 2.8 days
+- Average install time Madrid: 2.8 days
 - Average install time regions: 4.2 days
 - Current backlog: 3,200 pending
 - Technician utilization: 85%
@@ -170,7 +170,7 @@ This comprehensive demo covers all business areas for PremiumFiber Peru executiv
 **Expected Insights:**
 - Total employees: 512
 - Key departments: Network Ops (85), Technical Support (120), Sales (95)
-- Lima-based: 380 (74%)
+- Madrid-based: 380 (74%)
 - Regional offices: 132 (26%)
 
 ### Question 2: Key Metrics
@@ -193,7 +193,7 @@ This comprehensive demo covers all business areas for PremiumFiber Peru executiv
 - **Growth trajectory**: 35% subscriber growth, expanding to new regions
 - **Operational excellence**: 99.92% uptime, efficient installations
 
-PremiumFiber is positioned to be Peru's leading fiber ISP, and this platform ensures leadership has real-time visibility into every aspect of the business."
+PremiumFiber is positioned to be Spain's leading fiber ISP, and this platform ensures leadership has real-time visibility into every aspect of the business."
 
 ---
 
@@ -222,5 +222,5 @@ PremiumFiber is positioned to be Peru's leading fiber ISP, and this platform ens
 
 **Demo Duration:** 30 minutes  
 **Audience:** C-Suite, Board, Investors  
-**Key Message:** Complete business intelligence for Peru's fastest fiber ISP  
+**Key Message:** Complete business intelligence for Spain's fastest fiber ISP  
 **Currency:** Spanish Euros (€)

@@ -167,7 +167,7 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 | Theme | Mentions | Sentiment |
 |-------|----------|-----------|
 | Platform reliability | 2,850 | 8.5/10 |
-| Peru-based support | 2,420 | 8.8/10 |
+| Spain-based support | 2,420 | 8.8/10 |
 | Easy to use | 2,180 | 8.2/10 |
 | Teams integration | 1,950 | 8.6/10 |
 | Partner relationship | 1,680 | 8.4/10 |
@@ -195,7 +195,7 @@ Q4 2024 delivered continued improvement in customer experience metrics, with **c
 ### Verbatim Examples
 
 **Customer - Positive:**
-> "Moved from Orange España last quarter - the difference in support quality is night and day. Actually speaking to someone in the Peru who understands our business."
+> "Moved from Orange España last quarter - the difference in support quality is night and day. Actually speaking to someone in Spain who understands our business."
 
 **Partner - Positive:**
 > "PremiumFiber treats us as a genuine partner, not just a reseller. The margins work, the support is there when we need it, and the product is solid."

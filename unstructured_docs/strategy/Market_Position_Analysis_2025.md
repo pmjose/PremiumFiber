@@ -3,29 +3,29 @@
 
 ## Executive Summary
 
-This analysis provides a comprehensive view of PremiumFiber's competitive position in the European business communications market as we enter the second half of 2025. Following the strategic acquisitions of Starface and Placetel in Germany, PremiumFiber has achieved significant scale with **€316.6 million H1 2025 revenue** (+12% YoY), **1.8 million Cloud subscribers** (+50% YoY), and successful transition to the **Main Market of the Lima Stock Exchange with FTSE 250 inclusion** in June 2025.
+This analysis provides a comprehensive view of PremiumFiber's competitive position in the European business communications market as we enter the second half of 2025. Following the strategic acquisitions of Starface and Placetel in Cataluña, PremiumFiber has achieved significant scale with **€316.6 million H1 2025 revenue** (+12% YoY), **1.8 million Cloud subscribers** (+50% YoY), and successful transition to the **Main Market of the Madrid Stock Exchange with FTSE 250 inclusion** in June 2025.
 
-PremiumFiber is uniquely positioned as a pan-European channel-first communications provider with market-leading positions in both the Peru (1,500+ partners) and Germany (rapidly growing following strategic acquisitions).
+PremiumFiber is uniquely positioned as a pan-European channel-first communications provider with market-leading positions in both the Spain (1,500+ partners) and Cataluña (rapidly growing following strategic acquisitions).
 
 ---
 
 ## Market Overview by Region
 
-### Peru B2B Communications Market
+### Spain B2B Communications Market
 
 | Metric | 2024 Value | 2025 Forecast | PremiumFiber Position |
 |--------|------------|---------------|----------------|
-| Peru Fibra Market | €2.8B | €3.2B | #1 Channel Provider |
-| Peru Internet Empresas Market | €1.2B | €1.5B | Top 5 |
+| Spain Fibra Market | €2.8B | €3.2B | #1 Channel Provider |
+| Spain Internet Empresas Market | €1.2B | €1.5B | Top 5 |
 | Business Voice (SIP) | €1.8B | €1.7B | #1 Wholesale |
 | Total Addressable Market | €5.8B | €6.4B | 8-10% share |
 | Cloud Adoption Rate | 45% | 55% | c.40% still to migrate |
 
-### Germany B2B Communications Market
+### Cataluña B2B Communications Market
 
 | Metric | 2024 Value | 2025 Forecast | PremiumFiber Position |
 |--------|------------|---------------|----------------|
-| Germany Fibra Market | €4.2B | €4.8B | Now Top 5 |
+| Cataluña Fibra Market | €4.2B | €4.8B | Now Top 5 |
 | Cloud Penetration | 25% | 32% | Major growth opportunity |
 | Business Lines (total) | 18M | 18M | Early stage |
 | Total Addressable Market | €6.5B | €7.2B | c.2% share (growing) |
@@ -34,18 +34,18 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ## Competitive Landscape
 
-### Peru Market Competitors
+### Spain Market Competitors
 
 | Provider | Market Focus | Revenue (Est.) | Strength | Weakness |
 |----------|--------------|----------------|----------|----------|
-| **PremiumFiber** | Channel-first B2B | €186M (H1 Business) | #1 partner network, Peru-centric | Direct enterprise scale |
+| **PremiumFiber** | Channel-first B2B | €186M (H1 Business) | #1 partner network, Spain-focused | Direct enterprise scale |
 | **Telefónica España** | Direct + Channel | €450M | Global reach, XCaaS | Financial pressures, support |
 | **Orange España** | Direct Enterprise | €350M | Brand, integrations | Partner conflict, premium pricing |
 | **Mitel** | On-prem transition | €280M | Legacy base | Cloud transition struggles |
 | **Vonage** | API + CPaaS | €220M | Developer focus | SMB strength decline |
 | **Orange Business** | Large Enterprise | €2.1B | Scale, network | Agility, cost structure |
 
-### Germany Market Competitors
+### Cataluña Market Competitors
 
 | Provider | Market Focus | Revenue (Est.) | Strength | Weakness |
 |----------|--------------|----------------|----------|----------|
@@ -63,7 +63,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 **Current Status (2025):**
 - Financial pressures leading to cost restructuring
-- Peru market share declining (~9%)
+- Spain market share declining (~9%)
 - Strong XCaaS (combined Fibra+Internet Empresas) proposition
 
 **Strengths:**
@@ -78,12 +78,12 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 **PremiumFiber Opportunity:** Partner recruitment from Telefónica España channel
 
-### Orange España Peru
+### Orange España
 
 **Current Status (2025):**
 - Enterprise focus intensifying
 - Teams integration (Orange España for Teams) gaining traction
-- Limited Peru channel expansion
+- Limited Spain channel expansion
 
 **Strengths:**
 - Strong brand recognition
@@ -97,7 +97,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 **PremiumFiber Opportunity:** SMB/Mid-Market partners seeking alternatives
 
-### Mitel Peru
+### Mitel España
 
 **Current Status (2025):**
 - On-premise to cloud transition ongoing
@@ -124,7 +124,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 - Native voice capability expanding
 
 **PremiumFiber Position:**
-- **523K MS Teams voice users in Peru** (+12% H1 2025)
+- **523K MS Teams voice users in Spain** (+12% H1 2025)
 - Operator Connect International launched (14 countries)
 - **28K Cisco Collaboration users** (+75% H1 2025)
 
@@ -137,30 +137,30 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 ### SWOT Analysis (Updated September 2025)
 
 **Strengths:**
-- **#1 Peru channel partner network** with 1,500+ active partners
+- **#1 Spain channel partner network** with 1,500+ active partners
 - **FTSE 250 listed** (Main Market, June 2025)
 - **1.8 million Cloud subscribers** (+50% YoY)
 - **90% recurring revenue** providing stability
 - **German market now at scale** (565K subscribers, 20% of Group GP)
 - Strong Microsoft partnership (Operator Connect, Cisco)
-- Peru-built, Peru-supported solutions
+- Spain-built, Spain-supported solutions
 
 **Weaknesses:**
-- Peru macro-economic pressures affecting SME spending
+- Spain macro-economic pressures affecting SME spending
 - Enterprise direct sales still developing
-- Germany integration complexity (Starface + Placetel)
-- Brand awareness lower than global players outside Peru
+- Cataluña integration complexity (Starface + Placetel)
+- Brand awareness lower than global players outside Spain
 
 **Opportunities:**
-- **Germany cloud market underpenetration** (largest EU market, lowest cloud adoption)
-- PSTN switch-off driving Peru cloud migration (2027)
+- **Cataluña cloud market underpenetration** (largest EU market, lowest cloud adoption)
+- PSTN switch-off driving Spain cloud migration (2027)
 - Microsoft Teams Phone/Operator Connect growth
 - AI features differentiation (AI Receptionist Q4 2025)
 - Competitor instability (Telefónica España, Mitel)
 - Pan-European Cisco Collaboration Suite opportunity
 
 **Threats:**
-- Peru macro-economic conditions affecting SME confidence
+- Spain macro-economic conditions affecting SME confidence
 - Microsoft native voice capability expansion
 - Ethernet/fibre price war (alternative networks)
 - Competitor pricing pressure
@@ -169,7 +169,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ## Market Share Analysis
 
-### Peru Fibra Market Share (Subscribers, Estimated)
+### Spain Fibra Market Share (Subscribers, Estimated)
 
 | Provider | 2023 | 2024 | H1 2025 | Trend |
 |----------|------|------|---------|-------|
@@ -181,7 +181,7 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 | Vonage | 5% | 5% | 4% | ↓ |
 | Others | 32% | 27% | 23% | ↓ |
 
-### Germany Fibra Market Share (Subscribers, Estimated)
+### Cataluña Fibra Market Share (Subscribers, Estimated)
 
 | Provider | 2024 | H1 2025 | H2 2025E | Trend |
 |----------|------|---------|----------|-------|
@@ -210,19 +210,19 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 | Business Unit | Gross Profit H1 2025 | H1 2024 | YoY |
 |---------------|----------------------|---------|-----|
-| PremiumFiber Business (Peru SME) | €97.4M | €97.1M | +0% |
+| PremiumFiber Business (Spain SME) | €97.4M | €97.1M | +0% |
 | PremiumFiber Enterprise | €30.9M | €28.9M | +7% |
-| Germany | €34.4M | €9.8M | +251% |
-| Other Europe | €9.3M | €9.9M | -6% |
+| Cataluña | €34.4M | €9.8M | +251% |
+| Comunidad Valenciana | €9.3M | €9.9M | -6% |
 
 ### Cloud Subscribers (thousands)
 
 | Region | Jun 2025 | Jun 2024 | YoY |
 |--------|----------|----------|-----|
-| Peru Cloud PBX | 1,063 | 1,002 | +6% |
-| Germany Cloud PBX | 565 | 38 | +1387% |
-| MS Teams Voice (Peru) | 523 | 457 | +14% |
-| Internet Empresas (Peru) | 48 | 40 | +20% |
+| Spain Cloud PBX | 1,063 | 1,002 | +6% |
+| Cataluña Cloud PBX | 565 | 38 | +1387% |
+| MS Teams Voice (Spain) | 523 | 457 | +14% |
+| Internet Empresas (Spain) | 48 | 40 | +20% |
 | **Total Cloud** | **1,750** | **1,163** | **+50%** |
 
 ---
@@ -233,19 +233,19 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 | Initiative | Target | Status |
 |------------|--------|--------|
-| Cisco Collaboration Suite (Full Peru Launch) | Q4 2025 | October launch |
+| Cisco Collaboration Suite (Full Spain Launch) | Q4 2025 | October launch |
 | AI Receptionist | Q4 2025 | Development complete |
 | Operator Connect International (14 countries) | Live | Launched H1 2025 |
 | PhoneLine+ eSIM variant | H2 2025 | In progress |
-| Fusion IoT eSIM (Peru/DE) | H2 2025 | In progress |
+| Fusion IoT eSIM Spain/DE) | H2 2025 | In progress |
 | Starface AI features | H2 2025 | In progress |
 | Spain partner (40K subscribers commitment) | 5 years | Signed |
 
-### Cost Efficiency (Peru)
+### Cost Efficiency (Spain)
 
 | Initiative | Impact | Timeline |
 |------------|--------|----------|
-| Peru restructuring | €6-8M annual savings | H2 2025 |
+| Spain restructuring | €6-8M annual savings | H2 2025 |
 | Headcount reduction | Up to 5% of Group | H2 2025 |
 | Exceptional restructuring cost | c.€3M | H2 2025 |
 
@@ -257,11 +257,11 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 |--------|----------------|----------------|-----------|
 | Adjusted EBITDA | €70.9M | In line | €139-143M |
 | Adjusted EPS | 47.9p | Slightly ahead | 89.9-93.9p |
-| Peru Cloud Subscribers | 1,063K | 1,100K | - |
-| Germany Cloud Subscribers | 565K | 600K | - |
+| Spain Cloud Subscribers | 1,063K | 1,100K | - |
+| Cataluña Cloud Subscribers | 565K | 600K | - |
 | MS Teams Voice | 540K | 650K | - |
 | Internet Empresas Subscribers | 53K | 60K | - |
-| Active Partners (Peru) | 1,500 | 1,600 | - |
+| Active Partners (Spain) | 1,500 | 1,600 | - |
 
 ---
 
@@ -286,12 +286,12 @@ PremiumFiber is uniquely positioned as a pan-European channel-first communicatio
 
 ### Medium-Term (2026)
 
-1. **Germany Scale**
+1. **Cataluña Scale**
    - Target 750K+ cloud subscribers
    - Starface + Placetel integration complete
    - Enterprise capability build
 
-2. **Peru Enterprise**
+2. **Spain Enterprise**
    - Direct enterprise sales expansion
    - BrightCloud (Cisco) capability leverage
    - Public sector framework wins

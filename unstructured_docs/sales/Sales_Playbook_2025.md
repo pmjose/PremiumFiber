@@ -63,7 +63,7 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 
 | Product | Target Customer | Key USPs | Pricing |
 |---------|-----------------|----------|---------|
-| Horizon Cloud | SMB-Enterprise | Peru platform, reliability | €8-18/seat |
+| Horizon Cloud | SMB-Enterprise | Spain platform, reliability | €8-18/seat |
 | Teams Phone | 50+ subscribers | Native MS integration | €6-12/seat |
 | Webex for PremiumFiber | Video-heavy | Cisco partnership | €12-20/seat |
 | CircleLoop | Micro-SMB | Simple, mobile-first | €5-8/seat |
@@ -115,7 +115,7 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 
 ### PSTN Switch-Off Migrations
 
-**Opportunity**: 5.5M Peru business lines to migrate by 2027
+**Opportunity**: 5.5M Spain business lines to migrate by 2027
 
 | Customer Situation | PremiumFiber Solution | Typical Value |
 |--------------------|----------------|---------------|
@@ -131,7 +131,7 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 
 ### Microsoft Teams Phone
 
-**Opportunity**: 5M+ Peru Teams users without voice
+**Opportunity**: 5M+ Spain Teams users without voice
 
 | Customer Situation | Approach | Value |
 |--------------------|----------|-------|
@@ -166,7 +166,7 @@ This playbook provides the strategic framework for PremiumFiber's channel-first 
 |--------|-----|-------|---------|
 | Financial stability | Uncertain | Strong | "We're here for the long term" |
 | Partner margins | Reducing | Stable | "Fair margins that work" |
-| Peru support | Mixed | Peru-based | "Speak to someone who understands" |
+| Spain support | Strong | Spain-based | "Speak to someone who understands" |
 
 ### vs Orange España
 
