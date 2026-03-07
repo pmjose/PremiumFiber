@@ -340,6 +340,77 @@ CREATE OR REPLACE TABLE PF_HR_EMPLOYEE_FACT (
 );
 
 -- ========================================================================
+-- WHOLESALE B2B TABLES (Fiberco Model)
+-- PremiumFiber is a wholesale fiber infrastructure company owned by:
+-- MasOrange (58%), Vodafone España (17%), GIC (25% - financial investor)
+-- The ONLY wholesale customers are MasOrange and Vodafone España
+-- ========================================================================
+
+-- Wholesale Partner Dimension (Owners and Wholesale Customers)
+CREATE OR REPLACE TABLE PF_WHOLESALE_PARTNER_DIM (
+    partner_key INT PRIMARY KEY,
+    partner_name VARCHAR(100) NOT NULL,
+    ownership_percent DECIMAL(5,2),
+    partner_type VARCHAR(50),
+    contract_start_date DATE,
+    contract_end_date DATE,
+    sla_tier VARCHAR(20),
+    primary_contact VARCHAR(100),
+    headquarters_city VARCHAR(50)
+) COMMENT = 'Wholesale partners: MasOrange and Vodafone are retail operators (customers), GIC is a financial investor';
+
+-- Network Infrastructure by Region
+CREATE OR REPLACE TABLE PF_NETWORK_INFRASTRUCTURE (
+    infra_key INT PRIMARY KEY,
+    region_key INT NOT NULL,
+    homes_passed INT,
+    homes_connected INT,
+    fiber_km DECIMAL(10,2),
+    central_offices INT,
+    splitter_nodes INT,
+    xgspon_ready_percent DECIMAL(5,2),
+    network_availability_percent DECIMAL(5,3),
+    last_updated DATE
+) COMMENT = 'Network infrastructure metrics by region - 12M homes passed, 5M connected';
+
+-- Wholesale Revenue Fact Table
+CREATE OR REPLACE TABLE PF_WHOLESALE_REVENUE_FACT (
+    revenue_key INT PRIMARY KEY,
+    date DATE NOT NULL,
+    partner_key INT NOT NULL,
+    region_key INT NOT NULL,
+    service_type VARCHAR(50),
+    homes_served INT,
+    revenue_eur DECIMAL(12,2),
+    sla_credits_eur DECIMAL(10,2),
+    net_revenue_eur DECIMAL(12,2)
+) COMMENT = 'Daily wholesale revenue by partner (MasOrange/Vodafone), region, and service';
+
+-- SLA Performance Tracking
+CREATE OR REPLACE TABLE PF_SLA_PERFORMANCE (
+    sla_key INT PRIMARY KEY,
+    date DATE NOT NULL,
+    partner_key INT NOT NULL,
+    region_key INT NOT NULL,
+    availability_percent DECIMAL(6,3),
+    latency_ms DECIMAL(6,2),
+    packet_loss_percent DECIMAL(5,3),
+    mttr_minutes INT,
+    incidents_count INT,
+    sla_met BOOLEAN,
+    nps_score INT
+) COMMENT = 'SLA performance metrics by wholesale partner and region';
+
+-- Company Overview/Facts
+CREATE OR REPLACE TABLE PF_COMPANY_OVERVIEW (
+    metric_key INT PRIMARY KEY,
+    metric_name VARCHAR(100),
+    metric_value VARCHAR(200),
+    metric_category VARCHAR(50),
+    as_of_date DATE
+) COMMENT = 'PremiumFiber company overview - largest fiberco in Spain';
+
+-- ========================================================================
 -- SALESFORCE CRM TABLES
 -- ========================================================================
 
@@ -494,6 +565,85 @@ FROM @PF_INTERNAL_STAGE/demo_data/sf_contacts.csv
 FILE_FORMAT = PF_CSV_FORMAT ON_ERROR = 'CONTINUE';
 
 -- ========================================================================
+-- LOAD WHOLESALE B2B DATA FROM INTERNAL STAGE
+-- ========================================================================
+
+COPY INTO PF_WHOLESALE_PARTNER_DIM
+FROM @PF_INTERNAL_STAGE/demo_data/wholesale_partner_dim.csv
+FILE_FORMAT = PF_CSV_FORMAT ON_ERROR = 'CONTINUE';
+
+COPY INTO PF_NETWORK_INFRASTRUCTURE
+FROM @PF_INTERNAL_STAGE/demo_data/network_infrastructure.csv
+FILE_FORMAT = PF_CSV_FORMAT ON_ERROR = 'CONTINUE';
+
+COPY INTO PF_COMPANY_OVERVIEW
+FROM @PF_INTERNAL_STAGE/demo_data/company_overview.csv
+FILE_FORMAT = PF_CSV_FORMAT ON_ERROR = 'CONTINUE';
+
+-- Generate wholesale revenue data programmatically (daily data Jan-Mar 2026)
+INSERT INTO PF_WHOLESALE_REVENUE_FACT
+WITH dates AS (
+    SELECT DATEADD(day, seq4(), '2026-01-01')::DATE as date
+    FROM TABLE(GENERATOR(ROWCOUNT => 65))
+),
+partners AS (
+    SELECT 1 as partner_key, 0.58 as share UNION ALL
+    SELECT 2, 0.42
+),
+regions AS (
+    SELECT REGION_KEY, HOMES_CONNECTED FROM PF_NETWORK_INFRASTRUCTURE
+),
+services AS (
+    SELECT 'FTTH 300Mb' as service_type, 2.85 as price_per_home, 0.35 as mix UNION ALL
+    SELECT 'FTTH 600Mb', 3.42, 0.32 UNION ALL
+    SELECT 'FTTH 1Gbps', 4.20, 0.20 UNION ALL
+    SELECT 'FTTH Business', 5.80, 0.08 UNION ALL
+    SELECT 'Dark Fiber', 8.50, 0.05
+)
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY d.date, p.partner_key, r.REGION_KEY, s.service_type) as REVENUE_KEY,
+    d.date,
+    p.partner_key,
+    r.REGION_KEY,
+    s.service_type,
+    ROUND(r.HOMES_CONNECTED * p.share * s.mix / 30)::INT as homes_served,
+    ROUND(r.HOMES_CONNECTED * p.share * s.mix * s.price_per_home / 30, 2) as revenue_eur,
+    ROUND(ABS(HASH(d.date || p.partner_key || r.REGION_KEY) % 100) * 0.5, 2) as sla_credits_eur,
+    ROUND(r.HOMES_CONNECTED * p.share * s.mix * s.price_per_home / 30 - ABS(HASH(d.date || p.partner_key || r.REGION_KEY) % 100) * 0.5, 2) as net_revenue_eur
+FROM dates d
+CROSS JOIN partners p
+CROSS JOIN regions r
+CROSS JOIN services s;
+
+-- Generate SLA performance data
+INSERT INTO PF_SLA_PERFORMANCE
+WITH dates AS (
+    SELECT DATEADD(day, seq4(), '2026-01-01')::DATE as date
+    FROM TABLE(GENERATOR(ROWCOUNT => 65))
+),
+partners AS (
+    SELECT 1 as partner_key UNION ALL SELECT 2
+),
+regions AS (
+    SELECT REGION_KEY, NETWORK_AVAILABILITY_PERCENT FROM PF_NETWORK_INFRASTRUCTURE
+)
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY d.date, p.partner_key, r.REGION_KEY) as SLA_KEY,
+    d.date,
+    p.partner_key,
+    r.REGION_KEY,
+    ROUND(r.NETWORK_AVAILABILITY_PERCENT + (ABS(HASH(d.date || p.partner_key || r.REGION_KEY) % 10) - 5) * 0.01, 3) as availability_percent,
+    ROUND(2.5 + ABS(HASH(d.date || r.REGION_KEY) % 30) * 0.1, 2) as latency_ms,
+    ROUND(ABS(HASH(d.date || p.partner_key) % 20) * 0.001, 3) as packet_loss_percent,
+    30 + ABS(HASH(d.date || r.REGION_KEY) % 45) as mttr_minutes,
+    ABS(HASH(d.date || r.REGION_KEY) % 5) as incidents_count,
+    CASE WHEN r.NETWORK_AVAILABILITY_PERCENT > 99.80 THEN TRUE ELSE FALSE END as sla_met,
+    CASE p.partner_key WHEN 1 THEN 58 ELSE 54 END + ABS(HASH(d.date || r.REGION_KEY) % 8) - 4 as nps_score
+FROM dates d
+CROSS JOIN partners p
+CROSS JOIN regions r;
+
+-- ========================================================================
 -- VERIFICATION - Data Load Counts
 -- ========================================================================
 
@@ -524,7 +674,14 @@ UNION ALL SELECT '', '', NULL
 UNION ALL SELECT 'SALESFORCE TABLES', '', NULL
 UNION ALL SELECT '', 'PF_SF_ACCOUNTS', COUNT(*) FROM PF_SF_ACCOUNTS
 UNION ALL SELECT '', 'PF_SF_OPPORTUNITIES', COUNT(*) FROM PF_SF_OPPORTUNITIES
-UNION ALL SELECT '', 'PF_SF_CONTACTS', COUNT(*) FROM PF_SF_CONTACTS;
+UNION ALL SELECT '', 'PF_SF_CONTACTS', COUNT(*) FROM PF_SF_CONTACTS
+UNION ALL SELECT '', '', NULL
+UNION ALL SELECT 'WHOLESALE B2B TABLES', '', NULL
+UNION ALL SELECT '', 'PF_WHOLESALE_PARTNER_DIM', COUNT(*) FROM PF_WHOLESALE_PARTNER_DIM
+UNION ALL SELECT '', 'PF_NETWORK_INFRASTRUCTURE', COUNT(*) FROM PF_NETWORK_INFRASTRUCTURE
+UNION ALL SELECT '', 'PF_COMPANY_OVERVIEW', COUNT(*) FROM PF_COMPANY_OVERVIEW
+UNION ALL SELECT '', 'PF_WHOLESALE_REVENUE_FACT', COUNT(*) FROM PF_WHOLESALE_REVENUE_FACT
+UNION ALL SELECT '', 'PF_SLA_PERFORMANCE', COUNT(*) FROM PF_SLA_PERFORMANCE;
 
 -- ========================================================================
 -- SEMANTIC VIEWS
@@ -737,6 +894,76 @@ CREATE OR REPLACE SEMANTIC VIEW PF_INFRASTRUCTURE_SEMANTIC_VIEW
         NETWORK_NODES.AVGUPTIME AS AVG(NETWORK_NODES.NODE_UP) COMMENT = 'Average uptime'
     )
     COMMENT = 'Infrastructure semantic view for PremiumFiber network';
+
+-- WHOLESALE B2B SEMANTIC VIEW (Primary for Cortex Agent)
+CREATE OR REPLACE SEMANTIC VIEW PF_WHOLESALE_SEMANTIC_VIEW
+  TABLES (
+    PARTNERS AS PF_WHOLESALE_PARTNER_DIM 
+      PRIMARY KEY (PARTNER_KEY) 
+      COMMENT = 'Wholesale partners and investors including MasOrange, Vodafone España, and GIC',
+    NETWORK AS PF_NETWORK_INFRASTRUCTURE 
+      PRIMARY KEY (INFRA_KEY) 
+      COMMENT = 'Network infrastructure by region',
+    REVENUE AS PF_WHOLESALE_REVENUE_FACT 
+      PRIMARY KEY (REVENUE_KEY) 
+      COMMENT = 'Daily wholesale revenue by partner, region, and service',
+    SLA AS PF_SLA_PERFORMANCE 
+      PRIMARY KEY (SLA_KEY) 
+      COMMENT = 'SLA performance metrics by partner and region',
+    REGIONS AS PF_REGION_DIM 
+      PRIMARY KEY (REGION_KEY) 
+      COMMENT = 'Spanish autonomous communities',
+    COMPANY AS PF_COMPANY_OVERVIEW 
+      PRIMARY KEY (METRIC_KEY) 
+      COMMENT = 'PremiumFiber company overview and key facts'
+  )
+  RELATIONSHIPS (
+    REVENUE(PARTNER_KEY) REFERENCES PARTNERS(PARTNER_KEY),
+    REVENUE(REGION_KEY) REFERENCES REGIONS(REGION_KEY),
+    NETWORK(REGION_KEY) REFERENCES REGIONS(REGION_KEY),
+    SLA(PARTNER_KEY) REFERENCES PARTNERS(PARTNER_KEY),
+    SLA(REGION_KEY) REFERENCES REGIONS(REGION_KEY)
+  )
+  FACTS (
+    PARTNERS.OWNERSHIP AS PARTNERS.OWNERSHIP_PERCENT COMMENT = 'Ownership percentage in PremiumFiber',
+    NETWORK.HOMES_PASSED AS NETWORK.HOMES_PASSED COMMENT = 'Number of homes passed by fiber',
+    NETWORK.HOMES_CONNECTED AS NETWORK.HOMES_CONNECTED COMMENT = 'Number of homes connected to fiber',
+    NETWORK.FIBER_KM AS NETWORK.FIBER_KM COMMENT = 'Kilometers of fiber deployed',
+    NETWORK.XGSPON_PCT AS NETWORK.XGSPON_READY_PERCENT COMMENT = 'Percentage XGSPON ready',
+    NETWORK.AVAILABILITY AS NETWORK.NETWORK_AVAILABILITY_PERCENT COMMENT = 'Network availability percentage',
+    REVENUE.HOMES_SERVED AS REVENUE.HOMES_SERVED COMMENT = 'Homes served per day',
+    REVENUE.REVENUE AS REVENUE.REVENUE_EUR COMMENT = 'Revenue in EUR',
+    REVENUE.SLA_CREDITS AS REVENUE.SLA_CREDITS_EUR COMMENT = 'SLA credit deductions in EUR',
+    REVENUE.NET_REVENUE AS REVENUE.NET_REVENUE_EUR COMMENT = 'Net revenue in EUR',
+    SLA.AVAILABILITY_PCT AS SLA.AVAILABILITY_PERCENT COMMENT = 'Availability percentage',
+    SLA.LATENCY AS SLA.LATENCY_MS COMMENT = 'Latency in milliseconds',
+    SLA.NPS AS SLA.NPS_SCORE COMMENT = 'Net Promoter Score',
+    SLA.INCIDENTS AS SLA.INCIDENTS_COUNT COMMENT = 'Number of incidents'
+  )
+  DIMENSIONS (
+    PARTNERS.PARTNER_NAME AS PARTNERS.PARTNER_NAME COMMENT = 'Partner name: MasOrange, Vodafone España, or GIC',
+    PARTNERS.PARTNER_TYPE AS PARTNERS.PARTNER_TYPE COMMENT = 'Partner type: Retail Operator or Financial Investor',
+    PARTNERS.SLA_TIER AS PARTNERS.SLA_TIER COMMENT = 'SLA tier level',
+    REVENUE.SERVICE_TYPE AS REVENUE.SERVICE_TYPE COMMENT = 'Service type: FTTH 300Mb, FTTH 600Mb, FTTH 1Gbps, FTTH Business, Dark Fiber',
+    REVENUE.DATE AS REVENUE.DATE COMMENT = 'Revenue date',
+    SLA.DATE AS SLA.DATE COMMENT = 'SLA measurement date',
+    SLA.SLA_MET AS SLA.SLA_MET COMMENT = 'Whether SLA was met',
+    REGIONS.REGION_NAME AS REGIONS.REGION_NAME COMMENT = 'Spanish autonomous community name',
+    COMPANY.METRIC_NAME AS COMPANY.METRIC_NAME COMMENT = 'Company metric name',
+    COMPANY.METRIC_VALUE AS COMPANY.METRIC_VALUE COMMENT = 'Company metric value',
+    COMPANY.METRIC_CATEGORY AS COMPANY.METRIC_CATEGORY COMMENT = 'Metric category: Identity, Ownership, Network, Market, Customers, SLA, Financial'
+  )
+  METRICS (
+    NETWORK.TOTAL_HOMES_PASSED AS SUM(NETWORK.HOMES_PASSED) COMMENT = 'Total homes passed across all regions',
+    NETWORK.TOTAL_HOMES_CONNECTED AS SUM(NETWORK.HOMES_CONNECTED) COMMENT = 'Total homes connected across all regions',
+    NETWORK.TOTAL_FIBER_KM AS SUM(NETWORK.FIBER_KM) COMMENT = 'Total fiber kilometers deployed',
+    NETWORK.AVG_AVAILABILITY AS AVG(NETWORK.AVAILABILITY) COMMENT = 'Average network availability',
+    REVENUE.TOTAL_REVENUE AS SUM(REVENUE.REVENUE) COMMENT = 'Total revenue in EUR',
+    REVENUE.TOTAL_NET_REVENUE AS SUM(REVENUE.NET_REVENUE) COMMENT = 'Total net revenue in EUR',
+    SLA.AVG_NPS AS AVG(SLA.NPS) COMMENT = 'Average NPS score',
+    SLA.AVG_LATENCY AS AVG(SLA.LATENCY) COMMENT = 'Average latency in ms'
+  )
+  COMMENT = 'PremiumFiber wholesale business model semantic view - Joint fiber company (fiberco) owned by MasOrange (58%), Vodafone España (17%), and GIC (25%). Provides wholesale FTTH infrastructure to MasOrange and Vodafone.';
 
 -- Verify semantic views
 SHOW SEMANTIC VIEWS;
@@ -1032,34 +1259,30 @@ $$;
 
 CREATE OR REPLACE AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PREMIUMFIBER_EXECUTIVE_AGENT
 WITH PROFILE = '{"display_name": "PremiumFiber Executive Agent"}'
-COMMENT = 'PremiumFiber Spain executive intelligence agent for leadership team (CEO, CFO, COO, CMO). Covers fiber network status, subscriber metrics (ARPU, MRR, churn), revenue by segment (Residential/Enterprise), product performance (Internet plans 500Mbps-5000Mbps, TV Digital, equipment), regional expansion, customer satisfaction, and competitive analysis. Default currency Euros (€).'
+COMMENT = 'PremiumFiber Spain wholesale fiberco executive intelligence agent. Covers network infrastructure (12M homes passed, 5M connected), wholesale partners (MasOrange, Vodafone España), ownership structure (MasOrange 58%, Vodafone 17%, GIC 25%), SLA performance, and revenue analytics.'
 FROM SPECIFICATION $$
 {
   "models": {
     "orchestration": ""
   },
   "instructions": {
-    "response": "You are a business intelligence analyst for PremiumFiber Spain, the largest fiber optic infrastructure company in Spain with 12M+ homes passed across 250+ municipalities. You answer questions about subscriber metrics (active subscribers, ARPU, MRR, churn rate), revenue by segment (Residential 80%, Enterprise 20%), product performance (Internet plans, WiFi 6 equipment), regional expansion across Spanish comunidades autónomas (Comunidad de Madrid, Cataluña, Comunidad Valenciana, Andalucía, País Vasco, etc.), customer satisfaction and NPS, installation metrics, and competitive positioning. Monetary values default to Euros (€) unless the user specifies otherwise. Regions include Comunidad de Madrid, Cataluña, Comunidad Valenciana, Andalucía, and País Vasco. Competitors include Telefónica/Movistar, Orange, Digi, Avatel, and Adamo. Provide charts where helpful (line for trends, bar for comparisons). Always ground answers in the provided data and documents.",
-    "orchestration": "Use cortex search for finance, strategy, network, and operational documents. Use cortex analyst for structured queries: revenue by segment/region, subscriber growth and churn, ARPU trends, product performance, campaign effectiveness, and workforce metrics. Only respond to PremiumFiber business topics. For network infrastructure questions, use the Search Internal Documents: Network tool first.",
+    "response": "You are a business intelligence analyst for PremiumFiber, Spain's largest wholesale fiber-optic infrastructure company (fiberco). PremiumFiber is jointly owned by MasOrange (58%), Vodafone España (17%), and GIC (25% - financial investor). The company operates a 100% FTTH, XGSPON-ready wholesale network with 12M homes passed and nearly 5M customers using the network. PremiumFiber's ONLY wholesale customers are MasOrange and Vodafone España - they are the retail operators who serve end consumers. GIC is a financial investor, NOT a customer. Answer questions about network infrastructure (homes passed, homes connected, fiber km, regional coverage), wholesale revenue by partner (MasOrange, Vodafone), SLA performance, NPS scores, and company ownership structure. Monetary values default to Euros (€). Provide charts where helpful.",
+    "orchestration": "Use the Query Wholesale Datamart tool for questions about wholesale partners, revenue, network infrastructure, SLA performance, homes passed/connected, and company ownership. Use cortex search for document-based questions. Only respond to PremiumFiber business topics.",
     "sample_questions": [
-      {"question": "What is our total subscriber count and MRR by region?"},
-      {"question": "What is our ARPU trend for residential vs enterprise customers?"},
-      {"question": "Which internet plans have the highest adoption and revenue?"},
-      {"question": "What is our churn rate by region?"},
-      {"question": "How many new installations were completed this month?"},
-      {"question": "How do we compare against Telefónica and Digi in market share?"},
-      {"question": "What are our top performing marketing campaigns?"}
+      {"question": "What is our total network coverage in homes passed?"},
+      {"question": "How much revenue did MasOrange and Vodafone generate this month?"},
+      {"question": "What are the NPS scores for each wholesale partner?"},
+      {"question": "What is PremiumFiber's ownership structure?"},
+      {"question": "Which region has the highest take rate?"},
+      {"question": "What is our average network availability SLA?"},
+      {"question": "How many kilometers of fiber have we deployed?"}
     ]
   },
   "tools": [
+    {"tool_spec": {"type": "cortex_analyst_text_to_sql", "name": "Query Wholesale Datamart", "description": "Query PremiumFiber wholesale data: partners (MasOrange, Vodafone), network infrastructure (homes passed, homes connected, fiber km), revenue by partner/region/service, SLA performance, company ownership structure"}},
     {"tool_spec": {"type": "cortex_analyst_text_to_sql", "name": "Query Finance Datamart", "description": "Query PremiumFiber financials: revenue, MRR, ARPU, margin, vendor spend"}},
-    {"tool_spec": {"type": "cortex_analyst_text_to_sql", "name": "Query Sales Datamart", "description": "Query sales pipeline: subscriptions, contracts, churn analysis"}},
     {"tool_spec": {"type": "cortex_analyst_text_to_sql", "name": "Query HR Datamart", "description": "Query workforce data: headcount, departments, roles, attrition"}},
-    {"tool_spec": {"type": "cortex_analyst_text_to_sql", "name": "Query Marketing Datamart", "description": "Query marketing campaigns: spend, impressions, leads, ROI"}},
     {"tool_spec": {"type": "cortex_search", "name": "Search Internal Documents: Finance", "description": "Search finance documents"}},
-    {"tool_spec": {"type": "cortex_search", "name": "Search Internal Documents: HR", "description": "Search HR documents"}},
-    {"tool_spec": {"type": "cortex_search", "name": "Search Internal Documents: Sales", "description": "Search sales documents"}},
-    {"tool_spec": {"type": "cortex_search", "name": "Search Internal Documents: Marketing", "description": "Search marketing documents"}},
     {"tool_spec": {"type": "cortex_search", "name": "Search Internal Documents: Strategy", "description": "Search strategy documents"}},
     {"tool_spec": {"type": "cortex_search", "name": "Search Internal Documents: Network", "description": "Search network infrastructure documents"}},
     {"tool_spec": {"type": "generic", "name": "Web_scraper", "description": "Scrape text from a web page URL", "input_schema": {"type": "object", "properties": {"weburl": {"description": "Web URL to scrape", "type": "string"}}, "required": ["weburl"]}}},
@@ -1068,16 +1291,12 @@ FROM SPECIFICATION $$
   ],
   "tool_resources": {
     "Dynamic_Doc_URL_Tool": {"execution_environment": {"query_timeout": 0, "type": "warehouse", "warehouse": "PREMIUMFIBER_DEMO_WH"}, "identifier": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_GET_FILE_PRESIGNED_URL_SP", "name": "PF_GET_FILE_PRESIGNED_URL_SP(VARCHAR, DEFAULT NUMBER)", "type": "procedure"},
+    "Query Wholesale Datamart": {"semantic_view": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_WHOLESALE_SEMANTIC_VIEW"},
     "Query Finance Datamart": {"semantic_view": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_FINANCE_SEMANTIC_VIEW"},
     "Query HR Datamart": {"semantic_view": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_HR_SEMANTIC_VIEW"},
-    "Query Marketing Datamart": {"semantic_view": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_MARKETING_SEMANTIC_VIEW"},
-    "Query Sales Datamart": {"semantic_view": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SALES_SEMANTIC_VIEW"},
     "Search Internal Documents: Finance": {"id_column": "FILE_URL", "max_results": 5, "name": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SEARCH_FINANCE_DOCS", "title_column": "TITLE"},
-    "Search Internal Documents: HR": {"id_column": "FILE_URL", "max_results": 5, "name": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SEARCH_HR_DOCS", "title_column": "TITLE"},
-    "Search Internal Documents: Marketing": {"id_column": "RELATIVE_PATH", "max_results": 5, "name": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SEARCH_MARKETING_DOCS", "title_column": "TITLE"},
-    "Search Internal Documents: Sales": {"id_column": "FILE_URL", "max_results": 5, "name": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SEARCH_SALES_DOCS", "title_column": "TITLE"},
     "Search Internal Documents: Strategy": {"id_column": "RELATIVE_PATH", "max_results": 5, "name": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SEARCH_STRATEGY_DOCS", "title_column": "TITLE"},
-    "Search Internal Documents: Network": {"id_column": "RELATIVE_PATH", "max_results": 5, "name": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_PF_SEARCH_NETWORK_DOCS", "title_column": "TITLE"},
+    "Search Internal Documents: Network": {"id_column": "RELATIVE_PATH", "max_results": 5, "name": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SEARCH_NETWORK_DOCS", "title_column": "TITLE"},
     "Send_Emails": {"execution_environment": {"query_timeout": 0, "type": "warehouse", "warehouse": "PREMIUMFIBER_DEMO_WH"}, "identifier": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_SEND_MAIL", "name": "PF_SEND_MAIL(VARCHAR, VARCHAR, VARCHAR)", "type": "procedure"},
     "Web_scraper": {"execution_environment": {"query_timeout": 0, "type": "warehouse", "warehouse": "PREMIUMFIBER_DEMO_WH"}, "identifier": "PREMIUMFIBER_AI_DEMO.PREMIUMFIBER_SCHEMA.PF_WEB_SCRAPE", "name": "PF_WEB_SCRAPE(VARCHAR)", "type": "function"}
   }

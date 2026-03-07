@@ -14,10 +14,6 @@ except:
 PREMIUMFIBER_CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons&display=block');
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=block');
-@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Round&display=block');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block');
 
 /* ── PremiumFiber brand tokens ──────────────────────────────────────── */
 :root {
@@ -49,40 +45,7 @@ html, body, [class*="st-"] {
     font-family: 'Poppins', sans-serif !important;
 }
 
-/* Keep Material glyphs from being replaced by Poppins. */
-.material-icons,
-.material-icons-outlined,
-.material-icons-round,
-.material-icons-outlined,
-.material-icons-round,
-.material-icons-sharp,
-.material-symbols-outlined,
-.material-symbols-rounded,
-.material-symbols-sharp {
-    font-family: 'Material Symbols Outlined', 'Material Symbols Rounded', 'Material Icons' !important;
-    font-style: normal;
-    font-weight: normal;
-    letter-spacing: normal;
-    text-transform: none;
-}
-
-/* Streamlit sidebar collapse / expand icon fallback:
-   force icon font and hide accidental ligature text rendering. */
-[data-testid="stSidebarCollapseButton"] span,
-[data-testid="collapsedControl"] span {
-    font-family: 'Material Symbols Outlined', 'Material Icons Round', 'Material Icons Outlined', 'Material Icons' !important;
-    font-size: 20px !important;
-    line-height: 1 !important;
-    color: #ffffff !important;
-}
-
-[data-testid="stSidebarCollapseButton"] p,
-[data-testid="collapsedControl"] p {
-    display: none !important;
-}
-
-/* Hard fallback: hide Streamlit collapse controls to avoid
-   keyboard_arrow_* ligature text appearing in sidebar header. */
+/* Hide Streamlit sidebar collapse controls */
 [data-testid="stSidebarCollapseButton"],
 [data-testid="collapsedControl"] {
     display: none !important;
@@ -862,7 +825,7 @@ footer { visibility: hidden; }
 }
 
 .mf-sidebar-logo img {
-    max-width: 80px;
+    max-width: 120px;
     border-radius: 14px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
@@ -1471,7 +1434,6 @@ with st.sidebar:
     st.markdown(dedent(f"""
         <div class="mf-sidebar-logo">
             <img src="{LOGO_URL}" alt="PremiumFiber">
-            <div class="mf-sidebar-brand">Premium<span>Fiber</span></div>
             <div class="mf-sidebar-tagline">La red FTTH de España</div>
         </div>
     """), unsafe_allow_html=True)
@@ -1480,13 +1442,13 @@ with st.sidebar:
 
     menu_options = [
         "Intro",
-        "Executive Overview",
-        "Subscribers",
-        "Revenue Analytics",
+        "JV Board View",
+        "Tenant SLA",
+        "Wholesale Commercial",
+        "ESG & Energy",
         "Network Status",
-        "Marketing",
-        "HR & Workforce",
-        "Conclusion",
+        "Operations & Assets",
+        "Data Sharing",
     ]
 
     selected_menu = st.radio(
@@ -2347,11 +2309,11 @@ elif selected_menu == "Executive Overview":
     # Synthetic "warehouse-consistent" dataset for all executive metrics
     # -------------------------------------------------------------------
     db_segment_perf = pd.DataFrame({
-        "Segment": ["Consumer", "SMB", "Enterprise"],
-        "Subscribers": [20500, 7600, 2147],
-        "Monthly Revenue M": [2.6, 1.2, 0.6],
-        "NPS": [44, 52, 61],
-        "Churn %": [2.4, 1.9, 1.1],
+        "Segment": ["MasOrange", "Vodafone"],
+        "Subscribers": [7000000, 5000000],
+        "Monthly Revenue M": [24.5, 17.9],
+        "NPS": [58, 54],
+        "Churn %": [0.8, 1.1],
     })
     db_risk = pd.DataFrame({
         "Segment": ["Budget", "Standard", "Premium", "VIP"],
@@ -2379,17 +2341,17 @@ elif selected_menu == "Executive Overview":
     churn_rate = round(float((db_segment_perf["Churn %"] * db_segment_perf["Subscribers"]).sum() / active_subscribers), 1)
     at_risk_revenue_m = round(float(db_risk["Revenue at Risk K"].sum()) * 12 / 1000, 1)
     at_risk_customers = int(db_risk["At Risk"].sum())
-    market_share = 5.2
-    net_adds = 257
+    market_share = 38.2
+    net_adds = 125000
     network_availability = 99.7
     support_csat = 4.2
-    arpu_delta = "+€3.8"
+    arpu_delta = "+€0.42"
     value_in_flight_m = 1.6
     protectable_arr_m = round(at_risk_revenue_m * 0.6, 1)
 
     # ── Real-Time Business Pulse ──────────────────────────────────────
     st.markdown(
-        f"""<div class="business-pulse"><div class="pulse-header"><div class="pulse-live"><div class="pulse-dot"></div><span class="pulse-title">📊 Real-Time Business Pulse</span></div><div class="pulse-period">● Live</div></div><div class="pulse-metrics"><div class="pulse-metric"><div class="pm-icon">💰</div><div class="pm-val revenue">€{monthly_revenue_m:.1f}M</div><div class="pm-name">Monthly Revenue</div><div class="pm-trend up"><span>↑</span> +8.4% vs target</div></div><div class="pulse-metric"><div class="pm-icon">👥</div><div class="pm-val customers">{active_subscribers:,}</div><div class="pm-name">Active Subscribers</div><div class="pm-trend up"><span>↑</span> +{net_adds} net adds</div></div><div class="pulse-metric"><div class="pm-icon">⭐</div><div class="pm-val nps">+{nps_score}</div><div class="pm-name">NPS Score</div><div class="pm-trend up"><span>↑</span> +5 pts QoQ</div></div><div class="pulse-metric"><div class="pm-icon">📈</div><div class="pm-val growth">{market_share:.1f}%</div><div class="pm-name">Market Share</div><div class="pm-trend up"><span>↑</span> +0.4% YoY</div></div></div></div>""",
+        f"""<div class="business-pulse"><div class="pulse-header"><div class="pulse-live"><div class="pulse-dot"></div><span class="pulse-title">📊 Real-Time Business Pulse</span></div><div class="pulse-period">● Live</div></div><div class="pulse-metrics"><div class="pulse-metric"><div class="pm-icon">💰</div><div class="pm-val revenue">€{monthly_revenue_m:.1f}M</div><div class="pm-name">Monthly Revenue</div><div class="pm-trend up"><span>↑</span> +8.4% vs target</div></div><div class="pulse-metric"><div class="pm-icon">🏠</div><div class="pm-val customers">{active_subscribers:,}</div><div class="pm-name">Homes Passed</div><div class="pm-trend up"><span>↑</span> +{net_adds:,} this quarter</div></div><div class="pulse-metric"><div class="pm-icon">⭐</div><div class="pm-val nps">+{nps_score}</div><div class="pm-name">Partner NPS</div><div class="pm-trend up"><span>↑</span> +5 pts QoQ</div></div><div class="pulse-metric"><div class="pm-icon">📈</div><div class="pm-val growth">{market_share:.1f}%</div><div class="pm-name">FTTH Market Share</div><div class="pm-trend up"><span>↑</span> +2.1% YoY</div></div></div></div>""",
         unsafe_allow_html=True,
     )
 
@@ -2399,16 +2361,16 @@ elif selected_menu == "Executive Overview":
         # ── Business Health at a Glance ───────────────────────────────────
         st.markdown('<div class="eo-title">Business Health at a Glance</div>', unsafe_allow_html=True)
 
-        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #29B5E8;"><div class="eo-kpi-icon">👥</div><div class="eo-kpi-label">Total Subscribers</div><div class="eo-kpi-value">{active_subscribers:,}</div><div class="eo-kpi-delta positive">↑ +5.2% QoQ</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8" fill="none" stroke="#29B5E8" stroke-width="2"/><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8 L100,40 L0,40 Z" fill="#29B5E8"/></svg></div><div class="eo-kpi" style="--accent: #10B981;"><div class="eo-kpi-icon">💰</div><div class="eo-kpi-label">Quarterly Revenue</div><div class="eo-kpi-value">€{quarterly_revenue_m:.1f}M</div><div class="eo-kpi-delta positive">↑ +8.4% YoY</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8" fill="none" stroke="#10B981" stroke-width="2"/><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8 L100,40 L0,40 Z" fill="#10B981"/></svg></div><div class="eo-kpi" style="--accent: #8B5CF6;"><div class="eo-kpi-icon">⭐</div><div class="eo-kpi-label">NPS Score</div><div class="eo-kpi-value">+{nps_score}</div><div class="eo-kpi-delta positive">↑ +5 pts</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><rect x="5" y="28" width="10" height="12" fill="#8B5CF6"/><rect x="20" y="24" width="10" height="16" fill="#8B5CF6"/><rect x="35" y="26" width="10" height="14" fill="#8B5CF6"/><rect x="50" y="20" width="10" height="20" fill="#8B5CF6"/><rect x="65" y="16" width="10" height="24" fill="#8B5CF6"/><rect x="80" y="12" width="10" height="28" fill="#8B5CF6"/></svg></div><div class="eo-kpi" style="--accent: #F59E0B;"><div class="eo-kpi-icon">📉</div><div class="eo-kpi-label">Churn Rate</div><div class="eo-kpi-value">{churn_rate:.1f}%</div><div class="eo-kpi-delta positive">↓ -0.7%</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32" fill="none" stroke="#F59E0B" stroke-width="2"/><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32 L100,40 L0,40 Z" fill="#F59E0B"/></svg></div></div>""", unsafe_allow_html=True)
+        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #29B5E8;"><div class="eo-kpi-icon">🏠</div><div class="eo-kpi-label">Homes Passed</div><div class="eo-kpi-value">{active_subscribers:,}</div><div class="eo-kpi-delta positive">↑ +5.2% QoQ</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8" fill="none" stroke="#29B5E8" stroke-width="2"/><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8 L100,40 L0,40 Z" fill="#29B5E8"/></svg></div><div class="eo-kpi" style="--accent: #10B981;"><div class="eo-kpi-icon">💰</div><div class="eo-kpi-label">Quarterly Revenue</div><div class="eo-kpi-value">€{quarterly_revenue_m:.1f}M</div><div class="eo-kpi-delta positive">↑ +8.4% YoY</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8" fill="none" stroke="#10B981" stroke-width="2"/><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8 L100,40 L0,40 Z" fill="#10B981"/></svg></div><div class="eo-kpi" style="--accent: #8B5CF6;"><div class="eo-kpi-icon">⭐</div><div class="eo-kpi-label">Partner NPS</div><div class="eo-kpi-value">+{nps_score}</div><div class="eo-kpi-delta positive">↑ +5 pts</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><rect x="5" y="28" width="10" height="12" fill="#8B5CF6"/><rect x="20" y="24" width="10" height="16" fill="#8B5CF6"/><rect x="35" y="26" width="10" height="14" fill="#8B5CF6"/><rect x="50" y="20" width="10" height="20" fill="#8B5CF6"/><rect x="65" y="16" width="10" height="24" fill="#8B5CF6"/><rect x="80" y="12" width="10" height="28" fill="#8B5CF6"/></svg></div><div class="eo-kpi" style="--accent: #F59E0B;"><div class="eo-kpi-icon">📉</div><div class="eo-kpi-label">Partner Churn</div><div class="eo-kpi-value">{churn_rate:.1f}%</div><div class="eo-kpi-delta positive">↓ -0.7%</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32" fill="none" stroke="#F59E0B" stroke-width="2"/><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32 L100,40 L0,40 Z" fill="#F59E0B"/></svg></div></div>""", unsafe_allow_html=True)
 
-        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #06B6D4;"><div class="eo-kpi-icon">📡</div><div class="eo-kpi-label">Network Availability</div><div class="eo-kpi-value">{network_availability:.1f}%</div><div class="eo-kpi-delta positive">↑ +0.2%</div></div><div class="eo-kpi" style="--accent: #EC4899;"><div class="eo-kpi-icon">📊</div><div class="eo-kpi-label">ARPU (Blended)</div><div class="eo-kpi-value">€{arpu_blended:.2f}</div><div class="eo-kpi-delta positive">↑ {arpu_delta}</div></div><div class="eo-kpi" style="--accent: #14B8A6;"><div class="eo-kpi-icon">💬</div><div class="eo-kpi-label">Support CSAT</div><div class="eo-kpi-value">{support_csat:.1f}/5</div><div class="eo-kpi-delta positive">↑ +0.3</div></div><div class="eo-kpi" style="--accent: #EF4444;"><div class="eo-kpi-icon">⚠️</div><div class="eo-kpi-label">At-Risk Revenue</div><div class="eo-kpi-value">€{at_risk_revenue_m:.1f}M</div><div class="eo-kpi-delta neutral">{int(db_risk['At Risk'].sum())} customers</div></div></div>""", unsafe_allow_html=True)
+        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #06B6D4;"><div class="eo-kpi-icon">📡</div><div class="eo-kpi-label">Network Availability</div><div class="eo-kpi-value">{network_availability:.1f}%</div><div class="eo-kpi-delta positive">↑ +0.2%</div></div><div class="eo-kpi" style="--accent: #EC4899;"><div class="eo-kpi-icon">📊</div><div class="eo-kpi-label">Revenue per Home</div><div class="eo-kpi-value">€{arpu_blended:.2f}</div><div class="eo-kpi-delta positive">↑ {arpu_delta}</div></div><div class="eo-kpi" style="--accent: #14B8A6;"><div class="eo-kpi-icon">💬</div><div class="eo-kpi-label">Support CSAT</div><div class="eo-kpi-value">{support_csat:.1f}/5</div><div class="eo-kpi-delta positive">↑ +0.3</div></div><div class="eo-kpi" style="--accent: #EF4444;"><div class="eo-kpi-icon">⚠️</div><div class="eo-kpi-label">At-Risk Revenue</div><div class="eo-kpi-value">€{at_risk_revenue_m:.1f}M</div><div class="eo-kpi-delta neutral">{int(db_risk['At Risk'].sum())} customers</div></div></div>""", unsafe_allow_html=True)
 
         # ── Executive Performance Signals (Altair charts) ──────────────────
         st.markdown('<div class="eo-title">Executive Performance Signals</div>', unsafe_allow_html=True)
         exec_col1, exec_col2 = st.columns(2)
 
         with exec_col1:
-            st.markdown('<div class="eo-mini-title">Revenue Mix by Segment</div>', unsafe_allow_html=True)
+            st.markdown('<div class="eo-mini-title">Revenue Mix by Partner</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 seg_df = db_segment_perf[["Segment", "Monthly Revenue M"]].rename(columns={"Monthly Revenue M": "Revenue"})
                 seg_bar = (
@@ -2420,11 +2382,10 @@ elif selected_menu == "Executive Overview":
                         color=alt.Color(
                             'Segment:N',
                             scale=alt.Scale(
-                                domain=['Consumer', 'SMB', 'Enterprise'],
+                                domain=['MasOrange', 'Vodafone'],
                                 range=[
-                                    EXEC_CHART_THEME["accent_blue"],
-                                    "#1D9ED3",
-                                    "#1677A5",
+                                    "#FF6B00",
+                                    "#E60000",
                                 ],
                             ),
                             legend=None,
@@ -2444,9 +2405,9 @@ elif selected_menu == "Executive Overview":
                 top_seg = seg_df.loc[seg_df["Revenue"].idxmax()]
                 render_ai_recommendation(
                     "Revenue Mix",
-                    f"{top_seg['Segment']} contributes the largest monthly revenue at €{top_seg['Revenue']:.1f}M.",
-                    f"Protect {top_seg['Segment']} with loyalty bundles while accelerating SMB conversion playbooks.",
-                    "Stabilize core revenue base and add +€0.3M in 1 quarter.",
+                    f"{top_seg['Segment']} contributes the largest wholesale revenue at €{top_seg['Revenue']:.1f}M.",
+                    f"Strengthen SLA performance for {top_seg['Segment']} while expanding capacity for growth partners.",
+                    "Stabilize core wholesale revenue and add +€1.2M ARR in next quarter.",
                 )
 
         with exec_col2:
@@ -2467,11 +2428,10 @@ elif selected_menu == "Executive Overview":
                         color=alt.Color(
                             'Segment:N',
                             scale=alt.Scale(
-                                domain=['Consumer', 'SMB', 'Enterprise'],
+                                domain=['MasOrange', 'Vodafone'],
                                 range=[
-                                    EXEC_CHART_THEME["accent_blue"],
-                                    EXEC_CHART_THEME["accent_green"],
-                                    EXEC_CHART_THEME["accent_purple"],
+                                    "#FF6B00",
+                                    "#E60000",
                                 ],
                             ),
                             legend=alt.Legend(title=None),
@@ -2499,8 +2459,8 @@ elif selected_menu == "Executive Overview":
                 render_ai_recommendation(
                     "NPS vs Churn",
                     f"{worst_seg['Segment']} shows the highest churn ({worst_seg['Churn']:.1f}%) and the lowest relative NPS.",
-                    f"Launch a segment-specific retention sprint for {worst_seg['Segment']} with service-credit triggers.",
-                    "Reduce blended churn by ~0.2pp in 60 days.",
+                    f"Launch a partner-specific retention sprint for {worst_seg['Segment']} with SLA improvement triggers.",
+                    "Reduce blended partner churn by ~0.1pp in 60 days.",
                     level="warning",
                 )
 
@@ -2569,8 +2529,8 @@ elif selected_menu == "Executive Overview":
                         color=alt.Color(
                             'Segment:N',
                             scale=alt.Scale(
-                                domain=['Enterprise', 'SMB', 'Consumer'],
-                                range=["#0F766E", "#14B8A6", "#22D3EE"],
+                                domain=['Vodafone', 'MasOrange'],
+                                range=["#E60000", "#FF6B00"],
                             ),
                             legend=None,
                         ),
@@ -2583,17 +2543,17 @@ elif selected_menu == "Executive Overview":
                 st.altair_chart(style_exec_chart(arpu_bar, height=205), use_container_width=True)
                 top_arpu = arpu_df.loc[arpu_df["ARPU"].idxmax()]
                 render_ai_recommendation(
-                    "ARPU by Segment",
-                    f"{top_arpu['Segment']} has the highest ARPU at €{top_arpu['ARPU']:.0f}.",
-                    f"Replicate {top_arpu['Segment']} offer architecture into upper SMB to lift blended ARPU.",
-                    "Increase blended ARPU by ~€1.2 within a quarter.",
+                    "Revenue per Home by Partner",
+                    f"{top_arpu['Segment']} has the highest revenue per home at €{top_arpu['ARPU']:.2f}.",
+                    f"Replicate {top_arpu['Segment']} network efficiency to other partners.",
+                    "Increase blended revenue per home by ~€0.08 within a quarter.",
                 )
         with mix_col:
-            st.markdown('<div class="eo-mini-title">Plan Mix by Type</div>', unsafe_allow_html=True)
+            st.markdown('<div class="eo-mini-title">Infrastructure Mix by Type</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 plan_df = pd.DataFrame({
-                    'Plan': ['PF Hogar 300', 'PF Hogar 600', 'PF Gamer 1G', 'PF Mesh Plus'],
-                    'Share': [44, 29, 17, 10],
+                    'Plan': ['FTTH 300Mb', 'FTTH 600Mb', 'FTTH 1Gbps', 'Dark Fiber'],
+                    'Share': [35, 32, 25, 8],
                 })
                 plan_bar = (
                     alt.Chart(plan_df)
@@ -2604,13 +2564,13 @@ elif selected_menu == "Executive Overview":
                         color=alt.Color(
                             'Plan:N',
                             scale=alt.Scale(
-                                domain=['PF Hogar 300', 'PF Hogar 600', 'PF Gamer 1G', 'PF Mesh Plus'],
+                                domain=['FTTH 300Mb', 'FTTH 600Mb', 'FTTH 1Gbps', 'Dark Fiber'],
                                 range=[EXEC_CHART_THEME["accent_indigo"], "#818CF8", "#A5B4FC", "#C7D2FE"],
                             ),
                             legend=None,
                         ),
                         tooltip=[
-                            alt.Tooltip('Plan:N', title='Plan'),
+                            alt.Tooltip('Plan:N', title='Product'),
                             alt.Tooltip('Share:Q', title='Share %', format='.0f'),
                         ],
                     )
@@ -2618,17 +2578,17 @@ elif selected_menu == "Executive Overview":
                 st.altair_chart(style_exec_chart(plan_bar, height=205), use_container_width=True)
                 top_plan = plan_df.loc[plan_df["Share"].idxmax()]
                 render_ai_recommendation(
-                    "Plan Mix",
-                    f"{top_plan['Plan']} is the dominant mix component at {top_plan['Share']:.0f}%.",
-                    "Introduce add-on bundles in the dominant plan to monetize without raising churn pressure.",
-                    "Capture +€0.2M monthly incremental revenue.",
+                    "Infrastructure Mix",
+                    f"{top_plan['Plan']} is the dominant infrastructure type at {top_plan['Share']:.0f}%.",
+                    "Increase 1Gbps deployment in high-demand areas to capture premium wholesale pricing.",
+                    "Capture +€0.8M monthly incremental revenue.",
                 )
 
         # ── Revenue Mix by Customer Segment ────────────────────────────────
         col_left, col_right = st.columns([1.2, 1])
 
         with col_left:
-            st.markdown('<div class="eo-title">Revenue Mix by Customer Segment</div>', unsafe_allow_html=True)
+            st.markdown('<div class="eo-title">Revenue Mix by Partner</div>', unsafe_allow_html=True)
             revenue_data = db_segment_perf[['Segment', 'Monthly Revenue M']].copy()
             revenue_data['Revenue'] = (revenue_data['Monthly Revenue M'] * 3).round(1)
             revenue_data['Percentage'] = (100 * revenue_data['Revenue'] / revenue_data['Revenue'].sum()).round(0)
@@ -2638,7 +2598,7 @@ elif selected_menu == "Executive Overview":
                     theta=alt.Theta('Revenue:Q', stack=True),
                     color=alt.Color(
                         'Segment:N',
-                        scale=alt.Scale(domain=['Consumer', 'SMB', 'Enterprise'], range=['#29B5E8', '#1B2A4E', '#10B981']),
+                        scale=alt.Scale(domain=['MasOrange', 'Vodafone'], range=['#FF6B00', '#E60000']),
                         legend=alt.Legend(title=None, orient='right'),
                     ),
                     tooltip=[
@@ -2653,25 +2613,25 @@ elif selected_menu == "Executive Overview":
                 st.altair_chart(style_exec_chart(donut + center_text + center_sub, height=272), use_container_width=True)
                 dominant_seg = revenue_data.loc[revenue_data["Revenue"].idxmax()]
                 render_ai_recommendation(
-                    "Customer Revenue Concentration",
-                    f"{dominant_seg['Segment']} represents {dominant_seg['Percentage']:.0f}% of quarterly revenue.",
-                    f"Run concentration-risk mitigation: upsell SMB and enterprise to reduce dependency on {dominant_seg['Segment']}.",
-                    "Lower concentration risk while preserving growth resilience.",
+                    "Partner Revenue Concentration",
+                    f"{dominant_seg['Segment']} represents {dominant_seg['Percentage']:.0f}% of quarterly wholesale revenue.",
+                    f"Maintain strong SLA performance for both MasOrange and Vodafone networks.",
+                    "Ensure balanced growth across both wholesale partners.",
                 )
 
-                seg_cols = st.columns(3)
+                seg_cols = st.columns(2)
                 seg_info = []
-                seg_colors = {"Consumer": "#29B5E8", "SMB": "#1B2A4E", "Enterprise": "#10B981"}
-                seg_growth = {"Consumer": "+4.2%", "SMB": "+8.7%", "Enterprise": "+15.3%"}
+                seg_colors = {"MasOrange": "#FF6B00", "Vodafone": "#E60000"}
+                seg_growth = {"MasOrange": "+6.8%", "Vodafone": "+8.2%"}
                 for _, row in db_segment_perf.iterrows():
                     seg = row["Segment"]
                     q_rev = row["Monthly Revenue M"] * 3
                     share = 100 * q_rev / quarterly_revenue_m
                     seg_arpu = row["Monthly Revenue M"] * 1_000_000 / row["Subscribers"]
-                    seg_info.append((seg, seg_colors[seg], f"€{q_rev:.1f}M", f"{share:.0f}%", f"€{seg_arpu:.0f}", seg_growth[seg]))
+                    seg_info.append((seg, seg_colors[seg], f"€{q_rev:.1f}M", f"{share:.0f}%", f"€{seg_arpu:.2f}", seg_growth[seg]))
                 for i, (seg, color, rev, share, arpu, growth) in enumerate(seg_info):
                     with seg_cols[i]:
-                        st.markdown(f"""<div style="background: linear-gradient(135deg, {color}15 0%, {color}08 100%); border-left: 4px solid {color}; border-radius: 0 8px 8px 0; padding: 0.75rem;"><div style="font-weight: 600; color: {color}; font-size: 0.9rem;">{seg}</div><div style="font-size: 1.2rem; font-weight: 700; color: #1B2A4E;">{rev}</div><div style="color: #6B7280; font-size: 0.75rem;">ARPU {arpu} · <span style="color: #10B981;">{growth}</span></div></div>""", unsafe_allow_html=True)
+                        st.markdown(f"""<div style="background: linear-gradient(135deg, {color}15 0%, {color}08 100%); border-left: 4px solid {color}; border-radius: 0 8px 8px 0; padding: 0.75rem;"><div style="font-weight: 600; color: {color}; font-size: 0.9rem;">{seg}</div><div style="font-size: 1.2rem; font-weight: 700; color: #1B2A4E;">{rev}</div><div style="color: #6B7280; font-size: 0.75rem;">Rev/Home {arpu} · <span style="color: #10B981;">{growth}</span></div></div>""", unsafe_allow_html=True)
 
         with col_right:
             st.markdown('<div class="eo-title">At-Risk Customer Analysis</div>', unsafe_allow_html=True)
@@ -2880,10 +2840,10 @@ elif selected_menu == "Executive Overview":
                     <div class="cxo-init-foot">Progress: 68% · Next Milestone: Offer rollout for Budget segment</div>
                 </div>
                 <div class="cxo-initiative">
-                    <div class="cxo-init-head"><div class="cxo-init-title">Enterprise Expansion Sprint</div><span class="cxo-rag green">On Track</span></div>
-                    <div class="cxo-init-meta">Owner: CRO · Budget used: 48% · Benefit captured: €0.55M</div>
+                    <div class="cxo-init-head"><div class="cxo-init-title">Partner Expansion Sprint</div><span class="cxo-rag green">On Track</span></div>
+                    <div class="cxo-init-meta">Owner: CRO · Budget used: 48% · Benefit captured: €2.1M</div>
                     <div class="cxo-progress" style="--p: 74%;"><span style="--p: 74%;"></span></div>
-                    <div class="cxo-init-foot">Progress: 74% · Next Milestone: 20 new high-ARPU accounts</div>
+                    <div class="cxo-init-foot">Progress: 74% · Next Milestone: 125K new homes passed deployment</div>
                 </div>
                 <div class="cxo-initiative">
                     <div class="cxo-init-head"><div class="cxo-init-title">Network Quality Recovery Clusters</div><span class="cxo-rag red">Critical</span></div>
@@ -2906,15 +2866,15 @@ elif selected_menu == "Executive Overview":
                 <div class="cxo-board-grid">
                     <div class="cxo-board-cell">
                         <h5>What Changed</h5>
-                        <p>Revenue and ARPU improved, but churn intent rose in price-sensitive cohorts.</p>
+                        <p>Revenue and homes passed improved, but partner churn intent rose due to service disruptions.</p>
                     </div>
                     <div class="cxo-board-cell">
                         <h5>Why It Changed</h5>
-                        <p>Competitor discounts and service incidents in two clusters raised attrition risk.</p>
+                        <p>Competitor fiber buildouts and network incidents in two clusters raised attrition risk.</p>
                     </div>
                     <div class="cxo-board-cell">
                         <h5>Next 30 Days</h5>
-                        <p>Deploy save-offers, stabilize network hotspots, and accelerate enterprise pipeline.</p>
+                        <p>Improve SLA performance, stabilize network hotspots, and accelerate network expansion.</p>
                     </div>
                     <div class="cxo-board-cell">
                         <h5>Expected Impact</h5>
@@ -3075,7 +3035,1381 @@ elif selected_menu == "Executive Overview":
                 )
 
 # ---------------------------------------------------------------------------
-# Page: Subscribers
+# Page: JV Board View (Wholesale Fiberco Economics)
+# ---------------------------------------------------------------------------
+elif selected_menu == "JV Board View":
+    import pandas as pd
+    import altair as alt
+    import pydeck as pdk
+
+    JV_CHART_THEME = {
+        "font": "Poppins, sans-serif",
+        "title_color": "#0F172A",
+        "label_color": "#334155",
+        "grid_color": "#E2E8F0",
+        "masorange": "#FF6B00",
+        "vodafone": "#E60000",
+        "accent_blue": "#29B5E8",
+        "accent_green": "#10B981",
+    }
+
+    def style_jv_chart(chart: alt.Chart, height: int = 220) -> alt.Chart:
+        return (
+            chart.properties(height=height, padding={"left": 6, "top": 10, "right": 8, "bottom": 6})
+            .configure(background="#FFFFFF")
+            .configure_view(stroke=None)
+            .configure_axis(
+                labelFont=JV_CHART_THEME["font"], titleFont=JV_CHART_THEME["font"],
+                labelColor=JV_CHART_THEME["label_color"], titleColor=JV_CHART_THEME["title_color"],
+                gridColor=JV_CHART_THEME["grid_color"], domainColor=JV_CHART_THEME["grid_color"],
+                labelFontSize=10, titleFontSize=11, titleFontWeight=600,
+            )
+            .configure_legend(labelFont=JV_CHART_THEME["font"], titleFont=JV_CHART_THEME["font"], labelFontSize=10)
+        )
+
+    def render_jv_ai_reco(title: str, insight: str, action: str, outcome: str, level: str = "info"):
+        color_map = {"info": ("#29B5E8", "#EBF8FF", "#0C4A6E"), "warning": ("#F59E0B", "#FFFBEB", "#92400E"), "critical": ("#EF4444", "#FEF2F2", "#991B1B")}
+        accent, bg, text = color_map.get(level, color_map["info"])
+        st.markdown(f"""<div style="background: {bg}; border-left: 4px solid {accent}; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.5rem;">
+            <div style="font-weight: 700; color: {text}; font-size: 0.78rem; margin-bottom: 0.2rem;">🤖 {title}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Insight:</strong> {insight}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Action:</strong> {action}</div>
+            <div style="color: #059669; font-size: 0.74rem; margin-top: 0.2rem;"><strong>Outcome:</strong> {outcome}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("""<style>
+.jv-title { font-size: 1.15rem; font-weight: 800; color: #0F172A; margin: 1.2rem 0 0.6rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.4rem; }
+.jv-mini-title { font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 0.5rem; }
+.jv-pulse { background: linear-gradient(135deg, #003366 0%, #001a33 100%); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
+.jv-pulse-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.jv-pulse-title { color: #FFFFFF; font-size: 1rem; font-weight: 700; }
+.jv-pulse-live { background: #10B981; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.68rem; font-weight: 700; }
+.jv-pulse-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; }
+.jv-pulse-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.7rem; text-align: center; }
+.jv-pulse-label { color: rgba(255,255,255,0.7); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.jv-pulse-value { color: #FFFFFF; font-size: 1.4rem; font-weight: 800; margin-top: 0.15rem; }
+.jv-pulse-delta { color: #10B981; font-size: 0.72rem; font-weight: 600; margin-top: 0.1rem; }
+.jv-owner-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; margin-right: 6px; }
+.jv-owner-masorange { background: #FF6B00; color: white; }
+.jv-owner-vodafone { background: #E60000; color: white; }
+.jv-owner-gic { background: #6366F1; color: white; }
+@media (max-width: 980px) { .jv-pulse-grid { grid-template-columns: repeat(3, 1fr); } }
+</style>""", unsafe_allow_html=True)
+
+    jv_homes_passed = 12_000_000
+    jv_homes_connected = 5_000_000
+    jv_take_rate = round(jv_homes_connected / jv_homes_passed * 100, 1)
+    jv_monthly_revenue_m = 17.8
+    jv_ebitda_margin = 42.3
+    jv_capex_deployed_m = 892
+    jv_capex_planned_m = 156
+
+    jv_cluster_df = pd.DataFrame({
+        "Cluster": ["Madrid Centro", "Barcelona", "Valencia", "Sevilla", "Málaga", "Bilbao", "Zaragoza", "Murcia", "Palma", "Alicante", "Granada", "Santander"],
+        "Homes Passed K": [1850, 1620, 980, 720, 640, 580, 520, 480, 420, 390, 340, 280],
+        "MasOrange Connected K": [680, 590, 360, 265, 235, 214, 192, 177, 155, 144, 125, 103],
+        "Vodafone Connected K": [485, 420, 257, 189, 168, 152, 137, 126, 110, 103, 89, 74],
+        "Take Rate %": [63.0, 62.3, 63.0, 63.1, 63.0, 63.1, 63.3, 63.1, 63.1, 63.3, 62.9, 63.2],
+        "ARPU MasOrange": [3.52, 3.48, 3.45, 3.42, 3.40, 3.55, 3.50, 3.38, 3.62, 3.44, 3.41, 3.58],
+        "ARPU Vodafone": [3.60, 3.55, 3.52, 3.48, 3.46, 3.62, 3.58, 3.45, 3.70, 3.50, 3.48, 3.65],
+        "Capex Deployed M": [142, 124, 75, 55, 49, 44, 40, 37, 32, 30, 26, 21],
+        "Capex Planned M": [18, 22, 14, 12, 11, 10, 9, 8, 7, 6, 5, 4],
+        "NPV M": [89, 78, 47, 35, 31, 28, 25, 23, 20, 19, 16, 13],
+        "Payback Months": [38, 40, 42, 44, 45, 43, 44, 46, 42, 44, 47, 45],
+        "lat": [40.4168, 41.3874, 39.4699, 37.3891, 36.7213, 43.2630, 41.6488, 37.9922, 39.5696, 38.3452, 37.1773, 43.4623],
+        "lon": [-3.7038, 2.1686, -0.3763, -5.9845, -4.4214, -2.9350, -0.8891, -1.1307, 2.6502, -0.4810, -3.5986, -3.8100],
+    })
+    jv_cluster_df["Total Connected K"] = jv_cluster_df["MasOrange Connected K"] + jv_cluster_df["Vodafone Connected K"]
+    jv_cluster_df["MasOrange Share %"] = (jv_cluster_df["MasOrange Connected K"] / jv_cluster_df["Total Connected K"] * 100).round(1)
+    jv_cluster_df["Vodafone Share %"] = (jv_cluster_df["Vodafone Connected K"] / jv_cluster_df["Total Connected K"] * 100).round(1)
+    jv_cluster_df["Monthly Revenue K"] = (jv_cluster_df["MasOrange Connected K"] * jv_cluster_df["ARPU MasOrange"] + jv_cluster_df["Vodafone Connected K"] * jv_cluster_df["ARPU Vodafone"]).round(0)
+
+    jv_ownership = pd.DataFrame({
+        "Owner": ["MasOrange", "Vodafone España", "GIC"],
+        "Stake %": [58, 17, 25],
+        "Type": ["Operator + Investor", "Operator + Investor", "Financial Investor"],
+        "Is Tenant": ["Yes", "Yes", "No"],
+        "Monthly Revenue Share K": [round(jv_monthly_revenue_m * 1000 * 0.58), round(jv_monthly_revenue_m * 1000 * 0.17), round(jv_monthly_revenue_m * 1000 * 0.25)],
+    })
+
+    jv_build_priority = pd.DataFrame({
+        "Zone": ["Madrid Este", "Barcelona Nord", "Valencia Sur", "Sevilla Este", "Málaga Costa", "Bilbao Sur"],
+        "Homes Target K": [85, 72, 54, 42, 38, 32],
+        "Capex Required M": [12.8, 10.9, 8.1, 6.3, 5.7, 4.8],
+        "Projected Take Rate %": [58, 55, 52, 50, 48, 54],
+        "NPV M": [8.2, 6.8, 4.9, 3.6, 3.1, 2.9],
+        "Payback Months": [36, 38, 42, 46, 48, 40],
+        "Priority Score": [92, 88, 82, 76, 72, 84],
+        "MasOrange Demand": ["High", "High", "Medium", "Medium", "Low", "High"],
+        "Vodafone Demand": ["High", "Medium", "High", "Low", "Medium", "Medium"],
+    })
+
+    jv_scenario_df = pd.DataFrame({
+        "Scenario": ["Conservative", "Base Case", "Aggressive"],
+        "New Homes K": [120, 180, 260],
+        "Capex M": [36, 54, 78],
+        "NPV M": [18, 32, 48],
+        "IRR %": [12.4, 15.8, 18.2],
+        "Payback Months": [48, 42, 36],
+        "Probability": ["25%", "50%", "25%"],
+    })
+
+    total_masorange = jv_cluster_df["MasOrange Connected K"].sum()
+    total_vodafone = jv_cluster_df["Vodafone Connected K"].sum()
+    blended_arpu = round((total_masorange * jv_cluster_df["ARPU MasOrange"].mean() + total_vodafone * jv_cluster_df["ARPU Vodafone"].mean()) / (total_masorange + total_vodafone), 2)
+
+    st.markdown(f"""
+    <div class="jv-pulse">
+        <div class="jv-pulse-head">
+            <span class="jv-pulse-title">📊 JV Economics · Wholesale Fiberco Dashboard</span>
+            <span class="jv-pulse-live">Live</span>
+        </div>
+        <div style="margin-bottom: 0.6rem;">
+            <span class="jv-owner-badge jv-owner-masorange">MasOrange 58%</span>
+            <span class="jv-owner-badge jv-owner-vodafone">Vodafone 17%</span>
+            <span class="jv-owner-badge jv-owner-gic">GIC 25%</span>
+        </div>
+        <div class="jv-pulse-grid">
+            <div class="jv-pulse-card">
+                <div class="jv-pulse-label">Homes Passed</div>
+                <div class="jv-pulse-value">{jv_homes_passed / 1_000_000:.1f}M</div>
+                <div class="jv-pulse-delta">+156K planned</div>
+            </div>
+            <div class="jv-pulse-card">
+                <div class="jv-pulse-label">Homes Connected</div>
+                <div class="jv-pulse-value">{jv_homes_connected / 1_000_000:.1f}M</div>
+                <div class="jv-pulse-delta">{jv_take_rate}% take rate</div>
+            </div>
+            <div class="jv-pulse-card">
+                <div class="jv-pulse-label">Monthly Revenue</div>
+                <div class="jv-pulse-value">€{jv_monthly_revenue_m}M</div>
+                <div class="jv-pulse-delta">↑ +3.2% MoM</div>
+            </div>
+            <div class="jv-pulse-card">
+                <div class="jv-pulse-label">EBITDA Margin</div>
+                <div class="jv-pulse-value">{jv_ebitda_margin}%</div>
+                <div class="jv-pulse-delta">Above target</div>
+            </div>
+            <div class="jv-pulse-card">
+                <div class="jv-pulse-label">Blended ARPU</div>
+                <div class="jv-pulse-value">€{blended_arpu}</div>
+                <div class="jv-pulse-delta">Per line/month</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    jv_tab_clusters, jv_tab_build, jv_tab_scenarios = st.tabs(["🗺️ Cluster Economics", "🏗️ Build Prioritization", "📈 Investment Scenarios"])
+
+    with jv_tab_clusters:
+        st.markdown('<div class="jv-title">Cluster-Level Performance by Tenant</div>', unsafe_allow_html=True)
+        cl_col1, cl_col2 = st.columns(2)
+
+        with cl_col1:
+            st.markdown('<div class="jv-mini-title">Homes Connected by Tenant</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                cluster_long = jv_cluster_df.melt(id_vars=["Cluster"], value_vars=["MasOrange Connected K", "Vodafone Connected K"], var_name="Tenant", value_name="Connected K")
+                cluster_long["Tenant"] = cluster_long["Tenant"].str.replace(" Connected K", "")
+                tenant_bar = alt.Chart(cluster_long).mark_bar(cornerRadiusTopLeft=4, cornerRadiusTopRight=4).encode(
+                    x=alt.X("Cluster:N", title=None, sort="-y"),
+                    y=alt.Y("Connected K:Q", title="Homes Connected (K)"),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    xOffset="Tenant:N",
+                    tooltip=["Cluster:N", "Tenant:N", alt.Tooltip("Connected K:Q", format=",.0f")],
+                )
+                st.altair_chart(style_jv_chart(tenant_bar, height=260), use_container_width=True)
+                render_jv_ai_reco(
+                    "Tenant Distribution",
+                    f"MasOrange has {round(total_masorange/(total_masorange+total_vodafone)*100)}% of connected homes, aligned with ownership stake.",
+                    "Monitor cluster-level imbalances to ensure fair network utilization per tenant agreement.",
+                    "Maintain JV governance alignment and prevent tenant disputes.",
+                )
+
+        with cl_col2:
+            st.markdown('<div class="jv-mini-title">ARPU by Tenant and Cluster</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                arpu_long = jv_cluster_df.melt(id_vars=["Cluster"], value_vars=["ARPU MasOrange", "ARPU Vodafone"], var_name="Tenant", value_name="ARPU")
+                arpu_long["Tenant"] = arpu_long["Tenant"].str.replace("ARPU ", "")
+                arpu_line = alt.Chart(arpu_long).mark_line(point=True, strokeWidth=2.5).encode(
+                    x=alt.X("Cluster:N", title=None),
+                    y=alt.Y("ARPU:Q", title="ARPU (€)", scale=alt.Scale(domain=[3.3, 3.75])),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    tooltip=["Cluster:N", "Tenant:N", alt.Tooltip("ARPU:Q", format=".2f")],
+                )
+                st.altair_chart(style_jv_chart(arpu_line, height=260), use_container_width=True)
+                avg_mo = jv_cluster_df["ARPU MasOrange"].mean()
+                avg_vf = jv_cluster_df["ARPU Vodafone"].mean()
+                render_jv_ai_reco(
+                    "ARPU Analysis",
+                    f"Vodafone ARPU (€{avg_vf:.2f}) is {((avg_vf-avg_mo)/avg_mo*100):.1f}% higher than MasOrange (€{avg_mo:.2f}).",
+                    "Investigate product mix differences; consider whether MasOrange can migrate to higher-value tiers.",
+                    "Increase blended ARPU and JV revenue per line.",
+                )
+
+        st.markdown('<div class="jv-title">Cluster Investment Economics</div>', unsafe_allow_html=True)
+        cl_col3, cl_col4 = st.columns(2)
+
+        with cl_col3:
+            st.markdown('<div class="jv-mini-title">NPV vs Payback by Cluster</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                npv_scatter = alt.Chart(jv_cluster_df).mark_circle(opacity=0.85, stroke="#FFFFFF", strokeWidth=1.2).encode(
+                    x=alt.X("Payback Months:Q", title="Payback (months)", scale=alt.Scale(domain=[36, 50])),
+                    y=alt.Y("NPV M:Q", title="NPV (€ M)"),
+                    size=alt.Size("Homes Passed K:Q", scale=alt.Scale(range=[200, 1200]), legend=None),
+                    color=alt.Color("Take Rate %:Q", scale=alt.Scale(scheme="blues"), legend=alt.Legend(title="Take Rate %")),
+                    tooltip=["Cluster:N", alt.Tooltip("NPV M:Q", format=".1f"), alt.Tooltip("Payback Months:Q"), alt.Tooltip("Homes Passed K:Q", format=","), alt.Tooltip("Take Rate %:Q", format=".1f")],
+                )
+                npv_labels = alt.Chart(jv_cluster_df.head(6)).mark_text(dy=-10, fontSize=9, color="#1E293B").encode(
+                    x="Payback Months:Q", y="NPV M:Q", text="Cluster:N"
+                )
+                st.altair_chart(style_jv_chart(npv_scatter + npv_labels, height=260), use_container_width=True)
+                best_cluster = jv_cluster_df.sort_values("NPV M", ascending=False).iloc[0]
+                render_jv_ai_reco(
+                    "Investment Returns",
+                    f"{best_cluster['Cluster']} delivers highest NPV (€{best_cluster['NPV M']:.0f}M) with {best_cluster['Payback Months']} month payback.",
+                    "Prioritize incremental build-out in high-NPV clusters before expanding to new territories.",
+                    "Maximize JV returns and accelerate investor payback.",
+                )
+
+        with cl_col4:
+            st.markdown('<div class="jv-mini-title">Capex Deployed vs Planned</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                capex_long = jv_cluster_df.melt(id_vars=["Cluster"], value_vars=["Capex Deployed M", "Capex Planned M"], var_name="Type", value_name="Capex M")
+                capex_bar = alt.Chart(capex_long).mark_bar(cornerRadiusTopLeft=4, cornerRadiusTopRight=4).encode(
+                    x=alt.X("Cluster:N", title=None, sort=alt.EncodingSortField(field="Capex M", order="descending")),
+                    y=alt.Y("Capex M:Q", title="Capex (€ M)"),
+                    color=alt.Color("Type:N", scale=alt.Scale(domain=["Capex Deployed M", "Capex Planned M"], range=["#29B5E8", "#10B981"]), legend=alt.Legend(title=None)),
+                    xOffset="Type:N",
+                    tooltip=["Cluster:N", "Type:N", alt.Tooltip("Capex M:Q", format=".1f")],
+                )
+                st.altair_chart(style_jv_chart(capex_bar, height=260), use_container_width=True)
+                total_deployed = jv_cluster_df["Capex Deployed M"].sum()
+                total_planned = jv_cluster_df["Capex Planned M"].sum()
+                render_jv_ai_reco(
+                    "Capex Utilization",
+                    f"€{total_deployed}M deployed, €{total_planned}M planned ({round(total_planned/(total_deployed+total_planned)*100)}% of total pipeline).",
+                    "Ensure planned capex aligns with tenant demand signals and NPV thresholds.",
+                    "Optimize capital allocation across JV build program.",
+                )
+
+    with jv_tab_build:
+        st.markdown('<div class="jv-title">Build Prioritization Matrix</div>', unsafe_allow_html=True)
+
+        bp_col1, bp_col2 = st.columns(2)
+        with bp_col1:
+            st.markdown('<div class="jv-mini-title">Priority Score vs NPV</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                priority_bar = alt.Chart(jv_build_priority).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6, size=22).encode(
+                    x=alt.X("Priority Score:Q", title="Priority Score"),
+                    y=alt.Y("Zone:N", sort="-x", title=None),
+                    color=alt.Color("NPV M:Q", scale=alt.Scale(scheme="blues"), legend=alt.Legend(title="NPV (€M)")),
+                    tooltip=["Zone:N", "Priority Score:Q", alt.Tooltip("NPV M:Q", format=".1f"), alt.Tooltip("Homes Target K:Q", format=","), alt.Tooltip("Payback Months:Q")],
+                )
+                st.altair_chart(style_jv_chart(priority_bar, height=240), use_container_width=True)
+                top_zone = jv_build_priority.sort_values("Priority Score", ascending=False).iloc[0]
+                render_jv_ai_reco(
+                    "Build Priority",
+                    f"{top_zone['Zone']} has highest priority score ({top_zone['Priority Score']}) with €{top_zone['NPV M']}M NPV.",
+                    "Fast-track permitting and contractor allocation for top-priority zones.",
+                    "Accelerate high-return deployments and improve JV cash flow.",
+                )
+
+        with bp_col2:
+            st.markdown('<div class="jv-mini-title">Tenant Demand by Zone</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                demand_df = jv_build_priority.melt(id_vars=["Zone"], value_vars=["MasOrange Demand", "Vodafone Demand"], var_name="Tenant", value_name="Demand")
+                demand_df["Tenant"] = demand_df["Tenant"].str.replace(" Demand", "")
+                demand_df["Demand Score"] = demand_df["Demand"].map({"High": 3, "Medium": 2, "Low": 1})
+                demand_heat = alt.Chart(demand_df).mark_rect(cornerRadius=4).encode(
+                    x=alt.X("Tenant:N", title=None),
+                    y=alt.Y("Zone:N", title=None),
+                    color=alt.Color("Demand Score:Q", scale=alt.Scale(domain=[1, 3], range=["#FEF3C7", "#F59E0B", "#DC2626"]), legend=None),
+                    tooltip=["Zone:N", "Tenant:N", "Demand:N"],
+                )
+                demand_text = alt.Chart(demand_df).mark_text(fontSize=10, fontWeight="bold").encode(
+                    x="Tenant:N", y="Zone:N", text="Demand:N",
+                    color=alt.condition(alt.datum["Demand Score"] == 3, alt.value("white"), alt.value("#1E293B"))
+                )
+                st.altair_chart(style_jv_chart(demand_heat + demand_text, height=240), use_container_width=True)
+                render_jv_ai_reco(
+                    "Demand Alignment",
+                    "MasOrange shows high demand in Madrid/Barcelona/Bilbao; Vodafone prioritizes Valencia.",
+                    "Coordinate build sequencing with tenant commercial teams to maximize early take-up.",
+                    "Improve time-to-revenue and reduce idle network capacity.",
+                )
+
+        st.markdown('<div class="jv-title">Build Program Economics</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            st.dataframe(
+                jv_build_priority.style.format({
+                    "Homes Target K": "{:,.0f}",
+                    "Capex Required M": "€{:.1f}M",
+                    "Projected Take Rate %": "{:.0f}%",
+                    "NPV M": "€{:.1f}M",
+                    "Payback Months": "{:.0f}",
+                    "Priority Score": "{:.0f}",
+                }).background_gradient(subset=["Priority Score"], cmap="Blues"),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+    with jv_tab_scenarios:
+        st.markdown('<div class="jv-title">Investment Scenario Analysis</div>', unsafe_allow_html=True)
+
+        sc_col1, sc_col2 = st.columns(2)
+        with sc_col1:
+            st.markdown('<div class="jv-mini-title">NPV vs IRR by Scenario</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                scenario_scatter = alt.Chart(jv_scenario_df).mark_circle(opacity=0.9, stroke="#FFFFFF", strokeWidth=1.5, size=400).encode(
+                    x=alt.X("IRR %:Q", title="IRR (%)", scale=alt.Scale(domain=[10, 20])),
+                    y=alt.Y("NPV M:Q", title="NPV (€ M)"),
+                    color=alt.Color("Scenario:N", scale=alt.Scale(domain=["Conservative", "Base Case", "Aggressive"], range=["#94A3B8", "#29B5E8", "#10B981"]), legend=alt.Legend(title=None)),
+                    tooltip=["Scenario:N", alt.Tooltip("NPV M:Q", format=".1f"), alt.Tooltip("IRR %:Q", format=".1f"), "New Homes K:Q", alt.Tooltip("Capex M:Q", format=".1f"), "Probability:N"],
+                )
+                scenario_labels = alt.Chart(jv_scenario_df).mark_text(dy=-14, fontSize=10, fontWeight="bold", color="#1E293B").encode(
+                    x="IRR %:Q", y="NPV M:Q", text="Scenario:N"
+                )
+                st.altair_chart(style_jv_chart(scenario_scatter + scenario_labels, height=240), use_container_width=True)
+                base_case = jv_scenario_df[jv_scenario_df["Scenario"] == "Base Case"].iloc[0]
+                render_jv_ai_reco(
+                    "Scenario Outlook",
+                    f"Base case yields €{base_case['NPV M']}M NPV at {base_case['IRR %']}% IRR with 50% probability.",
+                    "Board should approve base case with contingency triggers for aggressive expansion if take-up exceeds plan.",
+                    "Balanced risk-return approach with upside optionality.",
+                )
+
+        with sc_col2:
+            st.markdown('<div class="jv-mini-title">Capex vs Payback Trade-off</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                tradeoff_bar = alt.Chart(jv_scenario_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=50).encode(
+                    x=alt.X("Scenario:N", title=None),
+                    y=alt.Y("Capex M:Q", title="Capex (€ M)"),
+                    color=alt.Color("Scenario:N", scale=alt.Scale(domain=["Conservative", "Base Case", "Aggressive"], range=["#94A3B8", "#29B5E8", "#10B981"]), legend=None),
+                    tooltip=["Scenario:N", alt.Tooltip("Capex M:Q", format=".1f"), alt.Tooltip("Payback Months:Q"), alt.Tooltip("New Homes K:Q", format=",")],
+                )
+                payback_line = alt.Chart(jv_scenario_df).mark_line(point=True, strokeWidth=3, color="#F59E0B").encode(
+                    x=alt.X("Scenario:N", title=None),
+                    y=alt.Y("Payback Months:Q", title="Payback (months)"),
+                    tooltip=["Scenario:N", "Payback Months:Q"],
+                )
+                st.altair_chart(style_jv_chart(alt.layer(tradeoff_bar, payback_line).resolve_scale(y="independent"), height=240), use_container_width=True)
+                render_jv_ai_reco(
+                    "Capital Efficiency",
+                    "Aggressive scenario requires 2.2x more capex but delivers 2.7x higher NPV.",
+                    "If financing conditions remain favorable, consider phased aggressive approach.",
+                    "Maximize long-term JV value creation for all shareholders.",
+                    level="warning",
+                )
+
+        st.markdown('<div class="jv-title">Scenario Summary Table</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            st.dataframe(
+                jv_scenario_df.style.format({
+                    "New Homes K": "{:,.0f}",
+                    "Capex M": "€{:.0f}M",
+                    "NPV M": "€{:.0f}M",
+                    "IRR %": "{:.1f}%",
+                    "Payback Months": "{:.0f}",
+                }).background_gradient(subset=["NPV M"], cmap="Greens"),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+    st.markdown("""
+    <details style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.8rem; margin-top: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #334155; font-size: 0.9rem;">▸ Data Sources & Systems</summary>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #475569;">
+            <p><strong>This dashboard aggregates data from the following source systems:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 0.5rem 0;">
+                <tr style="border-bottom: 1px solid #E2E8F0;"><th style="text-align: left; padding: 0.4rem;">Data Element</th><th style="text-align: left; padding: 0.4rem;">Source System</th><th style="text-align: left; padding: 0.4rem;">Refresh</th></tr>
+                <tr><td style="padding: 0.4rem;">Homes Passed / Connected</td><td style="padding: 0.4rem;"><strong>Network Inventory System (NIS)</strong></td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">Partner ownership stakes</td><td style="padding: 0.4rem;"><strong>SAP S/4HANA Finance</strong> - JV Accounting</td><td style="padding: 0.4rem;">Monthly</td></tr>
+                <tr><td style="padding: 0.4rem;">Revenue & ARPU metrics</td><td style="padding: 0.4rem;"><strong>Oracle Revenue Management</strong></td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">CAPEX/OPEX figures</td><td style="padding: 0.4rem;"><strong>SAP S/4HANA Controlling</strong></td><td style="padding: 0.4rem;">Monthly</td></tr>
+                <tr><td style="padding: 0.4rem;">Fiber deployment clusters</td><td style="padding: 0.4rem;"><strong>GIS Platform (ESRI ArcGIS)</strong></td><td style="padding: 0.4rem;">Weekly</td></tr>
+                <tr><td style="padding: 0.4rem;">Connection growth trends</td><td style="padding: 0.4rem;"><strong>CRM (Salesforce)</strong> + Provisioning</td><td style="padding: 0.4rem;">Daily</td></tr>
+            </table>
+            <p><strong>Key Integrations:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li>JV partner data via <strong>EDI/API</strong> with MasOrange and Vodafone finance</li>
+                <li>Cluster geography from <strong>INE</strong> for population metrics</li>
+                <li>Infrastructure valuations from <strong>independent auditor reports</strong> (annual)</li>
+            </ul>
+        </div>
+    </details>
+    """, unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Page: Tenant SLA Dashboard (Wholesale Service Quality)
+# ---------------------------------------------------------------------------
+elif selected_menu == "Tenant SLA":
+    import pandas as pd
+    import altair as alt
+
+    SLA_CHART_THEME = {
+        "font": "Poppins, sans-serif",
+        "masorange": "#FF6B00",
+        "vodafone": "#E60000",
+    }
+
+    def style_sla_chart(chart: alt.Chart, height: int = 220) -> alt.Chart:
+        return (
+            chart.properties(height=height, padding={"left": 6, "top": 10, "right": 8, "bottom": 6})
+            .configure(background="#FFFFFF")
+            .configure_view(stroke=None)
+            .configure_axis(labelFontSize=10, titleFontSize=11, gridColor="#E2E8F0", domainColor="#E2E8F0")
+            .configure_legend(labelFontSize=10)
+        )
+
+    def render_sla_ai_reco(title: str, insight: str, action: str, outcome: str, level: str = "info"):
+        color_map = {"info": ("#29B5E8", "#EBF8FF", "#0C4A6E"), "warning": ("#F59E0B", "#FFFBEB", "#92400E"), "critical": ("#EF4444", "#FEF2F2", "#991B1B")}
+        accent, bg, text = color_map.get(level, color_map["info"])
+        st.markdown(f"""<div style="background: {bg}; border-left: 4px solid {accent}; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.5rem;">
+            <div style="font-weight: 700; color: {text}; font-size: 0.78rem; margin-bottom: 0.2rem;">🤖 {title}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Insight:</strong> {insight}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Action:</strong> {action}</div>
+            <div style="color: #059669; font-size: 0.74rem; margin-top: 0.2rem;"><strong>Outcome:</strong> {outcome}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("""<style>
+.sla-title { font-size: 1.15rem; font-weight: 800; color: #0F172A; margin: 1.2rem 0 0.6rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.4rem; }
+.sla-mini-title { font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 0.5rem; }
+.sla-pulse { background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
+.sla-pulse-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.sla-pulse-title { color: #FFFFFF; font-size: 1rem; font-weight: 700; }
+.sla-tenant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.sla-tenant-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255,255,255,0.15); }
+.sla-tenant-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+.sla-tenant-name { color: white; font-size: 1.1rem; font-weight: 700; }
+.sla-tenant-badge { padding: 2px 8px; border-radius: 8px; font-size: 0.68rem; font-weight: 700; }
+.sla-tenant-badge.masorange { background: #FF6B00; color: white; }
+.sla-tenant-badge.vodafone { background: #E60000; color: white; }
+.sla-metric-row { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.sla-metric-label { color: rgba(255,255,255,0.7); font-size: 0.75rem; }
+.sla-metric-value { color: white; font-size: 0.85rem; font-weight: 700; }
+.sla-metric-value.good { color: #34D399; }
+.sla-metric-value.warning { color: #FBBF24; }
+.sla-metric-value.critical { color: #F87171; }
+</style>""", unsafe_allow_html=True)
+
+    sla_monthly = pd.DataFrame({
+        "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
+        "MasOrange Availability %": [99.94, 99.92, 99.91, 99.89, 99.93, 99.95],
+        "Vodafone Availability %": [99.92, 99.90, 99.88, 99.86, 99.91, 99.93],
+        "MasOrange MTTR Min": [42, 45, 48, 52, 46, 43],
+        "Vodafone MTTR Min": [44, 47, 51, 55, 48, 45],
+        "MasOrange Incidents": [124, 138, 152, 168, 142, 128],
+        "Vodafone Incidents": [98, 108, 118, 130, 112, 102],
+    })
+
+    sla_by_cause = pd.DataFrame({
+        "Cause": ["Fiber Cut", "Power Outage", "OLT Failure", "CPE Issue", "Backhaul Congestion", "Planned Maintenance"],
+        "MasOrange Incidents": [42, 28, 18, 52, 12, 8],
+        "Vodafone Incidents": [34, 22, 14, 41, 10, 6],
+        "MasOrange Downtime Min": [1840, 980, 720, 420, 380, 240],
+        "Vodafone Downtime Min": [1520, 810, 590, 340, 310, 195],
+    })
+
+    sla_by_region = pd.DataFrame({
+        "Region": ["Madrid", "Barcelona", "Valencia", "Sevilla", "Málaga", "Bilbao"],
+        "MasOrange SLA Met %": [99.8, 99.6, 99.4, 99.2, 98.9, 99.5],
+        "Vodafone SLA Met %": [99.7, 99.5, 99.3, 99.0, 98.7, 99.4],
+        "MasOrange Penalty Exposure K": [0, 12, 24, 38, 52, 18],
+        "Vodafone Penalty Exposure K": [0, 15, 28, 42, 58, 21],
+        "MasOrange Truck Rolls": [180, 165, 142, 128, 118, 105],
+        "Vodafone Truck Rolls": [145, 132, 114, 102, 95, 84],
+    })
+
+    sla_install = pd.DataFrame({
+        "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
+        "MasOrange Install Days": [4.2, 4.5, 4.8, 5.2, 4.6, 4.3],
+        "Vodafone Install Days": [4.0, 4.3, 4.6, 5.0, 4.4, 4.1],
+        "MasOrange SLA Met %": [94, 92, 88, 82, 90, 93],
+        "Vodafone SLA Met %": [95, 93, 89, 84, 91, 94],
+    })
+
+    mo_avail = sla_monthly["MasOrange Availability %"].iloc[-1]
+    vf_avail = sla_monthly["Vodafone Availability %"].iloc[-1]
+    mo_mttr = sla_monthly["MasOrange MTTR Min"].iloc[-1]
+    vf_mttr = sla_monthly["Vodafone MTTR Min"].iloc[-1]
+    mo_incidents = sla_monthly["MasOrange Incidents"].iloc[-1]
+    vf_incidents = sla_monthly["Vodafone Incidents"].iloc[-1]
+    mo_penalty = sla_by_region["MasOrange Penalty Exposure K"].sum()
+    vf_penalty = sla_by_region["Vodafone Penalty Exposure K"].sum()
+
+    st.markdown(f"""
+    <div class="sla-pulse">
+        <div class="sla-pulse-head">
+            <span class="sla-pulse-title">📊 Tenant SLA Performance · Fiberco → Operator</span>
+        </div>
+        <div class="sla-tenant-grid">
+            <div class="sla-tenant-card">
+                <div class="sla-tenant-header">
+                    <span class="sla-tenant-badge masorange">TENANT</span>
+                    <span class="sla-tenant-name">MasOrange</span>
+                </div>
+                <div class="sla-metric-row"><span class="sla-metric-label">Network Availability</span><span class="sla-metric-value good">{mo_avail}%</span></div>
+                <div class="sla-metric-row"><span class="sla-metric-label">MTTR</span><span class="sla-metric-value {'good' if mo_mttr < 45 else 'warning'}">{mo_mttr} min</span></div>
+                <div class="sla-metric-row"><span class="sla-metric-label">Monthly Incidents</span><span class="sla-metric-value">{mo_incidents}</span></div>
+                <div class="sla-metric-row"><span class="sla-metric-label">Penalty Exposure</span><span class="sla-metric-value {'good' if mo_penalty < 100 else 'critical'}">€{mo_penalty}K</span></div>
+            </div>
+            <div class="sla-tenant-card">
+                <div class="sla-tenant-header">
+                    <span class="sla-tenant-badge vodafone">TENANT</span>
+                    <span class="sla-tenant-name">Vodafone</span>
+                </div>
+                <div class="sla-metric-row"><span class="sla-metric-label">Network Availability</span><span class="sla-metric-value good">{vf_avail}%</span></div>
+                <div class="sla-metric-row"><span class="sla-metric-label">MTTR</span><span class="sla-metric-value {'good' if vf_mttr < 45 else 'warning'}">{vf_mttr} min</span></div>
+                <div class="sla-metric-row"><span class="sla-metric-label">Monthly Incidents</span><span class="sla-metric-value">{vf_incidents}</span></div>
+                <div class="sla-metric-row"><span class="sla-metric-label">Penalty Exposure</span><span class="sla-metric-value {'good' if vf_penalty < 100 else 'critical'}">€{vf_penalty}K</span></div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    sla_tab_perf, sla_tab_incidents, sla_tab_install = st.tabs(["📈 SLA Performance", "🔧 Incident Analysis", "🏠 Installation SLA"])
+
+    with sla_tab_perf:
+        st.markdown('<div class="sla-title">Network Availability by Tenant</div>', unsafe_allow_html=True)
+        perf_col1, perf_col2 = st.columns(2)
+
+        with perf_col1:
+            st.markdown('<div class="sla-mini-title">Availability Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                avail_long = sla_monthly.melt(id_vars=["Month"], value_vars=["MasOrange Availability %", "Vodafone Availability %"], var_name="Tenant", value_name="Availability %")
+                avail_long["Tenant"] = avail_long["Tenant"].str.replace(" Availability %", "")
+                avail_line = alt.Chart(avail_long).mark_line(point=True, strokeWidth=2.5).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Availability %:Q", title="Availability (%)", scale=alt.Scale(domain=[99.8, 100])),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    tooltip=["Month:N", "Tenant:N", alt.Tooltip("Availability %:Q", format=".2f")],
+                )
+                sla_target = alt.Chart(pd.DataFrame({"y": [99.9]})).mark_rule(strokeDash=[4, 4], color="#10B981").encode(y="y:Q")
+                st.altair_chart(style_sla_chart(avail_line + sla_target, height=240), use_container_width=True)
+                render_sla_ai_reco(
+                    "Availability Trend",
+                    f"Both tenants above 99.9% SLA target. MasOrange leads at {mo_avail}%.",
+                    "Maintain proactive monitoring to sustain current performance levels.",
+                    "Zero SLA penalties and strong tenant satisfaction.",
+                )
+
+        with perf_col2:
+            st.markdown('<div class="sla-mini-title">MTTR Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                mttr_long = sla_monthly.melt(id_vars=["Month"], value_vars=["MasOrange MTTR Min", "Vodafone MTTR Min"], var_name="Tenant", value_name="MTTR Min")
+                mttr_long["Tenant"] = mttr_long["Tenant"].str.replace(" MTTR Min", "")
+                mttr_line = alt.Chart(mttr_long).mark_line(point=True, strokeWidth=2.5).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("MTTR Min:Q", title="MTTR (minutes)"),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    tooltip=["Month:N", "Tenant:N", alt.Tooltip("MTTR Min:Q")],
+                )
+                mttr_target = alt.Chart(pd.DataFrame({"y": [45]})).mark_rule(strokeDash=[4, 4], color="#F59E0B").encode(y="y:Q")
+                st.altair_chart(style_sla_chart(mttr_line + mttr_target, height=240), use_container_width=True)
+                render_sla_ai_reco(
+                    "MTTR Analysis",
+                    f"MTTR improved from Dec peak. Current: MasOrange {mo_mttr}min, Vodafone {vf_mttr}min.",
+                    "Focus on reducing Vodafone MTTR to match MasOrange performance.",
+                    "Improved tenant experience and reduced penalty risk.",
+                    level="warning" if vf_mttr > 45 else "info",
+                )
+
+        st.markdown('<div class="sla-title">Regional SLA Performance</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            region_long = sla_by_region.melt(id_vars=["Region"], value_vars=["MasOrange SLA Met %", "Vodafone SLA Met %"], var_name="Tenant", value_name="SLA Met %")
+            region_long["Tenant"] = region_long["Tenant"].str.replace(" SLA Met %", "")
+            region_bar = alt.Chart(region_long).mark_bar(cornerRadiusTopLeft=4, cornerRadiusTopRight=4).encode(
+                x=alt.X("Region:N", title=None),
+                y=alt.Y("SLA Met %:Q", title="SLA Met (%)", scale=alt.Scale(zero=False, domain=[98.5, 100])),
+                color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                xOffset="Tenant:N",
+                tooltip=["Region:N", "Tenant:N", alt.Tooltip("SLA Met %:Q", format=".1f")],
+            )
+            sla_target_line = alt.Chart(pd.DataFrame({"y": [99.5]})).mark_rule(strokeDash=[4, 4], color="#10B981", strokeWidth=2).encode(y="y:Q")
+            st.altair_chart(style_sla_chart(region_bar + sla_target_line, height=240), use_container_width=True)
+            worst_region = sla_by_region.sort_values("MasOrange SLA Met %").iloc[0]
+            render_sla_ai_reco(
+                "Regional Risk",
+                f"{worst_region['Region']} has lowest SLA compliance ({worst_region['MasOrange SLA Met %']}% MasOrange, {worst_region['Vodafone SLA Met %']}% Vodafone).",
+                f"Deploy additional field resources to {worst_region['Region']} and review root causes.",
+                "Reduce regional SLA breaches and penalty exposure.",
+                level="critical",
+            )
+
+    with sla_tab_incidents:
+        st.markdown('<div class="sla-title">Incident Analysis by Cause</div>', unsafe_allow_html=True)
+        inc_col1, inc_col2 = st.columns(2)
+
+        with inc_col1:
+            st.markdown('<div class="sla-mini-title">Incidents by Cause</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                cause_long = sla_by_cause.melt(id_vars=["Cause"], value_vars=["MasOrange Incidents", "Vodafone Incidents"], var_name="Tenant", value_name="Incidents")
+                cause_long["Tenant"] = cause_long["Tenant"].str.replace(" Incidents", "")
+                cause_bar = alt.Chart(cause_long).mark_bar(cornerRadiusTopRight=5, cornerRadiusBottomRight=5, size=16).encode(
+                    x=alt.X("Incidents:Q", title="Incidents"),
+                    y=alt.Y("Cause:N", title=None, sort="-x"),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    yOffset="Tenant:N",
+                    tooltip=["Cause:N", "Tenant:N", "Incidents:Q"],
+                )
+                st.altair_chart(style_sla_chart(cause_bar, height=260), use_container_width=True)
+                top_cause = sla_by_cause.sort_values("MasOrange Incidents", ascending=False).iloc[0]
+                render_sla_ai_reco(
+                    "Top Incident Cause",
+                    f"CPE Issues cause most incidents ({top_cause['MasOrange Incidents']} MasOrange, {top_cause['Vodafone Incidents']} Vodafone).",
+                    "Review CPE provisioning process and consider proactive replacement program.",
+                    "Reduce repeat truck rolls and improve first-time-right rate.",
+                )
+
+        with inc_col2:
+            st.markdown('<div class="sla-mini-title">Downtime by Cause</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                dt_long = sla_by_cause.melt(id_vars=["Cause"], value_vars=["MasOrange Downtime Min", "Vodafone Downtime Min"], var_name="Tenant", value_name="Downtime Min")
+                dt_long["Tenant"] = dt_long["Tenant"].str.replace(" Downtime Min", "")
+                dt_bar = alt.Chart(dt_long).mark_bar(cornerRadiusTopRight=5, cornerRadiusBottomRight=5, size=16).encode(
+                    x=alt.X("Downtime Min:Q", title="Downtime (minutes)"),
+                    y=alt.Y("Cause:N", title=None, sort="-x"),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    yOffset="Tenant:N",
+                    tooltip=["Cause:N", "Tenant:N", alt.Tooltip("Downtime Min:Q", format=",")],
+                )
+                st.altair_chart(style_sla_chart(dt_bar, height=260), use_container_width=True)
+                top_dt = sla_by_cause.sort_values("MasOrange Downtime Min", ascending=False).iloc[0]
+                render_sla_ai_reco(
+                    "Downtime Impact",
+                    f"Fiber Cuts cause highest downtime ({top_dt['MasOrange Downtime Min']} min MasOrange).",
+                    "Invest in fiber route hardening and faster splice repair capability.",
+                    "Reduce major outage duration and SLA penalty exposure.",
+                    level="warning",
+                )
+
+        st.markdown('<div class="sla-title">Penalty Exposure by Region</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            penalty_long = sla_by_region.melt(id_vars=["Region"], value_vars=["MasOrange Penalty Exposure K", "Vodafone Penalty Exposure K"], var_name="Tenant", value_name="Penalty K")
+            penalty_long["Tenant"] = penalty_long["Tenant"].str.replace(" Penalty Exposure K", "")
+            penalty_bar = alt.Chart(penalty_long).mark_bar(cornerRadiusTopLeft=4, cornerRadiusTopRight=4).encode(
+                x=alt.X("Region:N", title=None),
+                y=alt.Y("Penalty K:Q", title="Penalty Exposure (€K)"),
+                color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                xOffset="Tenant:N",
+                tooltip=["Region:N", "Tenant:N", alt.Tooltip("Penalty K:Q", format="€,.0f")],
+            )
+            st.altair_chart(style_sla_chart(penalty_bar, height=220), use_container_width=True)
+            total_penalty = penalty_long["Penalty K"].sum()
+            highest_region = penalty_long.groupby("Region")["Penalty K"].sum().idxmax()
+            render_sla_ai_reco(
+                "Penalty Exposure",
+                f"Total penalty exposure: €{total_penalty:.0f}K. {highest_region} has highest risk.",
+                "Prioritize SLA improvement investments in high-penalty regions.",
+                "Reduce financial exposure and protect JV profitability.",
+                level="critical" if total_penalty > 500 else "warning",
+            )
+
+    with sla_tab_install:
+        st.markdown('<div class="sla-title">Installation Lead Time by Tenant</div>', unsafe_allow_html=True)
+        inst_col1, inst_col2 = st.columns(2)
+
+        with inst_col1:
+            st.markdown('<div class="sla-mini-title">Install Days Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                inst_long = sla_install.melt(id_vars=["Month"], value_vars=["MasOrange Install Days", "Vodafone Install Days"], var_name="Tenant", value_name="Install Days")
+                inst_long["Tenant"] = inst_long["Tenant"].str.replace(" Install Days", "")
+                inst_line = alt.Chart(inst_long).mark_line(point=True, strokeWidth=2.5).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Install Days:Q", title="Install Lead Time (days)"),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    tooltip=["Month:N", "Tenant:N", alt.Tooltip("Install Days:Q", format=".1f")],
+                )
+                st.altair_chart(style_sla_chart(inst_line, height=240), use_container_width=True)
+                avg_mo_days = sla_install["MasOrange Install Days"].mean()
+                avg_vf_days = sla_install["Vodafone Install Days"].mean()
+                render_sla_ai_reco(
+                    "Install Speed",
+                    f"Avg install time: MasOrange {avg_mo_days:.1f} days, Vodafone {avg_vf_days:.1f} days.",
+                    "Reduce variability by pre-staging equipment and optimizing scheduling.",
+                    "Faster customer activation and improved tenant experience.",
+                )
+
+        with inst_col2:
+            st.markdown('<div class="sla-mini-title">Installation SLA Met %</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                isla_long = sla_install.melt(id_vars=["Month"], value_vars=["MasOrange SLA Met %", "Vodafone SLA Met %"], var_name="Tenant", value_name="SLA Met %")
+                isla_long["Tenant"] = isla_long["Tenant"].str.replace(" SLA Met %", "")
+                isla_line = alt.Chart(isla_long).mark_line(point=True, strokeWidth=2.5).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("SLA Met %:Q", title="SLA Met (%)", scale=alt.Scale(domain=[80, 100])),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    tooltip=["Month:N", "Tenant:N", alt.Tooltip("SLA Met %:Q", format=".0f")],
+                )
+                st.altair_chart(style_sla_chart(isla_line, height=240), use_container_width=True)
+                latest_mo_sla = sla_install["MasOrange SLA Met %"].iloc[-1]
+                latest_vf_sla = sla_install["Vodafone SLA Met %"].iloc[-1]
+                render_sla_ai_reco(
+                    "Install SLA Compliance",
+                    f"Current install SLA: MasOrange {latest_mo_sla:.0f}%, Vodafone {latest_vf_sla:.0f}%.",
+                    "Target 95%+ for both tenants through process standardization.",
+                    "Reduce escalations and strengthen tenant relationships.",
+                    level="warning" if min(latest_mo_sla, latest_vf_sla) < 90 else "info",
+                )
+
+        render_sla_ai_reco(
+            "Installation Performance",
+            f"Install times recovered from Dec peak. Current: MasOrange {sla_install['MasOrange Install Days'].iloc[-1]} days, Vodafone {sla_install['Vodafone Install Days'].iloc[-1]} days.",
+            "Maintain contractor capacity and inventory levels to sustain improvement.",
+            "High tenant satisfaction and faster time-to-revenue.",
+        )
+
+    st.markdown("""
+    <details style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.8rem; margin-top: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #334155; font-size: 0.9rem;">▸ Data Sources & Systems</summary>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #475569;">
+            <p><strong>This dashboard aggregates data from the following source systems:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 0.5rem 0;">
+                <tr style="border-bottom: 1px solid #E2E8F0;"><th style="text-align: left; padding: 0.4rem;">Data Element</th><th style="text-align: left; padding: 0.4rem;">Source System</th><th style="text-align: left; padding: 0.4rem;">Refresh</th></tr>
+                <tr><td style="padding: 0.4rem;">Network availability %</td><td style="padding: 0.4rem;"><strong>NOC</strong> - Monitoring Platform</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">MTTR metrics</td><td style="padding: 0.4rem;"><strong>ServiceNow ITSM</strong> - Incident Mgmt</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Incident counts</td><td style="padding: 0.4rem;"><strong>ServiceNow</strong> + Alarm Correlation</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Regional SLA performance</td><td style="padding: 0.4rem;"><strong>NOC</strong> + GIS Platform</td><td style="padding: 0.4rem;">Hourly</td></tr>
+                <tr><td style="padding: 0.4rem;">Penalty exposure</td><td style="padding: 0.4rem;"><strong>Contract Management</strong> + Finance</td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">Installation times</td><td style="padding: 0.4rem;"><strong>Workforce Management (WFM)</strong></td><td style="padding: 0.4rem;">Daily</td></tr>
+            </table>
+            <p><strong>Key Integrations:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li>SLA thresholds from <strong>Master Service Agreements (MSA)</strong></li>
+                <li>Incident sync with <strong>MasOrange/Vodafone ticketing</strong></li>
+                <li>Penalty calculations from <strong>contractual SLA matrices</strong></li>
+            </ul>
+        </div>
+    </details>
+    """, unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Page: Wholesale Commercial (Product & Pricing Strategy)
+# ---------------------------------------------------------------------------
+elif selected_menu == "Wholesale Commercial":
+    import pandas as pd
+    import altair as alt
+
+    def style_ws_chart(chart: alt.Chart, height: int = 220) -> alt.Chart:
+        return (
+            chart.properties(height=height, padding={"left": 6, "top": 10, "right": 8, "bottom": 6})
+            .configure(background="#FFFFFF")
+            .configure_view(stroke=None)
+            .configure_axis(labelFontSize=10, titleFontSize=11, gridColor="#E2E8F0", domainColor="#E2E8F0")
+            .configure_legend(labelFontSize=10)
+        )
+
+    def render_ws_ai_reco(title: str, insight: str, action: str, outcome: str, level: str = "info"):
+        color_map = {"info": ("#29B5E8", "#EBF8FF", "#0C4A6E"), "warning": ("#F59E0B", "#FFFBEB", "#92400E"), "critical": ("#EF4444", "#FEF2F2", "#991B1B")}
+        accent, bg, text = color_map.get(level, color_map["info"])
+        st.markdown(f"""<div style="background: {bg}; border-left: 4px solid {accent}; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.5rem;">
+            <div style="font-weight: 700; color: {text}; font-size: 0.78rem; margin-bottom: 0.2rem;">🤖 {title}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Insight:</strong> {insight}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Action:</strong> {action}</div>
+            <div style="color: #059669; font-size: 0.74rem; margin-top: 0.2rem;"><strong>Outcome:</strong> {outcome}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("""<style>
+.ws-title { font-size: 1.15rem; font-weight: 800; color: #0F172A; margin: 1.2rem 0 0.6rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.4rem; }
+.ws-mini-title { font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 0.5rem; }
+.ws-pulse { background: linear-gradient(135deg, #065F46 0%, #047857 100%); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
+.ws-pulse-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.ws-pulse-title { color: #FFFFFF; font-size: 1rem; font-weight: 700; }
+.ws-pulse-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; }
+.ws-pulse-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 0.7rem; text-align: center; }
+.ws-pulse-label { color: rgba(255,255,255,0.7); font-size: 0.68rem; text-transform: uppercase; }
+.ws-pulse-value { color: #FFFFFF; font-size: 1.4rem; font-weight: 800; margin-top: 0.15rem; }
+.ws-pulse-delta { color: #34D399; font-size: 0.72rem; font-weight: 600; margin-top: 0.1rem; }
+</style>""", unsafe_allow_html=True)
+
+    ws_products = pd.DataFrame({
+        "Product": ["Bitstream 300Mb", "Bitstream 600Mb", "Bitstream 1Gb", "Bitstream 2.5Gb", "Enterprise Dedicated", "Dark Fiber"],
+        "MasOrange Lines K": [1820, 2340, 1680, 420, 85, 12],
+        "Vodafone Lines K": [1290, 1680, 1240, 310, 62, 8],
+        "Price €/mo": [2.80, 3.20, 3.80, 4.50, 12.00, 45.00],
+        "Cost €/mo": [1.85, 2.10, 2.50, 3.10, 7.20, 18.00],
+        "Margin %": [33.9, 34.4, 34.2, 31.1, 40.0, 60.0],
+        "YoY Growth %": [-8, 12, 28, 45, 18, 22],
+    })
+    ws_products["Total Lines K"] = ws_products["MasOrange Lines K"] + ws_products["Vodafone Lines K"]
+    ws_products["Monthly Revenue K"] = (ws_products["Total Lines K"] * ws_products["Price €/mo"]).round(0)
+    ws_products["Gross Profit K"] = (ws_products["Total Lines K"] * (ws_products["Price €/mo"] - ws_products["Cost €/mo"])).round(0)
+
+    ws_margin_waterfall = pd.DataFrame({
+        "Step": ["Gross Revenue", "Network Costs", "Field Ops", "Energy", "SLA Credits", "Net Margin"],
+        "Value M": [17.8, -7.2, -2.4, -1.8, -0.3, 6.1],
+        "Cumulative M": [17.8, 10.6, 8.2, 6.4, 6.1, 6.1],
+    })
+
+    ws_pricing_scenario = pd.DataFrame({
+        "Scenario": ["Current", "+5% Price", "+10% Price", "-5% Price"],
+        "Monthly Revenue M": [17.8, 18.7, 19.6, 16.9],
+        "Volume Impact %": [0, -2, -5, 3],
+        "EBITDA M": [6.1, 6.8, 7.2, 5.6],
+        "Tenant Risk": ["Low", "Medium", "High", "Low"],
+    })
+
+    ws_monthly_trend = pd.DataFrame({
+        "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
+        "MasOrange Revenue M": [9.8, 10.0, 10.2, 10.1, 10.3, 10.5],
+        "Vodafone Revenue M": [6.9, 7.0, 7.1, 7.0, 7.2, 7.3],
+    })
+
+    total_revenue_m = ws_products["Monthly Revenue K"].sum() / 1000
+    total_lines_k = ws_products["Total Lines K"].sum()
+    blended_margin = round(ws_products["Gross Profit K"].sum() / ws_products["Monthly Revenue K"].sum() * 100, 1)
+    avg_arpu = round(total_revenue_m * 1000 / total_lines_k, 2)
+
+    st.markdown(f"""
+    <div class="ws-pulse">
+        <div class="ws-pulse-head">
+            <span class="ws-pulse-title">📦 Wholesale Product & Pricing · B2B Strategy</span>
+        </div>
+        <div class="ws-pulse-grid">
+            <div class="ws-pulse-card">
+                <div class="ws-pulse-label">Monthly Revenue</div>
+                <div class="ws-pulse-value">€{total_revenue_m:.1f}M</div>
+                <div class="ws-pulse-delta">↑ +3.2% MoM</div>
+            </div>
+            <div class="ws-pulse-card">
+                <div class="ws-pulse-label">Active Lines</div>
+                <div class="ws-pulse-value">{total_lines_k/1000:.1f}M</div>
+                <div class="ws-pulse-delta">Both tenants</div>
+            </div>
+            <div class="ws-pulse-card">
+                <div class="ws-pulse-label">Blended Margin</div>
+                <div class="ws-pulse-value">{blended_margin}%</div>
+                <div class="ws-pulse-delta">Above target</div>
+            </div>
+            <div class="ws-pulse-card">
+                <div class="ws-pulse-label">Avg ARPU</div>
+                <div class="ws-pulse-value">€{avg_arpu}</div>
+                <div class="ws-pulse-delta">Per line/month</div>
+            </div>
+            <div class="ws-pulse-card">
+                <div class="ws-pulse-label">Products</div>
+                <div class="ws-pulse-value">{len(ws_products)}</div>
+                <div class="ws-pulse-delta">In portfolio</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    ws_tab_portfolio, ws_tab_margin, ws_tab_pricing = st.tabs(["📦 Product Portfolio", "💰 Margin Analysis", "📊 Pricing Scenarios"])
+
+    with ws_tab_portfolio:
+        st.markdown('<div class="ws-title">Product Portfolio by Tenant</div>', unsafe_allow_html=True)
+        port_col1, port_col2 = st.columns(2)
+
+        with port_col1:
+            st.markdown('<div class="ws-mini-title">Lines by Product and Tenant</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                prod_long = ws_products.melt(id_vars=["Product"], value_vars=["MasOrange Lines K", "Vodafone Lines K"], var_name="Tenant", value_name="Lines K")
+                prod_long["Tenant"] = prod_long["Tenant"].str.replace(" Lines K", "")
+                prod_bar = alt.Chart(prod_long).mark_bar(cornerRadiusTopLeft=4, cornerRadiusTopRight=4).encode(
+                    x=alt.X("Product:N", title=None, sort="-y"),
+                    y=alt.Y("Lines K:Q", title="Lines (K)"),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    xOffset="Tenant:N",
+                    tooltip=["Product:N", "Tenant:N", alt.Tooltip("Lines K:Q", format=",")],
+                )
+                st.altair_chart(style_ws_chart(prod_bar, height=260), use_container_width=True)
+                top_prod = ws_products.sort_values("Total Lines K", ascending=False).iloc[0]
+                render_ws_ai_reco(
+                    "Product Mix",
+                    f"{top_prod['Product']} is highest volume ({top_prod['Total Lines K']:,.0f}K lines, {top_prod['Total Lines K']/total_lines_k*100:.0f}% share).",
+                    "Monitor migration from 300Mb to higher tiers; declining legacy products.",
+                    "Optimize product mix toward higher-margin tiers.",
+                )
+
+        with port_col2:
+            st.markdown('<div class="ws-mini-title">Revenue vs Margin by Product</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                rev_margin = alt.Chart(ws_products).mark_circle(opacity=0.85, stroke="#FFFFFF", strokeWidth=1.2).encode(
+                    x=alt.X("Monthly Revenue K:Q", title="Monthly Revenue (€K)"),
+                    y=alt.Y("Margin %:Q", title="Margin (%)"),
+                    size=alt.Size("Total Lines K:Q", scale=alt.Scale(range=[200, 1000]), legend=None),
+                    color=alt.Color("YoY Growth %:Q", scale=alt.Scale(scheme="redyellowgreen", domainMid=0), legend=alt.Legend(title="YoY Growth")),
+                    tooltip=["Product:N", alt.Tooltip("Monthly Revenue K:Q", format="€,.0f"), alt.Tooltip("Margin %:Q", format=".1f"), alt.Tooltip("YoY Growth %:Q", format="+.0f"), alt.Tooltip("Total Lines K:Q", format=",")],
+                )
+                rev_labels = alt.Chart(ws_products).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
+                    x="Monthly Revenue K:Q", y="Margin %:Q", text="Product:N"
+                )
+                st.altair_chart(style_ws_chart(rev_margin + rev_labels, height=260), use_container_width=True)
+                low_margin = ws_products.sort_values("Margin %").iloc[0]
+                render_ws_ai_reco(
+                    "Margin Optimization",
+                    f"{low_margin['Product']} has lowest margin ({low_margin['Margin %']:.1f}%) but strong growth ({low_margin['YoY Growth %']:+.0f}%).",
+                    "Review cost structure for 2.5Gb tier; consider price adjustment or cost reduction.",
+                    "Improve margin as volumes scale.",
+                    level="warning",
+                )
+
+        st.markdown('<div class="ws-title">Product Portfolio Details</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            st.dataframe(
+                ws_products.style.format({
+                    "MasOrange Lines K": "{:,.0f}",
+                    "Vodafone Lines K": "{:,.0f}",
+                    "Total Lines K": "{:,.0f}",
+                    "Price €/mo": "€{:.2f}",
+                    "Cost €/mo": "€{:.2f}",
+                    "Margin %": "{:.1f}%",
+                    "YoY Growth %": "{:+.0f}%",
+                    "Monthly Revenue K": "€{:,.0f}",
+                    "Gross Profit K": "€{:,.0f}",
+                }).background_gradient(subset=["Margin %"], cmap="Greens"),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+    with ws_tab_margin:
+        st.markdown('<div class="ws-title">Margin Waterfall Analysis</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            wf = ws_margin_waterfall.copy()
+            wf["Type"] = wf["Value M"].apply(lambda v: "Revenue" if v > 10 else "Profit" if v > 0 else "Cost")
+            wf_bar = alt.Chart(wf).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, size=50).encode(
+                x=alt.X("Step:N", title=None, sort=list(wf["Step"])),
+                y=alt.Y("Value M:Q", title="€ Million"),
+                color=alt.Color("Type:N", scale=alt.Scale(domain=["Revenue", "Cost", "Profit"], range=["#29B5E8", "#EF4444", "#10B981"]), legend=None),
+                tooltip=["Step:N", alt.Tooltip("Value M:Q", format="+.1f"), alt.Tooltip("Cumulative M:Q", format=".1f")],
+            )
+            wf_text = alt.Chart(wf).mark_text(dy=-8, fontSize=10, fontWeight="bold", color="#0F172A").encode(
+                x=alt.X("Step:N", sort=list(wf["Step"])),
+                y="Value M:Q",
+                text=alt.Text("Value M:Q", format="+.1f"),
+            )
+            st.altair_chart(style_ws_chart(wf_bar + wf_text, height=280), use_container_width=True)
+            network_pct = round(abs(ws_margin_waterfall[ws_margin_waterfall["Step"] == "Network Costs"]["Value M"].iloc[0]) / ws_margin_waterfall[ws_margin_waterfall["Step"] == "Gross Revenue"]["Value M"].iloc[0] * 100, 1)
+            render_ws_ai_reco(
+                "Cost Structure",
+                f"Network costs are {network_pct}% of revenue, the largest cost driver.",
+                "Focus optimization on network efficiency and vendor renegotiations.",
+                "Improve net margin from current 34% toward 38% target.",
+            )
+
+        st.markdown('<div class="ws-title">Revenue Trend by Tenant</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            trend_long = ws_monthly_trend.melt(id_vars=["Month"], value_vars=["MasOrange Revenue M", "Vodafone Revenue M"], var_name="Tenant", value_name="Revenue M")
+            trend_long["Tenant"] = trend_long["Tenant"].str.replace(" Revenue M", "")
+            trend_line = alt.Chart(trend_long).mark_area(opacity=0.7).encode(
+                x=alt.X("Month:N", title=None),
+                y=alt.Y("Revenue M:Q", title="Revenue (€ M)", stack=True),
+                color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                tooltip=["Month:N", "Tenant:N", alt.Tooltip("Revenue M:Q", format=".1f")],
+            )
+            st.altair_chart(style_ws_chart(trend_line, height=220), use_container_width=True)
+            mo_growth = (ws_monthly_trend["MasOrange Revenue M"].iloc[-1] - ws_monthly_trend["MasOrange Revenue M"].iloc[0]) / ws_monthly_trend["MasOrange Revenue M"].iloc[0] * 100
+            vf_growth = (ws_monthly_trend["Vodafone Revenue M"].iloc[-1] - ws_monthly_trend["Vodafone Revenue M"].iloc[0]) / ws_monthly_trend["Vodafone Revenue M"].iloc[0] * 100
+            render_ws_ai_reco(
+                "Revenue Trend",
+                f"6-month growth: MasOrange {mo_growth:+.1f}%, Vodafone {vf_growth:+.1f}%.",
+                "Sustain growth momentum through upselling and network expansion.",
+                "Achieve €24M+ monthly revenue target by Q4.",
+            )
+
+    with ws_tab_pricing:
+        st.markdown('<div class="ws-title">Pricing Scenario Analysis</div>', unsafe_allow_html=True)
+        pr_col1, pr_col2 = st.columns(2)
+
+        with pr_col1:
+            st.markdown('<div class="ws-mini-title">Revenue vs EBITDA by Scenario</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                scenario_bar = alt.Chart(ws_pricing_scenario).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, size=40).encode(
+                    x=alt.X("Scenario:N", title=None),
+                    y=alt.Y("Monthly Revenue M:Q", title="Monthly Revenue (€ M)"),
+                    color=alt.Color("Tenant Risk:N", scale=alt.Scale(domain=["Low", "Medium", "High"], range=["#10B981", "#F59E0B", "#EF4444"]), legend=alt.Legend(title="Tenant Risk")),
+                    tooltip=["Scenario:N", alt.Tooltip("Monthly Revenue M:Q", format=".1f"), alt.Tooltip("EBITDA M:Q", format=".1f"), "Volume Impact %:Q", "Tenant Risk:N"],
+                )
+                ebitda_line = alt.Chart(ws_pricing_scenario).mark_line(point=True, strokeWidth=3, color="#6366F1").encode(
+                    x=alt.X("Scenario:N", title=None),
+                    y=alt.Y("EBITDA M:Q", title="EBITDA (€ M)"),
+                    tooltip=["Scenario:N", alt.Tooltip("EBITDA M:Q", format=".1f")],
+                )
+                st.altair_chart(style_ws_chart(alt.layer(scenario_bar, ebitda_line).resolve_scale(y="independent"), height=250), use_container_width=True)
+                render_ws_ai_reco(
+                    "Pricing Strategy",
+                    "+5% price increase yields €0.7M EBITDA uplift with moderate tenant risk.",
+                    "Propose +5% adjustment in next contract renewal cycle with enhanced SLA commitment.",
+                    "Balance margin improvement with tenant relationship stability.",
+                    level="warning",
+                )
+
+        with pr_col2:
+            st.markdown('<div class="ws-mini-title">Volume Impact Trade-off</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                vol_scatter = alt.Chart(ws_pricing_scenario).mark_circle(size=300, opacity=0.85, stroke="#FFFFFF", strokeWidth=1.5).encode(
+                    x=alt.X("Volume Impact %:Q", title="Volume Impact (%)"),
+                    y=alt.Y("EBITDA M:Q", title="EBITDA (€ M)"),
+                    color=alt.Color("Scenario:N", legend=alt.Legend(title=None)),
+                    tooltip=["Scenario:N", "Volume Impact %:Q", alt.Tooltip("EBITDA M:Q", format=".1f"), alt.Tooltip("Monthly Revenue M:Q", format=".1f")],
+                )
+                vol_labels = alt.Chart(ws_pricing_scenario).mark_text(dy=-14, fontSize=10, fontWeight="bold", color="#1E293B").encode(
+                    x="Volume Impact %:Q", y="EBITDA M:Q", text="Scenario:N"
+                )
+                st.altair_chart(style_ws_chart(vol_scatter + vol_labels, height=250), use_container_width=True)
+                render_ws_ai_reco(
+                    "Elasticity Analysis",
+                    "Price elasticity suggests -2% volume per +5% price, acceptable trade-off.",
+                    "Monitor churn signals closely if implementing price increases.",
+                    "Optimize revenue without triggering tenant contract disputes.",
+                )
+
+    st.markdown("""
+    <details style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.8rem; margin-top: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #334155; font-size: 0.9rem;">▸ Data Sources & Systems</summary>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #475569;">
+            <p><strong>This dashboard aggregates data from the following source systems:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 0.5rem 0;">
+                <tr style="border-bottom: 1px solid #E2E8F0;"><th style="text-align: left; padding: 0.4rem;">Data Element</th><th style="text-align: left; padding: 0.4rem;">Source System</th><th style="text-align: left; padding: 0.4rem;">Refresh</th></tr>
+                <tr><td style="padding: 0.4rem;">Product portfolio & speeds</td><td style="padding: 0.4rem;"><strong>Salesforce CPQ</strong></td><td style="padding: 0.4rem;">On change</td></tr>
+                <tr><td style="padding: 0.4rem;">Wholesale pricing</td><td style="padding: 0.4rem;"><strong>SAP S/4HANA Pricing</strong></td><td style="padding: 0.4rem;">Monthly</td></tr>
+                <tr><td style="padding: 0.4rem;">Revenue by product</td><td style="padding: 0.4rem;"><strong>Oracle Revenue Management</strong></td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">Tenant order volumes</td><td style="padding: 0.4rem;"><strong>Order Management (OMS)</strong></td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Margin calculations</td><td style="padding: 0.4rem;"><strong>SAP BPC</strong> Finance Analytics</td><td style="padding: 0.4rem;">Monthly</td></tr>
+                <tr><td style="padding: 0.4rem;">Pricing scenarios</td><td style="padding: 0.4rem;"><strong>Revenue Optimization Model</strong></td><td style="padding: 0.4rem;">On demand</td></tr>
+            </table>
+            <p><strong>Key Integrations:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li>Pricing agreements in <strong>Contract Lifecycle Management (CLM)</strong></li>
+                <li>Competitor intel from <strong>market research feeds</strong></li>
+                <li>Volume forecasts from <strong>SAP IBP Demand Planning</strong></li>
+            </ul>
+        </div>
+    </details>
+    """, unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Page: ESG & Energy Efficiency
+# ---------------------------------------------------------------------------
+elif selected_menu == "ESG & Energy":
+    import pandas as pd
+    import altair as alt
+
+    def style_esg_chart(chart: alt.Chart, height: int = 220) -> alt.Chart:
+        return (
+            chart.properties(height=height, padding={"left": 6, "top": 10, "right": 8, "bottom": 6})
+            .configure(background="#FFFFFF")
+            .configure_view(stroke=None)
+            .configure_axis(labelFontSize=10, titleFontSize=11, gridColor="#E2E8F0", domainColor="#E2E8F0")
+            .configure_legend(labelFontSize=10)
+        )
+
+    def render_esg_ai_reco(title: str, insight: str, action: str, outcome: str, level: str = "info"):
+        color_map = {"info": ("#10B981", "#ECFDF5", "#065F46"), "warning": ("#F59E0B", "#FFFBEB", "#92400E"), "critical": ("#EF4444", "#FEF2F2", "#991B1B")}
+        accent, bg, text = color_map.get(level, color_map["info"])
+        st.markdown(f"""<div style="background: {bg}; border-left: 4px solid {accent}; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.5rem;">
+            <div style="font-weight: 700; color: {text}; font-size: 0.78rem; margin-bottom: 0.2rem;">🌱 {title}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Insight:</strong> {insight}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Action:</strong> {action}</div>
+            <div style="color: #059669; font-size: 0.74rem; margin-top: 0.2rem;"><strong>Outcome:</strong> {outcome}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("""<style>
+.esg-title { font-size: 1.15rem; font-weight: 800; color: #0F172A; margin: 1.2rem 0 0.6rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.4rem; }
+.esg-mini-title { font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 0.5rem; }
+.esg-pulse { background: linear-gradient(135deg, #065F46 0%, #059669 100%); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
+.esg-pulse-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.esg-pulse-title { color: #FFFFFF; font-size: 1rem; font-weight: 700; }
+.esg-pulse-badge { background: #34D399; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.68rem; font-weight: 700; }
+.esg-pulse-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; }
+.esg-pulse-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 0.7rem; text-align: center; }
+.esg-pulse-label { color: rgba(255,255,255,0.7); font-size: 0.68rem; text-transform: uppercase; }
+.esg-pulse-value { color: #FFFFFF; font-size: 1.4rem; font-weight: 800; margin-top: 0.15rem; }
+.esg-pulse-delta { color: #34D399; font-size: 0.72rem; font-weight: 600; margin-top: 0.1rem; }
+</style>""", unsafe_allow_html=True)
+
+    esg_energy_monthly = pd.DataFrame({
+        "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
+        "Energy MWh": [4280, 4320, 4450, 4580, 4420, 4350],
+        "Active Lines M": [4.82, 4.88, 4.92, 4.96, 5.00, 5.02],
+        "Traffic PB": [12.4, 13.1, 14.2, 15.8, 14.6, 13.8],
+        "Cost K€": [385, 389, 401, 412, 398, 391],
+    })
+    esg_energy_monthly["kWh per Line"] = (esg_energy_monthly["Energy MWh"] * 1000 / (esg_energy_monthly["Active Lines M"] * 1_000_000)).round(3)
+    esg_energy_monthly["kWh per TB"] = (esg_energy_monthly["Energy MWh"] / (esg_energy_monthly["Traffic PB"] * 1000)).round(4)
+
+    esg_by_site = pd.DataFrame({
+        "Site Type": ["Core PoP", "Transport Node", "OLT Cabinet", "Field Junction", "Office"],
+        "Sites": [8, 42, 302, 1120, 6],
+        "Energy MWh/mo": [1420, 980, 1280, 520, 150],
+        "Renewable %": [78, 65, 42, 28, 92],
+        "PUE": [1.45, 1.62, 1.85, 2.10, 1.35],
+    })
+    esg_by_site["Energy per Site MWh"] = (esg_by_site["Energy MWh/mo"] / esg_by_site["Sites"]).round(1)
+
+    esg_carbon = pd.DataFrame({
+        "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
+        "Scope 1 tCO2": [42, 44, 46, 48, 45, 43],
+        "Scope 2 tCO2": [1285, 1297, 1336, 1375, 1327, 1306],
+        "Scope 3 tCO2": [420, 435, 448, 462, 445, 432],
+    })
+    esg_carbon["Total tCO2"] = esg_carbon["Scope 1 tCO2"] + esg_carbon["Scope 2 tCO2"] + esg_carbon["Scope 3 tCO2"]
+
+    esg_copper_migration = pd.DataFrame({
+        "Year": ["2023", "2024", "2025", "2026 (Plan)"],
+        "Copper Lines K": [320, 180, 85, 25],
+        "Fiber Lines K": [4200, 4650, 4920, 5100],
+        "Energy Saved MWh": [0, 2800, 4200, 5100],
+        "Carbon Avoided tCO2": [0, 840, 1260, 1530],
+    })
+
+    esg_initiatives = pd.DataFrame({
+        "Initiative": ["Solar PV at Core Sites", "OLT Power Optimization", "Fleet EV Transition", "Office LED Retrofit", "Cooling Efficiency Upgrade"],
+        "Status": ["In Progress", "Completed", "In Progress", "Completed", "Planned"],
+        "Investment K€": [420, 85, 280, 45, 320],
+        "Annual Savings K€": [95, 38, 62, 12, 78],
+        "Carbon Reduction tCO2": [380, 145, 95, 28, 185],
+        "Payback Years": [4.4, 2.2, 4.5, 3.8, 4.1],
+    })
+
+    current_energy = esg_energy_monthly["Energy MWh"].iloc[-1]
+    current_kwh_line = esg_energy_monthly["kWh per Line"].iloc[-1]
+    current_carbon = esg_carbon["Total tCO2"].iloc[-1]
+    renewable_pct = round((esg_by_site["Energy MWh/mo"] * esg_by_site["Renewable %"] / 100).sum() / esg_by_site["Energy MWh/mo"].sum() * 100, 1)
+    yoy_carbon_reduction = round((esg_carbon["Total tCO2"].iloc[0] - current_carbon) / esg_carbon["Total tCO2"].iloc[0] * 100, 1)
+
+    st.markdown(f"""
+    <div class="esg-pulse">
+        <div class="esg-pulse-head">
+            <span class="esg-pulse-title">🌍 ESG & Energy Efficiency Dashboard</span>
+            <span class="esg-pulse-badge">Sustainability Report</span>
+        </div>
+        <div class="esg-pulse-grid">
+            <div class="esg-pulse-card">
+                <div class="esg-pulse-label">Monthly Energy</div>
+                <div class="esg-pulse-value">{current_energy:,}</div>
+                <div class="esg-pulse-delta">MWh</div>
+            </div>
+            <div class="esg-pulse-card">
+                <div class="esg-pulse-label">kWh per Line</div>
+                <div class="esg-pulse-value">{current_kwh_line}</div>
+                <div class="esg-pulse-delta">↓ -4% YoY</div>
+            </div>
+            <div class="esg-pulse-card">
+                <div class="esg-pulse-label">Carbon Footprint</div>
+                <div class="esg-pulse-value">{current_carbon:,}</div>
+                <div class="esg-pulse-delta">tCO2/month</div>
+            </div>
+            <div class="esg-pulse-card">
+                <div class="esg-pulse-label">Renewable Energy</div>
+                <div class="esg-pulse-value">{renewable_pct}%</div>
+                <div class="esg-pulse-delta">↑ +8pp YoY</div>
+            </div>
+            <div class="esg-pulse-card">
+                <div class="esg-pulse-label">Carbon Reduction</div>
+                <div class="esg-pulse-value">{abs(yoy_carbon_reduction)}%</div>
+                <div class="esg-pulse-delta">vs baseline</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    esg_tab_energy, esg_tab_carbon, esg_tab_migration = st.tabs(["⚡ Energy Efficiency", "🌱 Carbon Footprint", "🔄 Copper Migration"])
+
+    with esg_tab_energy:
+        st.markdown('<div class="esg-title">Energy Consumption Analysis</div>', unsafe_allow_html=True)
+        en_col1, en_col2 = st.columns(2)
+
+        with en_col1:
+            st.markdown('<div class="esg-mini-title">Energy vs Traffic Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                energy_line = alt.Chart(esg_energy_monthly).mark_line(point=True, strokeWidth=2.5, color="#10B981").encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Energy MWh:Q", title="Energy (MWh)"),
+                    tooltip=["Month:N", alt.Tooltip("Energy MWh:Q", format=","), alt.Tooltip("Traffic PB:Q", format=".1f")],
+                )
+                traffic_line = alt.Chart(esg_energy_monthly).mark_line(point=True, strokeWidth=2.5, color="#6366F1").encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Traffic PB:Q", title="Traffic (PB)"),
+                )
+                st.altair_chart(style_esg_chart(alt.layer(energy_line, traffic_line).resolve_scale(y="independent"), height=240), use_container_width=True)
+                render_esg_ai_reco(
+                    "Energy Efficiency",
+                    "Energy consumption stable while traffic grew 11%, indicating improved efficiency.",
+                    "Continue network optimization and equipment refresh programs.",
+                    "Achieve 2026 target of 15% efficiency improvement.",
+                )
+
+        with en_col2:
+            st.markdown('<div class="esg-mini-title">kWh per Line Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                kwh_line = alt.Chart(esg_energy_monthly).mark_area(opacity=0.6, color="#10B981", line={"color": "#059669", "strokeWidth": 2}).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("kWh per Line:Q", title="kWh per Line", scale=alt.Scale(domain=[0.85, 0.92])),
+                    tooltip=["Month:N", alt.Tooltip("kWh per Line:Q", format=".3f")],
+                )
+                st.altair_chart(style_esg_chart(kwh_line, height=240), use_container_width=True)
+                render_esg_ai_reco(
+                    "Per-Line Efficiency",
+                    f"Current kWh/line ({current_kwh_line}) is 4% below 2025 baseline.",
+                    "Target 0.80 kWh/line by end of 2026 through OLT optimization.",
+                    "Reduce operating costs and carbon intensity per customer.",
+                )
+
+        st.markdown('<div class="esg-title">Energy by Site Type</div>', unsafe_allow_html=True)
+        site_col1, site_col2 = st.columns(2)
+
+        with site_col1:
+            st.markdown('<div class="esg-mini-title">Energy Distribution</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                site_donut = alt.Chart(esg_by_site).mark_arc(innerRadius=55, outerRadius=95).encode(
+                    theta=alt.Theta("Energy MWh/mo:Q", stack=True),
+                    color=alt.Color("Site Type:N", scale=alt.Scale(range=["#10B981", "#3B82F6", "#F59E0B", "#EF4444", "#8B5CF6"]), legend=alt.Legend(title=None)),
+                    tooltip=["Site Type:N", alt.Tooltip("Energy MWh/mo:Q", format=","), alt.Tooltip("Renewable %:Q", format=".0f"), alt.Tooltip("PUE:Q", format=".2f")],
+                )
+                st.altair_chart(style_esg_chart(site_donut, height=240), use_container_width=True)
+                top_consumer = esg_by_site.sort_values("Energy MWh/mo", ascending=False).iloc[0]
+                render_esg_ai_reco(
+                    "Energy Concentration",
+                    f"{top_consumer['Site Type']} consumes highest energy ({top_consumer['Energy MWh/mo']:,} MWh/mo).",
+                    "Focus efficiency upgrades on high-consumption site types.",
+                    "Reduce peak energy demand 15% through targeted optimization.",
+                )
+
+        with site_col2:
+            st.markdown('<div class="esg-mini-title">Renewable % by Site Type</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                renew_bar = alt.Chart(esg_by_site).mark_bar(cornerRadiusTopRight=5, cornerRadiusBottomRight=5, size=20).encode(
+                    x=alt.X("Renewable %:Q", title="Renewable Energy (%)", scale=alt.Scale(domain=[0, 100])),
+                    y=alt.Y("Site Type:N", title=None, sort="-x"),
+                    color=alt.Color("Renewable %:Q", scale=alt.Scale(scheme="greens"), legend=None),
+                    tooltip=["Site Type:N", alt.Tooltip("Renewable %:Q", format=".0f"), alt.Tooltip("Energy MWh/mo:Q", format=",")],
+                )
+                st.altair_chart(style_esg_chart(renew_bar, height=240), use_container_width=True)
+                low_renew = esg_by_site.sort_values("Renewable %").iloc[0]
+                render_esg_ai_reco(
+                    "Renewable Opportunity",
+                    f"{low_renew['Site Type']} has lowest renewable share ({low_renew['Renewable %']}%).",
+                    "Prioritize solar/battery deployment at field junction sites.",
+                    "Increase overall renewable mix toward 70% target.",
+                    level="warning",
+                )
+
+    with esg_tab_carbon:
+        st.markdown('<div class="esg-title">Carbon Footprint Tracking</div>', unsafe_allow_html=True)
+        c_col1, c_col2 = st.columns(2)
+
+        with c_col1:
+            st.markdown('<div class="esg-mini-title">Emissions by Scope</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                carbon_long = esg_carbon.melt(id_vars=["Month"], value_vars=["Scope 1 tCO2", "Scope 2 tCO2", "Scope 3 tCO2"], var_name="Scope", value_name="tCO2")
+                carbon_area = alt.Chart(carbon_long).mark_area(opacity=0.7).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("tCO2:Q", title="tCO2", stack=True),
+                    color=alt.Color("Scope:N", scale=alt.Scale(domain=["Scope 1 tCO2", "Scope 2 tCO2", "Scope 3 tCO2"], range=["#EF4444", "#F59E0B", "#3B82F6"]), legend=alt.Legend(title=None)),
+                    tooltip=["Month:N", "Scope:N", alt.Tooltip("tCO2:Q", format=",")],
+                )
+                st.altair_chart(style_esg_chart(carbon_area, height=240), use_container_width=True)
+                scope2_pct = round(esg_carbon["Scope 2 tCO2"].iloc[-1] / current_carbon * 100, 0)
+                render_esg_ai_reco(
+                    "Carbon Breakdown",
+                    f"Scope 2 (purchased electricity) represents {scope2_pct}% of emissions.",
+                    "Accelerate renewable energy procurement and PPA agreements.",
+                    "Reduce Scope 2 emissions 25% by 2027.",
+                )
+
+        with c_col2:
+            st.markdown('<div class="esg-mini-title">Total Carbon Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                total_line = alt.Chart(esg_carbon).mark_line(point=True, strokeWidth=3, color="#10B981").encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Total tCO2:Q", title="Total tCO2"),
+                    tooltip=["Month:N", alt.Tooltip("Total tCO2:Q", format=",")],
+                )
+                target_rule = alt.Chart(pd.DataFrame({"y": [1600]})).mark_rule(strokeDash=[4, 4], color="#EF4444").encode(y="y:Q")
+                st.altair_chart(style_esg_chart(total_line + target_rule, height=240), use_container_width=True)
+                render_esg_ai_reco(
+                    "Carbon Target",
+                    f"Current emissions ({current_carbon:,} tCO2) below 1,600 monthly target.",
+                    "Maintain trajectory; prepare for SBTi commitment reporting.",
+                    "Achieve carbon neutral operations by 2030.",
+                )
+
+        st.markdown('<div class="esg-title">ESG Initiatives Portfolio</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            st.dataframe(
+                esg_initiatives.style.format({
+                    "Investment K€": "€{:,.0f}",
+                    "Annual Savings K€": "€{:,.0f}",
+                    "Carbon Reduction tCO2": "{:,.0f}",
+                    "Payback Years": "{:.1f}",
+                }).background_gradient(subset=["Carbon Reduction tCO2"], cmap="Greens"),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+    with esg_tab_migration:
+        st.markdown('<div class="esg-title">Copper to Fiber Migration Impact</div>', unsafe_allow_html=True)
+        mig_col1, mig_col2 = st.columns(2)
+
+        with mig_col1:
+            st.markdown('<div class="esg-mini-title">Line Migration Progress</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                mig_long = esg_copper_migration.melt(id_vars=["Year"], value_vars=["Copper Lines K", "Fiber Lines K"], var_name="Type", value_name="Lines K")
+                mig_bar = alt.Chart(mig_long).mark_bar(cornerRadiusTopLeft=4, cornerRadiusTopRight=4).encode(
+                    x=alt.X("Year:N", title=None),
+                    y=alt.Y("Lines K:Q", title="Lines (K)"),
+                    color=alt.Color("Type:N", scale=alt.Scale(domain=["Copper Lines K", "Fiber Lines K"], range=["#94A3B8", "#10B981"]), legend=alt.Legend(title=None)),
+                    xOffset="Type:N",
+                    tooltip=["Year:N", "Type:N", alt.Tooltip("Lines K:Q", format=",")],
+                )
+                st.altair_chart(style_esg_chart(mig_bar, height=240), use_container_width=True)
+                copper_reduction = round((320 - 25) / 320 * 100, 0)
+                render_esg_ai_reco(
+                    "Migration Progress",
+                    f"Copper lines reduced {copper_reduction}% since 2023 (320K → 25K planned).",
+                    "Complete final copper sunset in 2027 for full fiber network.",
+                    "Eliminate legacy infrastructure costs and energy waste.",
+                )
+
+        with mig_col2:
+            st.markdown('<div class="esg-mini-title">Environmental Benefits</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                benefit_long = esg_copper_migration.melt(id_vars=["Year"], value_vars=["Energy Saved MWh", "Carbon Avoided tCO2"], var_name="Metric", value_name="Value")
+                benefit_line = alt.Chart(benefit_long).mark_line(point=True, strokeWidth=2.5).encode(
+                    x=alt.X("Year:N", title=None),
+                    y=alt.Y("Value:Q", title="Value"),
+                    color=alt.Color("Metric:N", scale=alt.Scale(domain=["Energy Saved MWh", "Carbon Avoided tCO2"], range=["#3B82F6", "#10B981"]), legend=alt.Legend(title=None)),
+                    tooltip=["Year:N", "Metric:N", alt.Tooltip("Value:Q", format=",")],
+                )
+                st.altair_chart(style_esg_chart(benefit_line, height=240), use_container_width=True)
+                total_saved = esg_copper_migration["Energy Saved MWh"].sum()
+                total_avoided = esg_copper_migration["Carbon Avoided tCO2"].sum()
+                render_esg_ai_reco(
+                    "Migration Benefits",
+                    f"Cumulative: {total_saved:,} MWh saved, {total_avoided:,} tCO2 avoided.",
+                    "Highlight migration benefits in ESG reporting and investor communications.",
+                    "Strengthen sustainability credentials with stakeholders.",
+                )
+
+    st.markdown("""
+    <details style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.8rem; margin-top: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #334155; font-size: 0.9rem;">▸ Data Sources & Systems</summary>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #475569;">
+            <p><strong>This dashboard aggregates data from the following source systems:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 0.5rem 0;">
+                <tr style="border-bottom: 1px solid #E2E8F0;"><th style="text-align: left; padding: 0.4rem;">Data Element</th><th style="text-align: left; padding: 0.4rem;">Source System</th><th style="text-align: left; padding: 0.4rem;">Refresh</th></tr>
+                <tr><td style="padding: 0.4rem;">Energy consumption</td><td style="padding: 0.4rem;"><strong>BMS</strong> + Smart meters</td><td style="padding: 0.4rem;">Hourly</td></tr>
+                <tr><td style="padding: 0.4rem;">Carbon emissions</td><td style="padding: 0.4rem;"><strong>Salesforce Net Zero</strong></td><td style="padding: 0.4rem;">Monthly</td></tr>
+                <tr><td style="padding: 0.4rem;">PUE metrics</td><td style="padding: 0.4rem;"><strong>DCIM</strong> Infrastructure Mgmt</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Renewable energy %</td><td style="padding: 0.4rem;"><strong>Energy procurement</strong> + Grid</td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">Copper migration</td><td style="padding: 0.4rem;"><strong>Network Inventory (NIS)</strong></td><td style="padding: 0.4rem;">Weekly</td></tr>
+                <tr><td style="padding: 0.4rem;">Environmental savings</td><td style="padding: 0.4rem;"><strong>ESG Calculation Engine</strong></td><td style="padding: 0.4rem;">Monthly</td></tr>
+            </table>
+            <p><strong>Key Integrations:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li>Energy data from <strong>Iberdrola/Endesa</strong> utility APIs</li>
+                <li>Carbon factors from <strong>IDAE</strong></li>
+                <li>Reporting aligned with <strong>GRI Standards</strong> and <strong>CDP Climate</strong></li>
+                <li>Third-party verification by <strong>Bureau Veritas</strong></li>
+            </ul>
+        </div>
+    </details>
+    """, unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Page: Subscribers (now after new wholesale pages)
 # ---------------------------------------------------------------------------
 elif selected_menu == "Subscribers":
     import pandas as pd
@@ -3206,10 +4540,10 @@ elif selected_menu == "Subscribers":
     sub_monthly["Churn %"] = (sub_monthly["Churned"] / (sub_monthly["Base"] - sub_monthly["Net Adds"]) * 100).round(2)
 
     sub_segments = pd.DataFrame({
-        "Segment": ["Consumer", "SMB", "Enterprise"],
-        "Subscribers": [20500, 7600, 2147],
-        "NPS": [45, 51, 60],
-        "ARPU": [123, 164, 286],
+        "Segment": ["MasOrange", "Vodafone"],
+        "Subscribers": [7000000, 5000000],
+        "NPS": [58, 54],
+        "ARPU": [3.50, 3.58],
     })
 
     sub_risk = pd.DataFrame({
@@ -3412,14 +4746,14 @@ elif selected_menu == "Subscribers":
                 )
 
         with ov_col2:
-            st.markdown('<div class="sub-mini-title">Segment Mix, NPS and ARPU</div>', unsafe_allow_html=True)
+            st.markdown('<div class="sub-mini-title">Partner Mix, NPS and Revenue/Home</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 seg_bubble = alt.Chart(sub_segments).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
-                    x=alt.X("Subscribers:Q", title="Subscribers"),
-                    y=alt.Y("NPS:Q", title="NPS", scale=alt.Scale(domain=[40, 64])),
-                    size=alt.Size("ARPU:Q", title="ARPU", scale=alt.Scale(range=[300, 1600])),
-                    color=alt.Color("Segment:N", scale=alt.Scale(domain=["Consumer", "SMB", "Enterprise"], range=["#29B5E8", "#6366F1", "#10B981"]), legend=alt.Legend(title=None)),
-                    tooltip=["Segment:N", alt.Tooltip("Subscribers:Q", format=","), "NPS:Q", alt.Tooltip("ARPU:Q", format=".0f")],
+                    x=alt.X("Subscribers:Q", title="Homes Passed"),
+                    y=alt.Y("NPS:Q", title="NPS", scale=alt.Scale(domain=[50, 66])),
+                    size=alt.Size("ARPU:Q", title="Rev/Home", scale=alt.Scale(range=[300, 1600])),
+                    color=alt.Color("Segment:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    tooltip=["Segment:N", alt.Tooltip("Subscribers:Q", format=",", title="Homes Passed"), "NPS:Q", alt.Tooltip("ARPU:Q", format=".2f", title="Rev/Home")],
                 )
                 seg_labels = alt.Chart(sub_segments).mark_text(dy=-12, fontSize=10, color="#1E293B").encode(
                     x="Subscribers:Q", y="NPS:Q", text="Segment:N"
@@ -3427,10 +4761,10 @@ elif selected_menu == "Subscribers":
                 st.altair_chart(style_sub_chart(seg_bubble + seg_labels, height=230), use_container_width=True)
                 top_seg = sub_segments.loc[sub_segments["Subscribers"].idxmax()]
                 render_sub_ai_reco(
-                    "Segment Quality",
-                    f"{top_seg['Segment']} drives the largest base while Enterprise leads on NPS and ARPU quality.",
-                    "Run cross-sell journeys from Consumer to SMB bundles with value-added service tiers.",
-                    "Lift blended ARPU while preserving loyalty in the largest segment.",
+                    "Partner Quality",
+                    f"{top_seg['Segment']} has the largest footprint. Focus on network reliability for both partners.",
+                    "Expand network capacity in high-demand regions and maintain SLA excellence.",
+                    "Increase homes passed while maintaining partner satisfaction.",
                 )
 
         st.markdown('<div class="sub-mini-title">Voluntary vs Involuntary Churn Split</div>', unsafe_allow_html=True)
@@ -3843,16 +5177,16 @@ elif selected_menu == "Revenue Analytics":
     rev_monthly["Collection %"] = (rev_monthly["Collected M"] / rev_monthly["Invoiced M"] * 100).round(1)
 
     rev_segments = pd.DataFrame({
-        "Segment": ["Consumer", "SMB", "Enterprise", "Wholesale"],
-        "Revenue M": [2.4, 1.1, 0.7, 0.3],
-        "Growth %": [6.1, 8.1, 11.4, 3.2],
-        "Margin %": [47.8, 53.9, 57.4, 40.8],
+        "Segment": ["MasOrange", "Vodafone"],
+        "Revenue M": [24.5, 17.9],
+        "Growth %": [6.8, 8.2],
+        "Margin %": [52.1, 50.8],
     })
 
     rev_plans = pd.DataFrame({
-        "Plan": ["PF Hogar 300", "PF Empresas Pro", "PF Gamer 1G", "PF TV App", "PF Mesh Plus"],
-        "Subs": [16500, 6100, 2100, 9800, 7200],
-        "ARPU": [121, 187, 320, 35, 30],
+        "Plan": ["FTTH 300Mb", "FTTH 600Mb", "FTTH 1Gbps", "FTTH Business", "Dark Fiber"],
+        "Subs": [4200000, 3800000, 2100000, 1200000, 700000],
+        "ARPU": [2.85, 3.42, 4.20, 5.80, 8.50],
     })
     rev_plans["Revenue M"] = (rev_plans["Subs"] * rev_plans["ARPU"] / 1_000_000).round(3)
 
@@ -3869,7 +5203,7 @@ elif selected_menu == "Revenue Analytics":
     rev_channels["ROI x"] = ((rev_channels["Revenue M"] - rev_channels["Cost M"]) / rev_channels["Cost M"]).round(2)
 
     rev_risk = pd.DataFrame({
-        "Risk Driver": ["Delinquency", "Discount Leakage", "Enterprise Churn", "Downgrades", "Disputes"],
+        "Risk Driver": ["Delinquency", "Discount Leakage", "Partner Churn", "Downgrades", "Disputes"],
         "Exposure M": [0.95, 0.62, 0.47, 0.31, 0.19],
         "Likelihood": [4.2, 3.8, 3.1, 2.9, 2.7],
     })
@@ -4071,31 +5405,31 @@ elif selected_menu == "Revenue Analytics":
                 )
 
         with rv_col2:
-            st.markdown('<div class="rev-mini-title">Revenue Mix by Segment</div>', unsafe_allow_html=True)
+            st.markdown('<div class="rev-mini-title">Revenue Mix by Partner</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 seg_donut = alt.Chart(rev_segments).mark_arc(innerRadius=66, outerRadius=108, cornerRadius=4, stroke="#FFFFFF", strokeWidth=2).encode(
                     theta=alt.Theta("Revenue M:Q", stack=True),
-                    color=alt.Color("Segment:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B"]), legend=alt.Legend(title=None)),
+                    color=alt.Color("Segment:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
                     tooltip=["Segment:N", alt.Tooltip("Revenue M:Q", format=".2f"), alt.Tooltip("Growth %:Q", format=".1f")],
                 )
                 seg_center = alt.Chart(pd.DataFrame({"t": [f"€{rev_segments['Revenue M'].sum():.1f}M"]})).mark_text(fontSize=22, fontWeight="bold", color="#0F172A").encode(text="t:N")
-                seg_sub = alt.Chart(pd.DataFrame({"t": ["Monthly Mix"]})).mark_text(fontSize=11, dy=18, color="#64748B").encode(text="t:N")
+                seg_sub = alt.Chart(pd.DataFrame({"t": ["Monthly Wholesale"]})).mark_text(fontSize=11, dy=18, color="#64748B").encode(text="t:N")
                 st.altair_chart(style_rev_chart(seg_donut + seg_center + seg_sub, height=230), use_container_width=True)
                 dom = rev_segments.loc[rev_segments["Revenue M"].idxmax()]
                 render_rev_ai_reco(
                     "Mix Concentration",
                     f"{dom['Segment']} contributes the highest revenue share at €{dom['Revenue M']:.2f}M.",
-                    "Increase SMB and Enterprise expansion to reduce concentration risk.",
-                    "Improve resilience of revenue mix against single-segment volatility.",
+                    "Maintain balanced growth across both MasOrange and Vodafone networks.",
+                    "Strengthen wholesale revenue stability with both partners.",
                 )
 
-        st.markdown('<div class="rev-mini-title">Margin vs Growth by Segment</div>', unsafe_allow_html=True)
+        st.markdown('<div class="rev-mini-title">Margin vs Growth by Partner</div>', unsafe_allow_html=True)
         with st.container(border=True):
             mg_scatter = alt.Chart(rev_segments).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
                 x=alt.X("Growth %:Q", title="Growth %"),
                 y=alt.Y("Margin %:Q", title="Margin %"),
                 size=alt.Size("Revenue M:Q", scale=alt.Scale(range=[250, 1400]), legend=None),
-                color=alt.Color("Segment:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B"]), legend=alt.Legend(title=None)),
+                color=alt.Color("Segment:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
                 tooltip=["Segment:N", alt.Tooltip("Growth %:Q", format=".1f"), alt.Tooltip("Margin %:Q", format=".1f"), alt.Tooltip("Revenue M:Q", format=".2f")],
             )
             mg_labels = alt.Chart(rev_segments).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
@@ -4106,8 +5440,8 @@ elif selected_menu == "Revenue Analytics":
             render_rev_ai_reco(
                 "Growth Quality",
                 f"{best_quad['Segment']} sits in the strongest growth-margin quadrant.",
-                f"Prioritize go-to-market around {best_quad['Segment']} bundles and adjacent offerings.",
-                "Maximize profitable growth instead of top-line only.",
+                f"Prioritize network expansion in {best_quad['Segment']} deployment regions.",
+                "Maximize profitable infrastructure growth with partner alignment.",
             )
 
     with rev_tab_ops:
@@ -5290,13 +6624,14 @@ elif selected_menu == "Network Status":
         </div>
     """), unsafe_allow_html=True)
 
-    net_tab_overview, net_tab_map, net_tab_ops, net_tab_impact, net_tab_exec, net_tab_risk = st.tabs([
+    net_tab_overview, net_tab_map, net_tab_ops, net_tab_impact, net_tab_exec, net_tab_risk, net_tab_aiml = st.tabs([
         "📈 Network Overview",
         "🗺️ Network Map",
         "🧭 Network Operations",
         "💼 Service Impact",
         "🧩 Execution & Playbooks",
         "⚠️ Risk & Strategy",
+        "🤖 AI/ML Predictive",
     ])
 
     with net_tab_overview:
@@ -6684,6 +8019,2513 @@ elif selected_menu == "Network Status":
             </div>
         """), unsafe_allow_html=True)
 
+    with net_tab_aiml:
+        import numpy as np
+        np.random.seed(42)
+
+        anomaly_data = pd.DataFrame({
+            "Timestamp": pd.date_range("2025-03-01 00:00", periods=168, freq="h"),
+            "Traffic Gbps": [45 + 15*np.sin(i/24*2*np.pi) + np.random.normal(0, 3) + (25 if i in [72, 73, 74, 145] else 0) for i in range(168)],
+            "Latency ms": [22 + 4*np.sin(i/24*2*np.pi) + np.random.normal(0, 1.5) + (18 if i in [72, 73, 74] else 0) + (12 if i == 145 else 0) for i in range(168)],
+            "Packet Loss %": [0.15 + 0.05*np.sin(i/24*2*np.pi) + np.random.normal(0, 0.02) + (0.8 if i in [72, 73, 74] else 0) + (0.4 if i == 145 else 0) for i in range(168)],
+        })
+        anomaly_data["Hour"] = anomaly_data["Timestamp"].dt.strftime("%b %d %H:00")
+        anomaly_data["Is Anomaly"] = ((anomaly_data["Traffic Gbps"] > 70) | (anomaly_data["Latency ms"] > 35) | (anomaly_data["Packet Loss %"] > 0.5)).astype(int)
+        anomaly_data["Anomaly Score"] = np.clip((anomaly_data["Traffic Gbps"] - 60) / 20 + (anomaly_data["Latency ms"] - 30) / 10 + (anomaly_data["Packet Loss %"] - 0.3) / 0.3, 0, 1)
+
+        predictive_assets = pd.DataFrame({
+            "Asset ID": ["OLT-MAD-001", "OLT-BCN-003", "TRANS-VAL-007", "OLT-BIL-002", "CORE-MAD-001", "OLT-SEV-004", "TRANS-BCN-012", "OLT-MAL-001"],
+            "Asset Type": ["OLT", "OLT", "Transport Node", "OLT", "Core Router", "OLT", "Transport Node", "OLT"],
+            "Region": ["Madrid", "Barcelona", "Valencia", "Bilbao", "Madrid", "Sevilla", "Barcelona", "Málaga"],
+            "Health Score": [94, 67, 82, 91, 88, 72, 58, 96],
+            "Failure Probability %": [3, 28, 12, 5, 8, 22, 38, 2],
+            "Days to Failure": [180, 12, 45, 120, 85, 21, 8, 210],
+            "Anomalies 30d": [2, 18, 7, 3, 5, 14, 24, 1],
+            "Last Maintenance": ["2025-01-15", "2024-09-20", "2024-11-05", "2025-02-01", "2024-12-10", "2024-10-15", "2024-08-22", "2025-02-20"],
+            "Subscribers Impacted K": [45, 82, 120, 38, 350, 55, 95, 28],
+        })
+        predictive_assets["Risk Category"] = pd.cut(predictive_assets["Failure Probability %"], bins=[0, 10, 25, 100], labels=["Low", "Medium", "High"])
+        predictive_assets["Urgency"] = pd.cut(predictive_assets["Days to Failure"], bins=[0, 14, 30, 365], labels=["Critical", "Warning", "Normal"])
+
+        ml_model_perf = pd.DataFrame({
+            "Model": ["Anomaly Detection", "Failure Prediction", "Capacity Forecast", "Incident Classification"],
+            "Accuracy": [94.2, 89.7, 91.3, 96.1],
+            "Precision": [92.1, 87.4, 89.8, 94.5],
+            "Recall": [96.8, 91.2, 93.1, 97.2],
+            "F1Score": [0.94, 0.89, 0.91, 0.96],
+            "TrainingDate": ["2025-02-28", "2025-02-25", "2025-02-20", "2025-03-01"],
+            "PredictionsToday": [1247, 856, 423, 2891],
+        })
+
+        anomaly_by_type = pd.DataFrame({
+            "Anomaly Type": ["Traffic Spike", "Latency Surge", "Packet Loss", "CPU Overload", "Memory Pressure", "Link Saturation"],
+            "Count 7d": [23, 18, 12, 8, 5, 15],
+            "Avg Duration Min": [45, 28, 62, 35, 48, 55],
+            "Auto-Resolved %": [78, 85, 45, 92, 88, 62],
+            "Severity": [3, 4, 5, 2, 2, 4],
+        })
+
+        maintenance_schedule = pd.DataFrame({
+            "Asset": ["OLT-BCN-003", "TRANS-BCN-012", "OLT-SEV-004", "TRANS-VAL-007", "OLT-BIL-002"],
+            "Scheduled Date": ["2025-03-08", "2025-03-10", "2025-03-15", "2025-03-22", "2025-04-05"],
+            "Maintenance Type": ["Preventive", "Emergency", "Preventive", "Preventive", "Routine"],
+            "Estimated Duration Hr": [4, 6, 3, 4, 2],
+            "Cost €K": [8.5, 15.2, 6.8, 7.2, 3.5],
+            "Avoided Outage Hr": [48, 72, 36, 24, 12],
+            "ROI x": [5.6, 4.7, 5.3, 3.3, 3.4],
+        })
+
+        total_anomalies = anomaly_data["Is Anomaly"].sum()
+        critical_assets = len(predictive_assets[predictive_assets["Urgency"] == "Critical"])
+        avg_model_accuracy = ml_model_perf["Accuracy"].mean()
+        prevented_outages = maintenance_schedule["Avoided Outage Hr"].sum()
+
+        st.markdown(f"""
+        <div style="background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%); border-radius: 16px; padding: 1.2rem; margin-bottom: 1rem; box-shadow: 0 8px 32px rgba(67, 56, 202, 0.3);">
+            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                <span style="font-size: 2rem; margin-right: 0.8rem;">🧠</span>
+                <div>
+                    <div style="color: #E0E7FF; font-size: 1.4rem; font-weight: 700;">AI-Powered Network Intelligence</div>
+                    <div style="color: #A5B4FC; font-size: 0.85rem;">Real-time anomaly detection & predictive maintenance powered by ML models</div>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+                <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 0.9rem; text-align: center; backdrop-filter: blur(10px);">
+                    <div style="color: #C7D2FE; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">Anomalies (7d)</div>
+                    <div style="color: #FFFFFF; font-size: 1.8rem; font-weight: 800;">{total_anomalies}</div>
+                    <div style="color: {'#FCA5A5' if total_anomalies > 5 else '#86EFAC'}; font-size: 0.75rem;">{'↑ Above baseline' if total_anomalies > 5 else '✓ Normal range'}</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 0.9rem; text-align: center; backdrop-filter: blur(10px);">
+                    <div style="color: #C7D2FE; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">Critical Assets</div>
+                    <div style="color: {'#FCA5A5' if critical_assets > 0 else '#FFFFFF'}; font-size: 1.8rem; font-weight: 800;">{critical_assets}</div>
+                    <div style="color: #FBBF24; font-size: 0.75rem;">Require immediate action</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 0.9rem; text-align: center; backdrop-filter: blur(10px);">
+                    <div style="color: #C7D2FE; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">ML Model Accuracy</div>
+                    <div style="color: #86EFAC; font-size: 1.8rem; font-weight: 800;">{avg_model_accuracy:.1f}%</div>
+                    <div style="color: #86EFAC; font-size: 0.75rem;">↑ +2.3% vs last month</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 0.9rem; text-align: center; backdrop-filter: blur(10px);">
+                    <div style="color: #C7D2FE; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">Outages Prevented</div>
+                    <div style="color: #FFFFFF; font-size: 1.8rem; font-weight: 800;">{prevented_outages}h</div>
+                    <div style="color: #86EFAC; font-size: 0.75rem;">€{prevented_outages * 2.5:.0f}K saved</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 0.9rem; text-align: center; backdrop-filter: blur(10px);">
+                    <div style="color: #C7D2FE; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">Predictions Today</div>
+                    <div style="color: #FFFFFF; font-size: 1.8rem; font-weight: 800;">{ml_model_perf['PredictionsToday'].sum():,}</div>
+                    <div style="color: #A5B4FC; font-size: 0.75rem;">Active ML inferences</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown('<div class="net-title">🔍 Real-Time Anomaly Detection</div>', unsafe_allow_html=True)
+        anom_col1, anom_col2 = st.columns([2, 1])
+
+        with anom_col1:
+            st.markdown('<div class="net-mini-title">Network Metrics with Anomaly Overlay (7-Day View)</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                base_traffic = alt.Chart(anomaly_data).mark_area(opacity=0.3, color="#3B82F6").encode(
+                    x=alt.X("Hour:N", title=None, axis=alt.Axis(labelAngle=-45, labelFontSize=8)),
+                    y=alt.Y("Traffic Gbps:Q", title="Traffic (Gbps)"),
+                    tooltip=["Hour:N", alt.Tooltip("Traffic Gbps:Q", format=".1f")],
+                )
+                traffic_line = alt.Chart(anomaly_data).mark_line(strokeWidth=2, color="#2563EB").encode(
+                    x="Hour:N", y="Traffic Gbps:Q",
+                )
+                anomaly_points = alt.Chart(anomaly_data[anomaly_data["Is Anomaly"] == 1]).mark_circle(size=200, color="#EF4444", opacity=0.9).encode(
+                    x="Hour:N", y="Traffic Gbps:Q",
+                    tooltip=["Hour:N", alt.Tooltip("Traffic Gbps:Q", format=".1f"), alt.Tooltip("Anomaly Score:Q", format=".2f")],
+                )
+                threshold_line = alt.Chart(pd.DataFrame({"y": [70]})).mark_rule(strokeDash=[6, 4], color="#F59E0B", strokeWidth=2).encode(y="y:Q")
+                st.altair_chart(style_net_chart(base_traffic + traffic_line + anomaly_points + threshold_line, height=200), use_container_width=True)
+
+                latency_area = alt.Chart(anomaly_data).mark_area(opacity=0.3, color="#10B981").encode(
+                    x=alt.X("Hour:N", title=None, axis=alt.Axis(labelAngle=-45, labelFontSize=8)),
+                    y=alt.Y("Latency ms:Q", title="Latency (ms)"),
+                )
+                latency_line = alt.Chart(anomaly_data).mark_line(strokeWidth=2, color="#059669").encode(x="Hour:N", y="Latency ms:Q")
+                latency_anomaly = alt.Chart(anomaly_data[anomaly_data["Latency ms"] > 35]).mark_circle(size=180, color="#EF4444").encode(
+                    x="Hour:N", y="Latency ms:Q",
+                    tooltip=["Hour:N", alt.Tooltip("Latency ms:Q", format=".1f")],
+                )
+                latency_thresh = alt.Chart(pd.DataFrame({"y": [35]})).mark_rule(strokeDash=[6, 4], color="#F59E0B", strokeWidth=2).encode(y="y:Q")
+                st.altair_chart(style_net_chart(latency_area + latency_line + latency_anomaly + latency_thresh, height=140), use_container_width=True)
+
+                render_net_ai_reco(
+                    "Anomaly Pattern Detected",
+                    f"{total_anomalies} anomalies detected in 7 days. Major incident on Mar 4 (72-74h) correlated across traffic, latency, and packet loss.",
+                    "ML model flagged root cause as upstream peering congestion. Auto-triggered traffic rerouting.",
+                    "Reduced mean-time-to-detect (MTTD) from 15 min to 45 seconds.",
+                )
+
+        with anom_col2:
+            st.markdown('<div class="net-mini-title">Anomaly Distribution by Type</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                anom_bar = alt.Chart(anomaly_by_type).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6, size=18).encode(
+                    x=alt.X("Count 7d:Q", title="Anomalies (7d)"),
+                    y=alt.Y("Anomaly Type:N", sort="-x", title=None),
+                    color=alt.Color("Severity:Q", scale=alt.Scale(scheme="orangered"), legend=None),
+                    tooltip=["Anomaly Type:N", "Count 7d:Q", alt.Tooltip("Avg Duration Min:Q", format=".0f"), alt.Tooltip("Auto-Resolved %:Q", format=".0f")],
+                )
+                st.altair_chart(style_net_chart(anom_bar, height=220), use_container_width=True)
+                render_net_ai_reco(
+                    "Self-Healing Rate",
+                    f"Traffic spikes auto-resolved {anomaly_by_type[anomaly_by_type['Anomaly Type']=='Traffic Spike']['Auto-Resolved %'].iloc[0]}% of the time via ML-triggered remediation.",
+                    "Expand auto-remediation playbooks to packet loss scenarios (currently 45% auto-resolved).",
+                    "Target 80%+ auto-resolution across all anomaly types.",
+                    level="warning",
+                )
+
+        st.markdown('<div class="net-title">🔮 Predictive Maintenance Intelligence</div>', unsafe_allow_html=True)
+        pred_col1, pred_col2 = st.columns(2)
+
+        with pred_col1:
+            st.markdown('<div class="net-mini-title">Asset Health vs Failure Probability</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                health_scatter = alt.Chart(predictive_assets).mark_circle(opacity=0.85, stroke="#FFFFFF", strokeWidth=1.5).encode(
+                    x=alt.X("Health Score:Q", title="Health Score", scale=alt.Scale(domain=[50, 100])),
+                    y=alt.Y("Failure Probability %:Q", title="Failure Probability (%)"),
+                    size=alt.Size("Subscribers Impacted K:Q", scale=alt.Scale(range=[200, 1200]), legend=alt.Legend(title="Subs (K)")),
+                    color=alt.Color("Risk Category:N", scale=alt.Scale(domain=["Low", "Medium", "High"], range=["#10B981", "#F59E0B", "#EF4444"]), legend=alt.Legend(title="Risk")),
+                    tooltip=["Asset ID:N", "Asset Type:N", "Region:N", alt.Tooltip("Health Score:Q"), alt.Tooltip("Failure Probability %:Q", format=".0f"), alt.Tooltip("Days to Failure:Q"), alt.Tooltip("Subscribers Impacted K:Q", format=",")],
+                )
+                health_labels = alt.Chart(predictive_assets[predictive_assets["Failure Probability %"] > 15]).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
+                    x="Health Score:Q", y="Failure Probability %:Q", text="Asset ID:N"
+                )
+                danger_zone = alt.Chart(pd.DataFrame({"x": [50], "x2": [75], "y": [20], "y2": [50]})).mark_rect(opacity=0.1, color="#EF4444").encode(
+                    x="x:Q", x2="x2:Q", y="y:Q", y2="y2:Q"
+                )
+                st.altair_chart(style_net_chart(danger_zone + health_scatter + health_labels, height=280), use_container_width=True)
+                highest_risk = predictive_assets.sort_values("Failure Probability %", ascending=False).iloc[0]
+                render_net_ai_reco(
+                    "Critical Asset Alert",
+                    f"{highest_risk['Asset ID']} has {highest_risk['Failure Probability %']}% failure probability, impacting {highest_risk['Subscribers Impacted K']}K subscribers.",
+                    f"Schedule emergency maintenance within {highest_risk['Days to Failure']} days. Pre-position spare parts.",
+                    "Prevent unplanned outage affecting {highest_risk['Subscribers Impacted K']}K customers.",
+                    level="critical",
+                )
+
+        with pred_col2:
+            st.markdown('<div class="net-mini-title">Days to Predicted Failure</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                sorted_assets = predictive_assets.sort_values("Days to Failure")
+                days_bar = alt.Chart(sorted_assets).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6, size=22).encode(
+                    x=alt.X("Days to Failure:Q", title="Days to Predicted Failure"),
+                    y=alt.Y("Asset ID:N", sort=alt.EncodingSortField(field="Days to Failure", order="ascending"), title=None),
+                    color=alt.Color("Urgency:N", scale=alt.Scale(domain=["Critical", "Warning", "Normal"], range=["#EF4444", "#F59E0B", "#10B981"]), legend=alt.Legend(title="Urgency")),
+                    tooltip=["Asset ID:N", "Asset Type:N", "Region:N", "Days to Failure:Q", alt.Tooltip("Failure Probability %:Q", format=".0f")],
+                )
+                critical_line = alt.Chart(pd.DataFrame({"x": [14]})).mark_rule(strokeDash=[4, 4], color="#EF4444", strokeWidth=2).encode(x="x:Q")
+                warning_line = alt.Chart(pd.DataFrame({"x": [30]})).mark_rule(strokeDash=[4, 4], color="#F59E0B", strokeWidth=2).encode(x="x:Q")
+                st.altair_chart(style_net_chart(days_bar + critical_line + warning_line, height=280), use_container_width=True)
+                critical_count = len(predictive_assets[predictive_assets["Days to Failure"] <= 14])
+                render_net_ai_reco(
+                    "Maintenance Urgency",
+                    f"{critical_count} assets predicted to fail within 14 days. {len(predictive_assets[predictive_assets['Days to Failure'] <= 30])} within 30 days.",
+                    "Accelerate preventive maintenance for TRANS-BCN-012 and OLT-BCN-003 immediately.",
+                    "Reduce unplanned outages by 65% through proactive intervention.",
+                    level="critical" if critical_count > 1 else "warning",
+                )
+
+        st.markdown('<div class="net-title">📅 AI-Optimized Maintenance Schedule</div>', unsafe_allow_html=True)
+        maint_col1, maint_col2 = st.columns([1.5, 1])
+
+        with maint_col1:
+            st.markdown('<div class="net-mini-title">Scheduled Preventive Maintenance</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                st.dataframe(
+                    maintenance_schedule.style.format({
+                        "Estimated Duration Hr": "{:.0f}h",
+                        "Cost €K": "€{:.1f}K",
+                        "Avoided Outage Hr": "{:.0f}h",
+                        "ROI x": "{:.1f}x",
+                    }).background_gradient(subset=["ROI x"], cmap="Greens").map(
+                        lambda x: "background-color: #FEE2E2; color: #991B1B;" if x == "Emergency" else "", subset=["Maintenance Type"]
+                    ),
+                    use_container_width=True,
+                    hide_index=True,
+                    height=220,
+                )
+                render_net_ai_reco(
+                    "Maintenance ROI",
+                    f"Scheduled maintenance will prevent {prevented_outages}h of outages, saving €{prevented_outages * 2.5:.0f}K in SLA penalties.",
+                    "AI optimizer recommends consolidating BCN maintenance windows to minimize customer impact.",
+                    "Average maintenance ROI of {:.1f}x across scheduled interventions.".format(maintenance_schedule["ROI x"].mean()),
+                )
+
+        with maint_col2:
+            st.markdown('<div class="net-mini-title">Maintenance Cost vs Avoided Loss</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                maint_scatter = alt.Chart(maintenance_schedule).mark_circle(size=300, opacity=0.85, stroke="#FFFFFF", strokeWidth=1.5).encode(
+                    x=alt.X("Cost €K:Q", title="Maintenance Cost (€K)"),
+                    y=alt.Y("Avoided Outage Hr:Q", title="Avoided Outage (hours)"),
+                    color=alt.Color("Maintenance Type:N", scale=alt.Scale(domain=["Emergency", "Preventive", "Routine"], range=["#EF4444", "#F59E0B", "#10B981"]), legend=alt.Legend(title=None)),
+                    tooltip=["Asset:N", "Maintenance Type:N", alt.Tooltip("Cost €K:Q", format="€.1f"), alt.Tooltip("Avoided Outage Hr:Q", format=".0f"), alt.Tooltip("ROI x:Q", format=".1f")],
+                )
+                maint_labels = alt.Chart(maintenance_schedule).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
+                    x="Cost €K:Q", y="Avoided Outage Hr:Q", text="Asset:N"
+                )
+                st.altair_chart(style_net_chart(maint_scatter + maint_labels, height=200), use_container_width=True)
+
+        st.markdown('<div class="net-title">🧠 ML Model Performance Dashboard</div>', unsafe_allow_html=True)
+        ml_col1, ml_col2, ml_col3 = st.columns(3)
+
+        with ml_col1:
+            st.markdown('<div class="net-mini-title">Model Accuracy Comparison</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                accuracy_bar = alt.Chart(ml_model_perf).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=20, color="#6366F1").encode(
+                    x=alt.X("Accuracy:Q", title="Accuracy (%)", scale=alt.Scale(domain=[80, 100])),
+                    y=alt.Y("Model:N", sort="-x", title=None),
+                    tooltip=["Model:N", alt.Tooltip("Accuracy:Q", format=".1f"), alt.Tooltip("F1Score:Q", format=".2f")],
+                )
+                target_line = alt.Chart(pd.DataFrame({"x": [90]})).mark_rule(strokeDash=[4, 4], color="#10B981", strokeWidth=2).encode(x="x:Q")
+                acc_text = alt.Chart(ml_model_perf).mark_text(align="left", dx=4, fontSize=10, color="#1E293B").encode(
+                    x="Accuracy:Q", y=alt.Y("Model:N", sort="-x"), text=alt.Text("Accuracy:Q", format=".1f")
+                )
+                st.altair_chart(style_net_chart(accuracy_bar + target_line + acc_text, height=180), use_container_width=True)
+
+        with ml_col2:
+            st.markdown('<div class="net-mini-title">Precision vs Recall</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                pr_scatter = alt.Chart(ml_model_perf).mark_circle(size=250, opacity=0.85, stroke="#FFFFFF", strokeWidth=1.5).encode(
+                    x=alt.X("Precision:Q", title="Precision (%)", scale=alt.Scale(domain=[85, 100])),
+                    y=alt.Y("Recall:Q", title="Recall (%)", scale=alt.Scale(domain=[85, 100])),
+                    color=alt.Color("Model:N", legend=None),
+                    tooltip=["Model:N", alt.Tooltip("Precision:Q", format=".1f"), alt.Tooltip("Recall:Q", format=".1f"), alt.Tooltip("F1Score:Q", format=".2f")],
+                )
+                pr_labels = alt.Chart(ml_model_perf).mark_text(dy=-10, fontSize=8, color="#1E293B").encode(
+                    x="Precision:Q", y="Recall:Q", text="Model:N"
+                )
+                st.altair_chart(style_net_chart(pr_scatter + pr_labels, height=180), use_container_width=True)
+
+        with ml_col3:
+            st.markdown('<div class="net-mini-title">Daily Predictions Volume</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                pred_bar = alt.Chart(ml_model_perf).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=35).encode(
+                    x=alt.X("Model:N", title=None, axis=alt.Axis(labelAngle=-20, labelFontSize=9)),
+                    y=alt.Y("PredictionsToday:Q", title="Predictions"),
+                    color=alt.Color("Model:N", legend=None, scale=alt.Scale(scheme="category10")),
+                    tooltip=["Model:N", alt.Tooltip("PredictionsToday:Q", format=","), "TrainingDate:N"],
+                )
+                pred_text = alt.Chart(ml_model_perf).mark_text(dy=-8, fontSize=9, color="#1E293B").encode(
+                    x="Model:N", y="PredictionsToday:Q", text=alt.Text("PredictionsToday:Q", format=",")
+                )
+                st.altair_chart(style_net_chart(pred_bar + pred_text, height=180), use_container_width=True)
+
+        render_net_ai_reco(
+            "ML Platform Health",
+            f"All 4 models exceeding 89% accuracy target. Total {ml_model_perf['PredictionsToday'].sum():,} predictions processed today.",
+            "Schedule model retraining for Failure Prediction (oldest training date) to maintain accuracy.",
+            "Continuous model monitoring ensures reliable predictive capabilities.",
+        )
+
+        st.markdown('<div class="net-title">🌦️ External Data Correlation · Snowflake Marketplace</div>', unsafe_allow_html=True)
+
+        weather_incidents = pd.DataFrame({
+            "Date": pd.date_range("2025-02-01", periods=28, freq="D"),
+            "Wind Speed kmh": [15, 18, 22, 45, 68, 72, 35, 20, 18, 25, 30, 55, 48, 22, 18, 15, 20, 62, 75, 42, 28, 22, 18, 20, 35, 45, 52, 25],
+            "Precipitation mm": [0, 2, 5, 18, 32, 28, 12, 0, 0, 3, 8, 22, 15, 0, 0, 0, 5, 25, 38, 18, 8, 2, 0, 0, 12, 18, 28, 5],
+            "Temperature C": [12, 11, 10, 8, 6, 5, 9, 12, 14, 13, 11, 7, 8, 12, 15, 16, 14, 9, 4, 7, 10, 13, 15, 16, 12, 10, 8, 11],
+            "Fiber Cuts": [0, 0, 0, 2, 5, 4, 1, 0, 0, 0, 1, 3, 2, 0, 0, 0, 0, 4, 6, 2, 1, 0, 0, 0, 1, 2, 3, 0],
+            "Equipment Failures": [1, 0, 1, 1, 3, 2, 1, 0, 1, 0, 1, 2, 1, 0, 0, 1, 0, 2, 4, 1, 1, 0, 0, 0, 1, 1, 2, 0],
+            "Power Outages": [0, 0, 0, 1, 2, 3, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 2, 3, 1, 0, 0, 0, 0, 1, 1, 2, 0],
+        })
+        weather_incidents["Day"] = weather_incidents["Date"].dt.strftime("%b %d")
+        weather_incidents["Total Incidents"] = weather_incidents["Fiber Cuts"] + weather_incidents["Equipment Failures"]
+        weather_incidents["Storm Day"] = (weather_incidents["Wind Speed kmh"] > 50) | (weather_incidents["Precipitation mm"] > 20)
+
+        construction_risk = pd.DataFrame({
+            "Region": ["Madrid", "Barcelona", "Valencia", "Bilbao", "Sevilla", "Málaga"],
+            "Active Permits": [145, 128, 67, 42, 55, 38],
+            "Fiber Route Proximity": [23, 18, 12, 8, 11, 6],
+            "Predicted Dig-ups": [8, 6, 3, 2, 4, 2],
+            "Risk Score": [85, 72, 45, 38, 52, 28],
+        })
+
+        mobility_capacity = pd.DataFrame({
+            "Hour": list(range(24)),
+            "Population Density Index": [0.3, 0.2, 0.15, 0.12, 0.15, 0.25, 0.55, 0.85, 0.95, 0.88, 0.82, 0.85, 0.9, 0.88, 0.85, 0.82, 0.88, 0.95, 0.92, 0.85, 0.72, 0.58, 0.45, 0.35],
+            "Network Utilization": [22, 18, 15, 12, 14, 25, 52, 78, 88, 82, 75, 78, 85, 82, 78, 75, 82, 92, 88, 80, 68, 55, 42, 28],
+            "Predicted Demand": [24, 20, 16, 13, 15, 27, 55, 82, 92, 86, 78, 82, 88, 85, 82, 78, 85, 95, 92, 84, 72, 58, 45, 30],
+        })
+
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); border-radius: 12px; padding: 1rem; margin-bottom: 1rem; border-left: 4px solid #6366F1;">
+            <div style="display: flex; align-items: center;">
+                <span style="font-size: 1.3rem; margin-right: 0.6rem;">❄️</span>
+                <div>
+                    <strong style="color: #3730A3;">Powered by Snowflake Marketplace</strong>
+                    <div style="color: #4338CA; font-size: 0.82rem;">Enriching network intelligence with external data: Weather Source, Precisely Geospatial, SafeGraph Mobility, GridStatus Power</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        ext_col1, ext_col2 = st.columns(2)
+
+        with ext_col1:
+            st.markdown('<div class="net-mini-title">Weather Impact on Network Incidents</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                weather_base = alt.Chart(weather_incidents).mark_area(opacity=0.3, color="#3B82F6").encode(
+                    x=alt.X("Day:N", title=None, axis=alt.Axis(labelAngle=-45, labelFontSize=8)),
+                    y=alt.Y("Wind Speed kmh:Q", title="Wind Speed (km/h)"),
+                )
+                weather_line = alt.Chart(weather_incidents).mark_line(strokeWidth=2, color="#2563EB").encode(
+                    x="Day:N", y="Wind Speed kmh:Q",
+                )
+                incident_bars = alt.Chart(weather_incidents).mark_bar(color="#EF4444", opacity=0.7, size=8).encode(
+                    x="Day:N",
+                    y=alt.Y("Total Incidents:Q", title="Incidents", axis=alt.Axis(titleColor="#EF4444")),
+                    tooltip=["Day:N", "Wind Speed kmh:Q", "Precipitation mm:Q", "Fiber Cuts:Q", "Equipment Failures:Q"],
+                )
+                storm_points = alt.Chart(weather_incidents[weather_incidents["Storm Day"]]).mark_point(size=100, color="#F59E0B", shape="triangle-up", filled=True).encode(
+                    x="Day:N", y="Wind Speed kmh:Q",
+                    tooltip=["Day:N", alt.Tooltip("Wind Speed kmh:Q"), alt.Tooltip("Precipitation mm:Q"), alt.Tooltip("Fiber Cuts:Q")],
+                )
+                st.altair_chart(style_net_chart(alt.layer(weather_base, weather_line, storm_points, incident_bars).resolve_scale(y="independent"), height=220), use_container_width=True)
+
+                storm_days = weather_incidents["Storm Day"].sum()
+                storm_incidents = weather_incidents[weather_incidents["Storm Day"]]["Total Incidents"].sum()
+                correlation = weather_incidents["Wind Speed kmh"].corr(weather_incidents["Total Incidents"])
+                render_net_ai_reco(
+                    "Weather Correlation",
+                    f"{storm_days} storm days caused {storm_incidents} incidents (correlation: {correlation:.2f}). Data from Weather Source via Snowflake Marketplace.",
+                    "Pre-position repair crews 24h before predicted storms. ML model triggers alerts at >50 km/h wind forecast.",
+                    "Reduce storm-related MTTR by 40% through proactive response.",
+                    level="warning",
+                )
+
+        with ext_col2:
+            st.markdown('<div class="net-mini-title">Construction Activity Risk (Precisely Data)</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                const_scatter = alt.Chart(construction_risk).mark_circle(opacity=0.85, stroke="#FFFFFF", strokeWidth=1.5).encode(
+                    x=alt.X("Active Permits:Q", title="Active Construction Permits"),
+                    y=alt.Y("Fiber Route Proximity:Q", title="Routes in Proximity"),
+                    size=alt.Size("Risk Score:Q", scale=alt.Scale(range=[200, 800]), legend=None),
+                    color=alt.Color("Risk Score:Q", scale=alt.Scale(scheme="orangered"), legend=alt.Legend(title="Risk")),
+                    tooltip=["Region:N", "Active Permits:Q", "Fiber Route Proximity:Q", "Predicted Dig-ups:Q", "Risk Score:Q"],
+                )
+                const_labels = alt.Chart(construction_risk).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
+                    x="Active Permits:Q", y="Fiber Route Proximity:Q", text="Region:N"
+                )
+                st.altair_chart(style_net_chart(const_scatter + const_labels, height=220), use_container_width=True)
+
+                high_risk_region = construction_risk.sort_values("Risk Score", ascending=False).iloc[0]
+                total_predicted = construction_risk["Predicted Dig-ups"].sum()
+                render_net_ai_reco(
+                    "Dig-Up Prevention",
+                    f"{total_predicted} fiber dig-ups predicted this month. {high_risk_region['Region']} highest risk ({high_risk_region['Predicted Dig-ups']} predicted).",
+                    "Cross-reference Precisely construction permits with GIS routes. Auto-notify contractors of fiber presence.",
+                    "Prevent €{:.0f}K in dig-up repair costs through proactive outreach.".format(total_predicted * 15),
+                )
+
+        ext_col3, ext_col4 = st.columns(2)
+
+        with ext_col3:
+            st.markdown('<div class="net-mini-title">Mobility-Driven Capacity Planning (SafeGraph)</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                mobility_area = alt.Chart(mobility_capacity).mark_area(opacity=0.4, color="#10B981").encode(
+                    x=alt.X("Hour:O", title="Hour of Day"),
+                    y=alt.Y("Population Density Index:Q", title="Population Index", scale=alt.Scale(domain=[0, 1])),
+                )
+                util_line = alt.Chart(mobility_capacity).mark_line(strokeWidth=2.5, color="#6366F1").encode(
+                    x="Hour:O",
+                    y=alt.Y("Network Utilization:Q", title="Network Util (%)", scale=alt.Scale(domain=[0, 100])),
+                )
+                demand_line = alt.Chart(mobility_capacity).mark_line(strokeWidth=2, strokeDash=[4, 4], color="#F59E0B").encode(
+                    x="Hour:O",
+                    y=alt.Y("Predicted Demand:Q", scale=alt.Scale(domain=[0, 100])),
+                )
+                st.altair_chart(style_net_chart(alt.layer(mobility_area, util_line, demand_line).resolve_scale(y="independent"), height=220), use_container_width=True)
+
+                peak_hour = mobility_capacity.loc[mobility_capacity["Network Utilization"].idxmax(), "Hour"]
+                peak_util = mobility_capacity["Network Utilization"].max()
+                render_net_ai_reco(
+                    "Mobility Intelligence",
+                    f"Peak utilization {peak_util}% at {peak_hour}:00 correlates with SafeGraph population density. Demand forecast accuracy: 94%.",
+                    "Dynamic bandwidth allocation based on real-time mobility patterns.",
+                    "Optimize capacity spend by matching infrastructure to actual population movement.",
+                )
+
+        with ext_col4:
+            st.markdown('<div class="net-mini-title">Power Grid Correlation (GridStatus)</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                power_events = pd.DataFrame({
+                    "Region": ["Madrid", "Barcelona", "Valencia", "Bilbao", "Sevilla"],
+                    "Grid Outages": [3, 5, 2, 4, 2],
+                    "Network Outages": [2, 4, 1, 3, 1],
+                    "Correlation": [0.89, 0.92, 0.78, 0.88, 0.82],
+                    "Backup Coverage": [95, 88, 92, 85, 90],
+                })
+                power_bar = alt.Chart(power_events).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=25).encode(
+                    x=alt.X("Region:N", title=None),
+                    y=alt.Y("Grid Outages:Q", title="Outages"),
+                    color=alt.value("#94A3B8"),
+                    tooltip=["Region:N", "Grid Outages:Q", "Network Outages:Q", alt.Tooltip("Correlation:Q", format=".2f")],
+                )
+                network_bar = alt.Chart(power_events).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=25, xOffset=15).encode(
+                    x=alt.X("Region:N", title=None),
+                    y=alt.Y("Network Outages:Q"),
+                    color=alt.value("#EF4444"),
+                )
+                corr_line = alt.Chart(power_events).mark_line(point=True, strokeWidth=2.5, color="#10B981").encode(
+                    x="Region:N",
+                    y=alt.Y("Correlation:Q", title="Correlation", scale=alt.Scale(domain=[0.7, 1])),
+                )
+                st.altair_chart(style_net_chart(alt.layer(power_bar, network_bar, corr_line).resolve_scale(y="independent"), height=220), use_container_width=True)
+
+                avg_corr = power_events["Correlation"].mean()
+                render_net_ai_reco(
+                    "Power-Network Correlation",
+                    f"{avg_corr:.0%} average correlation between grid outages and network incidents. GridStatus data enables 15-min advance warning.",
+                    "Integrate GridStatus alerts into NOC runbooks. Auto-activate generator pre-start sequence.",
+                    "Reduce power-related outages by 60% through predictive UPS management.",
+                    level="warning",
+                )
+
+        st.markdown('<div class="net-title">🔮 7-Day Predictive Forecast · ML + External Data</div>', unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius: 12px; padding: 1rem; margin-bottom: 1rem; border-left: 4px solid #F59E0B;">
+            <div style="display: flex; align-items: center;">
+                <span style="font-size: 1.3rem; margin-right: 0.6rem;">🧠</span>
+                <div>
+                    <strong style="color: #92400E;">Snowflake Cortex ML Predictions</strong>
+                    <div style="color: #B45309; font-size: 0.82rem;">ML models trained on historical incidents + Weather Source + Precisely + GridStatus data to forecast network events</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        forecast_dates = pd.date_range(pd.Timestamp.today(), periods=7, freq="D")
+        weather_forecast = pd.DataFrame({
+            "Date": forecast_dates,
+            "Day": [d.strftime("%a %d") for d in forecast_dates],
+            "Wind Forecast kmh": [25, 35, 62, 78, 55, 30, 22],
+            "Rain Forecast mm": [2, 8, 28, 42, 18, 5, 0],
+            "Temp Forecast C": [14, 12, 8, 5, 9, 13, 15],
+            "Predicted Incidents": [1, 2, 6, 9, 4, 1, 0],
+            "Confidence": [0.92, 0.89, 0.94, 0.96, 0.91, 0.88, 0.90],
+            "Risk Level": ["Low", "Medium", "High", "Critical", "High", "Low", "Low"],
+            "Storm Alert": [False, False, True, True, True, False, False],
+            "Predicted Fiber Cuts": [0, 1, 3, 5, 2, 0, 0],
+            "Predicted Equipment Failures": [1, 1, 3, 4, 2, 1, 0],
+            "Recommended Crews": [2, 3, 8, 12, 6, 2, 2],
+        })
+
+        construction_forecast = pd.DataFrame({
+            "Date": forecast_dates,
+            "Day": [d.strftime("%a %d") for d in forecast_dates],
+            "Scheduled Works": [12, 15, 8, 3, 5, 18, 22],
+            "High Risk Zones": [3, 4, 2, 1, 1, 5, 6],
+            "Predicted Dig-ups": [1, 2, 1, 0, 0, 2, 3],
+            "Confidence": [0.87, 0.85, 0.89, 0.92, 0.91, 0.84, 0.82],
+            "Proactive Alerts Sent": [8, 12, 5, 2, 3, 14, 18],
+        })
+
+        capacity_forecast = pd.DataFrame({
+            "Date": forecast_dates,
+            "Day": [d.strftime("%a %d") for d in forecast_dates],
+            "Expected Events": ["Normal", "Normal", "Storm", "Storm Recovery", "Normal", "Football Match", "Weekend"],
+            "Peak Demand Predicted": [82, 85, 45, 78, 88, 96, 72],
+            "Capacity Available": [95, 95, 95, 95, 95, 95, 95],
+            "Headroom": [13, 10, 50, 17, 7, -1, 23],
+            "Action Required": ["None", "None", "None", "Monitor", "Pre-scale", "Scale Up", "None"],
+        })
+
+        pred_col1, pred_col2 = st.columns(2)
+
+        with pred_col1:
+            st.markdown('<div class="net-mini-title">🌧️ Weather-Based Incident Forecast (Next 7 Days)</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                risk_colors = alt.Scale(domain=["Low", "Medium", "High", "Critical"], range=["#10B981", "#F59E0B", "#EF4444", "#7C2D12"])
+                forecast_bars = alt.Chart(weather_forecast).mark_bar(cornerRadiusTopLeft=8, cornerRadiusTopRight=8).encode(
+                    x=alt.X("Day:N", title=None, sort=list(weather_forecast["Day"])),
+                    y=alt.Y("Predicted Incidents:Q", title="Predicted Incidents"),
+                    color=alt.Color("Risk Level:N", scale=risk_colors, legend=alt.Legend(title="Risk", orient="bottom", columns=4)),
+                    tooltip=["Day:N", "Wind Forecast kmh:Q", "Rain Forecast mm:Q", "Predicted Incidents:Q", "Risk Level:N", alt.Tooltip("Confidence:Q", format=".0%")],
+                )
+                conf_line = alt.Chart(weather_forecast).mark_line(strokeWidth=2, strokeDash=[4, 4], color="#6366F1", point=alt.OverlayMarkDef(size=50, filled=True)).encode(
+                    x=alt.X("Day:N", sort=list(weather_forecast["Day"])),
+                    y=alt.Y("Confidence:Q", title="Confidence", scale=alt.Scale(domain=[0.8, 1])),
+                )
+                storm_markers = alt.Chart(weather_forecast[weather_forecast["Storm Alert"]]).mark_text(dy=-15, fontSize=16).encode(
+                    x=alt.X("Day:N", sort=list(weather_forecast["Day"])),
+                    y="Predicted Incidents:Q",
+                    text=alt.value("⚠️"),
+                )
+                st.altair_chart(style_net_chart(alt.layer(forecast_bars, storm_markers, conf_line).resolve_scale(y="independent"), height=240), use_container_width=True)
+
+                critical_days = len(weather_forecast[weather_forecast["Risk Level"].isin(["High", "Critical"])])
+                total_predicted = weather_forecast["Predicted Incidents"].sum()
+                peak_day = weather_forecast.loc[weather_forecast["Predicted Incidents"].idxmax()]
+
+                st.markdown(f"""
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
+                    <div style="background: #FEF2F2; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #DC2626;">{total_predicted}</div>
+                        <div style="font-size: 0.7rem; color: #991B1B;">Total Predicted</div>
+                    </div>
+                    <div style="background: #FEF3C7; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #D97706;">{critical_days}</div>
+                        <div style="font-size: 0.7rem; color: #92400E;">High Risk Days</div>
+                    </div>
+                    <div style="background: #DBEAFE; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #2563EB;">{peak_day['Day']}</div>
+                        <div style="font-size: 0.7rem; color: #1E40AF;">Peak Risk Day</div>
+                    </div>
+                    <div style="background: #ECFDF5; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #059669;">{peak_day['Recommended Crews']}</div>
+                        <div style="font-size: 0.7rem; color: #047857;">Crews Needed</div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        with pred_col2:
+            st.markdown('<div class="net-mini-title">🚧 Construction Dig-Up Risk Forecast</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                works_area = alt.Chart(construction_forecast).mark_area(opacity=0.3, color="#6366F1").encode(
+                    x=alt.X("Day:N", title=None, sort=list(construction_forecast["Day"])),
+                    y=alt.Y("Scheduled Works:Q", title="Scheduled Works"),
+                )
+                works_line = alt.Chart(construction_forecast).mark_line(strokeWidth=2, color="#4F46E5").encode(
+                    x=alt.X("Day:N", sort=list(construction_forecast["Day"])), y="Scheduled Works:Q",
+                )
+                digup_bars = alt.Chart(construction_forecast).mark_bar(color="#EF4444", opacity=0.8, size=20).encode(
+                    x=alt.X("Day:N", sort=list(construction_forecast["Day"])),
+                    y=alt.Y("Predicted Dig-ups:Q", title="Predicted Dig-ups"),
+                    tooltip=["Day:N", "Scheduled Works:Q", "High Risk Zones:Q", "Predicted Dig-ups:Q", "Proactive Alerts Sent:Q"],
+                )
+                st.altair_chart(style_net_chart(alt.layer(works_area, works_line, digup_bars).resolve_scale(y="independent"), height=240), use_container_width=True)
+
+                total_digups = construction_forecast["Predicted Dig-ups"].sum()
+                total_alerts = construction_forecast["Proactive Alerts Sent"].sum()
+                worst_day = construction_forecast.loc[construction_forecast["Predicted Dig-ups"].idxmax()]
+
+                st.markdown(f"""
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
+                    <div style="background: #FEF2F2; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #DC2626;">{total_digups}</div>
+                        <div style="font-size: 0.7rem; color: #991B1B;">Predicted Dig-ups</div>
+                    </div>
+                    <div style="background: #EEF2FF; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #4F46E5;">{total_alerts}</div>
+                        <div style="font-size: 0.7rem; color: #3730A3;">Alerts to Send</div>
+                    </div>
+                    <div style="background: #FEF3C7; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #D97706;">{worst_day['Day']}</div>
+                        <div style="font-size: 0.7rem; color: #92400E;">Highest Risk</div>
+                    </div>
+                    <div style="background: #ECFDF5; border-radius: 8px; padding: 0.6rem; text-align: center;">
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #059669;">€{total_digups * 15}K</div>
+                        <div style="font-size: 0.7rem; color: #047857;">At Risk</div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        st.markdown('<div class="net-mini-title">📊 Capacity Demand Forecast vs Available Headroom</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            cap_demand = alt.Chart(capacity_forecast).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, color="#6366F1").encode(
+                x=alt.X("Day:N", title=None, sort=list(capacity_forecast["Day"])),
+                y=alt.Y("Peak Demand Predicted:Q", title="Utilization %", scale=alt.Scale(domain=[0, 100])),
+                tooltip=["Day:N", "Expected Events:N", "Peak Demand Predicted:Q", "Capacity Available:Q", "Action Required:N"],
+            )
+            cap_line = alt.Chart(capacity_forecast).mark_line(strokeWidth=3, color="#10B981").encode(
+                x=alt.X("Day:N", sort=list(capacity_forecast["Day"])),
+                y=alt.Y("Capacity Available:Q"),
+            )
+            cap_rule = alt.Chart(pd.DataFrame({"y": [90]})).mark_rule(strokeDash=[5, 5], color="#EF4444", strokeWidth=2).encode(y="y:Q")
+
+            headroom_text = alt.Chart(capacity_forecast).mark_text(dy=-10, fontSize=11, fontWeight="bold").encode(
+                x=alt.X("Day:N", sort=list(capacity_forecast["Day"])),
+                y="Peak Demand Predicted:Q",
+                text=alt.Text("Headroom:Q", format="+d"),
+                color=alt.condition(alt.datum.Headroom < 5, alt.value("#DC2626"), alt.value("#059669")),
+            )
+            event_labels = alt.Chart(capacity_forecast).mark_text(dy=15, fontSize=8, color="#64748B").encode(
+                x=alt.X("Day:N", sort=list(capacity_forecast["Day"])),
+                y=alt.value(5),
+                text="Expected Events:N",
+            )
+            st.altair_chart(style_net_chart(cap_demand + cap_line + cap_rule + headroom_text + event_labels, height=200), use_container_width=True)
+
+            needs_action = capacity_forecast[capacity_forecast["Headroom"] < 10]
+            if len(needs_action) > 0:
+                action_days = ", ".join(needs_action["Day"].tolist())
+                render_net_ai_reco(
+                    "Capacity Alert",
+                    f"⚠️ {len(needs_action)} days with <10% headroom: {action_days}. SafeGraph mobility data predicts high demand.",
+                    f"Pre-scale capacity for {needs_action.iloc[0]['Expected Events']} event. Auto-trigger CDN edge caching.",
+                    "Prevent SLA breaches through proactive capacity management.",
+                    level="warning",
+                )
+
+        st.markdown('<div class="net-mini-title">🎯 Consolidated 7-Day Action Plan</div>', unsafe_allow_html=True)
+
+        action_items = []
+        for _, row in weather_forecast.iterrows():
+            if row["Risk Level"] in ["High", "Critical"]:
+                action_items.append({
+                    "Day": row["Day"],
+                    "Source": "Weather Source",
+                    "Prediction": f"{row['Predicted Incidents']} incidents expected",
+                    "Action": f"Deploy {row['Recommended Crews']} crews, pre-stage equipment",
+                    "Priority": "🔴 Critical" if row["Risk Level"] == "Critical" else "🟠 High",
+                    "Confidence": f"{row['Confidence']:.0%}",
+                })
+        for _, row in construction_forecast.iterrows():
+            if row["Predicted Dig-ups"] >= 2:
+                action_items.append({
+                    "Day": row["Day"],
+                    "Source": "Precisely",
+                    "Prediction": f"{row['Predicted Dig-ups']} dig-ups likely",
+                    "Action": f"Send {row['Proactive Alerts Sent']} contractor alerts",
+                    "Priority": "🟠 High",
+                    "Confidence": f"{row['Confidence']:.0%}",
+                })
+        for _, row in capacity_forecast.iterrows():
+            if row["Headroom"] < 10:
+                action_items.append({
+                    "Day": row["Day"],
+                    "Source": "SafeGraph",
+                    "Prediction": f"{row['Expected Events']} - {row['Peak Demand Predicted']}% demand",
+                    "Action": row["Action Required"],
+                    "Priority": "🔴 Critical" if row["Headroom"] < 0 else "🟠 High",
+                    "Confidence": "94%",
+                })
+
+        if action_items:
+            action_df = pd.DataFrame(action_items)
+            st.dataframe(
+                action_df,
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Day": st.column_config.TextColumn("Day", width="small"),
+                    "Source": st.column_config.TextColumn("Data Source", width="medium"),
+                    "Prediction": st.column_config.TextColumn("ML Prediction", width="large"),
+                    "Action": st.column_config.TextColumn("Recommended Action", width="large"),
+                    "Priority": st.column_config.TextColumn("Priority", width="small"),
+                    "Confidence": st.column_config.TextColumn("Conf.", width="small"),
+                },
+            )
+
+        render_net_ai_reco(
+            "Predictive Operations Summary",
+            f"ML models predict {weather_forecast['Predicted Incidents'].sum()} weather incidents, {construction_forecast['Predicted Dig-ups'].sum()} dig-ups, and {len(needs_action)} capacity constraints in next 7 days.",
+            "Execute consolidated action plan above. Estimated prevention value: €{:.0f}K.".format(
+                weather_forecast["Predicted Incidents"].sum() * 8 + construction_forecast["Predicted Dig-ups"].sum() * 15
+            ),
+            "Snowflake Marketplace data transforms reactive NOC into predictive operations center.",
+        )
+
+        st.markdown(f"""
+        <div style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); border-radius: 12px; padding: 1rem; margin-top: 1rem; border-left: 4px solid #10B981;">
+            <div style="display: flex; align-items: center;">
+                <span style="font-size: 1.5rem; margin-right: 0.6rem;">✨</span>
+                <div>
+                    <strong style="color: #065F46;">AI-Driven Network Operations Summary</strong>
+                    <div style="color: #047857; font-size: 0.85rem; margin-top: 0.3rem;">
+                        ML models have detected <strong>{total_anomalies} anomalies</strong> this week, with <strong>{critical_assets} critical assets</strong> flagged for immediate maintenance.
+                        Predictive maintenance is projected to save <strong>€{prevented_outages * 2.5:.0f}K</strong> in avoided outages.
+                        Overall model accuracy: <strong>{avg_model_accuracy:.1f}%</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <details style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.8rem; margin-top: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #334155; font-size: 0.9rem;">▸ Data Sources & Systems</summary>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #475569;">
+            <p><strong>This dashboard aggregates data from the following source systems:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 0.5rem 0;">
+                <tr style="border-bottom: 1px solid #E2E8F0;"><th style="text-align: left; padding: 0.4rem;">Data Element</th><th style="text-align: left; padding: 0.4rem;">Source System</th><th style="text-align: left; padding: 0.4rem;">Refresh</th></tr>
+                <tr><td style="padding: 0.4rem;">Node status & health</td><td style="padding: 0.4rem;"><strong>NOC</strong> Monitoring</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Traffic utilization</td><td style="padding: 0.4rem;"><strong>NPM</strong> - CA Spectrum</td><td style="padding: 0.4rem;">5 min</td></tr>
+                <tr><td style="padding: 0.4rem;">Fiber routes</td><td style="padding: 0.4rem;"><strong>GIS (ESRI ArcGIS)</strong> + OSS</td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">Alarm data</td><td style="padding: 0.4rem;"><strong>Moogsoft</strong> Alarm Correlation</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Weather overlays</td><td style="padding: 0.4rem;"><strong>AEMET API</strong></td><td style="padding: 0.4rem;">Hourly</td></tr>
+                <tr><td style="padding: 0.4rem;">Risk exposure</td><td style="padding: 0.4rem;"><strong>Risk Management Platform</strong></td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">Anomaly detection</td><td style="padding: 0.4rem;"><strong>Snowflake ML</strong> + Cortex</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Predictive models</td><td style="padding: 0.4rem;"><strong>Snowflake Model Registry</strong></td><td style="padding: 0.4rem;">Continuous</td></tr>
+                <tr><td style="padding: 0.4rem;">Asset health scores</td><td style="padding: 0.4rem;"><strong>CMDB</strong> + ML Pipeline</td><td style="padding: 0.4rem;">Hourly</td></tr>
+            </table>
+            <p><strong>Key Integrations:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li>Network elements from <strong>Nokia NSP, Ericsson ENM</strong></li>
+                <li>Geographic data from <strong>Catastro</strong></li>
+                <li>External threat feeds from <strong>weather/civil protection</strong></li>
+                <li>Incident correlation with <strong>tenant NOC systems</strong></li>
+                <li>ML inference via <strong>Snowflake Cortex ML</strong></li>
+                <li>Model training on <strong>Snowpark Container Services</strong></li>
+            </ul>
+        </div>
+    </details>
+    """, unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Page: Operations & Assets (Service Inventory & Billing Reconciliation)
+# ---------------------------------------------------------------------------
+elif selected_menu == "Operations & Assets":
+    import pandas as pd
+    import altair as alt
+    from datetime import datetime, timedelta
+    import random
+
+    def render_ops_ai_reco(title: str, insight: str, action: str, outcome: str, level: str = "info"):
+        color_map = {"info": ("#6366F1", "#EEF2FF", "#3730A3"), "warning": ("#F59E0B", "#FFFBEB", "#92400E"), "critical": ("#EF4444", "#FEF2F2", "#991B1B")}
+        accent, bg, text = color_map.get(level, color_map["info"])
+        st.markdown(f"""<div style="background: {bg}; border-left: 4px solid {accent}; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.5rem;">
+            <div style="font-weight: 700; color: {text}; font-size: 0.78rem; margin-bottom: 0.2rem;">🤖 {title}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Insight:</strong> {insight}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Action:</strong> {action}</div>
+            <div style="color: #059669; font-size: 0.74rem; margin-top: 0.2rem;"><strong>Outcome:</strong> {outcome}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("""<style>
+.ops-title { font-size: 1.15rem; font-weight: 800; color: #0F172A; margin: 1.2rem 0 0.6rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.4rem; }
+.ops-mini-title { font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 0.5rem; }
+.ops-pulse { background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
+.ops-pulse-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.ops-pulse-title { color: #FFFFFF; font-size: 1rem; font-weight: 700; }
+.ops-pulse-badge { background: #34D399; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.68rem; font-weight: 700; }
+.ops-pulse-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; }
+.ops-pulse-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 0.7rem; text-align: center; }
+.ops-pulse-label { color: rgba(255,255,255,0.7); font-size: 0.68rem; text-transform: uppercase; }
+.ops-pulse-value { color: #FFFFFF; font-size: 1.3rem; font-weight: 700; }
+.ops-pulse-delta { font-size: 0.68rem; }
+    </style>""", unsafe_allow_html=True)
+
+    tab_topology, tab_inventory, tab_orders, tab_recon, tab_amort = st.tabs([
+        "🌐 Network Topology",
+        "📋 Service Inventory",
+        "📦 Partner Orders",
+        "🔍 Billing Reconciliation",
+        "📉 Asset Amortization",
+    ])
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # TAB 1: Network Topology (OLT to Home)
+    # ═══════════════════════════════════════════════════════════════════════
+    with tab_topology:
+
+        total_olts = 156
+        total_pon_ports = 2496
+        total_splitters = 12480
+        homes_passed = 1248000
+        homes_connected = 892456
+        network_utilization = 71.5
+
+        st.markdown(f"""
+        <div class="ops-pulse" style="background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);">
+            <div class="ops-pulse-head">
+                <div class="ops-pulse-title">🌐 Fiber Access Network - OLT to Home</div>
+                <div class="ops-pulse-badge">Network Sync · {datetime.now().strftime('%H:%M')}</div>
+            </div>
+            <div class="ops-pulse-grid">
+                <div class="ops-pulse-card"><div class="ops-pulse-label">OLTs</div><div class="ops-pulse-value">{total_olts}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">active chassis</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">PON Ports</div><div class="ops-pulse-value">{total_pon_ports:,}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">16 ports/OLT</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Splitters</div><div class="ops-pulse-value">{total_splitters:,}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">1:32 ratio</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Homes Passed</div><div class="ops-pulse-value">{homes_passed/1000:.0f}K</div><div class="ops-pulse-delta" style="color: #A7F3D0;">FTTH coverage</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Homes Connected</div><div class="ops-pulse-value">{homes_connected/1000:.0f}K</div><div class="ops-pulse-delta" style="color: #A7F3D0;">{network_utilization}% take-rate</div></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-title">🏗️ Network Hierarchy: OLT → PON → Splitter → Home</div>', unsafe_allow_html=True)
+
+        network_elements = pd.DataFrame({
+            "Element ID": ["OLT-MAD-001", "OLT-MAD-002", "OLT-BCN-001", "OLT-BCN-002", "OLT-VAL-001", "OLT-SEV-001", "OLT-BIL-001", "OLT-MAL-001"],
+            "Location": ["Madrid Central", "Madrid Norte", "Barcelona Hub", "Barcelona 22@", "Valencia DC", "Sevilla POP", "Bilbao POP", "Malaga POP"],
+            "Vendor": ["Nokia", "Nokia", "Huawei", "Nokia", "Huawei", "Nokia", "Huawei", "Nokia"],
+            "PON Ports Total": [16, 16, 16, 16, 16, 16, 16, 16],
+            "PON Ports Used": [14, 12, 15, 11, 13, 10, 9, 8],
+            "Splitters": [448, 384, 480, 352, 416, 320, 288, 256],
+            "Homes Connected": [14336, 12288, 15360, 11264, 13312, 10240, 9216, 8192],
+            "MO Lines": [8320, 7168, 8960, 6554, 7741, 5939, 5356, 4761],
+            "VF Lines": [6016, 5120, 6400, 4710, 5571, 4301, 3860, 3431],
+            "Utilization Pct": [87.5, 75.0, 93.8, 68.8, 81.3, 62.5, 56.3, 50.0],
+        })
+
+        topo_col1, topo_col2 = st.columns([2, 1])
+
+        with topo_col1:
+            st.markdown('<div class="ops-mini-title">OLT Capacity & Utilization</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                olt_chart = alt.Chart(network_elements).mark_bar().encode(
+                    x=alt.X("Element ID:N", title=None, sort="-y"),
+                    y=alt.Y("Homes Connected:Q", title="Homes Connected"),
+                    color=alt.value("#3B82F6"),
+                )
+                st.altair_chart(olt_chart, use_container_width=True)
+
+        with topo_col2:
+            st.markdown('<div class="ops-mini-title">Partner Split per OLT</div>', unsafe_allow_html=True)
+            mo_total = network_elements["MO Lines"].sum()
+            vf_total = network_elements["VF Lines"].sum()
+            partner_split = pd.DataFrame({
+                "Partner": ["MasOrange", "Vodafone"],
+                "Lines": [mo_total, vf_total],
+                "Color": ["#FF6B00", "#E60000"],
+            })
+            with st.container(border=True):
+                partner_pie = alt.Chart(partner_split).mark_arc(innerRadius=50).encode(
+                    theta=alt.Theta("Lines:Q"),
+                    color=alt.Color("Partner:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"])),
+                )
+                st.altair_chart(partner_pie, use_container_width=True)
+
+            st.markdown(f"""
+            <div style="background: #F8FAFC; border-radius: 8px; padding: 0.8rem; margin-top: 0.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <span style="color: #FF6B00; font-weight: 600;">MasOrange</span>
+                    <span style="font-weight: 700;">{mo_total:,} lines ({mo_total/(mo_total+vf_total)*100:.1f}%)</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: #E60000; font-weight: 600;">Vodafone</span>
+                    <span style="font-weight: 700;">{vf_total:,} lines ({vf_total/(mo_total+vf_total)*100:.1f}%)</span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-mini-title">OLT Inventory Detail</div>', unsafe_allow_html=True)
+        st.dataframe(
+            network_elements,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Element ID": st.column_config.TextColumn("OLT ID", width="medium"),
+                "Location": st.column_config.TextColumn("Location", width="medium"),
+                "Vendor": st.column_config.TextColumn("Vendor", width="small"),
+                "PON Ports Total": st.column_config.NumberColumn("Ports", format="%d"),
+                "PON Ports Used": st.column_config.NumberColumn("Used", format="%d"),
+                "Splitters": st.column_config.NumberColumn("Splitters", format="%d"),
+                "Homes Connected": st.column_config.NumberColumn("Homes", format="%,d"),
+                "MO Lines": st.column_config.NumberColumn("MasOrange", format="%,d"),
+                "VF Lines": st.column_config.NumberColumn("Vodafone", format="%,d"),
+                "Utilization Pct": st.column_config.ProgressColumn("Utilization", min_value=0, max_value=100, format="%.0f%%"),
+            },
+        )
+
+        high_util_olts = network_elements[network_elements["Utilization Pct"] > 85]
+        if len(high_util_olts) > 0:
+            render_ops_ai_reco(
+                "Capacity Planning Alert",
+                f"{len(high_util_olts)} OLTs above 85% utilization. {high_util_olts.iloc[0]['Element ID']} at {high_util_olts.iloc[0]['Utilization Pct']}% - risk of service rejection.",
+                "Initiate PON port expansion for high-utilization OLTs. Pre-provision additional splitters in growth areas.",
+                "Prevent service rejection and maintain SLA commitments to Vodafone and MasOrange.",
+                level="warning",
+            )
+
+        st.markdown('<div class="ops-title">📊 Network Topology Flow</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="background: #F8FAFC; border-radius: 12px; padding: 1.2rem; border: 1px solid #E2E8F0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; text-align: center;">
+                <div style="flex: 1;">
+                    <div style="background: #1E3A8A; color: white; padding: 1rem; border-radius: 8px; font-weight: 700;">OLT</div>
+                    <div style="color: #64748B; font-size: 0.75rem; margin-top: 0.3rem;">156 chassis</div>
+                </div>
+                <div style="color: #94A3B8; font-size: 1.5rem;">→</div>
+                <div style="flex: 1;">
+                    <div style="background: #3B82F6; color: white; padding: 1rem; border-radius: 8px; font-weight: 700;">PON Port</div>
+                    <div style="color: #64748B; font-size: 0.75rem; margin-top: 0.3rem;">2,496 ports</div>
+                </div>
+                <div style="color: #94A3B8; font-size: 1.5rem;">→</div>
+                <div style="flex: 1;">
+                    <div style="background: #60A5FA; color: white; padding: 1rem; border-radius: 8px; font-weight: 700;">Splitter 1:32</div>
+                    <div style="color: #64748B; font-size: 0.75rem; margin-top: 0.3rem;">12,480 units</div>
+                </div>
+                <div style="color: #94A3B8; font-size: 1.5rem;">→</div>
+                <div style="flex: 1;">
+                    <div style="background: #93C5FD; color: #1E3A8A; padding: 1rem; border-radius: 8px; font-weight: 700;">Distribution</div>
+                    <div style="color: #64748B; font-size: 0.75rem; margin-top: 0.3rem;">Feeder/Drop fiber</div>
+                </div>
+                <div style="color: #94A3B8; font-size: 1.5rem;">→</div>
+                <div style="flex: 1;">
+                    <div style="background: #10B981; color: white; padding: 1rem; border-radius: 8px; font-weight: 700;">Home</div>
+                    <div style="color: #64748B; font-size: 0.75rem; margin-top: 0.3rem;">892,456 connected</div>
+                </div>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+                <div style="display: flex; justify-content: center; gap: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 12px; height: 12px; background: #FF6B00; border-radius: 2px;"></div>
+                        <span style="font-size: 0.8rem; color: #334155;"><strong>MasOrange:</strong> 54,799 lines (58%)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 12px; height: 12px; background: #E60000; border-radius: 2px;"></div>
+                        <span style="font-size: 0.8rem; color: #334155;"><strong>Vodafone:</strong> 39,409 lines (42%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # TAB 2: Service Inventory (Core - Billable Lines)
+    # ═══════════════════════════════════════════════════════════════════════
+    with tab_inventory:
+
+        total_active_lines = 892456
+        mo_lines = 517625
+        vf_lines = 374831
+        total_mrc = 13386840
+        avg_bandwidth = "612 Mbps"
+        pending_activations = 1247
+        pending_disconnects = 423
+
+        st.markdown(f"""
+        <div class="ops-pulse" style="background: linear-gradient(135deg, #7C2D12 0%, #EA580C 100%);">
+            <div class="ops-pulse-head">
+                <div class="ops-pulse-title">📋 Service Inventory - Billable Lines</div>
+                <div class="ops-pulse-badge">Golden Record · {datetime.now().strftime('%H:%M')}</div>
+            </div>
+            <div class="ops-pulse-grid">
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Active Lines</div><div class="ops-pulse-value">{total_active_lines:,}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">billable services</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">MasOrange</div><div class="ops-pulse-value">{mo_lines:,}</div><div class="ops-pulse-delta" style="color: #FFEDD5;">{mo_lines/total_active_lines*100:.1f}% share</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Vodafone</div><div class="ops-pulse-value">{vf_lines:,}</div><div class="ops-pulse-delta" style="color: #FECACA;">{vf_lines/total_active_lines*100:.1f}% share</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Monthly MRC</div><div class="ops-pulse-value">€{total_mrc/1000000:.1f}M</div><div class="ops-pulse-delta" style="color: #A7F3D0;">recurring revenue</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Pending Orders</div><div class="ops-pulse-value">{pending_activations + pending_disconnects}</div><div class="ops-pulse-delta" style="color: #FDE68A;">{pending_activations} new / {pending_disconnects} cease</div></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-title">📊 Service Inventory by Partner & Bandwidth</div>', unsafe_allow_html=True)
+
+        service_inventory_sample = pd.DataFrame({
+            "Service ID": [f"SVC-2024-{str(i).zfill(6)}" for i in range(1, 21)],
+            "Partner": ["MasOrange", "Vodafone", "MasOrange", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange",
+                       "Vodafone", "MasOrange", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone"],
+            "Address": ["Calle Gran Via 42, 3A, Madrid", "Passeig de Gracia 78, 2B, Barcelona", "Av. del Puerto 156, Valencia", "Calle Serrano 89, 4C, Madrid",
+                       "Rambla Catalunya 112, Barcelona", "Plaza Mayor 23, Salamanca", "Calle Larios 15, Malaga", "Gran Via 67, Bilbao", "Calle Colon 45, Valencia",
+                       "Paseo Castellana 200, Madrid", "Diagonal 456, Barcelona", "Calle Alcala 78, Madrid", "Av. Diagonal 234, Barcelona", "Calle Preciados 12, Madrid",
+                       "Ramblas 89, Barcelona", "Gran Via 34, Madrid", "Passeig Joan de Borbo 56, Barcelona", "Calle Mayor 90, Madrid", "Via Laietana 78, Barcelona", "Calle Fuencarral 123, Madrid"],
+            "OLT": ["OLT-MAD-001", "OLT-BCN-001", "OLT-VAL-001", "OLT-MAD-001", "OLT-BCN-002", "OLT-MAD-002", "OLT-MAL-001", "OLT-BIL-001", "OLT-VAL-001", "OLT-MAD-001",
+                   "OLT-BCN-001", "OLT-MAD-002", "OLT-BCN-001", "OLT-MAD-001", "OLT-BCN-002", "OLT-MAD-001", "OLT-BCN-001", "OLT-MAD-002", "OLT-BCN-002", "OLT-MAD-001"],
+            "PON Port": ["PON-001-01", "PON-001-03", "PON-001-02", "PON-001-05", "PON-002-01", "PON-002-04", "PON-001-02", "PON-001-01", "PON-001-06", "PON-001-08",
+                        "PON-001-05", "PON-002-02", "PON-001-07", "PON-001-09", "PON-002-03", "PON-001-10", "PON-001-04", "PON-002-06", "PON-002-05", "PON-001-11"],
+            "Bandwidth": ["1 Gbps", "600 Mbps", "300 Mbps", "1 Gbps", "600 Mbps", "300 Mbps", "1 Gbps", "600 Mbps", "300 Mbps", "1 Gbps",
+                         "600 Mbps", "1 Gbps", "300 Mbps", "600 Mbps", "1 Gbps", "300 Mbps", "600 Mbps", "1 Gbps", "300 Mbps", "600 Mbps"],
+            "Status": ["Active", "Active", "Active", "Active", "Active", "Active", "Active", "Active", "Active", "Active",
+                      "Active", "Active", "Pending Disconnect", "Active", "Active", "Active", "Pending Activation", "Active", "Active", "Active"],
+            "Activation Date": ["2023-06-15", "2023-08-22", "2024-01-10", "2022-11-05", "2023-09-18", "2024-02-28", "2023-07-14", "2024-03-01", "2023-12-20", "2022-05-30",
+                               "2023-10-12", "2024-01-25", "2023-04-08", "2023-11-15", "2024-02-14", "2022-08-19", "2025-03-10", "2023-06-28", "2024-01-05", "2023-09-22"],
+            "MRC EUR": [15.50, 12.00, 9.50, 15.50, 12.00, 9.50, 15.50, 12.00, 9.50, 15.50, 12.00, 15.50, 9.50, 12.00, 15.50, 9.50, 12.00, 15.50, 9.50, 12.00],
+        })
+
+        inv_filter_col1, inv_filter_col2, inv_filter_col3 = st.columns([1, 1, 1])
+        with inv_filter_col1:
+            partner_filter = st.selectbox("Partner", ["All", "MasOrange", "Vodafone"])
+        with inv_filter_col2:
+            status_filter = st.selectbox("Status", ["All", "Active", "Pending Activation", "Pending Disconnect"])
+        with inv_filter_col3:
+            bandwidth_filter = st.selectbox("Bandwidth", ["All", "1 Gbps", "600 Mbps", "300 Mbps"])
+
+        filtered_inventory = service_inventory_sample.copy()
+        if partner_filter != "All":
+            filtered_inventory = filtered_inventory[filtered_inventory["Partner"] == partner_filter]
+        if status_filter != "All":
+            filtered_inventory = filtered_inventory[filtered_inventory["Status"] == status_filter]
+        if bandwidth_filter != "All":
+            filtered_inventory = filtered_inventory[filtered_inventory["Bandwidth"] == bandwidth_filter]
+
+        inv_col1, inv_col2 = st.columns([2, 1])
+
+        with inv_col1:
+            st.markdown('<div class="ops-mini-title">Lines by Bandwidth Tier</div>', unsafe_allow_html=True)
+            bandwidth_dist = pd.DataFrame({
+                "Bandwidth": ["1 Gbps", "600 Mbps", "300 Mbps"],
+                "Lines": [312456, 356789, 223211],
+                "MRC EUR": [4843068, 4281468, 2120505],
+            })
+            with st.container(border=True):
+                bw_chart = alt.Chart(bandwidth_dist).mark_bar().encode(
+                    x=alt.X("Bandwidth:N", title=None, sort=["1 Gbps", "600 Mbps", "300 Mbps"]),
+                    y=alt.Y("Lines:Q", title="Active Lines"),
+                    color=alt.value("#EA580C"),
+                )
+                st.altair_chart(bw_chart, use_container_width=True)
+
+        with inv_col2:
+            st.markdown('<div class="ops-mini-title">MRC by Partner</div>', unsafe_allow_html=True)
+            partner_mrc = pd.DataFrame({
+                "Partner": ["MasOrange", "Vodafone"],
+                "MRC": [7764427, 5622413],
+            })
+            with st.container(border=True):
+                mrc_pie = alt.Chart(partner_mrc).mark_arc(innerRadius=50).encode(
+                    theta=alt.Theta("MRC:Q"),
+                    color=alt.Color("Partner:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"])),
+                )
+                st.altair_chart(mrc_pie, use_container_width=True)
+
+        st.markdown('<div class="ops-mini-title">Service Inventory Detail (Sample)</div>', unsafe_allow_html=True)
+        st.dataframe(
+            filtered_inventory,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Service ID": st.column_config.TextColumn("Service ID", width="medium"),
+                "Partner": st.column_config.TextColumn("Partner", width="small"),
+                "Address": st.column_config.TextColumn("Address", width="large"),
+                "OLT": st.column_config.TextColumn("OLT", width="small"),
+                "PON Port": st.column_config.TextColumn("PON", width="small"),
+                "Bandwidth": st.column_config.TextColumn("BW", width="small"),
+                "Status": st.column_config.TextColumn("Status", width="medium"),
+                "Activation Date": st.column_config.DateColumn("Activated", format="YYYY-MM-DD"),
+                "MRC EUR": st.column_config.NumberColumn("MRC €", format="€%.2f"),
+            },
+        )
+        st.markdown('<div style="background: #F3E8FF; border-left: 3px solid #9333EA; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #6B21A8;">🎯 Anomaly Insight:</strong> <span style="color: #581C87;">SPL-MAD-BATCH-045 shows 66% faster depreciation than expected - likely environmental factors. FBR-VAL-TRUNK-003 over-allocated by 50% - risk of service degradation.</span></div>', unsafe_allow_html=True)
+
+        render_ops_ai_reco(
+            "Service Inventory Health",
+            f"892,456 active lines generating €13.4M MRC. {pending_activations} pending activations, {pending_disconnects} pending disconnects. Inventory sync rate: 99.2%.",
+            "Process pending orders within SLA. Flag any services without OLT assignment for investigation.",
+            "Maintain accurate inventory as the 'golden record' for billing reconciliation with partners.",
+        )
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # TAB 3: Partner Orders (Connect/Modify/Cease)
+    # ═══════════════════════════════════════════════════════════════════════
+    with tab_orders:
+
+        total_orders_mtd = 4567
+        orders_completed = 3892
+        orders_in_progress = 548
+        orders_pending = 127
+        sla_compliance = 94.2
+        avg_fulfillment_days = 4.8
+
+        st.markdown(f"""
+        <div class="ops-pulse" style="background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%);">
+            <div class="ops-pulse-head">
+                <div class="ops-pulse-title">📦 Partner Orders - Vodafone & MasOrange</div>
+                <div class="ops-pulse-badge">MTD · {datetime.now().strftime('%H:%M')}</div>
+            </div>
+            <div class="ops-pulse-grid">
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Orders MTD</div><div class="ops-pulse-value">{total_orders_mtd:,}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">total received</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Completed</div><div class="ops-pulse-value">{orders_completed:,}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">{orders_completed/total_orders_mtd*100:.1f}%</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">In Progress</div><div class="ops-pulse-value">{orders_in_progress}</div><div class="ops-pulse-delta" style="color: #FDE68A;">active</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">SLA Compliance</div><div class="ops-pulse-value">{sla_compliance}%</div><div class="ops-pulse-delta" style="color: #A7F3D0;">on target</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Avg Fulfillment</div><div class="ops-pulse-value">{avg_fulfillment_days}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">days</div></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown(f"""
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div style="background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%); border: 2px solid #FF6B00; border-radius: 12px; padding: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.6rem;">
+                    <div style="width: 40px; height: 40px; background: #FF6B00; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">
+                        <span style="color: white; font-weight: 700; font-size: 0.7rem;">MO</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; color: #9A3412; font-size: 1rem;">MasOrange Orders</div>
+                        <div style="font-size: 0.72rem; color: #C2410C;">58% JV Share</div>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;">
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #EA580C;">2,648</div>
+                        <div style="font-size: 0.65rem; color: #9A3412;">Total</div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #059669;">2,156</div>
+                        <div style="font-size: 0.65rem; color: #047857;">Connect</div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #3B82F6;">312</div>
+                        <div style="font-size: 0.65rem; color: #1D4ED8;">Modify</div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #DC2626;">180</div>
+                        <div style="font-size: 0.65rem; color: #B91C1C;">Cease</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #FEF2F2 0%, #FECACA 100%); border: 2px solid #E60000; border-radius: 12px; padding: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.6rem;">
+                    <div style="width: 40px; height: 40px; background: #E60000; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">
+                        <span style="color: white; font-weight: 700; font-size: 0.7rem;">VF</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; color: #991B1B; font-size: 1rem;">Vodafone Orders</div>
+                        <div style="font-size: 0.72rem; color: #B91C1C;">42% JV Share</div>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;">
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #DC2626;">1,919</div>
+                        <div style="font-size: 0.65rem; color: #991B1B;">Total</div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #059669;">1,523</div>
+                        <div style="font-size: 0.65rem; color: #047857;">Connect</div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #3B82F6;">254</div>
+                        <div style="font-size: 0.65rem; color: #1D4ED8;">Modify</div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 0.5rem; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #DC2626;">142</div>
+                        <div style="font-size: 0.65rem; color: #B91C1C;">Cease</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-title">📋 Order Pipeline & Billing Impact</div>', unsafe_allow_html=True)
+
+        partner_orders = pd.DataFrame({
+            "Order ID": ["ORD-MO-2025-004521", "ORD-VF-2025-003892", "ORD-MO-2025-004520", "ORD-VF-2025-003891", "ORD-MO-2025-004519",
+                        "ORD-VF-2025-003890", "ORD-MO-2025-004518", "ORD-VF-2025-003889", "ORD-MO-2025-004517", "ORD-VF-2025-003888"],
+            "Partner": ["MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone"],
+            "Order Type": ["Connect", "Connect", "Modify", "Cease", "Connect", "Modify", "Cease", "Connect", "Connect", "Connect"],
+            "Service ID": ["SVC-2024-892457", "SVC-2024-892458", "SVC-2024-000156", "SVC-2024-000089", "SVC-2024-892459",
+                          "SVC-2024-000234", "SVC-2024-000312", "SVC-2024-892460", "SVC-2024-892461", "SVC-2024-892462"],
+            "Address": ["Calle Alcala 156, Madrid", "Via Augusta 234, Barcelona", "Gran Via 89, Madrid", "Diagonal 567, Barcelona",
+                       "Paseo Castellana 45, Madrid", "Rambla Catalunya 78, Barcelona", "Calle Serrano 123, Madrid",
+                       "Passeig de Gracia 90, Barcelona", "Calle Goya 67, Madrid", "Av. Meridiana 345, Barcelona"],
+            "Bandwidth": ["1 Gbps", "600 Mbps", "600 Mbps → 1 Gbps", "-", "300 Mbps", "300 Mbps → 600 Mbps", "-", "1 Gbps", "600 Mbps", "300 Mbps"],
+            "Order Date": ["2025-03-06", "2025-03-06", "2025-03-05", "2025-03-05", "2025-03-05", "2025-03-04", "2025-03-04", "2025-03-04", "2025-03-03", "2025-03-03"],
+            "SLA Deadline": ["2025-03-13", "2025-03-13", "2025-03-12", "2025-03-12", "2025-03-12", "2025-03-11", "2025-03-11", "2025-03-11", "2025-03-10", "2025-03-10"],
+            "Status": ["In Progress", "In Progress", "Completed", "Completed", "In Progress", "In Progress", "Completed", "Completed", "Completed", "Completed"],
+            "Billing Impact": ["+€15.50/mo", "+€12.00/mo", "+€3.50/mo", "-€12.00/mo", "+€9.50/mo", "+€2.50/mo", "-€15.50/mo", "+€15.50/mo", "+€12.00/mo", "+€9.50/mo"],
+            "Inventory Updated": ["Pending", "Pending", "Yes", "Yes", "Pending", "Pending", "Yes", "Yes", "Yes", "Yes"],
+        })
+
+        order_col1, order_col2 = st.columns([2, 1])
+
+        with order_col1:
+            st.markdown('<div class="ops-mini-title">Orders by Type</div>', unsafe_allow_html=True)
+            order_type_dist = pd.DataFrame({
+                "Type": ["Connect", "Modify", "Cease"],
+                "MasOrange": [2156, 312, 180],
+                "Vodafone": [1523, 254, 142],
+            })
+            order_melted = order_type_dist.melt(id_vars=["Type"], value_vars=["MasOrange", "Vodafone"], var_name="Partner", value_name="Orders")
+            with st.container(border=True):
+                order_chart = alt.Chart(order_melted).mark_bar().encode(
+                    x=alt.X("Type:N", title=None, sort=["Connect", "Modify", "Cease"]),
+                    y=alt.Y("Orders:Q", title="Order Count"),
+                    color=alt.Color("Partner:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"])),
+                    xOffset="Partner:N",
+                )
+                st.altair_chart(order_chart, use_container_width=True)
+
+        with order_col2:
+            st.markdown('<div class="ops-mini-title">Billing Impact MTD</div>', unsafe_allow_html=True)
+            new_mrc = (2156 + 1523) * 12.50
+            upgrade_mrc = (312 + 254) * 3.00
+            lost_mrc = (180 + 142) * 12.50
+            net_mrc = new_mrc + upgrade_mrc - lost_mrc
+
+            st.markdown(f"""
+            <div style="background: #F8FAFC; border-radius: 10px; padding: 1rem; border: 1px solid #E2E8F0;">
+                <div style="font-weight: 700; color: #0F172A; margin-bottom: 0.8rem; font-size: 0.9rem;">MRC Impact Summary</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">New Connects</span>
+                    <span style="color: #059669; font-weight: 600; font-size: 0.85rem;">+€{new_mrc:,.0f}/mo</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Upgrades</span>
+                    <span style="color: #3B82F6; font-weight: 600; font-size: 0.85rem;">+€{upgrade_mrc:,.0f}/mo</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Ceases</span>
+                    <span style="color: #DC2626; font-weight: 600; font-size: 0.85rem;">-€{lost_mrc:,.0f}/mo</span>
+                </div>
+                <div style="border-top: 1px solid #E2E8F0; padding-top: 0.5rem; display: flex; justify-content: space-between;">
+                    <span style="color: #0F172A; font-weight: 600; font-size: 0.85rem;">Net MRC Change</span>
+                    <span style="color: #059669; font-weight: 700; font-size: 0.95rem;">+€{net_mrc:,.0f}/mo</span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-mini-title">Recent Orders</div>', unsafe_allow_html=True)
+        st.dataframe(
+            partner_orders,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Order ID": st.column_config.TextColumn("Order ID", width="medium"),
+                "Partner": st.column_config.TextColumn("Partner", width="small"),
+                "Order Type": st.column_config.TextColumn("Type", width="small"),
+                "Service ID": st.column_config.TextColumn("Service ID", width="medium"),
+                "Address": st.column_config.TextColumn("Address", width="large"),
+                "Bandwidth": st.column_config.TextColumn("Bandwidth", width="medium"),
+                "Order Date": st.column_config.DateColumn("Ordered", format="YYYY-MM-DD"),
+                "SLA Deadline": st.column_config.DateColumn("SLA Due", format="YYYY-MM-DD"),
+                "Status": st.column_config.TextColumn("Status", width="small"),
+                "Billing Impact": st.column_config.TextColumn("Billing", width="small"),
+                "Inventory Updated": st.column_config.TextColumn("Inventory", width="small"),
+            },
+        )
+
+        pending_inventory = partner_orders[partner_orders["Inventory Updated"] == "Pending"]
+        if len(pending_inventory) > 0:
+            render_ops_ai_reco(
+                "Inventory Sync Alert",
+                f"{len(pending_inventory)} orders not yet reflected in Service Inventory. Billing reconciliation will show discrepancies until inventory is updated.",
+                "Complete order processing and update Service Inventory within 24 hours of SLA completion.",
+                "Ensure accurate billing and prevent disputes in weekly committee meetings.",
+                level="warning",
+            )
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # TAB 4: Billing Reconciliation (Orphan/Ghost Detection)
+    # ═══════════════════════════════════════════════════════════════════════
+    with tab_recon:
+
+        total_lines_pf = 892456
+        total_lines_mo_view = 518234
+        total_lines_vf_view = 374012
+        matched_lines = 886234
+        orphan_lines = 3456
+        ghost_lines = 1892
+        lifecycle_mismatches = 874
+
+        st.markdown(f"""
+        <div class="ops-pulse" style="background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);">
+            <div class="ops-pulse-head">
+                <div class="ops-pulse-title">🔍 Billing Reconciliation - PremiumFiber vs Partners</div>
+                <div class="ops-pulse-badge">Weekly Committee · {datetime.now().strftime('%H:%M')}</div>
+            </div>
+            <div class="ops-pulse-grid">
+                <div class="ops-pulse-card"><div class="ops-pulse-label">PF Inventory</div><div class="ops-pulse-value">{total_lines_pf:,}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">golden record</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Matched</div><div class="ops-pulse-value">{matched_lines:,}</div><div class="ops-pulse-delta" style="color: #A7F3D0;">{matched_lines/total_lines_pf*100:.1f}% aligned</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Orphan Lines</div><div class="ops-pulse-value" style="color: #FCA5A5;">{orphan_lines:,}</div><div class="ops-pulse-delta" style="color: #FCA5A5;">in PF, not partner</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Ghost Lines</div><div class="ops-pulse-value" style="color: #FDE68A;">{ghost_lines:,}</div><div class="ops-pulse-delta" style="color: #FDE68A;">in partner, not PF</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Lifecycle Drift</div><div class="ops-pulse-value" style="color: #93C5FD;">{lifecycle_mismatches}</div><div class="ops-pulse-delta" style="color: #93C5FD;">date mismatches</div></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-title">📊 Reconciliation Overview</div>', unsafe_allow_html=True)
+
+        recon_col1, recon_col2 = st.columns([1.5, 1])
+
+        with recon_col1:
+            st.markdown("""
+            <div style="background: #F8FAFC; border-radius: 12px; padding: 1.2rem; border: 1px solid #E2E8F0;">
+                <div style="font-weight: 700; color: #0F172A; font-size: 1rem; margin-bottom: 1rem;">Inventory Comparison: PremiumFiber vs Partners</div>
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div style="text-align: center;">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #0F766E, #14B8A6); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <div>
+                                <div style="color: white; font-size: 1.2rem; font-weight: 700;">892,456</div>
+                                <div style="color: rgba(255,255,255,0.8); font-size: 0.65rem;">PF Lines</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 0.5rem; font-weight: 600; color: #0F766E;">PremiumFiber</div>
+                    </div>
+                    <div style="text-align: center; padding: 0 1rem;">
+                        <div style="font-size: 2rem; color: #10B981;">∩</div>
+                        <div style="background: #ECFDF5; border: 2px solid #10B981; border-radius: 8px; padding: 0.5rem 1rem;">
+                            <div style="font-size: 1.3rem; font-weight: 700; color: #059669;">886,234</div>
+                            <div style="font-size: 0.7rem; color: #047857;">Matched (99.3%)</div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <div style="width: 80px; height: 80px; background: #FF6B00; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <div>
+                                    <div style="color: white; font-size: 0.9rem; font-weight: 700;">518K</div>
+                                    <div style="color: rgba(255,255,255,0.8); font-size: 0.55rem;">MO</div>
+                                </div>
+                            </div>
+                            <div style="width: 80px; height: 80px; background: #E60000; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <div>
+                                    <div style="color: white; font-size: 0.9rem; font-weight: 700;">374K</div>
+                                    <div style="color: rgba(255,255,255,0.8); font-size: 0.55rem;">VF</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 0.5rem; font-weight: 600; color: #64748B;">Partner Views</div>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with recon_col2:
+            st.markdown('<div class="ops-mini-title">Discrepancy Summary</div>', unsafe_allow_html=True)
+            orphan_mrc = orphan_lines * 12.50
+            ghost_mrc = ghost_lines * 12.50
+            lifecycle_mrc = lifecycle_mismatches * 2.50
+
+            st.markdown(f"""
+            <div style="background: #FEF2F2; border: 2px solid #EF4444; border-radius: 10px; padding: 0.8rem; margin-bottom: 0.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 700; color: #991B1B; font-size: 0.9rem;">Orphan Lines</div>
+                        <div style="font-size: 0.72rem; color: #B91C1C;">In PF inventory, not in partner view</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 1.3rem; font-weight: 700; color: #DC2626;">{orphan_lines:,}</div>
+                        <div style="font-size: 0.7rem; color: #991B1B;">€{orphan_mrc:,.0f}/mo at risk</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background: #FFFBEB; border: 2px solid #F59E0B; border-radius: 10px; padding: 0.8rem; margin-bottom: 0.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 700; color: #92400E; font-size: 0.9rem;">Ghost Lines</div>
+                        <div style="font-size: 0.72rem; color: #B45309;">In partner view, not in PF inventory</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 1.3rem; font-weight: 700; color: #D97706;">{ghost_lines:,}</div>
+                        <div style="font-size: 0.7rem; color: #92400E;">€{ghost_mrc:,.0f}/mo unbilled</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background: #EFF6FF; border: 2px solid #3B82F6; border-radius: 10px; padding: 0.8rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="font-weight: 700; color: #1E40AF; font-size: 0.9rem;">Lifecycle Drift</div>
+                        <div style="font-size: 0.72rem; color: #1D4ED8;">Mismatched activation/deactivation dates</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 1.3rem; font-weight: 700; color: #2563EB;">{lifecycle_mismatches}</div>
+                        <div style="font-size: 0.7rem; color: #1E40AF;">€{lifecycle_mrc:,.0f}/mo variance</div>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-title">🔎 Discrepancy Details</div>', unsafe_allow_html=True)
+
+        discrepancy_details = pd.DataFrame({
+            "Service ID": ["SVC-2024-234567", "SVC-2024-345678", "SVC-2024-456789", "SVC-2024-567890", "SVC-2024-678901",
+                          "SVC-2024-789012", "SVC-2024-890123", "SVC-2024-901234", "SVC-2024-012345", "SVC-2024-123456"],
+            "Partner": ["MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone", "MasOrange", "Vodafone"],
+            "Discrepancy Type": ["Orphan", "Ghost", "Lifecycle Mismatch", "Orphan", "Ghost", "Lifecycle Mismatch", "Orphan", "Ghost", "Lifecycle Mismatch", "Orphan"],
+            "PF Status": ["Active", "-", "Active", "Active", "-", "Active", "Active", "-", "Inactive", "Active"],
+            "Partner Status": ["-", "Active", "Active", "-", "Active", "Active", "-", "Active", "Active", "-"],
+            "PF Activation": ["2023-06-15", "-", "2023-08-22", "2024-01-10", "-", "2023-09-18", "2023-07-14", "-", "2024-02-28", "2023-12-20"],
+            "Partner Activation": ["-", "2023-06-15", "2023-09-01", "-", "2024-01-10", "2023-09-01", "-", "2023-07-14", "2024-02-28", "-"],
+            "PF Deactivation": ["-", "-", "-", "-", "-", "-", "-", "-", "2025-02-15", "-"],
+            "Partner Deactivation": ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-"],
+            "MRC Impact EUR": [15.50, -12.00, 1.50, 9.50, -15.50, 0.75, 12.00, -9.50, 15.50, 15.50],
+            "Root Cause": ["Disconnect not synced to MO", "Missing in PF OSS", "Activation date drift", "Cease not processed by VF", "Order not created in PF",
+                         "Activation date drift", "Partner system lag", "Missing ONT record", "Deactivation not synced", "Disconnect pending"],
+            "Days Outstanding": [45, 12, 8, 23, 5, 15, 34, 7, 3, 18],
+        })
+
+        disc_filter = st.selectbox("Filter by Discrepancy Type", ["All", "Orphan", "Ghost", "Lifecycle Mismatch"])
+        filtered_disc = discrepancy_details if disc_filter == "All" else discrepancy_details[discrepancy_details["Discrepancy Type"] == disc_filter]
+
+        st.dataframe(
+            filtered_disc,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Service ID": st.column_config.TextColumn("Service ID", width="medium"),
+                "Partner": st.column_config.TextColumn("Partner", width="small"),
+                "Discrepancy Type": st.column_config.TextColumn("Type", width="medium"),
+                "PF Status": st.column_config.TextColumn("PF Status", width="small"),
+                "Partner Status": st.column_config.TextColumn("Partner Status", width="small"),
+                "PF Activation": st.column_config.TextColumn("PF Activated", width="small"),
+                "Partner Activation": st.column_config.TextColumn("Partner Activated", width="small"),
+                "MRC Impact EUR": st.column_config.NumberColumn("MRC Impact €", format="€%.2f"),
+                "Root Cause": st.column_config.TextColumn("Root Cause", width="large"),
+                "Days Outstanding": st.column_config.NumberColumn("Days Open", format="%d"),
+            },
+        )
+
+        st.markdown('<div class="ops-title">📈 Reconciliation by Partner</div>', unsafe_allow_html=True)
+
+        partner_recon = pd.DataFrame({
+            "Partner": ["MasOrange", "MasOrange", "MasOrange", "Vodafone", "Vodafone", "Vodafone"],
+            "Discrepancy": ["Orphan", "Ghost", "Lifecycle", "Orphan", "Ghost", "Lifecycle"],
+            "Count": [2134, 987, 512, 1322, 905, 362],
+            "MRC Impact": [26675, -12337, 1280, 16525, -11312, 905],
+        })
+
+        partner_col1, partner_col2 = st.columns(2)
+
+        with partner_col1:
+            st.markdown('<div class="ops-mini-title">MasOrange Discrepancies</div>', unsafe_allow_html=True)
+            mo_disc = partner_recon[partner_recon["Partner"] == "MasOrange"]
+            with st.container(border=True):
+                mo_chart = alt.Chart(mo_disc).mark_bar().encode(
+                    x=alt.X("Discrepancy:N", title=None),
+                    y=alt.Y("Count:Q", title="Lines"),
+                    color=alt.value("#FF6B00"),
+                )
+                st.altair_chart(mo_chart, use_container_width=True)
+
+        with partner_col2:
+            st.markdown('<div class="ops-mini-title">Vodafone Discrepancies</div>', unsafe_allow_html=True)
+            vf_disc = partner_recon[partner_recon["Partner"] == "Vodafone"]
+            with st.container(border=True):
+                vf_chart = alt.Chart(vf_disc).mark_bar().encode(
+                    x=alt.X("Discrepancy:N", title=None),
+                    y=alt.Y("Count:Q", title="Lines"),
+                    color=alt.value("#E60000"),
+                )
+                st.altair_chart(vf_chart, use_container_width=True)
+
+        total_at_risk = orphan_mrc + lifecycle_mrc
+        total_unbilled = ghost_mrc
+        render_ops_ai_reco(
+            "Weekly Billing Committee Preparation",
+            f"€{total_at_risk:,.0f}/mo at risk from orphan lines and lifecycle drift. €{total_unbilled:,.0f}/mo potentially unbilled from ghost lines. Total discrepancy impact: €{total_at_risk + total_unbilled:,.0f}/mo.",
+            "Prioritize orphan resolution with MasOrange (2,134 lines). Initiate ghost line investigation with Vodafone (905 lines). Schedule joint audit for lifecycle mismatches.",
+            "Resolve 80% of discrepancies before next weekly committee to reduce billing disputes.",
+            level="critical",
+        )
+
+        st.markdown('<div class="ops-title">🤖 AI-Powered Reconciliation Intelligence</div>', unsafe_allow_html=True)
+
+        ai_col1, ai_col2 = st.columns(2)
+
+        with ai_col1:
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, #1E1B4B 0%, #4338CA 100%); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                    <div style="background: #A5B4FC; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                        <span style="font-size: 1.2rem;">🔮</span>
+                    </div>
+                    <div>
+                        <div style="color: #E0E7FF; font-size: 0.7rem; text-transform: uppercase;">Cortex ML</div>
+                        <div style="color: white; font-weight: 700; font-size: 1rem;">Anomaly Detection</div>
+                    </div>
+                </div>
+                <div style="color: #C7D2FE; font-size: 0.82rem; line-height: 1.5;">
+                    ML model analyzing 892K service records to detect unusual discrepancy patterns that deviate from normal reconciliation behavior.
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            anomaly_results = pd.DataFrame({
+                "Anomaly ID": ["ANM-001", "ANM-002", "ANM-003", "ANM-004", "ANM-005"],
+                "Pattern": ["Spike in MO orphans", "VF ghost cluster", "Date drift surge", "OLT-BCN bulk mismatch", "Weekend disconnect lag"],
+                "Affected Lines": [156, 89, 234, 312, 67],
+                "Confidence": [94.2, 87.5, 91.8, 96.3, 82.1],
+                "MRC Impact EUR": [2418, 1068, 585, 4836, 1005],
+                "Detection Date": ["2025-03-06", "2025-03-05", "2025-03-05", "2025-03-04", "2025-03-03"],
+                "Status": ["Investigating", "Confirmed", "Resolved", "Investigating", "New"],
+            })
+
+            st.markdown('<div class="ops-mini-title">Detected Anomalies (Last 7 Days)</div>', unsafe_allow_html=True)
+            st.dataframe(
+                anomaly_results,
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Anomaly ID": st.column_config.TextColumn("ID", width="small"),
+                    "Pattern": st.column_config.TextColumn("Pattern Detected", width="medium"),
+                    "Affected Lines": st.column_config.NumberColumn("Lines", format="%d"),
+                    "Confidence": st.column_config.ProgressColumn("Confidence", min_value=0, max_value=100, format="%.1f%%"),
+                    "MRC Impact EUR": st.column_config.NumberColumn("MRC €", format="€%,.0f"),
+                    "Detection Date": st.column_config.DateColumn("Detected", format="YYYY-MM-DD"),
+                    "Status": st.column_config.TextColumn("Status", width="small"),
+                },
+            )
+            st.markdown('<div style="background: #FEF3C7; border-left: 3px solid #D97706; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #92400E;">🔍 Insight:</strong> <span style="color: #78350F;">5 anomalies detected with 87%+ confidence. ANO-005 (312 lines, OLT-BCN cluster) requires immediate attention - VF migration without B2B notification.</span></div>', unsafe_allow_html=True)
+
+        with ai_col2:
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, #14532D 0%, #22C55E 100%); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                    <div style="background: #BBF7D0; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                        <span style="font-size: 1.2rem;">🎯</span>
+                    </div>
+                    <div>
+                        <div style="color: #DCFCE7; font-size: 0.7rem; text-transform: uppercase;">ML Classification</div>
+                        <div style="color: white; font-weight: 700; font-size: 1rem;">Root Cause Predictor</div>
+                    </div>
+                </div>
+                <div style="color: #D1FAE5; font-size: 0.82rem; line-height: 1.5;">
+                    Classification model trained on 2.4M historical discrepancies to auto-predict root cause with 91% accuracy.
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            root_cause_predictions = pd.DataFrame({
+                "Root Cause": ["OSS Sync Delay", "Partner API Timeout", "Manual Entry Error", "Batch Processing Gap", "Order Workflow Stuck", "System Migration"],
+                "Predicted Count": [1456, 892, 567, 423, 312, 156],
+                "Confidence Avg": [93.2, 89.4, 86.7, 91.2, 84.5, 78.9],
+                "Resolution Time Hrs": [4.2, 8.6, 24.0, 2.1, 12.4, 48.0],
+                "Auto-Resolvable": ["Yes", "Yes", "No", "Yes", "Partial", "No"],
+            })
+
+            st.markdown('<div class="ops-mini-title">Predicted Root Causes</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                rc_chart = alt.Chart(root_cause_predictions).mark_bar().encode(
+                    y=alt.Y("Root Cause:N", title=None, sort="-x"),
+                    x=alt.X("Predicted Count:Q", title="Discrepancies"),
+                    color=alt.value("#22C55E"),
+                )
+                st.altair_chart(rc_chart, use_container_width=True)
+            st.markdown('<div style="background: #DCFCE7; border-left: 3px solid #16A34A; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #166534;">💡 AI Insight:</strong> <span style="color: #14532D;">OSS Sync Delay (1,456 cases) is 93% auto-resolvable with 4.2hr avg resolution. Recommend enabling auto-fix to reduce manual effort by 38%.</span></div>', unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #7C2D12 0%, #F97316 100%); border-radius: 12px; padding: 1.2rem; margin: 1rem 0;">
+            <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                <div style="background: #FED7AA; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                    <span style="font-size: 1.2rem;">📊</span>
+                </div>
+                <div>
+                    <div style="color: #FFEDD5; font-size: 0.7rem; text-transform: uppercase;">Cortex FORECAST</div>
+                    <div style="color: white; font-weight: 700; font-size: 1rem;">Discrepancy Prediction - Next 30 Days</div>
+                </div>
+            </div>
+            <div style="color: #FED7AA; font-size: 0.82rem; line-height: 1.5;">
+                Time-series forecasting predicts discrepancy volumes to enable proactive resource allocation for reconciliation teams.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        forecast_data = pd.DataFrame({
+            "Week": ["Week 11", "Week 12", "Week 13", "Week 14", "Week 15"],
+            "Predicted Orphans": [3234, 3456, 3123, 2987, 2845],
+            "Predicted Ghosts": [1756, 1892, 1678, 1534, 1423],
+            "Predicted Lifecycle": [812, 874, 756, 689, 623],
+            "Confidence Band": ["±12%", "±15%", "±18%", "±22%", "±25%"],
+        })
+
+        forecast_col1, forecast_col2 = st.columns([2, 1])
+
+        with forecast_col1:
+            forecast_melted = forecast_data.melt(id_vars=["Week"], value_vars=["Predicted Orphans", "Predicted Ghosts", "Predicted Lifecycle"], var_name="Type", value_name="Count")
+            with st.container(border=True):
+                forecast_chart = alt.Chart(forecast_melted).mark_line(point=True, strokeWidth=2).encode(
+                    x=alt.X("Week:N", title=None),
+                    y=alt.Y("Count:Q", title="Predicted Discrepancies"),
+                    color=alt.Color("Type:N", scale=alt.Scale(domain=["Predicted Orphans", "Predicted Ghosts", "Predicted Lifecycle"], range=["#EF4444", "#F59E0B", "#3B82F6"])),
+                )
+                st.altair_chart(forecast_chart, use_container_width=True)
+            st.markdown('<div style="background: #FFEDD5; border-left: 3px solid #EA580C; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #9A3412;">📈 Forecast Insight:</strong> <span style="color: #7C2D12;">Week 12 spike (+18% predicted) aligns with MasOrange maintenance. Pre-assign 2 additional reconciliation resources to maintain SLA.</span></div>', unsafe_allow_html=True)
+
+        with forecast_col2:
+            st.markdown(f"""
+            <div style="background: #FFF7ED; border: 2px solid #F97316; border-radius: 10px; padding: 1rem;">
+                <div style="font-weight: 700; color: #9A3412; font-size: 0.9rem; margin-bottom: 0.6rem;">30-Day Forecast Summary</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Total Predicted</span>
+                    <span style="font-weight: 700; color: #EA580C;">{forecast_data['Predicted Orphans'].sum() + forecast_data['Predicted Ghosts'].sum() + forecast_data['Predicted Lifecycle'].sum():,}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Trend</span>
+                    <span style="font-weight: 600; color: #059669;">↓ Declining 12%</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Model Accuracy</span>
+                    <span style="font-weight: 600; color: #7C3AED;">94.2%</span>
+                </div>
+                <div style="margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid #FDBA74;">
+                    <div style="font-size: 0.75rem; color: #9A3412;"><strong>Peak Week:</strong> Week 12 - Staff accordingly</div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #581C87 0%, #A855F7 100%); border-radius: 12px; padding: 1.2rem; margin: 1rem 0;">
+            <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                <div style="background: #E9D5FF; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                    <span style="font-size: 1.2rem;">✨</span>
+                </div>
+                <div>
+                    <div style="color: #F3E8FF; font-size: 0.7rem; text-transform: uppercase;">Cortex LLM · Complete</div>
+                    <div style="color: white; font-weight: 700; font-size: 1rem;">AI-Generated Weekly Committee Report</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        with st.container(border=True):
+            report_html = """<div style="background: #FAFAFA; border-radius: 8px; padding: 1rem; font-family: 'Georgia', serif;">
+<div style="color: #6B21A8; font-weight: 700; font-size: 1rem; margin-bottom: 0.8rem; border-bottom: 2px solid #E9D5FF; padding-bottom: 0.5rem;">
+📋 PremiumFiber Billing Reconciliation Report
+<span style="float: right; font-size: 0.75rem; color: #9CA3AF; font-weight: 400;">Week 10, 2025</span>
+</div>
+<div style="color: #1F2937; font-size: 0.88rem; line-height: 1.7;">
+<p><strong>Executive Summary:</strong> This week's reconciliation identified <span style="color: #DC2626; font-weight: 600;">6,222 total discrepancies</span> across both partners, representing a combined MRC impact of <span style="color: #DC2626; font-weight: 600;">€89,285/month</span>. This is a 7.2% improvement from last week.</p>
+<p><strong>MasOrange (58% JV share):</strong> 3,633 discrepancies identified. The primary issue is <span style="color: #F59E0B;">orphan lines (2,134)</span> caused by disconnect orders not syncing to the MO portal. Root cause analysis indicates 78% stem from the OSS batch processing delay introduced in the Feb 15 maintenance window. <em>Recommended action: Expedite OSS patch deployment scheduled for March 12.</em></p>
+<p><strong>Vodafone (42% JV share):</strong> 2,589 discrepancies identified. Notable spike in <span style="color: #F59E0B;">ghost lines (905)</span> traced to VF's API timeout issues during peak hours. ML anomaly detection flagged OLT-BCN-001 cluster with 312 mismatches - investigation reveals VF migrated 400 lines without proper B2B notification. <em>Recommended action: Escalate to VF wholesale operations for data reconciliation.</em></p>
+<p><strong>Forecast:</strong> Cortex ML predicts discrepancy volume will decline 12% over the next 30 days as OSS fixes take effect. Week 12 shows a temporary spike due to planned MasOrange system maintenance - recommend pre-positioning reconciliation resources.</p>
+</div>
+<div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: center;">
+<span style="font-size: 0.72rem; color: #9CA3AF;">Generated by Snowflake Cortex LLM · Model: llama3.1-70b</span>
+<span style="font-size: 0.72rem; color: #7C3AED;">Confidence: 96.4%</span>
+</div>
+</div>"""
+            st.markdown(report_html, unsafe_allow_html=True)
+
+        render_ops_ai_reco(
+            "AI Reconciliation Insights",
+            "Cortex ML detected 5 anomaly patterns this week. Root cause classifier achieving 91% accuracy. LLM report generation reducing manual effort by 4 hours/week.",
+            "Deploy auto-resolution for 'OSS Sync Delay' root cause (1,456 lines, 93% confidence). Review OLT-BCN cluster anomaly with network ops.",
+            "Reduce manual reconciliation effort by 60% while improving accuracy to 98%+.",
+        )
+
+    # ═══════════════════════════════════════════════════════════════════════
+    # TAB 5: Asset Amortization (Linked to Services)
+    # ═══════════════════════════════════════════════════════════════════════
+    with tab_amort:
+
+        total_gross_value = 892.4
+        total_net_book_value = 524.8
+        accumulated_depreciation = 367.6
+        monthly_depreciation = 4.8
+        ytd_depreciation = 38.4
+
+        st.markdown(f"""
+        <div class="ops-pulse" style="background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);">
+            <div class="ops-pulse-head">
+                <div class="ops-pulse-title">📉 Asset Amortization - Linked to Billable Services</div>
+                <div class="ops-pulse-badge">FY 2025 · Q1</div>
+            </div>
+            <div class="ops-pulse-grid">
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Gross Value</div><div class="ops-pulse-value">€{total_gross_value}M</div><div class="ops-pulse-delta" style="color: #A7F3D0;">original cost</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Net Book Value</div><div class="ops-pulse-value">€{total_net_book_value}M</div><div class="ops-pulse-delta" style="color: #FDE68A;">{total_net_book_value/total_gross_value*100:.1f}% remaining</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Accum. Depreciation</div><div class="ops-pulse-value">€{accumulated_depreciation}M</div><div class="ops-pulse-delta" style="color: #FCA5A5;">{accumulated_depreciation/total_gross_value*100:.1f}% depreciated</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">Monthly Expense</div><div class="ops-pulse-value">€{monthly_depreciation}M</div><div class="ops-pulse-delta" style="color: #A7F3D0;">per month</div></div>
+                <div class="ops-pulse-card"><div class="ops-pulse-label">YTD Depreciation</div><div class="ops-pulse-value">€{ytd_depreciation}M</div><div class="ops-pulse-delta" style="color: #A7F3D0;">8 months</div></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-title">🔗 Asset-to-Service Linkage</div>', unsafe_allow_html=True)
+
+        asset_service_link = pd.DataFrame({
+            "Asset ID": ["OLT-MAD-001", "OLT-MAD-002", "OLT-BCN-001", "OLT-BCN-002", "OLT-VAL-001", "SPL-MAD-001-BATCH", "SPL-BCN-001-BATCH", "FBR-MAD-TRUNK-001"],
+            "Asset Type": ["OLT Chassis", "OLT Chassis", "OLT Chassis", "OLT Chassis", "OLT Chassis", "Splitter 1:32", "Splitter 1:32", "Fiber Trunk"],
+            "Location": ["Madrid Central", "Madrid Norte", "Barcelona Hub", "Barcelona 22@", "Valencia DC", "Madrid Region", "Barcelona Region", "Madrid Backbone"],
+            "Gross Value EUR": [125000, 125000, 145000, 125000, 145000, 224000, 192000, 890000],
+            "Net Book Value EUR": [78125, 93750, 72500, 109375, 126875, 140000, 144000, 623000],
+            "Depreciation Pct": [37.5, 25.0, 50.0, 12.5, 12.5, 37.5, 25.0, 30.0],
+            "Status": ["In Service", "In Service", "In Service", "In Service", "In Service", "In Service", "In Service", "In Service"],
+            "Services Supported": [14336, 12288, 15360, 11264, 13312, 14336, 15360, 41984],
+            "Monthly MRC EUR": [222208, 190464, 238080, 174592, 206336, 222208, 238080, 650752],
+            "MRC per EUR NBV": [2.84, 2.03, 3.28, 1.60, 1.63, 1.59, 1.65, 1.04],
+        })
+
+        link_col1, link_col2 = st.columns([2, 1])
+
+        with link_col1:
+            st.markdown('<div class="ops-mini-title">Asset Depreciation vs Services Supported</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                asset_chart = alt.Chart(asset_service_link).mark_bar().encode(
+                    x=alt.X("Asset ID:N", title=None, sort="-y"),
+                    y=alt.Y("Services Supported:Q", title="Lines Supported"),
+                    color=alt.value("#3B82F6"),
+                )
+                st.altair_chart(asset_chart, use_container_width=True)
+            st.markdown('<div style="background: #DBEAFE; border-left: 3px solid #2563EB; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #1E40AF;">📊 Insight:</strong> <span style="color: #1E3A8A;">FBR-MAD-TRUNK-001 supports 42K services but has lowest efficiency (€1.04/NBV). OLT-BCN-001 leads with €3.28/NBV - consider rebalancing loads.</span></div>', unsafe_allow_html=True)
+
+        with link_col2:
+            st.markdown('<div class="ops-mini-title">Revenue Efficiency</div>', unsafe_allow_html=True)
+            avg_mrc_per_nbv = asset_service_link["MRC per EUR NBV"].mean()
+            best_asset = asset_service_link.loc[asset_service_link["MRC per EUR NBV"].idxmax()]
+            worst_asset = asset_service_link.loc[asset_service_link["MRC per EUR NBV"].idxmin()]
+
+            st.markdown(f"""
+            <div style="background: #F8FAFC; border-radius: 10px; padding: 1rem; border: 1px solid #E2E8F0;">
+                <div style="font-weight: 700; color: #0F172A; margin-bottom: 0.8rem; font-size: 0.9rem;">MRC per € Net Book Value</div>
+                <div style="text-align: center; margin-bottom: 0.8rem;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #3B82F6;">€{avg_mrc_per_nbv:.2f}</div>
+                    <div style="font-size: 0.75rem; color: #64748B;">Average across assets</div>
+                </div>
+                <div style="border-top: 1px solid #E2E8F0; padding-top: 0.6rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                        <span style="color: #059669; font-size: 0.8rem;">Best: {best_asset['Asset ID']}</span>
+                        <span style="font-weight: 600; color: #059669;">€{best_asset['MRC per EUR NBV']:.2f}</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #DC2626; font-size: 0.8rem;">Lowest: {worst_asset['Asset ID']}</span>
+                        <span style="font-weight: 600; color: #DC2626;">€{worst_asset['MRC per EUR NBV']:.2f}</span>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-mini-title">Asset-Service Detail</div>', unsafe_allow_html=True)
+        st.dataframe(
+            asset_service_link,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Asset ID": st.column_config.TextColumn("Asset ID", width="medium"),
+                "Asset Type": st.column_config.TextColumn("Type", width="medium"),
+                "Location": st.column_config.TextColumn("Location", width="medium"),
+                "Gross Value EUR": st.column_config.NumberColumn("Gross €", format="€%,.0f"),
+                "Net Book Value EUR": st.column_config.NumberColumn("NBV €", format="€%,.0f"),
+                "Depreciation Pct": st.column_config.ProgressColumn("Depreciated", min_value=0, max_value=100, format="%.0f%%"),
+                "Status": st.column_config.TextColumn("Status", width="small"),
+                "Services Supported": st.column_config.NumberColumn("Lines", format="%,d"),
+                "Monthly MRC EUR": st.column_config.NumberColumn("MRC €/mo", format="€%,.0f"),
+                "MRC per EUR NBV": st.column_config.NumberColumn("Efficiency", format="€%.2f"),
+            },
+        )
+
+        st.markdown('<div class="ops-title">⚠️ Asset-Billing Anomalies</div>', unsafe_allow_html=True)
+
+        anomalies = pd.DataFrame({
+            "Asset ID": ["SPL-MAD-045", "SPL-BCN-023", "OLT-SEV-002", "SPL-VAL-012", "FBR-BIL-DROP-078"],
+            "Asset Type": ["Splitter 1:32", "Splitter 1:32", "OLT Line Card", "Splitter 1:32", "Drop Fiber"],
+            "Status": ["Decommissioned", "Decommissioned", "Decommissioned", "Failed", "Decommissioned"],
+            "Decommission Date": ["2024-11-15", "2024-12-01", "2025-01-10", "2025-02-20", "2024-10-05"],
+            "Services Still Linked": [24, 18, 156, 12, 8],
+            "MRC Still Billed EUR": [372, 279, 2418, 186, 124],
+            "Net Book Value EUR": [0, 0, 15000, 280, 0],
+            "Anomaly Type": ["Ghost billing", "Ghost billing", "Ghost billing", "Failed asset billing", "Ghost billing"],
+            "Action Required": ["Remove from billing", "Remove from billing", "Migrate services", "Replace asset", "Remove from billing"],
+        })
+
+        st.dataframe(
+            anomalies,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Asset ID": st.column_config.TextColumn("Asset", width="medium"),
+                "Asset Type": st.column_config.TextColumn("Type", width="medium"),
+                "Status": st.column_config.TextColumn("Status", width="small"),
+                "Decommission Date": st.column_config.DateColumn("Decommissioned", format="YYYY-MM-DD"),
+                "Services Still Linked": st.column_config.NumberColumn("Lines Linked", format="%d"),
+                "MRC Still Billed EUR": st.column_config.NumberColumn("MRC Billed €", format="€%,.0f"),
+                "Net Book Value EUR": st.column_config.NumberColumn("NBV €", format="€%,.0f"),
+                "Anomaly Type": st.column_config.TextColumn("Anomaly", width="medium"),
+                "Action Required": st.column_config.TextColumn("Action", width="medium"),
+            },
+        )
+
+        total_ghost_billing = anomalies["MRC Still Billed EUR"].sum()
+        render_ops_ai_reco(
+            "Asset-Billing Integrity Alert",
+            f"5 decommissioned/failed assets still linked to {anomalies['Services Still Linked'].sum()} active services, generating €{total_ghost_billing:,.0f}/mo in potentially invalid billing.",
+            "Migrate services from OLT-SEV-002 to active line card. Update billing system to remove decommissioned splitters. Process asset write-offs for fully depreciated items.",
+            "Clean up ghost billing and ensure accurate capex recovery from partners.",
+            level="critical",
+        )
+
+        st.markdown('<div class="ops-title">📊 Depreciation by Asset Class</div>', unsafe_allow_html=True)
+
+        depreciation_schedule = pd.DataFrame({
+            "Asset Class": ["OLT Equipment", "Splitters", "Fiber Cable", "Distribution Points", "Civil Works"],
+            "Gross Value M": [156.8, 18.4, 234.2, 45.6, 89.4],
+            "Net Book Value M": [98.2, 12.8, 168.5, 28.4, 62.1],
+            "Accum Depreciation M": [58.6, 5.6, 65.7, 17.2, 27.3],
+            "Useful Life Years": [10, 10, 20, 15, 25],
+            "Avg Age Years": [3.7, 3.0, 5.6, 5.7, 7.6],
+            "Monthly Depreciation M": [1.31, 0.15, 0.98, 0.25, 0.30],
+            "Services Supported": [892456, 892456, 892456, 892456, 892456],
+        })
+
+        dep_col1, dep_col2 = st.columns(2)
+
+        with dep_col1:
+            st.markdown('<div class="ops-mini-title">Gross vs Net Book Value</div>', unsafe_allow_html=True)
+            dep_melted = depreciation_schedule.melt(id_vars=["Asset Class"], value_vars=["Gross Value M", "Net Book Value M"], var_name="Type", value_name="Value")
+            with st.container(border=True):
+                dep_chart = alt.Chart(dep_melted).mark_bar().encode(
+                    x=alt.X("Asset Class:N", title=None),
+                    y=alt.Y("Value:Q", title="Value (€M)"),
+                    color=alt.Color("Type:N", scale=alt.Scale(domain=["Gross Value M", "Net Book Value M"], range=["#94A3B8", "#3B82F6"])),
+                    xOffset="Type:N",
+                )
+                st.altair_chart(dep_chart, use_container_width=True)
+            st.markdown('<div style="background: #F1F5F9; border-left: 3px solid #475569; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #334155;">📉 Insight:</strong> <span style="color: #1E293B;">OLT Equipment (62.6% remaining) is youngest asset class. Fiber Cable has €65.7M accumulated depreciation - largest contributor to monthly expense.</span></div>', unsafe_allow_html=True)
+
+        with dep_col2:
+            st.markdown('<div class="ops-mini-title">Monthly Depreciation Expense</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                monthly_chart = alt.Chart(depreciation_schedule).mark_bar().encode(
+                    y=alt.Y("Asset Class:N", title=None, sort="-x"),
+                    x=alt.X("Monthly Depreciation M:Q", title="€M/month"),
+                    color=alt.value("#6366F1"),
+                )
+                st.altair_chart(monthly_chart, use_container_width=True)
+            st.markdown('<div style="background: #EEF2FF; border-left: 3px solid #6366F1; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #4338CA;">💰 Insight:</strong> <span style="color: #312E81;">OLT Equipment drives 44% of monthly depreciation (€1.31M). Consider accelerating splitter depreciation schedule given 3-year avg age vs 10-year useful life.</span></div>', unsafe_allow_html=True)
+
+        st.markdown('<div class="ops-title">🤖 AI-Powered Asset Intelligence</div>', unsafe_allow_html=True)
+
+        ai_asset_col1, ai_asset_col2 = st.columns(2)
+
+        with ai_asset_col1:
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, #7F1D1D 0%, #EF4444 100%); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                    <div style="background: #FECACA; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                        <span style="font-size: 1.2rem;">⚠️</span>
+                    </div>
+                    <div>
+                        <div style="color: #FEE2E2; font-size: 0.7rem; text-transform: uppercase;">Cortex ML · Predictive Maintenance</div>
+                        <div style="color: white; font-weight: 700; font-size: 1rem;">Asset Failure Prediction</div>
+                    </div>
+                </div>
+                <div style="color: #FECACA; font-size: 0.82rem; line-height: 1.5;">
+                    ML model analyzing telemetry, age, utilization, and environmental data to predict asset failures 30-90 days in advance.
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            failure_predictions = pd.DataFrame({
+                "Asset ID": ["OLT-MAD-001-LC4", "SPL-VAL-089", "OLT-BCN-002-PS1", "SPL-SEV-034", "OLT-BIL-001-LC2", "FBR-MAD-DROP-234"],
+                "Asset Type": ["OLT Line Card", "Splitter 1:32", "OLT Power Supply", "Splitter 1:32", "OLT Line Card", "Drop Fiber"],
+                "Failure Probability": [89.2, 76.4, 72.1, 68.9, 64.3, 58.7],
+                "Predicted Window": ["7-14 days", "15-30 days", "30-45 days", "30-45 days", "45-60 days", "60-90 days"],
+                "Services at Risk": [512, 28, 1024, 24, 384, 12],
+                "MRC at Risk EUR": [7936, 434, 15872, 372, 5952, 186],
+                "Replacement Cost EUR": [8500, 450, 3200, 450, 8500, 280],
+            })
+
+            st.markdown('<div class="ops-mini-title">High-Risk Assets (Next 90 Days)</div>', unsafe_allow_html=True)
+            st.dataframe(
+                failure_predictions,
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Asset ID": st.column_config.TextColumn("Asset ID", width="medium"),
+                    "Asset Type": st.column_config.TextColumn("Type", width="medium"),
+                    "Failure Probability": st.column_config.ProgressColumn("Failure Risk", min_value=0, max_value=100, format="%.1f%%"),
+                    "Predicted Window": st.column_config.TextColumn("Window", width="small"),
+                    "Services at Risk": st.column_config.NumberColumn("Lines", format="%d"),
+                    "MRC at Risk EUR": st.column_config.NumberColumn("MRC €", format="€%,.0f"),
+                    "Replacement Cost EUR": st.column_config.NumberColumn("Replace €", format="€%,.0f"),
+                },
+            )
+            st.markdown('<div style="background: #FEE2E2; border-left: 3px solid #DC2626; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #991B1B;">⚠️ Alert:</strong> <span style="color: #7F1D1D;">OLT-MAD-001-LC4 at 89% failure risk with 512 services (€7.9K MRC) at risk. Replacement cost €8.5K has 24-month payback - recommend immediate action.</span></div>', unsafe_allow_html=True)
+
+        with ai_asset_col2:
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                    <div style="background: #BFDBFE; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                        <span style="font-size: 1.2rem;">💰</span>
+                    </div>
+                    <div>
+                        <div style="color: #DBEAFE; font-size: 0.7rem; text-transform: uppercase;">ML Optimization</div>
+                        <div style="color: white; font-weight: 700; font-size: 1rem;">Replacement Optimizer</div>
+                    </div>
+                </div>
+                <div style="color: #BFDBFE; font-size: 0.82rem; line-height: 1.5;">
+                    Optimization model balancing NBV, maintenance costs, failure risk, and service impact to recommend optimal replacement timing.
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            replacement_reco = pd.DataFrame({
+                "Asset ID": ["OLT-MAD-001-LC4", "OLT-BCN-002-PS1", "OLT-BIL-001-LC2", "SPL-VAL-089", "SPL-SEV-034"],
+                "Current NBV EUR": [2125, 800, 4250, 112, 168],
+                "Maint Cost YTD EUR": [3400, 1200, 890, 45, 0],
+                "Failure Risk": [89.2, 72.1, 64.3, 76.4, 68.9],
+                "Optimal Action": ["Replace Now", "Replace Now", "Schedule Q2", "Replace Now", "Monitor"],
+                "ROI if Replaced": ["+€4,200/yr", "+€2,800/yr", "+€1,900/yr", "+€890/yr", "+€340/yr"],
+                "Payback Months": [24, 14, 54, 6, 16],
+            })
+
+            st.markdown('<div class="ops-mini-title">Optimal Replacement Recommendations</div>', unsafe_allow_html=True)
+            for _, row in replacement_reco.iterrows():
+                if row["Optimal Action"] == "Replace Now":
+                    action_color = "#EF4444"
+                    action_bg = "#FEF2F2"
+                elif row["Optimal Action"] == "Schedule Q2":
+                    action_color = "#F59E0B"
+                    action_bg = "#FFFBEB"
+                else:
+                    action_color = "#10B981"
+                    action_bg = "#ECFDF5"
+
+                st.markdown(f"""
+                <div style="background: {action_bg}; border-left: 4px solid {action_color}; border-radius: 6px; padding: 0.6rem; margin-bottom: 0.4rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-weight: 600; color: #0F172A; font-size: 0.85rem;">{row['Asset ID']}</span>
+                            <span style="color: #64748B; font-size: 0.75rem; margin-left: 0.5rem;">NBV €{row['Current NBV EUR']:,}</span>
+                        </div>
+                        <div style="background: {action_color}; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600;">
+                            {row['Optimal Action']}
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 0.3rem; font-size: 0.75rem;">
+                        <span style="color: #059669;">{row['ROI if Replaced']}</span>
+                        <span style="color: #64748B;">Payback: {row['Payback Months']} mo</span>
+                        <span style="color: #DC2626;">Risk: {row['Failure Risk']}%</span>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        st.markdown('<div style="background: #DBEAFE; border-left: 3px solid #3B82F6; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #1E40AF;">🎯 Optimizer Insight:</strong> <span style="color: #1E3A8A;">3 assets flagged for immediate replacement with combined ROI of €7.9K/yr. Total payback across recommendations: 23 months avg. Delaying increases failure risk by 12%/month.</span></div>', unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #14532D 0%, #22C55E 100%); border-radius: 12px; padding: 1.2rem; margin: 1rem 0;">
+            <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                <div style="background: #BBF7D0; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                    <span style="font-size: 1.2rem;">📈</span>
+                </div>
+                <div>
+                    <div style="color: #DCFCE7; font-size: 0.7rem; text-transform: uppercase;">Cortex FORECAST</div>
+                    <div style="color: white; font-weight: 700; font-size: 1rem;">12-Month Capex Forecast & Optimization</div>
+                </div>
+            </div>
+            <div style="color: #D1FAE5; font-size: 0.82rem; line-height: 1.5;">
+                Time-series model forecasting depreciation expense, maintenance costs, and replacement needs to optimize capex planning.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        capex_forecast = pd.DataFrame({
+            "Month": ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
+            "Depreciation M": [4.8, 4.8, 4.9, 4.9, 5.0, 5.0, 5.1, 5.1, 5.2, 5.2, 5.3, 5.3],
+            "Predicted Failures": [3, 5, 4, 6, 4, 3, 5, 7, 4, 3, 4, 5],
+            "Replacement Capex M": [0.12, 0.18, 0.15, 0.22, 0.14, 0.11, 0.19, 0.28, 0.16, 0.12, 0.15, 0.18],
+            "Maintenance M": [0.08, 0.09, 0.07, 0.11, 0.08, 0.06, 0.10, 0.12, 0.09, 0.07, 0.08, 0.09],
+            "ML Savings M": [0.04, 0.05, 0.04, 0.06, 0.04, 0.03, 0.05, 0.07, 0.05, 0.04, 0.04, 0.05],
+        })
+
+        capex_col1, capex_col2 = st.columns([2, 1])
+
+        with capex_col1:
+            capex_melted = capex_forecast.melt(id_vars=["Month"], value_vars=["Replacement Capex M", "Maintenance M", "ML Savings M"], var_name="Category", value_name="Value")
+            with st.container(border=True):
+                capex_chart = alt.Chart(capex_melted).mark_bar().encode(
+                    x=alt.X("Month:N", title=None, sort=list(capex_forecast["Month"])),
+                    y=alt.Y("Value:Q", title="€M", stack="zero"),
+                    color=alt.Color("Category:N", scale=alt.Scale(domain=["Replacement Capex M", "Maintenance M", "ML Savings M"], range=["#3B82F6", "#F59E0B", "#10B981"])),
+                )
+                st.altair_chart(capex_chart, use_container_width=True)
+            st.markdown('<div style="background: #DCFCE7; border-left: 3px solid #16A34A; border-radius: 4px; padding: 0.6rem; margin-top: 0.5rem; font-size: 0.78rem;"><strong style="color: #166534;">📈 Forecast Insight:</strong> <span style="color: #14532D;">November spike (7 failures, €0.28M capex) driven by OLT equipment lifecycle. ML savings of €0.56M/yr justify predictive maintenance investment.</span></div>', unsafe_allow_html=True)
+
+        with capex_col2:
+            total_replacement = capex_forecast["Replacement Capex M"].sum()
+            total_maintenance = capex_forecast["Maintenance M"].sum()
+            total_savings = capex_forecast["ML Savings M"].sum()
+            total_failures = capex_forecast["Predicted Failures"].sum()
+
+            st.markdown(f"""
+            <div style="background: #F8FAFC; border: 2px solid #22C55E; border-radius: 10px; padding: 1rem;">
+                <div style="font-weight: 700; color: #0F172A; font-size: 0.9rem; margin-bottom: 0.8rem;">12-Month Forecast Summary</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Predicted Failures</span>
+                    <span style="font-weight: 700; color: #DC2626;">{total_failures}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Replacement Capex</span>
+                    <span style="font-weight: 700; color: #3B82F6;">€{total_replacement:.2f}M</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <span style="color: #64748B; font-size: 0.8rem;">Maintenance Cost</span>
+                    <span style="font-weight: 700; color: #F59E0B;">€{total_maintenance:.2f}M</span>
+                </div>
+                <div style="border-top: 1px solid #E2E8F0; margin-top: 0.6rem; padding-top: 0.6rem;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #059669; font-weight: 600; font-size: 0.85rem;">ML-Driven Savings</span>
+                        <span style="font-weight: 700; color: #059669;">€{total_savings:.2f}M</span>
+                    </div>
+                    <div style="font-size: 0.72rem; color: #64748B; margin-top: 0.2rem;">
+                        Predictive maintenance avoiding unplanned failures
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #581C87 0%, #A855F7 100%); border-radius: 12px; padding: 1.2rem; margin: 1rem 0;">
+            <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                <div style="background: #E9D5FF; border-radius: 8px; padding: 0.5rem; margin-right: 0.8rem;">
+                    <span style="font-size: 1.2rem;">🎯</span>
+                </div>
+                <div>
+                    <div style="color: #F3E8FF; font-size: 0.7rem; text-transform: uppercase;">Cortex ML · Anomaly Detection</div>
+                    <div style="color: white; font-weight: 700; font-size: 1rem;">Asset Performance Anomalies</div>
+                </div>
+            </div>
+            <div style="color: #E9D5FF; font-size: 0.82rem; line-height: 1.5;">
+                Detecting assets with abnormal MRC efficiency, unexpected depreciation patterns, or billing misalignments.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        perf_anomalies = pd.DataFrame({
+            "Asset ID": ["OLT-BCN-001", "SPL-MAD-BATCH-045", "FBR-VAL-TRUNK-003", "OLT-SEV-001"],
+            "Anomaly Type": ["Low MRC Efficiency", "Unexpected Depreciation", "Over-allocated Services", "Underutilized Capacity"],
+            "Expected Value": ["€2.50/NBV", "37.5% depreciated", "32 services/splitter", "85% utilization"],
+            "Actual Value": ["€1.04/NBV", "62.1% depreciated", "48 services/splitter", "42% utilization"],
+            "Deviation": ["-58%", "+66%", "+50%", "-51%"],
+            "Recommended Action": ["Review pricing", "Investigate accelerated wear", "Rebalance load", "Consolidate or decommission"],
+            "Priority": ["Medium", "High", "High", "Low"],
+        })
+
+        st.dataframe(
+            perf_anomalies,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Asset ID": st.column_config.TextColumn("Asset", width="medium"),
+                "Anomaly Type": st.column_config.TextColumn("Anomaly", width="medium"),
+                "Expected Value": st.column_config.TextColumn("Expected", width="medium"),
+                "Actual Value": st.column_config.TextColumn("Actual", width="medium"),
+                "Deviation": st.column_config.TextColumn("Deviation", width="small"),
+                "Recommended Action": st.column_config.TextColumn("Action", width="large"),
+                "Priority": st.column_config.TextColumn("Priority", width="small"),
+            },
+        )
+
+        render_ops_ai_reco(
+            "AI Asset Management Summary",
+            f"Predictive maintenance model identified 6 high-risk assets with 89% confidence. Replacement optimizer recommends immediate action on 3 assets to prevent €30,752/mo MRC disruption.",
+            f"Execute proactive replacement of OLT-MAD-001-LC4 and OLT-BCN-002-PS1 this week. Schedule Q2 capex review for remaining recommendations. Investigate OLT-SEV-001 underutilization.",
+            f"Reduce unplanned failures by 70% and save €{total_savings:.2f}M annually through predictive maintenance.",
+        )
+
+    st.markdown("""
+    <details style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.8rem; margin-top: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #334155; font-size: 0.9rem;">Data Sources & Reconciliation Flow</summary>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #475569;">
+            <p><strong>This dashboard aggregates data for billing reconciliation:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 0.5rem 0;">
+                <tr style="border-bottom: 1px solid #E2E8F0;"><th style="text-align: left; padding: 0.4rem;">Data Entity</th><th style="text-align: left; padding: 0.4rem;">Source System</th><th style="text-align: left; padding: 0.4rem;">Reconciliation Role</th></tr>
+                <tr><td style="padding: 0.4rem;">Network Elements</td><td style="padding: 0.4rem;"><strong>OSS/NMS</strong></td><td style="padding: 0.4rem;">Physical capacity for services</td></tr>
+                <tr><td style="padding: 0.4rem;">Service Inventory</td><td style="padding: 0.4rem;"><strong>OSS/BSS</strong></td><td style="padding: 0.4rem;">Golden record for billing</td></tr>
+                <tr><td style="padding: 0.4rem;">Partner Orders</td><td style="padding: 0.4rem;"><strong>Salesforce CPQ</strong></td><td style="padding: 0.4rem;">Creates/modifies inventory</td></tr>
+                <tr><td style="padding: 0.4rem;">MasOrange Inventory</td><td style="padding: 0.4rem;"><strong>MO B2B Portal</strong></td><td style="padding: 0.4rem;">Partner view for reconciliation</td></tr>
+                <tr><td style="padding: 0.4rem;">Vodafone Inventory</td><td style="padding: 0.4rem;"><strong>VF Wholesale API</strong></td><td style="padding: 0.4rem;">Partner view for reconciliation</td></tr>
+                <tr><td style="padding: 0.4rem;">Asset Register</td><td style="padding: 0.4rem;"><strong>SAP S/4HANA AA</strong></td><td style="padding: 0.4rem;">Capex recovery tracking</td></tr>
+            </table>
+            <p style="margin-top: 0.5rem;"><strong>Snowflake Data Flow:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li><strong>OSS → Snowflake:</strong> Kafka streaming for service inventory changes</li>
+                <li><strong>Partner Files → Snowflake:</strong> Daily SFTP ingestion of MO/VF inventory views</li>
+                <li><strong>SAP → Snowflake:</strong> Real-time CDC via SAP SLT for asset data</li>
+                <li><strong>Reconciliation Engine:</strong> SQL/dbt transforms compare PF vs partner views</li>
+            </ul>
+            <p style="margin-top: 0.5rem;"><strong>Reconciliation Logic:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li><strong>Orphan:</strong> SERVICE_INVENTORY.service_id NOT IN PARTNER_INVENTORY</li>
+                <li><strong>Ghost:</strong> PARTNER_INVENTORY.line_id NOT IN SERVICE_INVENTORY</li>
+                <li><strong>Lifecycle Drift:</strong> Activation/deactivation date mismatches</li>
+            </ul>
+        </div>
+    </details>
+    """, unsafe_allow_html=True)
+
+# ---------------------------------------------------------------------------
+# Page: Data Sharing (Tenant Data Exchange & Governance)
+# ---------------------------------------------------------------------------
+elif selected_menu == "Data Sharing":
+    import pandas as pd
+    import altair as alt
+    from datetime import datetime, timedelta
+
+    def style_ds_chart(chart: alt.Chart, height: int = 220) -> alt.Chart:
+        return (
+            chart.properties(height=height, padding={"left": 6, "top": 10, "right": 8, "bottom": 6})
+            .configure(background="#FFFFFF")
+            .configure_view(stroke=None)
+            .configure_axis(labelFontSize=10, titleFontSize=11, gridColor="#E2E8F0", domainColor="#E2E8F0")
+            .configure_legend(labelFontSize=10)
+        )
+
+    def render_ds_ai_reco(title: str, insight: str, action: str, outcome: str, level: str = "info"):
+        color_map = {"info": ("#6366F1", "#EEF2FF", "#3730A3"), "warning": ("#F59E0B", "#FFFBEB", "#92400E"), "critical": ("#EF4444", "#FEF2F2", "#991B1B")}
+        accent, bg, text = color_map.get(level, color_map["info"])
+        st.markdown(f"""<div style="background: {bg}; border-left: 4px solid {accent}; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.5rem;">
+            <div style="font-weight: 700; color: {text}; font-size: 0.78rem; margin-bottom: 0.2rem;">🔗 {title}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Insight:</strong> {insight}</div>
+            <div style="color: #334155; font-size: 0.76rem; line-height: 1.4;"><strong>Action:</strong> {action}</div>
+            <div style="color: #059669; font-size: 0.74rem; margin-top: 0.2rem;"><strong>Outcome:</strong> {outcome}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("""<style>
+.ds-title { font-size: 1.15rem; font-weight: 800; color: #0F172A; margin: 1.2rem 0 0.6rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.4rem; }
+.ds-mini-title { font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 0.5rem; }
+.ds-pulse { background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
+.ds-pulse-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.ds-pulse-title { color: #FFFFFF; font-size: 1rem; font-weight: 700; }
+.ds-pulse-badge { background: #34D399; color: #065F46; padding: 2px 10px; border-radius: 12px; font-size: 0.68rem; font-weight: 700; }
+.ds-pulse-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; }
+.ds-pulse-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 0.7rem; text-align: center; }
+.ds-pulse-label { color: rgba(255,255,255,0.7); font-size: 0.68rem; text-transform: uppercase; }
+.ds-pulse-value { color: #FFFFFF; font-size: 1.4rem; font-weight: 800; margin-top: 0.15rem; }
+.ds-pulse-delta { color: #34D399; font-size: 0.72rem; font-weight: 600; margin-top: 0.1rem; }
+.ds-feed-card { background: white; border: 1px solid #E2E8F0; border-radius: 10px; padding: 0.8rem; margin-bottom: 0.5rem; }
+.ds-feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+.ds-feed-name { font-weight: 700; color: #1E293B; font-size: 0.85rem; }
+.ds-feed-badge { padding: 2px 8px; border-radius: 8px; font-size: 0.68rem; font-weight: 700; }
+.ds-feed-badge.masorange { background: #FFF7ED; color: #C2410C; }
+.ds-feed-badge.vodafone { background: #FEF2F2; color: #B91C1C; }
+.ds-feed-badge.both { background: #EEF2FF; color: #4338CA; }
+.ds-feed-meta { display: flex; gap: 1rem; font-size: 0.75rem; color: #64748B; }
+.ds-status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+.ds-status-dot.active { background: #10B981; }
+.ds-status-dot.warning { background: #F59E0B; }
+.ds-status-dot.error { background: #EF4444; }
+</style>""", unsafe_allow_html=True)
+
+    ds_data_feeds = pd.DataFrame({
+        "Feed Name": [
+            "Network Availability Real-time",
+            "SLA Performance Daily",
+            "Incident Tickets",
+            "Provisioning Orders",
+            "Billing & Usage",
+            "CPE Inventory",
+            "Planned Maintenance",
+            "Capacity Utilization",
+            "Quality of Service (QoS)",
+            "Fiber Route Status",
+        ],
+        "Category": ["Network", "SLA", "Operations", "Provisioning", "Billing", "Inventory", "Operations", "Network", "Network", "Infrastructure"],
+        "Tenant": ["Both", "Both", "Both", "Both", "Both", "Both", "Both", "MasOrange", "Vodafone", "Both"],
+        "Frequency": ["Real-time", "Daily", "Real-time", "Real-time", "Daily", "Weekly", "As needed", "Hourly", "Hourly", "Daily"],
+        "Records/Day": [86400, 1, 245, 1820, 12000000, 50, 12, 8640, 8640, 1],
+        "Latency Sec": [2, 3600, 5, 3, 7200, 86400, 300, 60, 60, 3600],
+        "Status": ["Active", "Active", "Active", "Active", "Active", "Active", "Active", "Warning", "Active", "Active"],
+        "SLA Target Sec": [5, 7200, 30, 10, 14400, 172800, 600, 120, 120, 7200],
+        "Uptime %": [99.98, 99.95, 99.92, 99.88, 99.96, 99.90, 100.0, 98.45, 99.87, 99.94],
+    })
+    ds_data_feeds["SLA Met"] = ds_data_feeds["Latency Sec"] <= ds_data_feeds["SLA Target Sec"]
+
+    ds_volume_trend = pd.DataFrame({
+        "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
+        "MasOrange Records M": [312, 328, 345, 362, 378, 392],
+        "Vodafone Records M": [224, 235, 248, 260, 271, 281],
+        "API Calls M": [48, 52, 58, 64, 68, 72],
+    })
+
+    ds_api_health = pd.DataFrame({
+        "API Endpoint": ["Network Status API", "SLA Reporting API", "Order Management API", "Billing Data API", "Inventory API", "Incident API"],
+        "Tenant": ["Both", "Both", "Both", "Both", "Both", "Both"],
+        "Avg Response ms": [45, 120, 85, 210, 95, 38],
+        "P99 Response ms": [180, 450, 320, 780, 380, 150],
+        "Error Rate %": [0.02, 0.05, 0.08, 0.12, 0.04, 0.03],
+        "Calls/Day K": [125, 48, 86, 24, 12, 156],
+    })
+
+    ds_data_quality = pd.DataFrame({
+        "Data Domain": ["Customer Records", "Network Topology", "Billing Events", "Service Orders", "Incident Data", "Inventory"],
+        "Completeness %": [99.4, 98.8, 99.7, 99.1, 98.9, 97.5],
+        "Accuracy %": [99.2, 99.5, 99.8, 98.7, 99.1, 98.2],
+        "Timeliness %": [99.6, 99.2, 99.4, 98.5, 99.3, 96.8],
+        "DQ Score": [99.4, 99.2, 99.6, 98.8, 99.1, 97.5],
+    })
+
+    ds_compliance = pd.DataFrame({
+        "Requirement": ["GDPR Data Access Logs", "Tenant Data Isolation", "Encryption at Rest", "Encryption in Transit", "Access Control Audit", "Data Retention Policy"],
+        "Status": ["Compliant", "Compliant", "Compliant", "Compliant", "Compliant", "Review Needed"],
+        "Last Audit": ["2026-02-15", "2026-02-15", "2026-01-20", "2026-01-20", "2026-02-01", "2025-11-30"],
+        "Next Audit": ["2026-05-15", "2026-05-15", "2026-04-20", "2026-04-20", "2026-05-01", "2026-02-28"],
+    })
+
+    ds_sharing_by_category = pd.DataFrame({
+        "Category": ["Network", "Billing", "Operations", "Provisioning", "SLA", "Inventory", "Infrastructure"],
+        "MasOrange Feeds": [4, 2, 3, 2, 2, 1, 1],
+        "Vodafone Feeds": [4, 2, 3, 2, 2, 1, 1],
+        "Daily Volume GB": [45, 128, 12, 8, 2, 0.5, 0.3],
+    })
+
+    total_feeds = len(ds_data_feeds)
+    active_feeds = len(ds_data_feeds[ds_data_feeds["Status"] == "Active"])
+    total_daily_records = ds_data_feeds["Records/Day"].sum()
+    avg_uptime = ds_data_feeds["Uptime %"].mean()
+    sla_compliance = len(ds_data_feeds[ds_data_feeds["SLA Met"]]) / total_feeds * 100
+
+    st.markdown(f"""
+    <div class="ds-pulse">
+        <div class="ds-pulse-head">
+            <span class="ds-pulse-title">🔗 Tenant Data Sharing · Exchange & Governance</span>
+            <span class="ds-pulse-badge">Live Monitoring</span>
+        </div>
+        <div class="ds-pulse-grid">
+            <div class="ds-pulse-card">
+                <div class="ds-pulse-label">Active Data Feeds</div>
+                <div class="ds-pulse-value">{active_feeds}/{total_feeds}</div>
+                <div class="ds-pulse-delta">All operational</div>
+            </div>
+            <div class="ds-pulse-card">
+                <div class="ds-pulse-label">Daily Records</div>
+                <div class="ds-pulse-value">{total_daily_records/1_000_000:.1f}M</div>
+                <div class="ds-pulse-delta">Shared with tenants</div>
+            </div>
+            <div class="ds-pulse-card">
+                <div class="ds-pulse-label">Avg Feed Uptime</div>
+                <div class="ds-pulse-value">{avg_uptime:.2f}%</div>
+                <div class="ds-pulse-delta">Above 99.5% SLA</div>
+            </div>
+            <div class="ds-pulse-card">
+                <div class="ds-pulse-label">SLA Compliance</div>
+                <div class="ds-pulse-value">{sla_compliance:.0f}%</div>
+                <div class="ds-pulse-delta">Latency targets met</div>
+            </div>
+            <div class="ds-pulse-card">
+                <div class="ds-pulse-label">Data Quality</div>
+                <div class="ds-pulse-value">{ds_data_quality['DQ Score'].mean():.1f}%</div>
+                <div class="ds-pulse-delta">Across all domains</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    ds_tab_feeds, ds_tab_volume, ds_tab_quality, ds_tab_compliance = st.tabs(["📡 Data Feeds", "📊 Volume & APIs", "✅ Data Quality", "🔒 Compliance"])
+
+    with ds_tab_feeds:
+        st.markdown('<div class="ds-title">Active Data Feeds by Tenant</div>', unsafe_allow_html=True)
+
+        for _, feed in ds_data_feeds.iterrows():
+            tenant_class = "both" if feed["Tenant"] == "Both" else feed["Tenant"].lower()
+            status_class = "active" if feed["Status"] == "Active" else "warning" if feed["Status"] == "Warning" else "error"
+            sla_status = "✓ SLA Met" if feed["SLA Met"] else "⚠ SLA Breach"
+            sla_color = "#10B981" if feed["SLA Met"] else "#F59E0B"
+            
+            st.markdown(f"""
+            <div class="ds-feed-card">
+                <div class="ds-feed-header">
+                    <span class="ds-feed-name"><span class="ds-status-dot {status_class}"></span>{feed['Feed Name']}</span>
+                    <span class="ds-feed-badge {tenant_class}">{feed['Tenant']}</span>
+                </div>
+                <div class="ds-feed-meta">
+                    <span>📁 {feed['Category']}</span>
+                    <span>⏱️ {feed['Frequency']}</span>
+                    <span>📈 {feed['Records/Day']:,} records/day</span>
+                    <span>⚡ {feed['Latency Sec']}s latency</span>
+                    <span style="color: {sla_color}; font-weight: 600;">{sla_status}</span>
+                    <span>📊 {feed['Uptime %']:.2f}% uptime</span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        warning_feeds = ds_data_feeds[ds_data_feeds["Status"] == "Warning"]
+        if len(warning_feeds) > 0:
+            warn_feed = warning_feeds.iloc[0]
+            render_ds_ai_reco(
+                "Feed Health Alert",
+                f"{warn_feed['Feed Name']} showing degraded performance ({warn_feed['Uptime %']:.2f}% uptime).",
+                "Investigate capacity utilization feed latency and scale infrastructure if needed.",
+                "Restore full SLA compliance for MasOrange data feeds.",
+                level="warning",
+            )
+
+        st.markdown('<div class="ds-title">Data Sharing by Category</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            cat_bar = alt.Chart(ds_sharing_by_category).mark_bar(cornerRadiusTopRight=5, cornerRadiusBottomRight=5, size=20).encode(
+                x=alt.X("Daily Volume GB:Q", title="Daily Volume (GB)"),
+                y=alt.Y("Category:N", title=None, sort="-x"),
+                color=alt.Color("Category:N", scale=alt.Scale(scheme="tableau10"), legend=None),
+                tooltip=["Category:N", alt.Tooltip("Daily Volume GB:Q", format=".1f"), "MasOrange Feeds:Q", "Vodafone Feeds:Q"],
+            )
+            st.altair_chart(style_ds_chart(cat_bar, height=220), use_container_width=True)
+            top_category = ds_sharing_by_category.sort_values("Daily Volume GB", ascending=False).iloc[0]
+            render_ds_ai_reco(
+                "Data Category Distribution",
+                f"Billing data dominates at {top_category['Daily Volume GB']:.0f} GB/day ({top_category['Daily Volume GB']/ds_sharing_by_category['Daily Volume GB'].sum()*100:.0f}% of total volume).",
+                "Optimize billing data compression and consider incremental sync for large datasets.",
+                "Reduce bandwidth costs while maintaining data freshness for tenant billing reconciliation.",
+            )
+
+    with ds_tab_volume:
+        st.markdown('<div class="ds-title">Data Exchange Volume Trends</div>', unsafe_allow_html=True)
+        vol_col1, vol_col2 = st.columns(2)
+
+        with vol_col1:
+            st.markdown('<div class="ds-mini-title">Records Shared by Tenant</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                vol_long = ds_volume_trend.melt(id_vars=["Month"], value_vars=["MasOrange Records M", "Vodafone Records M"], var_name="Tenant", value_name="Records M")
+                vol_long["Tenant"] = vol_long["Tenant"].str.replace(" Records M", "")
+                vol_area = alt.Chart(vol_long).mark_area(opacity=0.7).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Records M:Q", title="Records (Millions)", stack=True),
+                    color=alt.Color("Tenant:N", scale=alt.Scale(domain=["MasOrange", "Vodafone"], range=["#FF6B00", "#E60000"]), legend=alt.Legend(title=None)),
+                    tooltip=["Month:N", "Tenant:N", alt.Tooltip("Records M:Q", format=",")],
+                )
+                st.altair_chart(style_ds_chart(vol_area, height=240), use_container_width=True)
+                total_mo = ds_volume_trend["MasOrange Records M"].iloc[-1]
+                total_vf = ds_volume_trend["Vodafone Records M"].iloc[-1]
+                render_ds_ai_reco(
+                    "Data Volume Growth",
+                    f"Monthly data sharing: {total_mo}M records to MasOrange, {total_vf}M to Vodafone.",
+                    "Monitor storage and bandwidth capacity as volumes grow ~5% monthly.",
+                    "Ensure scalable data infrastructure for tenant growth.",
+                )
+
+        with vol_col2:
+            st.markdown('<div class="ds-mini-title">API Call Volume</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                api_line = alt.Chart(ds_volume_trend).mark_line(point=True, strokeWidth=3, color="#6366F1").encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("API Calls M:Q", title="API Calls (Millions)"),
+                    tooltip=["Month:N", alt.Tooltip("API Calls M:Q", format=",")],
+                )
+                api_area = alt.Chart(ds_volume_trend).mark_area(opacity=0.3, color="#6366F1").encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("API Calls M:Q"),
+                )
+                st.altair_chart(style_ds_chart(api_area + api_line, height=240), use_container_width=True)
+                api_growth = (ds_volume_trend["API Calls M"].iloc[-1] - ds_volume_trend["API Calls M"].iloc[0]) / ds_volume_trend["API Calls M"].iloc[0] * 100
+                render_ds_ai_reco(
+                    "API Integration Trend",
+                    f"API calls grew {api_growth:.0f}% over 6 months ({ds_volume_trend['API Calls M'].iloc[0]}M → {ds_volume_trend['API Calls M'].iloc[-1]}M/month).",
+                    "Evaluate API gateway capacity and consider rate limiting policies for peak loads.",
+                    "Maintain sub-100ms response times during tenant integration growth.",
+                )
+
+        st.markdown('<div class="ds-title">API Endpoint Health</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            api_scatter = alt.Chart(ds_api_health).mark_circle(opacity=0.85, stroke="#FFFFFF", strokeWidth=1.2).encode(
+                x=alt.X("Avg Response ms:Q", title="Avg Response Time (ms)"),
+                y=alt.Y("Error Rate %:Q", title="Error Rate (%)"),
+                size=alt.Size("Calls/Day K:Q", scale=alt.Scale(range=[200, 1000]), legend=alt.Legend(title="Calls/Day (K)")),
+                color=alt.Color("API Endpoint:N", legend=None),
+                tooltip=["API Endpoint:N", alt.Tooltip("Avg Response ms:Q"), alt.Tooltip("P99 Response ms:Q"), alt.Tooltip("Error Rate %:Q", format=".2f"), alt.Tooltip("Calls/Day K:Q", format=",")],
+            )
+            api_labels = alt.Chart(ds_api_health).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
+                x="Avg Response ms:Q", y="Error Rate %:Q", text="API Endpoint:N"
+            )
+            st.altair_chart(style_ds_chart(api_scatter + api_labels, height=260), use_container_width=True)
+            slowest_api = ds_api_health.sort_values("Avg Response ms", ascending=False).iloc[0]
+            render_ds_ai_reco(
+                "API Performance",
+                f"{slowest_api['API Endpoint']} has highest latency ({slowest_api['Avg Response ms']}ms avg, {slowest_api['P99 Response ms']}ms P99).",
+                "Optimize billing data queries and consider caching for frequently accessed data.",
+                "Improve tenant API experience and reduce integration complaints.",
+                level="warning",
+            )
+
+    with ds_tab_quality:
+        st.markdown('<div class="ds-title">Data Quality Scorecard</div>', unsafe_allow_html=True)
+        dq_col1, dq_col2 = st.columns(2)
+
+        with dq_col1:
+            st.markdown('<div class="ds-mini-title">DQ Score by Domain</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                dq_bar = alt.Chart(ds_data_quality).mark_bar(cornerRadiusTopRight=5, cornerRadiusBottomRight=5, size=22).encode(
+                    x=alt.X("DQ Score:Q", title="DQ Score (%)", scale=alt.Scale(domain=[95, 100])),
+                    y=alt.Y("Data Domain:N", title=None, sort="-x"),
+                    color=alt.Color("DQ Score:Q", scale=alt.Scale(domain=[96, 100], range=["#FCD34D", "#10B981"]), legend=None),
+                    tooltip=["Data Domain:N", alt.Tooltip("DQ Score:Q", format=".1f"), alt.Tooltip("Completeness %:Q", format=".1f"), alt.Tooltip("Accuracy %:Q", format=".1f"), alt.Tooltip("Timeliness %:Q", format=".1f")],
+                )
+                target_line = alt.Chart(pd.DataFrame({"x": [98]})).mark_rule(strokeDash=[4, 4], color="#6366F1", strokeWidth=2).encode(x="x:Q")
+                st.altair_chart(style_ds_chart(dq_bar + target_line, height=220), use_container_width=True)
+                lowest_dq = ds_data_quality.sort_values("DQ Score").iloc[0]
+                render_ds_ai_reco(
+                    "Data Quality Focus",
+                    f"{lowest_dq['Data Domain']} has lowest DQ score ({lowest_dq['DQ Score']:.1f}%), mainly due to timeliness.",
+                    "Implement automated inventory reconciliation to improve data freshness.",
+                    "Meet 98% DQ target across all data domains.",
+                    level="warning",
+                )
+
+        with dq_col2:
+            st.markdown('<div class="ds-mini-title">Quality Dimensions</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                dq_long = ds_data_quality.melt(id_vars=["Data Domain"], value_vars=["Completeness %", "Accuracy %", "Timeliness %"], var_name="Dimension", value_name="Score")
+                dq_heat = alt.Chart(dq_long).mark_rect(cornerRadius=4).encode(
+                    x=alt.X("Dimension:N", title=None),
+                    y=alt.Y("Data Domain:N", title=None),
+                    color=alt.Color("Score:Q", scale=alt.Scale(domain=[96, 100], range=["#FEF3C7", "#10B981"]), legend=alt.Legend(title="Score %")),
+                    tooltip=["Data Domain:N", "Dimension:N", alt.Tooltip("Score:Q", format=".1f")],
+                )
+                dq_text = alt.Chart(dq_long).mark_text(fontSize=10, fontWeight="bold").encode(
+                    x="Dimension:N", y="Data Domain:N", text=alt.Text("Score:Q", format=".1f"),
+                    color=alt.condition(alt.datum.Score < 98, alt.value("#B45309"), alt.value("#065F46"))
+                )
+                st.altair_chart(style_ds_chart(dq_heat + dq_text, height=220), use_container_width=True)
+                timeliness_issues = dq_long[dq_long["Dimension"] == "Timeliness %"].sort_values("Score").iloc[0]
+                render_ds_ai_reco(
+                    "Quality Dimensions Analysis",
+                    f"Timeliness is the weakest dimension across domains ({timeliness_issues['Data Domain']}: {timeliness_issues['Score']:.1f}%).",
+                    "Implement real-time data pipelines for inventory and order data to reduce latency.",
+                    "Achieve 99%+ timeliness across all data domains shared with tenants.",
+                )
+
+    with ds_tab_compliance:
+        st.markdown('<div class="ds-title">Data Governance & Compliance</div>', unsafe_allow_html=True)
+
+        comp_col1, comp_col2 = st.columns([2, 1])
+        with comp_col1:
+            for _, req in ds_compliance.iterrows():
+                status_color = "#10B981" if req["Status"] == "Compliant" else "#F59E0B"
+                status_icon = "✅" if req["Status"] == "Compliant" else "⚠️"
+                st.markdown(f"""
+                <div style="background: white; border: 1px solid #E2E8F0; border-radius: 10px; padding: 0.8rem; margin-bottom: 0.5rem; border-left: 4px solid {status_color};">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-weight: 700; color: #1E293B;">{status_icon} {req['Requirement']}</span>
+                        <span style="background: {'#ECFDF5' if req['Status'] == 'Compliant' else '#FFFBEB'}; color: {'#065F46' if req['Status'] == 'Compliant' else '#92400E'}; padding: 2px 10px; border-radius: 8px; font-size: 0.72rem; font-weight: 700;">{req['Status']}</span>
+                    </div>
+                    <div style="font-size: 0.75rem; color: #64748B; margin-top: 0.3rem;">
+                        Last Audit: {req['Last Audit']} · Next Audit: {req['Next Audit']}
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        with comp_col2:
+            compliant_count = len(ds_compliance[ds_compliance["Status"] == "Compliant"])
+            total_reqs = len(ds_compliance)
+            st.markdown(f"""
+            <div style="background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); border-radius: 12px; padding: 1.2rem; text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #065F46;">{compliant_count}/{total_reqs}</div>
+                <div style="font-size: 0.85rem; color: #047857; font-weight: 600;">Requirements Compliant</div>
+                <div style="font-size: 0.75rem; color: #059669; margin-top: 0.5rem;">1 item needs review</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        review_needed = ds_compliance[ds_compliance["Status"] == "Review Needed"]
+        if len(review_needed) > 0:
+            render_ds_ai_reco(
+                "Compliance Action Required",
+                f"'{review_needed.iloc[0]['Requirement']}' requires review before {review_needed.iloc[0]['Next Audit']}.",
+                "Schedule compliance review meeting with legal and data governance teams.",
+                "Maintain full regulatory compliance and avoid audit findings.",
+                level="warning",
+            )
+
+        st.markdown('<div class="ds-title">Data Access Summary by Tenant</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            access_summary = pd.DataFrame({
+                "Tenant": ["MasOrange", "Vodafone"],
+                "Data Feeds": [10, 10],
+                "API Endpoints": [6, 6],
+                "Daily Volume GB": [142, 98],
+                "Active Users": [45, 32],
+                "Last Access": ["2 min ago", "5 min ago"],
+            })
+            st.dataframe(
+                access_summary.style.format({
+                    "Daily Volume GB": "{:.0f} GB",
+                    "Active Users": "{:.0f}",
+                }),
+                use_container_width=True,
+                hide_index=True,
+            )
+            render_ds_ai_reco(
+                "Tenant Access Patterns",
+                "MasOrange consumes 45% more data volume than Vodafone (142 GB vs 98 GB daily).",
+                "Review MasOrange data needs and optimize delivery pipelines for high-volume feeds.",
+                "Ensure equitable data access and SLA performance across both tenants.",
+            )
+
+    st.markdown("""
+    <details style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.8rem; margin-top: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #334155; font-size: 0.9rem;">▸ Data Sources & Systems</summary>
+        <div style="margin-top: 0.8rem; font-size: 0.85rem; color: #475569;">
+            <p><strong>This dashboard aggregates data from the following source systems:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 0.5rem 0;">
+                <tr style="border-bottom: 1px solid #E2E8F0;"><th style="text-align: left; padding: 0.4rem;">Data Element</th><th style="text-align: left; padding: 0.4rem;">Source System</th><th style="text-align: left; padding: 0.4rem;">Refresh</th></tr>
+                <tr><td style="padding: 0.4rem;">Data feed status</td><td style="padding: 0.4rem;"><strong>Kong/Apigee</strong> + Airflow</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Records/volume metrics</td><td style="padding: 0.4rem;"><strong>Snowflake</strong> Data Warehouse</td><td style="padding: 0.4rem;">Hourly</td></tr>
+                <tr><td style="padding: 0.4rem;">API call metrics</td><td style="padding: 0.4rem;"><strong>API Gateway Analytics</strong></td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">API response times</td><td style="padding: 0.4rem;"><strong>Datadog/New Relic</strong> APM</td><td style="padding: 0.4rem;">Real-time</td></tr>
+                <tr><td style="padding: 0.4rem;">Data quality scores</td><td style="padding: 0.4rem;"><strong>Great Expectations</strong></td><td style="padding: 0.4rem;">Daily</td></tr>
+                <tr><td style="padding: 0.4rem;">Compliance status</td><td style="padding: 0.4rem;"><strong>ServiceNow GRC</strong></td><td style="padding: 0.4rem;">On audit</td></tr>
+            </table>
+            <p><strong>Key Integrations:</strong></p>
+            <ul style="margin: 0.3rem 0; padding-left: 1.2rem;">
+                <li>Tenant feeds via <strong>Snowflake Data Sharing</strong></li>
+                <li>API auth via <strong>OAuth 2.0</strong></li>
+                <li>Lineage in <strong>Alation/Collibra</strong> Data Catalog</li>
+                <li>GDPR logs synced with <strong>Legal & Privacy</strong></li>
+                <li>Audit trails in <strong>immutable storage</strong> (7 years)</li>
+            </ul>
+        </div>
+    </details>
+    """, unsafe_allow_html=True)
+
 elif selected_menu == "Marketing":
     import pandas as pd
     import altair as alt
@@ -7774,7 +11616,7 @@ elif selected_menu == "Conclusion":
 # ---------------------------------------------------------------------------
 st.markdown(dedent(f"""
     <div class="mf-footer">
-        <div class="mf-footer-brand">Mi<span>Fibra</span></div>
+        <div class="mf-footer-brand">Premium<span>Fiber</span></div>
         <div style="max-width:760px; margin:16px auto 0; padding:14px 16px; border-radius:12px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18); color:#E2E8F0;">
             <div style="font-size:0.9rem; font-weight:800; letter-spacing:0.2px;">PremiumFiber + Snowflake: partnership for scalable telecom growth</div>
             <div style="font-size:0.82rem; line-height:1.45; margin-top:6px; color:rgba(255,255,255,0.82);">
@@ -7788,7 +11630,7 @@ st.markdown(dedent(f"""
         </div>
         <hr class="mf-footer-divider">
         <div class="mf-footer-copy" style="display:flex; flex-direction:column; align-items:center; gap:0.32rem;">
-            <div style="display:inline-flex; align-items:center; gap:0.46rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.22); border-radius:999px; padding:0.24rem 0.68rem; color:#E2E8F0; font-weight:700;">Build with &#10084;&#65039; by Snowflake for PremiumFiber - MWC 2026</div>
+            <div style="display:inline-flex; align-items:center; gap:0.46rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.22); border-radius:999px; padding:0.24rem 0.68rem; color:#E2E8F0; font-weight:700;">Build with &#10084;&#65039; by Snowflake for PremiumFiber</div>
         </div>
     </div>
 """), unsafe_allow_html=True)

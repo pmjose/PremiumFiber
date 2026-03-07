@@ -1,0 +1,4 @@
+partner_key,partner_name,ownership_percent,partner_type,contract_start_date,contract_end_date,sla_tier,primary_contact,headquarters_city
+1,MasOrange,58.00,Retail Operator,2024-01-01,2034-12-31,Premium,Carlos García,Madrid
+2,Vodafone España,17.00,Retail Operator,2024-01-01,2034-12-31,Premium,Ana Martínez,Madrid
+3,GIC,25.00,Financial Investor,2024-01-01,2034-12-31,N/A,Wei Chen,Singapore
